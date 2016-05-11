@@ -1,7 +1,3 @@
-<?php  
-    define('indexes', TRUE); 
-    include './misc/input_ore.php';  
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,60 +15,36 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="height: 72px;" role="navigation">
         <div class="navbar-header">
-            <button class="navbar-toggle" data-target=".navbar-collapse"
-            data-toggle="collapse" type="button"><span class="sr-only">Toggle
-            navigation</span> <span class="icon-bar"></span> <span class=
-            "icon-bar"></span> <span class="icon-bar"></span> <span class=
-            "icon-bar"></span></button> <a class="navbar-brand" href=
-            "index.html"><img src="images/logo-wide.png" style=
-            "margin-top: -7px;"></a>
+            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> 
+            <a class="navbar-brand" href="index.html">
+                <img src="http://image.eveonline.com/Alliance/99004116_64.png" style="margin-top: -10px;">
+            </a>
         </div>
-        <div class="collapse navbar-collapse pull-right">
+        <div class="collapse navbar-collapse pull-left">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Home</a>
                 </li>
-                <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle">Games<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">EvE Online</a></li>
-                <li><a href="#">Firefall</a></li>
-                </ul>
-                </li>
-                <li><a href="http://www.lone-star-warriors.com/forums">Forum</a>
-                </li>
-                <li><a href="#">Services(WIP)</a>
-                </li>
-                <li><a href="contact.html">Contact</a>
-                </li>
-                <li><a href="about.html">About Us</a>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href=
-                    "#"><img src="images/settings.png"><b class=
-                    "caret"></b></a>
-                    <ul class="dropdown-menu pull-right">
-                        <li class="dropdown-header">Applications</li>
-                        <li><a href="#">EvE Online Applications</a>
-                        </li>
-                        <li><a href="#" onclick=
-                        "clearCookies();location.reload();">Clear all
-                        cookies</a>
-                        </li>
-                    </ul>
+                <li><a href="http://forums.warpedintentions.com">Forum</a>
                 </li>
             </ul>
         </div>
     </div>
     <!-- Lead -->
 <div class="central-header">
-        <h1>Buying to make your lives easier.</h1>
+        <h1>Warped Intentions Buy Back Program</h1>
         <p></p>
-				<h4 class="text-danger">This site is still under going massive developments! Report any issues on the forums!</h4>
+				<h4 class="text-danger">This site is still in development.  Please report any errors on the Warped Intention Forums</h4>
       </div> 
 <div class="container">
-            <h4><span class="eve-link" onmouseover="popCorp($(this), 98259161, 'Lone Star Warriors');">Lone Star Warriors</span> offers <a href="http://evewho.com/alli/Yulai+Federation">Yulai</a> and other PROVI-BLOC members a reliable calculator to sell your resources to us within the <a href="http://evemaps.dotlan.net/special/Providence-Catch.pdf">PROVI</a> empire.<br></h4>
+            <h4>Warped Intentions offers a buy back program designed for the Providence residence a way to sell off the extra materials they have within high sec and the<a href="http://evemaps.dotlan.net/special/Providence-Catch.pdf">Providence</a> region.<br></h4>
 			<div class="clearfix"></div>
 		</div>
 		<div class="blocks">
@@ -205,16 +177,7 @@
 				<hr>
   <div class="footer">
         <div class="container">
-        <h4>Buy Up Indexes brought to you by Lone Star Warriors</h4>
-            <ul class="social">
-                <li><a href="https://www.facebook.com/lonestarwarriorsgaming"><i class="fa"></i></a>
-                </li>
-                <li><a href="https://twitter.com/lone_warriors"><i class="fb"></i></a>
-                </li>
-                <li><a href="https://plus.google.com/+lonestarwarriorsgaming"><i class="fc"></i></a>
-                </li>
-            </ul>
-            <p>2015 Design by <a href="#">Joery Pigmans</a>. All rights reserved.</p>
+            <p>2016 Design by <a href="#">Chris Mancuso</a>. All rights reserved.</p>
 			<p>EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. 
 			All other trademarks are the property of their respective owners. 
 			EVE Online, the EVE logo, EVE and all associated logos and designs are 

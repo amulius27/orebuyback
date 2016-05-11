@@ -8,16 +8,15 @@
 require_once('../functions/registry.php');
 
 $items = array(
-    "Veldspar" => "1230"
+    "Veldspar" => "1230",
+    "Concentrated Veldspar" => "",
+    "Dense Veldspar" => ""
 );
 
 $db = DBOpen();
 
 $regionlimit = 10000043;
 
-//Get the list of ore to calculate updated prices for from the data table
-$mineralPrices = $db->fetchRowMany('SELECT * FROM MineralPrices');
-$composition = $db->fetchRowMany('SELECT * FROM itemComposition');
 
 $tritaniumPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id', array("id" => "34"));
 $pyeritePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id', array("id" => "35"));
