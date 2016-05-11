@@ -5,19 +5,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//Register the necessary functions
 require_once('../functions/registry.php');
 
-$items = array(
-    "Veldspar" => "1230",
-    "Concentrated Veldspar" => "",
-    "Dense Veldspar" => ""
-);
-
+//Open the database connection
 $db = DBOpen();
 
+//Set our region for EVE-Central
 $regionlimit = 10000043;
 
-
+//Get the price of the base minerals
 $tritaniumPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id', array("id" => "34"));
 $pyeritePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id', array("id" => "35"));
 $mexallonPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id', array("id" => "36"));
@@ -34,7 +31,9 @@ $liquidOzonePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemI
 $heavyWaterPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id', array("id" => "16272"));
 $strontiumClathratesPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id', array("id" => "16275"));
 
-foreach($items as $item){
+$items = $db->fetchRowMany('SELECT * FROM itemComposition');
+
+foreach($items[ItemId] as $item){
     $composition = $db->fetchRow('SELECT * FROM itemComposition WHERE id= :itemid', array("itemid" => $item));
     $price = ( ($composition[TritaniumNum] * $tritaniumPrice) + ($composition[PyeriteNum] * $pyeritePrice) + ($composition[MexallonNum] * $mexallonPrice) + ($composition[IsogenNum] * $isogenPrice) +
                ($composition[NocxiumNum] * $nocxiumPrice) + ($composition[ZydrineNum] * $zydrinePrice) + ($composition[MegacyteNum] * $megacytePrice) + ($composition[MorphiteNum] * $morphitePrice) +
