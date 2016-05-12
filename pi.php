@@ -1,5 +1,7 @@
-<?php define('indexes', TRUE);
-include '../input_pi_raw.php';
+<?php 
+    define('indexes', TRUE);
+    require_once('./functions/registry.php');
+    include '../input_pi_raw.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,33 +27,9 @@ include '../input_pi_raw.php';
     </style>
 </head>
 <!--Navigation-->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.php"><img src="images/logo-wide.png" style="margin-top: -7px;"></a>
-    </div>
-    <div class="collapse navbar-collapse pull-right">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="../../index.html">Mainpage</a></li>
-            <li><a href="../../eve.html">Eve Page</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img
-                        src="images/settings.png"><b class="caret"></b></a>
-                <ul class="dropdown-menu pull-right">
-                    <li class="dropdown-header">Applications</li>
-                    <li><a href="#">EvE Online Applications</a></li>
-                    <li><a href="#" onclick="clearCookies();location.reload();">Clear all cookies</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
+<?php
+    PrintNavBar();
+?>
 <!--Navigation-->
 
 <div class="central-header">
@@ -281,55 +259,9 @@ include '../input_pi_raw.php';
 <div class="clearfix"></div>
 
 <div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading" align="center">
-            <h3 class="panel-title"><strong>Buy Up Indexes brought to you by <span class="eve-link" onmouseover="popCorp($(this), 98259161, 'Lone Star Warriors');">Lone Star Warriors</span></strong></h3>
-        </div>
-        <div class="panel-body" align="center">
-        <ul class="social">
-            <li>
-                <a href=
-                   "https://www.facebook.com/lonestarwarriorsgaming"><i class="fa">
-                    </i></a>
-            </li>
-
-            <li>
-                <a href="https://twitter.com/lone_warriors"><i class=
-                                                               "fb"></i></a>
-            </li>
-
-            <li>
-                <a href=
-                   "https://plus.google.com/+lonestarwarriorsgaming"><i class="fc">
-                    </i></a>
-            </li>
-        </ul>
-
-        <p>
-            2015 Design by <a href="#">Joery Pigmans</a>. All rights
-            reserved.
-        </p>
-
-        <p>
-            EVE Online and the EVE logo are the registered trademarks
-            of CCP hf. All rights are reserved worldwide. All other
-            trademarks are the property of their respective owners. EVE
-            Online, the EVE logo, EVE and all associated logos and
-            designs are the intellectual property of CCP hf. All
-            artwork, screenshots, characters, vehicles, storylines,
-            world facts or other recognizable features of the
-            intellectual property relating to these trademarks are
-            likewise the intellectual property of CCP hf. CCP hf. has
-            granted permission to Joery Pigmans to use EVE Online and
-            all associated logos and designs for promotional and
-            information purposes on its website but does not endorse,
-            and is not in any way affiliated with, Joery Pigmans. CCP
-            is in no way responsible for the content on or functioning
-            of this website, nor can it be liable for any damage
-            arising from the use of this website.
-        </p>
-    </div>
-</div>
+<?php
+PrintFooter();
+?>
 <!-- Footer -->
 
 <!-- Popups -->
