@@ -6,7 +6,8 @@
  * and open the template in the editor.
  */
 
-require_once('../functions/registry.php');
+require_once __DIR__.'/../functions/registry.php';
+printf("Performed require_once.<br>");
 
 $itemIDs = array(
     "tritanium" => "34",
@@ -25,19 +26,23 @@ $itemIDs = array(
     "heavyWater" => "16272",
     "strontiumClathrates" => "16275"    
 );
+printf("Set itemIDs up.<br>");
 
 $regionlimit = 10000043;
 
 
 $db = DBOpen();
+printf("Opened the database.<br>");
 
 foreach($itemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=".$id."&regionlimit=".$regionlimit;
     $xml = simplexml_load_file($url);
     $price = $xml->marketstat->type->buy->median[0];
     $db->insert('MineralPrices', array("ItemId" => $id, "Price" => $price));
+    printf("$i was performed.<br>");
 }
 
 DBClose($db);
+printf("Closed the database.<br>");
 
 ?>
