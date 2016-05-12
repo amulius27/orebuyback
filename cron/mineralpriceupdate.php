@@ -33,13 +33,17 @@ $regionlimit = 10000043;
 
 $db = DBOpen();
 printf("Opened the database.<br>");
+$i = 1;
 
 foreach($itemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=".$id."&regionlimit=".$regionlimit;
     $xml = simplexml_load_file($url);
     $price = $xml->marketstat->type->buy->median[0];
+    printf("Got $price from Eve-Central.com.<br>");
     $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price));
+    printf("Delivered price to database.<br>");
     printf("$i was performed.<br>");
+    $i++;
 }
 
 DBClose($db);
