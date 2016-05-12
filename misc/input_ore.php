@@ -1,6 +1,6 @@
 <!-- Connect to DB -->
 <?php
-    require_once('../functions/registry.php');
+    require_once('./functions/registry.php');
     
     if(!defined('indexes')) {
         die('Direct access not permitted');
