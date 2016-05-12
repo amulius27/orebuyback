@@ -9,7 +9,6 @@
     ],
     "require": {
         "simplon/mysql": "dev-master",
-        "predis/predis": "1.0.3",
-        "twbs/bootstrap": "dev-master"
+        "predis/predis": "1.0.3"
     }
 }
