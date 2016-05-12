@@ -40,6 +40,5 @@ foreach($itemIDs as $id) {
 }
 
 DBClose($db);
-printf("Closed the database.<br>");
 
 ?>
