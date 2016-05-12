@@ -15,33 +15,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="height: 72px;" role="navigation">
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button> 
-            <a class="navbar-brand" href="index.html">
-                <img src="http://image.eveonline.com/Alliance/99004116_64.png" style="margin-top: -10px;">
-            </a>
-        </div>
-        <div class="collapse navbar-collapse pull-left">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a>
-                </li>
-                <li><a href="http://forums.warpedintentions.com">Forum</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php 
+        require_once('functions/registry.php');
+        PrintNavBar(); 
+    ?>
     <!-- Lead -->
 <div class="central-header">
         <h1>Warped Intentions Buy Back Program</h1>
         <p></p>
-				<h4 class="text-danger">This site is still in development.  Please report any errors on the Warped Intention Forums</h4>
+            <h4 class="text-danger">This site is still in development.  Please report any errors on the Warped Intention Forums.</h4>
       </div> 
 <div class="container">
             <h4>Warped Intentions offers a buy back program designed for the Providence residence a way to sell off the extra materials they have within high sec and the<a href="http://evemaps.dotlan.net/special/Providence-Catch.pdf">Providence</a> region.<br></h4>
@@ -175,22 +157,9 @@
 				</div class="clearfix"></div>
 				</div>
 				<hr>
-  <div class="footer">
-        <div class="container">
-            <p>2016 Design by <a href="#">Chris Mancuso</a>. All rights reserved.</p>
-			<p>EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. 
-			All other trademarks are the property of their respective owners. 
-			EVE Online, the EVE logo, EVE and all associated logos and designs are 
-			the intellectual property of CCP hf. All artwork, screenshots, characters, vehicles, 
-			storylines, world facts or other recognizable features of the intellectual property 
-			relating to these trademarks are likewise the intellectual property of CCP hf. CCP hf. 
-			has granted permission to Joery Pigmans to use EVE Online and all associated logos and 
-			designs for promotional and information purposes on its website but does not endorse, 
-			and is not in any way affiliated with, Joery Pigmans. 
-			CCP is in no way responsible for the content on or functioning of this website, 
-			nor can it be liable for any damage arising from the use of this website.</p>
-			</div>
-    </div>
+  <?php
+    PrintFooter();
+  ?>
 	<!-- Popups -->
      <div class="hide" id="popchar" style="background:white;">
         <table style='border: 1px solid;'>

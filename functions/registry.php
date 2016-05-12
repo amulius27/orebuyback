@@ -13,4 +13,7 @@ require_once('../vendor/autoload.php');
 require_once('../functions/database/dbclose.php');
 require_once('../functions/database/dbopen.php');
 
+//HTML functionality
+require_once('../functions/html/printnavbar.php');
+
 ?>

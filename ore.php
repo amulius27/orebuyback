@@ -1,5 +1,8 @@
-<?php  define('indexes', TRUE);
-include '../input_ore.php';
+<?php  
+    define('indexes', TRUE);
+    require_once('/functions/registry.php');
+    include 'misc/input_ore.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +14,7 @@ include '../input_ore.php';
         <meta content="index,follow" name="robots">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <title>
-            Buy Up Indexes | Lone Star Warriors
+            W4RP Buy Back Program
         </title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -28,69 +31,69 @@ include '../input_ore.php';
 		$('.form-control').keyup(function () {
         var total = 
 		
-					$('#veldspar_units').val() * <?php $string=implode(",",$veld[0]); echo round($string*0.925,2); ?> +
-					$('#veldspar_units_5').val() * 1.05 * <?php $string=implode(",",$veld[0]); echo round($string*0.925,2); ?> +
-					$('#veldspar_units_10').val() * 1.1 * <?php $string=implode(",",$veld[0]); echo round ($string*0.925,2); ?> +
+					$('#veldspar_units').val() * <?php $string=implode(",",$veldspar); echo round($string,2); ?> +
+					$('#veldspar_units_5').val() * 1.05 * <?php $string=implode(",",$veldspar); echo round($string,2); ?> +
+					$('#veldspar_units_10').val() * 1.1 * <?php $string=implode(",",$veldspar); echo round ($string,2); ?> +
 					
-					$('#scordite_units').val() * <?php $string=implode(",",$scor[0]); echo round($string*0.925,2); ?> +
-					$('#scordite_units_5').val() * 1.05 * <?php $string=implode(",",$scor[0]); echo round($string*0.925,2); ?> +
-					$('#scordite_units_10').val() * 1.1 * <?php $string=implode(",",$scor[0]); echo round ($string*0.925,2); ?> +
+					$('#scordite_units').val() * <?php $string=implode(",",$scordite); echo round($string,2); ?> +
+					$('#scordite_units_5').val() * 1.05 * <?php $string=implode(",",$scordite); echo round($string,2); ?> +
+					$('#scordite_units_10').val() * 1.1 * <?php $string=implode(",",$scordite); echo round ($string,2); ?> +
 					
-					$('#pyroxeres_units').val() * <?php $string=implode(",",$pyro[0]); echo round($string*0.925,2); ?> +
-					$('#pyroxeres_units_5').val() * 1.05 * <?php $string=implode(",",$pyro[0]); echo round($string*0.925,2); ?> +
-					$('#pyroxeres_units_10').val() * 1.1 * <?php $string=implode(",",$pyro[0]); echo round ($string*0.925,2); ?> +
+					$('#pyroxeres_units').val() * <?php $string=implode(",",$pyroxeres); echo round($string,2); ?> +
+					$('#pyroxeres_units_5').val() * 1.05 * <?php $string=implode(",",$pyroxeres); echo round($string,2); ?> +
+					$('#pyroxeres_units_10').val() * 1.1 * <?php $string=implode(",",$pyroxeres); echo round ($string,2); ?> +
 					
-					$('#plagioclase_units').val() * <?php $string=implode(",",$plag[0]); echo round($string*0.925,2); ?> +
-					$('#plagioclase_units_5').val() * 1.05 * <?php $string=implode(",",$plag[0]); echo round($string*0.925,2); ?> +
-					$('#plagioclase_units_10').val() * 1.1 * <?php $string=implode(",",$plag[0]); echo round ($string*0.925,2); ?> +
+					$('#plagioclase_units').val() * <?php $string=implode(",",$plagioclase); echo round($string,2); ?> +
+					$('#plagioclase_units_5').val() * 1.05 * <?php $string=implode(",",$plagioclase); echo round($string,2); ?> +
+					$('#plagioclase_units_10').val() * 1.1 * <?php $string=implode(",",$plagioclase); echo round ($string,2); ?> +
 					
-					$('#omber_units').val() * <?php $string=implode(",",$omber[0]); echo round($string*0.925,2); ?> +
-					$('#omber_units_5').val() * 1.05 * <?php $string=implode(",",$omber[0]); echo round($string*0.925,2); ?> +
-					$('#omber_units_10').val() * 1.1 * <?php $string=implode(",",$omber[0]); echo round ($string*0.925,2); ?> +
+					$('#omber_units').val() * <?php $string=implode(",",$omber); echo round($string,2); ?> +
+					$('#omber_units_5').val() * 1.05 * <?php $string=implode(",",$omber); echo round($string,2); ?> +
+					$('#omber_units_10').val() * 1.1 * <?php $string=implode(",",$omber); echo round ($string,2); ?> +
 					
-					$('#kernite_units').val() * <?php $string=implode(",",$kern[0]); echo round($string*0.925,2); ?> +
-					$('#kernite_units_5').val() * 1.05 * <?php $string=implode(",",$kern[0]); echo round($string*0.925,2); ?> +
-					$('#kernite_units_10').val() * 1.1 * <?php $string=implode(",",$kern[0]); echo round ($string*0.925,2); ?> +
+					$('#kernite_units').val() * <?php $string=implode(",",$kernite); echo round($string,2); ?> +
+					$('#kernite_units_5').val() * 1.05 * <?php $string=implode(",",$kernite); echo round($string,2); ?> +
+					$('#kernite_units_10').val() * 1.1 * <?php $string=implode(",",$kernite); echo round ($string,2); ?> +
 					
-					$('#jaspet_units').val() * <?php $string=implode(",",$jasp[0]); echo round($string*0.925,2); ?> +
-					$('#jaspet_units_5').val() * 1.05 * <?php $string=implode(",",$jasp[0]); echo round($string*0.925,2); ?> +
-					$('#jaspet_units_10').val() * 1.1 * <?php $string=implode(",",$jasp[0]); echo round ($string*0.925,2); ?> +
+					$('#jaspet_units').val() * <?php $string=implode(",",$jaspet); echo round($string,2); ?> +
+					$('#jaspet_units_5').val() * 1.05 * <?php $string=implode(",",$jaspet); echo round($string,2); ?> +
+					$('#jaspet_units_10').val() * 1.1 * <?php $string=implode(",",$jaspet); echo round ($string,2); ?> +
 					
-					$('#hemorphite_units').val() * <?php $string=implode(",",$hemo[0]); echo round($string*0.925,2); ?> +
-					$('#hemorphite_units_5').val() * 1.05 * <?php $string=implode(",",$hemo[0]); echo round($string*0.925,2); ?> +
-					$('#hemorphite_units_10').val() * 1.1 * <?php $string=implode(",",$hemo[0]); echo round ($string*0.925,2); ?> +
+					$('#hemorphite_units').val() * <?php $string=implode(",",$hemorphite); echo round($string,2); ?> +
+					$('#hemorphite_units_5').val() * 1.05 * <?php $string=implode(",",$hemorphite); echo round($string,2); ?> +
+					$('#hemorphite_units_10').val() * 1.1 * <?php $string=implode(",",$hemorphite); echo round ($string,2); ?> +
 					
-					$('#hedbergite_units').val() * <?php $string=implode(",",$hedb[0]); echo round($string*0.925,2); ?> +
-					$('#hedbergite_units_5').val() * 1.05 * <?php $string=implode(",",$hedb[0]); echo round($string*0.925,2); ?> +
-					$('#hedbergite_units_10').val() * 1.1 * <?php $string=implode(",",$hedb[0]); echo round ($string*0.925,2); ?> +
+					$('#hedbergite_units').val() * <?php $string=implode(",",$hedbergite); echo round($string,2); ?> +
+					$('#hedbergite_units_5').val() * 1.05 * <?php $string=implode(",",$hedbergite); echo round($string,2); ?> +
+					$('#hedbergite_units_10').val() * 1.1 * <?php $string=implode(",",$hedbergite); echo round ($string,2); ?> +
 					
-					$('#gneiss_units').val() * <?php $string=implode(",",$gneiss[0]); echo round($string*0.925,2); ?> +
-					$('#gneiss_units_5').val() * 1.05 * <?php $string=implode(",",$gneiss[0]); echo round($string*0.925,2); ?> +
-					$('#gneiss_units_10').val() * 1.1 * <?php $string=implode(",",$gneiss[0]); echo round ($string*0.925,2); ?> +
+					$('#gneiss_units').val() * <?php $string=implode(",",$gneiss); echo round($string,2); ?> +
+					$('#gneiss_units_5').val() * 1.05 * <?php $string=implode(",",$gneiss); echo round($string,2); ?> +
+					$('#gneiss_units_10').val() * 1.1 * <?php $string=implode(",",$gneiss); echo round ($string,2); ?> +
 					
-					$('#ochre_units').val() * <?php $string=implode(",",$dark[0]); echo round($string*0.925,2); ?> +
-					$('#ochre_units_5').val() * 1.05 * <?php $string=implode(",",$dark[0]); echo round($string*0.925,2); ?> +
-					$('#ochre_units_10').val() * 1.1 * <?php $string=implode(",",$dark[0]); echo round ($string*0.925,2); ?> +
+					$('#ochre_units').val() * <?php $string=implode(",",$dark_ochre); echo round($string,2); ?> +
+					$('#ochre_units_5').val() * 1.05 * <?php $string=implode(",",$dark_ochre); echo round($string,2); ?> +
+					$('#ochre_units_10').val() * 1.1 * <?php $string=implode(",",$dark_ochre); echo round ($string,2); ?> +
 					
-					$('#spod_units').val() * <?php $string=implode(",",$spod[0]); echo round($string*0.925,2); ?> +
-					$('#spod_units_5').val() * 1.05 * <?php $string=implode(",",$spod[0]); echo round($string*0.925,2); ?> +
-					$('#spod_units_10').val() * 1.1 * <?php $string=implode(",",$spod[0]); echo round ($string*0.925,2); ?> +
+					$('#spod_units').val() * <?php $string=implode(",",$spodumain); echo round($string,2); ?> +
+					$('#spod_units_5').val() * 1.05 * <?php $string=implode(",",$spodumain); echo round($string,2); ?> +
+					$('#spod_units_10').val() * 1.1 * <?php $string=implode(",",$spodumain); echo round ($string,2); ?> +
 					
-					$('#crokite_units').val() * <?php $string=implode(",",$crok[0]); echo round($string*0.925,2); ?> +
-					$('#crokite_units_5').val() * 1.05 * <?php $string=implode(",",$crok[0]); echo round($string*0.925,2); ?> +
-					$('#crokite_units_10').val() * 1.1 * <?php $string=implode(",",$crok[0]); echo round ($string*0.925,2); ?> +
+					$('#crokite_units').val() * <?php $string=implode(",",$crokite); echo round($string,2); ?> +
+					$('#crokite_units_5').val() * 1.05 * <?php $string=implode(",",$crokite); echo round($string,2); ?> +
+					$('#crokite_units_10').val() * 1.1 * <?php $string=implode(",",$crokite); echo round ($string,2); ?> +
 					
-					$('#bistot_units').val() * <?php $string=implode(",",$bis[0]); echo round($string*0.925,2); ?> +
-					$('#bistot_units_5').val() * 1.05 * <?php $string=implode(",",$bis[0]); echo round($string*0.925,2); ?> +
-					$('#bistot_units_10').val() * 1.1 * <?php $string=implode(",",$bis[0]); echo round ($string*0.925,2); ?> +
+					$('#bistot_units').val() * <?php $string=implode(",",$bistot); echo round($string,2); ?> +
+					$('#bistot_units_5').val() * 1.05 * <?php $string=implode(",",$bistot); echo round($string,2); ?> +
+					$('#bistot_units_10').val() * 1.1 * <?php $string=implode(",",$bistot); echo round ($string,2); ?> +
 					
-					$('#arkonor_units').val() * <?php $string=implode(",",$ark[0]); echo round($string*0.925,2); ?> +
-					$('#arkonor_units_5').val() * 1.05 * <?php $string=implode(",",$ark[0]); echo round($string*0.925,2); ?> +
-					$('#arkonor_units_10').val() * 1.1 * <?php $string=implode(",",$ark[0]); echo round ($string*0.925,2); ?> +
+					$('#arkonor_units').val() * <?php $string=implode(",",$arkonor); echo round($string,2); ?> +
+					$('#arkonor_units_5').val() * 1.05 * <?php $string=implode(",",$arkonor); echo round($string,2); ?> +
+					$('#arkonor_units_10').val() * 1.1 * <?php $string=implode(",",$arkonor); echo round ($string,2); ?> +
 					
-					$('#mercoxit_units').val() * <?php $string=implode(",",$merc[0]); echo round($string*0.925,2); ?> +
-					$('#mercoxit_units_5').val() * 1.05 * <?php $string=implode(",",$merc[0]); echo round($string*0.925,2); ?> +
-					$('#mercoxit_units_10').val() * 1.1 * <?php $string=implode(",",$merc[0]); echo round ($string*0.925,2); ?>;
+					$('#mercoxit_units').val() * <?php $string=implode(",",$mercoxit); echo round($string,2); ?> +
+					$('#mercoxit_units_5').val() * 1.05 * <?php $string=implode(",",$mercoxit); echo round($string,2); ?> +
+					$('#mercoxit_units_10').val() * 1.1 * <?php $string=implode(",",$mercoxit); echo round ($string,2); ?>;
 					
                 $('#total').html((total).toFixed(2));
             });
@@ -98,91 +101,23 @@ include '../input_ore.php';
 			</script>
 		</head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <button class="navbar-toggle" data-target=".navbar-collapse"
-                data-toggle="collapse" type="button"><span class=
-                "sr-only">Toggle navigation</span> <span class=
-                "icon-bar"></span> <span class="icon-bar"></span> <span class=
-                "icon-bar"></span> <span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="index.html"><img src=
-                "images/logo-wide.png" style="margin-top: -7px;"></a>
-            </div>
-
-            <div class="collapse navbar-collapse pull-right">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="index.html">Home</a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle=
-                        "dropdown">Games<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">EvE Online</a>
-                            </li>
-
-                            <li>
-                                <a href="#">Firefall</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href=
-                        "http://www.lone-star-warriors.com/forums">Forum</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Services(WIP)</a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">About Us</a>
-                    </li>
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href=
-                        "#"><img src="images/settings.png"><b class=
-                        "caret"></b></a>
-                        <ul class="dropdown-menu pull-right">
-                            <li class="dropdown-header">Applications
-                            </li>
-
-                            <li>
-                                <a href="#">EvE Online Applications</a>
-                            </li>
-
-                            <li>
-                                <a href="#" onclick=
-                                "clearCookies();location.reload();">Clear all
-                                cookies</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php
+            PrintNavBar();
+        ?>
 
         <div class="clearfix">
         </div>
 
         <div class="central-header">
             <h1>
-                Buying to make your lives easier.
+                Warped Intentions Buy Back Program.
             </h1>
 
             <p>
             </p>
 
             <h4 class="text-danger">
-                This site is still under going massive developments! Report any
-                issues on the forums!
+                This site is still in development.  Please report any errors on the Warped Intention Forums.
             </h4>
         </div>
 
@@ -198,7 +133,7 @@ include '../input_ore.php';
                 - Then just double-click the contract value and copy to the
                 clipboard.<br>
                 <span style="font-family: Arial; color: #8FEF2F;"><strong>
-              Database was last updated on: <?php echo $string=implode(",",$update[0]); ?></strong></span><br>
+              Database was last updated on: <?php echo $string=implode(",",$update); ?></strong></span><br>
             </div>
         </div>
 
@@ -211,8 +146,8 @@ include '../input_ore.php';
             <form class="form-horizontal" role="form">
                 <div class="form-group">
                     <label class="col-sm-2" for=
-                    "veldspar_units">Veldspar<br>(<?php $string=implode(",",$veld[0]); echo number_format($string*0.925 , 2, ",", "."); ?>
-					<script>var veldspar = '<?php $string=implode(",",$veld[0]); echo number_format($string*0.925 , 2, ",", "."); ?>';</script>
+                    "veldspar_units">Veldspar<br>(<?php $string=implode(",",$veldspar); echo number_format($string, 2, ".", ","); ?>
+					<script>var veldspar = '<?php $string=implode(",",$veldspar); echo number_format($string , 2, ".", ","); ?>';</script>
                     ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input class="form-control" id="veldspar_units"
@@ -232,7 +167,7 @@ include '../input_ore.php';
             
                 <div class="form-group">
                     <label class="col-sm-2" for=
-                    "scordite_units">Scordite<br>(<?php $string=implode(",",$scor[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "scordite_units">Scordite<br>(<?php $string=implode(",",$scordite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input class="form-control" id="scordite_units" placeholder="Base" type="number">
                     </div>
@@ -248,7 +183,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "pyroxeres_units">Pyroxeres<br>(<?php $string=implode(",",$pyro[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "pyroxeres_units">Pyroxeres<br>(<?php $string=implode(",",$pyroxeres); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="pyroxeres_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -264,7 +199,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "plagioclase_units">Plagioclase<br>(<?php $string=implode(",",$plag[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "plagioclase_units">Plagioclase<br>(<?php $string=implode(",",$plagioclase); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="plagioclase_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -280,7 +215,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "omber_units">Omber<br>(<?php $string=implode(",",$omber[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "omber_units">Omber<br>(<?php $string=implode(",",$omber); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="omber_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -296,7 +231,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "kernite_units">Kernite<br>(<?php $string=implode(",",$kern[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "kernite_units">Kernite<br>(<?php $string=implode(",",$kernite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="kernite_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -312,7 +247,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "jaspet_units">Jaspet<br>(<?php $string=implode(",",$jasp[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "jaspet_units">Jaspet<br>(<?php $string=implode(",",$jaspet); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="jaspet_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -328,7 +263,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "hemorphite_units">Hemorphite<br>(<?php $string=implode(",",$hemo[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "hemorphite_units">Hemorphite<br>(<?php $string=implode(",",$hemorphite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="hemorphite_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -344,7 +279,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "hedbergite_units">Hedbergite<br>(<?php $string=implode(",",$hedb[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "hedbergite_units">Hedbergite<br>(<?php $string=implode(",",$hedbergite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="hedbergite_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -360,7 +295,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "gneiss_units">Gneiss<br>(<?php $string=implode(",",$gneiss[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "gneiss_units">Gneiss<br>(<?php $string=implode(",",$gneiss); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="gneiss_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -376,7 +311,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "ochre_units">Dark Ochre<br>(<?php $string=implode(",",$dark[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "ochre_units">Dark Ochre<br>(<?php $string=implode(",",$dark_ochre); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="ochre_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -392,7 +327,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "spod_units">Spodumain<br>(<?php $string=implode(",",$spod[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "spod_units">Spodumain<br>(<?php $string=implode(",",$spodumain); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="spod_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -408,7 +343,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "crokite_units">Crokite<br>(<?php $string=implode(",",$crok[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "crokite_units">Crokite<br>(<?php $string=implode(",",$crokite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="crokite_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -424,7 +359,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "bistot_units">Bistot<br>(<?php $string=implode(",",$bis[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "bistot_units">Bistot<br>(<?php $string=implode(",",$bistot); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="bistot_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -440,7 +375,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "arkonor_units">Arkonor<br>(<?php $string=implode(",",$ark[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "arkonor_units">Arkonor<br>(<?php $string=implode(",",$arkonor); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="arkonor_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -456,7 +391,7 @@ include '../input_ore.php';
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "mercoxit_units">Mercoxit<br>(<?php $string=implode(",",$merc[0]); echo number_format($string*0.925 , 2, ",", "."); ?> ISK/Unit)</label>
+                    "mercoxit_units">Mercoxit<br>(<?php $string=implode(",",$mercoxit); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
                         <input id="mercoxit_units" class="form-control" placeholder="Base" type="number">
                     </div>
@@ -483,56 +418,9 @@ include '../input_ore.php';
 
         <hr>
 
-        <div class="footer">
-            <div class="container">
-                <h4>
-                    Buy Up Indexes brought to you by Lone Star Warriors
-                </h4>
-
-                <ul class="social">
-                    <li>
-                        <a href=
-                        "https://www.facebook.com/lonestarwarriorsgaming"><i class="fa">
-                        </i></a>
-                    </li>
-
-                    <li>
-                        <a href="https://twitter.com/lone_warriors"><i class=
-                        "fb"></i></a>
-                    </li>
-
-                    <li>
-                        <a href=
-                        "https://plus.google.com/+lonestarwarriorsgaming"><i class="fc">
-                        </i></a>
-                    </li>
-                </ul>
-
-                <p>
-                    2015 Design by <a href="#">Joery Pigmans</a>. All rights
-                    reserved.
-                </p>
-
-                <p>
-                    EVE Online and the EVE logo are the registered trademarks
-                    of CCP hf. All rights are reserved worldwide. All other
-                    trademarks are the property of their respective owners. EVE
-                    Online, the EVE logo, EVE and all associated logos and
-                    designs are the intellectual property of CCP hf. All
-                    artwork, screenshots, characters, vehicles, storylines,
-                    world facts or other recognizable features of the
-                    intellectual property relating to these trademarks are
-                    likewise the intellectual property of CCP hf. CCP hf. has
-                    granted permission to Joery Pigmans to use EVE Online and
-                    all associated logos and designs for promotional and
-                    information purposes on its website but does not endorse,
-                    and is not in any way affiliated with, Joery Pigmans. CCP
-                    is in no way responsible for the content on or functioning
-                    of this website, nor can it be liable for any damage
-                    arising from the use of this website.
-                </p>
-            </div>
-        </div>
+        <?php 
+            PrintFooter();
+        ?>
         <!-- Clipboard -->
 
         <div aria-hidden="true" aria-labelledby="clipboardLabel" class="modal"

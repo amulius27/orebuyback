@@ -58,7 +58,7 @@
     $bistot = $db->fetchColumn('SELECT price FROM OrePrices WHERE ItemId= :id', array('id' => '1223'));
 
     //Arkonor
-    $arknor = $db->fetchColumn('SELECT price FROM OrePrices WHERE ItemId= :id', array('id' => '22'));
+    $arkonor = $db->fetchColumn('SELECT price FROM OrePrices WHERE ItemId= :id', array('id' => '22'));
     
     //Mercoxit
     $mercoxit = $db->fetchColumn('SELECT price FROM OrePrices WHERE ItemId= :id', array('id' => '11396'));
