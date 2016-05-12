@@ -10,10 +10,10 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 //Database functionality
-require_once('../functions/database/dbclose.php');
-require_once('../functions/database/dbopen.php');
+require_once __DIR__.'../functions/database/dbclose.php';
+require_once __DIR__.'../functions/database/dbopen.php';
 
 //HTML functionality
-require_once('../functions/html/printnavbar.php');
+require_once __DIR__.'../functions/html/printnavbar.php';
 
 ?>
