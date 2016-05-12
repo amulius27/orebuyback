@@ -26,7 +26,7 @@
             <h4 class="text-danger">This site is still in development.  Please report any errors on the Warped Intention Forums.</h4>
       </div> 
 <div class="container">
-            <h4>Warped Intentions offers a buy back program designed for the Providence residence a way to sell off the extra materials they have within high sec and the<a href="http://evemaps.dotlan.net/special/Providence-Catch.pdf">Providence</a> region.<br></h4>
+            <h4>Warped Intentions offers a buy back program designed for the Providence residence a way to sell off the extra materials they have within high sec and the <a href="http://evemaps.dotlan.net/special/Providence-Catch.pdf">Providence</a> region.<br></h4>
 			<div class="clearfix"></div>
 		</div>
 		<div class="blocks">
