@@ -38,7 +38,7 @@ foreach($itemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=".$id."&regionlimit=".$regionlimit;
     $xml = simplexml_load_file($url);
     $price = $xml->marketstat->type->buy->median[0];
-    $db->insert('MineralPrices', array("ItemId" => $id, "Price" => $price));
+    $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price));
     printf("$i was performed.<br>");
 }
 
