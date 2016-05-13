@@ -1,11 +1,5 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+//Load the required functions for the sql calls
 require_once __DIR__.'/../functions/registry.php';
 
 $itemIDs = array(
@@ -35,6 +29,8 @@ foreach($itemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
     $xml = simplexml_load_file($url);
     $price = $xml->marketstat->type->buy->median[0];
+    //Multiply the price by 1.00 to put it in a float format for the database.  The
+    //database is expecting a decimal and not a character
     $price = $price * 1.00;
     $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price));
 }
