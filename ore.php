@@ -1,7 +1,20 @@
 <?php  
     define('indexes', TRUE);
-    require_once('./functions/registry.php');
+    require_once __DIR__.'/../functions/registry.php';
     include 'misc/input_ore.php';
+    
+    if(session_is_registered("username")) {
+        $username = $_SESSION["username"];
+        $db = DBOpen();
+        $corpTax = $db->fetchColumn('SELECT `CorpTax` FROM users WHERE username= :username', array('username' => $username));
+    }
+    else {
+        $corpTax = 0.00;
+    }
+    
+    $alliance_tax = 0.04;
+    $total_tax = $alliance_tax + $corp_tax;
+    $value = 1.00 - $total_tax;
     
 ?>
 
@@ -31,69 +44,69 @@
 		$('.form-control').keyup(function () {
         var total = 
 		
-					$('#veldspar_units').val() * <?php $string=implode(",",$veldspar); echo round($string,2); ?> +
-					$('#veldspar_units_5').val() * 1.05 * <?php $string=implode(",",$veldspar); echo round($string,2); ?> +
-					$('#veldspar_units_10').val() * 1.1 * <?php $string=implode(",",$veldspar); echo round ($string,2); ?> +
+					$('#veldspar_units').val() * <?php $string=implode(",",$veldspar); echo round(($string * $value),2); ?> +
+					$('#veldspar_units_5').val() * 1.05 * <?php $string=implode(",",$veldspar); echo round(($string * $value),2); ?> +
+					$('#veldspar_units_10').val() * 1.1 * <?php $string=implode(",",$veldspar); echo round (($string * $value),2); ?> +
 					
-					$('#scordite_units').val() * <?php $string=implode(",",$scordite); echo round($string,2); ?> +
-					$('#scordite_units_5').val() * 1.05 * <?php $string=implode(",",$scordite); echo round($string,2); ?> +
-					$('#scordite_units_10').val() * 1.1 * <?php $string=implode(",",$scordite); echo round ($string,2); ?> +
+					$('#scordite_units').val() * <?php $string=implode(",",$scordite); echo round(($string * $value),2); ?> +
+					$('#scordite_units_5').val() * 1.05 * <?php $string=implode(",",$scordite); echo round(($string * $value),2); ?> +
+					$('#scordite_units_10').val() * 1.1 * <?php $string=implode(",",$scordite); echo round (($string * $value),2); ?> +
 					
-					$('#pyroxeres_units').val() * <?php $string=implode(",",$pyroxeres); echo round($string,2); ?> +
-					$('#pyroxeres_units_5').val() * 1.05 * <?php $string=implode(",",$pyroxeres); echo round($string,2); ?> +
-					$('#pyroxeres_units_10').val() * 1.1 * <?php $string=implode(",",$pyroxeres); echo round ($string,2); ?> +
+					$('#pyroxeres_units').val() * <?php $string=implode(",",$pyroxeres); echo round(($string * $value),2); ?> +
+					$('#pyroxeres_units_5').val() * 1.05 * <?php $string=implode(",",$pyroxeres); echo round(($string * $value),2); ?> +
+					$('#pyroxeres_units_10').val() * 1.1 * <?php $string=implode(",",$pyroxeres); echo round (($string * $value),2); ?> +
 					
-					$('#plagioclase_units').val() * <?php $string=implode(",",$plagioclase); echo round($string,2); ?> +
-					$('#plagioclase_units_5').val() * 1.05 * <?php $string=implode(",",$plagioclase); echo round($string,2); ?> +
-					$('#plagioclase_units_10').val() * 1.1 * <?php $string=implode(",",$plagioclase); echo round ($string,2); ?> +
+					$('#plagioclase_units').val() * <?php $string=implode(",",$plagioclase); echo round(($string * $value),2); ?> +
+					$('#plagioclase_units_5').val() * 1.05 * <?php $string=implode(",",$plagioclase); echo round(($string * $value),2); ?> +
+					$('#plagioclase_units_10').val() * 1.1 * <?php $string=implode(",",$plagioclase); echo round (($string * $value),2); ?> +
 					
-					$('#omber_units').val() * <?php $string=implode(",",$omber); echo round($string,2); ?> +
-					$('#omber_units_5').val() * 1.05 * <?php $string=implode(",",$omber); echo round($string,2); ?> +
-					$('#omber_units_10').val() * 1.1 * <?php $string=implode(",",$omber); echo round ($string,2); ?> +
+					$('#omber_units').val() * <?php $string=implode(",",$omber); echo round(($string * $value),2); ?> +
+					$('#omber_units_5').val() * 1.05 * <?php $string=implode(",",$omber); echo round(($string * $value),2); ?> +
+					$('#omber_units_10').val() * 1.1 * <?php $string=implode(",",$omber); echo round (($string * $value),2); ?> +
 					
-					$('#kernite_units').val() * <?php $string=implode(",",$kernite); echo round($string,2); ?> +
-					$('#kernite_units_5').val() * 1.05 * <?php $string=implode(",",$kernite); echo round($string,2); ?> +
-					$('#kernite_units_10').val() * 1.1 * <?php $string=implode(",",$kernite); echo round ($string,2); ?> +
+					$('#kernite_units').val() * <?php $string=implode(",",$kernite); echo round(($string * $value),2); ?> +
+					$('#kernite_units_5').val() * 1.05 * <?php $string=implode(",",$kernite); echo round(($string * $value),2); ?> +
+					$('#kernite_units_10').val() * 1.1 * <?php $string=implode(",",$kernite); echo round (($string * $value),2); ?> +
 					
-					$('#jaspet_units').val() * <?php $string=implode(",",$jaspet); echo round($string,2); ?> +
-					$('#jaspet_units_5').val() * 1.05 * <?php $string=implode(",",$jaspet); echo round($string,2); ?> +
-					$('#jaspet_units_10').val() * 1.1 * <?php $string=implode(",",$jaspet); echo round ($string,2); ?> +
+					$('#jaspet_units').val() * <?php $string=implode(",",$jaspet); echo round(($string * $value),2); ?> +
+					$('#jaspet_units_5').val() * 1.05 * <?php $string=implode(",",$jaspet); echo round(($string * $value),2); ?> +
+					$('#jaspet_units_10').val() * 1.1 * <?php $string=implode(",",$jaspet); echo round (($string * $value),2); ?> +
 					
-					$('#hemorphite_units').val() * <?php $string=implode(",",$hemorphite); echo round($string,2); ?> +
-					$('#hemorphite_units_5').val() * 1.05 * <?php $string=implode(",",$hemorphite); echo round($string,2); ?> +
-					$('#hemorphite_units_10').val() * 1.1 * <?php $string=implode(",",$hemorphite); echo round ($string,2); ?> +
+					$('#hemorphite_units').val() * <?php $string=implode(",",$hemorphite); echo round(($string * $value),2); ?> +
+					$('#hemorphite_units_5').val() * 1.05 * <?php $string=implode(",",$hemorphite); echo round(($string * $value),2); ?> +
+					$('#hemorphite_units_10').val() * 1.1 * <?php $string=implode(",",$hemorphite); echo round (($string * $value),2); ?> +
 					
-					$('#hedbergite_units').val() * <?php $string=implode(",",$hedbergite); echo round($string,2); ?> +
-					$('#hedbergite_units_5').val() * 1.05 * <?php $string=implode(",",$hedbergite); echo round($string,2); ?> +
-					$('#hedbergite_units_10').val() * 1.1 * <?php $string=implode(",",$hedbergite); echo round ($string,2); ?> +
+					$('#hedbergite_units').val() * <?php $string=implode(",",$hedbergite); echo round(($string * $value),2); ?> +
+					$('#hedbergite_units_5').val() * 1.05 * <?php $string=implode(",",$hedbergite); echo round(($string * $value),2); ?> +
+					$('#hedbergite_units_10').val() * 1.1 * <?php $string=implode(",",$hedbergite); echo round (($string * $value),2); ?> +
 					
-					$('#gneiss_units').val() * <?php $string=implode(",",$gneiss); echo round($string,2); ?> +
-					$('#gneiss_units_5').val() * 1.05 * <?php $string=implode(",",$gneiss); echo round($string,2); ?> +
-					$('#gneiss_units_10').val() * 1.1 * <?php $string=implode(",",$gneiss); echo round ($string,2); ?> +
+					$('#gneiss_units').val() * <?php $string=implode(",",$gneiss); echo round(($string * $value),2); ?> +
+					$('#gneiss_units_5').val() * 1.05 * <?php $string=implode(",",$gneiss); echo round(($string * $value),2); ?> +
+					$('#gneiss_units_10').val() * 1.1 * <?php $string=implode(",",$gneiss); echo round (($string * $value),2); ?> +
 					
-					$('#ochre_units').val() * <?php $string=implode(",",$dark_ochre); echo round($string,2); ?> +
-					$('#ochre_units_5').val() * 1.05 * <?php $string=implode(",",$dark_ochre); echo round($string,2); ?> +
-					$('#ochre_units_10').val() * 1.1 * <?php $string=implode(",",$dark_ochre); echo round ($string,2); ?> +
+					$('#ochre_units').val() * <?php $string=implode(",",$dark_ochre); echo round(($string * $value),2); ?> +
+					$('#ochre_units_5').val() * 1.05 * <?php $string=implode(",",$dark_ochre); echo round(($string * $value),2); ?> +
+					$('#ochre_units_10').val() * 1.1 * <?php $string=implode(",",$dark_ochre); echo round (($string * $value),2); ?> +
 					
-					$('#spod_units').val() * <?php $string=implode(",",$spodumain); echo round($string,2); ?> +
-					$('#spod_units_5').val() * 1.05 * <?php $string=implode(",",$spodumain); echo round($string,2); ?> +
-					$('#spod_units_10').val() * 1.1 * <?php $string=implode(",",$spodumain); echo round ($string,2); ?> +
+					$('#spod_units').val() * <?php $string=implode(",",$spodumain); echo round(($string * $value),2); ?> +
+					$('#spod_units_5').val() * 1.05 * <?php $string=implode(",",$spodumain); echo round(($string * $value),2); ?> +
+					$('#spod_units_10').val() * 1.1 * <?php $string=implode(",",$spodumain); echo round (($string * $value),2); ?> +
 					
-					$('#crokite_units').val() * <?php $string=implode(",",$crokite); echo round($string,2); ?> +
-					$('#crokite_units_5').val() * 1.05 * <?php $string=implode(",",$crokite); echo round($string,2); ?> +
-					$('#crokite_units_10').val() * 1.1 * <?php $string=implode(",",$crokite); echo round ($string,2); ?> +
+					$('#crokite_units').val() * <?php $string=implode(",",$crokite); echo round(($string * $value),2); ?> +
+					$('#crokite_units_5').val() * 1.05 * <?php $string=implode(",",$crokite); echo round(($string * $value),2); ?> +
+					$('#crokite_units_10').val() * 1.1 * <?php $string=implode(",",$crokite); echo round (($string * $value),2); ?> +
 					
-					$('#bistot_units').val() * <?php $string=implode(",",$bistot); echo round($string,2); ?> +
-					$('#bistot_units_5').val() * 1.05 * <?php $string=implode(",",$bistot); echo round($string,2); ?> +
-					$('#bistot_units_10').val() * 1.1 * <?php $string=implode(",",$bistot); echo round ($string,2); ?> +
+					$('#bistot_units').val() * <?php $string=implode(",",$bistot); echo round(($string * $value),2); ?> +
+					$('#bistot_units_5').val() * 1.05 * <?php $string=implode(",",$bistot); echo round(($string * $value),2); ?> +
+					$('#bistot_units_10').val() * 1.1 * <?php $string=implode(",",$bistot); echo round (($string * $value),2); ?> +
 					
-					$('#arkonor_units').val() * <?php $string=implode(",",$arkonor); echo round($string,2); ?> +
-					$('#arkonor_units_5').val() * 1.05 * <?php $string=implode(",",$arkonor); echo round($string,2); ?> +
-					$('#arkonor_units_10').val() * 1.1 * <?php $string=implode(",",$arkonor); echo round ($string,2); ?> +
+					$('#arkonor_units').val() * <?php $string=implode(",",$arkonor); echo round(($string * $value),2); ?> +
+					$('#arkonor_units_5').val() * 1.05 * <?php $string=implode(",",$arkonor); echo round(($string * $value),2); ?> +
+					$('#arkonor_units_10').val() * 1.1 * <?php $string=implode(",",$arkonor); echo round (($string * $value),2); ?> +
 					
-					$('#mercoxit_units').val() * <?php $string=implode(",",$mercoxit); echo round($string,2); ?> +
-					$('#mercoxit_units_5').val() * 1.05 * <?php $string=implode(",",$mercoxit); echo round($string,2); ?> +
-					$('#mercoxit_units_10').val() * 1.1 * <?php $string=implode(",",$mercoxit); echo round ($string,2); ?>;
+					$('#mercoxit_units').val() * <?php $string=implode(",",$mercoxit); echo round(($string * $value),2); ?> +
+					$('#mercoxit_units_5').val() * 1.05 * <?php $string=implode(",",$mercoxit); echo round(($string * $value),2); ?> +
+					$('#mercoxit_units_10').val() * 1.1 * <?php $string=implode(",",$mercoxit); echo round (($string * $value),2); ?>;
 					
                 $('#total').html((total).toFixed(2));
             });
@@ -142,150 +155,152 @@
 
         <hr>
 
-        <div class="container">
-            <form class="form-horizontal" role="form">
+        <div class="container col-sm-3">
+            <form class="form-horizontal" action="calccontract.php" method="POST" role="form">
+                <input type="hidden" name="contractType" value="ore">    
+                <div class="form-group">
+                    <label class="col-sm-2" for="characterName">Character Name</label>
+                    <input type="text" class="form-control" id="characterName" name="characterName" placeholder="Character Name">
+                </div>
                 <div class="form-group">
                     <label class="col-sm-2" for=
-                    "veldspar_units">Veldspar<br>(<?php $string=implode(",",$veldspar); echo number_format($string, 2, ".", ","); ?>
-					<script>var veldspar = '<?php $string=implode(",",$veldspar); echo number_format($string , 2, ".", ","); ?>';</script>
+                    "veldspar_units">Veldspar<br>(<?php $string=implode(",",$veldspar); echo number_format(($string * $value), 2, ".", ","); ?>
+					<script>var veldspar = '<?php $string=implode(",",$veldspar); echo number_format(($string * $value), 2, ".", ","); ?>';</script>
                     ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="veldspar_units"
-                        placeholder="Base" type="number">
+                        <input class="form-control" id="veldspar_units" name="veldspar_units" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input class="form-control" id="veldspar_units_5"
-                        placeholder="Concentrated" type="number">
+                        <input class="form-control" id="veldspar_units_5" name="veldspar_units_5" placeholder="Concentrated" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input class="form-control" id="veldspar_units_10"
-                        placeholder="Dense" type="number">
+                        <input class="form-control" id="veldspar_units_10" name="veldspar_units_10" placeholder="Dense" type="number">
                     </div>
                 </div>
             
                 <div class="form-group">
                     <label class="col-sm-2" for=
-                    "scordite_units">Scordite<br>(<?php $string=implode(",",$scordite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "scordite_units">Scordite<br>(<?php $string=implode(",",$scordite); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="scordite_units" placeholder="Base" type="number">
+                        <input class="form-control" id="scordite_units" name="scordite_units" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="scordite_units_5" class="form-control" placeholder="Condensed" type="number">
+                        <input id="scordite_units_5" class="form-control" name="scordite_units_5" placeholder="Condensed" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="scordite_units_10" class="form-control" placeholder="Massive" type="number">
+                        <input id="scordite_units_10" class="form-control" name="scordite_units_10" placeholder="Massive" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "pyroxeres_units">Pyroxeres<br>(<?php $string=implode(",",$pyroxeres); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "pyroxeres_units">Pyroxeres<br>(<?php $string=implode(",",$pyroxeres); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="pyroxeres_units" class="form-control" placeholder="Base" type="number">
+                        <input id="pyroxeres_units" name="pyroxeres_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="pyroxeres_units_5" class="form-control" placeholder="Solid" type="number">
+                        <input id="pyroxeres_units_5" name="pyroxeres_units_5" class="form-control" placeholder="Solid" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="pyroxeres_units_10" class="form-control" placeholder="Viscous" type="number">
+                        <input id="pyroxeres_units_10" name="pyroxeres_units_10" class="form-control" placeholder="Viscous" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "plagioclase_units">Plagioclase<br>(<?php $string=implode(",",$plagioclase); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "plagioclase_units">Plagioclase<br>(<?php $string=implode(",",$plagioclase); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="plagioclase_units" class="form-control" placeholder="Base" type="number">
+                        <input id="plagioclase_units" name="plagioclase_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="plagioclase_units_5" class="form-control" placeholder="Azure" type="number">
+                        <input id="plagioclase_units_5" name="plagioclase_units_5" class="form-control" placeholder="Azure" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="plagioclase_units_10" class="form-control" placeholder="Rich" type="number">
+                        <input id="plagioclase_units_10" name="plagioclase_units_10" class="form-control" placeholder="Rich" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "omber_units">Omber<br>(<?php $string=implode(",",$omber); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "omber_units">Omber<br>(<?php $string=implode(",",$omber); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="omber_units" class="form-control" placeholder="Base" type="number">
+                        <input id="omber_units" name="omber_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="omber_units_5" class="form-control" placeholder="Silvery" type="number">
+                        <input id="omber_units_5" name="omber_units_5" class="form-control" placeholder="Silvery" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="omber_units_10" class="form-control" placeholder="Golden" type="number">
+                        <input id="omber_units_10" name="omber_units_10" class="form-control" placeholder="Golden" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "kernite_units">Kernite<br>(<?php $string=implode(",",$kernite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "kernite_units">Kernite<br>(<?php $string=implode(",",$kernite); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="kernite_units" class="form-control" placeholder="Base" type="number">
+                        <input id="kernite_units" name="kernite_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="kernite_units_5" class="form-control" placeholder="Luminous" type="number">
+                        <input id="kernite_units_5" name="kernite_units_5" class="form-control" placeholder="Luminous" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="kernite_units_10" class="form-control" placeholder="Fiery" type="number">
+                        <input id="kernite_units_10" name="kernite_units_10" class="form-control" placeholder="Fiery" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "jaspet_units">Jaspet<br>(<?php $string=implode(",",$jaspet); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "jaspet_units">Jaspet<br>(<?php $string=implode(",",$jaspet); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="jaspet_units" class="form-control" placeholder="Base" type="number">
+                        <input id="jaspet_units" name="jaspet_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="jaspet_units_5" class="form-control" placeholder="Pure" type="number">
+                        <input id="jaspet_units_5" name="jaspet_units_5" class="form-control" placeholder="Pure" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="jaspet_units_10" class="form-control" placeholder="Pristine" type="number">
+                        <input id="jaspet_units_10" name="jaspet_units_10" class="form-control" placeholder="Pristine" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "hemorphite_units">Hemorphite<br>(<?php $string=implode(",",$hemorphite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "hemorphite_units">Hemorphite<br>(<?php $string=implode(",",$hemorphite); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="hemorphite_units" class="form-control" placeholder="Base" type="number">
+                        <input id="hemorphite_units" name="hemorphite_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="hemorphite_units_5" class="form-control" placeholder="Vivid" type="number">
+                        <input id="hemorphite_units_5" name="hemorphite_units_5" class="form-control" placeholder="Vivid" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="hemorphite_units_10" class="form-control" placeholder="Radiant" type="number">
+                        <input id="hemorphite_units_10" name="hemorphite_units_10" class="form-control" placeholder="Radiant" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "hedbergite_units">Hedbergite<br>(<?php $string=implode(",",$hedbergite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "hedbergite_units">Hedbergite<br>(<?php $string=implode(",",$hedbergite); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="hedbergite_units" class="form-control" placeholder="Base" type="number">
+                        <input id="hedbergite_units" name="hedbergite_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="hedbergite_units_5" class="form-control" placeholder="Vitric" type="number">
+                        <input id="hedbergite_units_5" name="hedbergite_units_5" class="form-control" placeholder="Vitric" type="number">
                     </div>
 
                     <div class="col-sm-3">
@@ -295,116 +310,118 @@
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "gneiss_units">Gneiss<br>(<?php $string=implode(",",$gneiss); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "gneiss_units">Gneiss<br>(<?php $string=implode(",",$gneiss); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="gneiss_units" class="form-control" placeholder="Base" type="number">
+                        <input id="gneiss_units" name="gneiss_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="gneiss_units_5" class="form-control" placeholder="Iridescent" type="number">
+                        <input id="gneiss_units_5" name="gneiss_units_5" class="form-control" placeholder="Iridescent" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="gneiss_units_10" class="form-control" placeholder="Glazed" type="number">
+                        <input id="gneiss_units_10" name="gneiss_units_10" class="form-control" placeholder="Glazed" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "ochre_units">Dark Ochre<br>(<?php $string=implode(",",$dark_ochre); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "ochre_units">Dark Ochre<br>(<?php $string=implode(",",$dark_ochre); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="ochre_units" class="form-control" placeholder="Base" type="number">
+                        <input id="ochre_units" name="ochre_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="ochre_units_5" class="form-control" placeholder="Onyx" type="number">
+                        <input id="ochre_units_5" name="ochre_units_5" class="form-control" placeholder="Onyx" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="ochre_units_10" class="form-control" placeholder="Obsidian" type="number">
+                        <input id="ochre_units_10" name="ochre_units_10" class="form-control" placeholder="Obsidian" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "spod_units">Spodumain<br>(<?php $string=implode(",",$spodumain); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "spod_units">Spodumain<br>(<?php $string=implode(",",$spodumain); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="spod_units" class="form-control" placeholder="Base" type="number">
+                        <input id="spod_units" name="spod_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="spod_units_5" class="form-control" placeholder="Bright" type="number">
+                        <input id="spod_units_5" name="spod_units_5" class="form-control" placeholder="Bright" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="spod_units_10" class="form-control" placeholder="Gleaming" type="number">
+                        <input id="spod_units_10" name="spod_units_10" class="form-control" placeholder="Gleaming" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "crokite_units">Crokite<br>(<?php $string=implode(",",$crokite); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "crokite_units">Crokite<br>(<?php $string=implode(",",$crokite); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="crokite_units" class="form-control" placeholder="Base" type="number">
+                        <input id="crokite_units" name="crokite_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="crokite_units_5" class="form-control" placeholder="Sharp" type="number">
+                        <input id="crokite_units_5" name="crokite_units_5" class="form-control" placeholder="Sharp" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="crokite_units_10" class="form-control" placeholder="Crystalline" type="number">
+                        <input id="crokite_units_10" name="crokite_units_10" class="form-control" placeholder="Crystalline" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "bistot_units">Bistot<br>(<?php $string=implode(",",$bistot); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "bistot_units">Bistot<br>(<?php $string=implode(",",$bistot); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="bistot_units" class="form-control" placeholder="Base" type="number">
+                        <input id="bistot_units" name="bistot_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="bistot_units_5" class="form-control" placeholder="Triclinic" type="number">
+                        <input id="bistot_units_5" name="bistot_units_5" class="form-control" placeholder="Triclinic" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="bistot_units_10" class="form-control" placeholder="Monoclinic" type="number">
+                        <input id="bistot_units_10" name="bistot_units_10" class="form-control" placeholder="Monoclinic" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "arkonor_units">Arkonor<br>(<?php $string=implode(",",$arkonor); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "arkonor_units">Arkonor<br>(<?php $string=implode(",",$arkonor); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="arkonor_units" class="form-control" placeholder="Base" type="number">
+                        <input id="arkonor_units" name="arkonor_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="arkonor_units_5" class="form-control" placeholder="Crimson" type="number">
+                        <input id="arkonor_units_5" name="arkonor_units_5" class="form-control" placeholder="Crimson" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="arkonor_units_10" class="form-control" placeholder="Prime" type="number">
+                        <input id="arkonor_units_10" name="arkonor_units_10" class="form-control" placeholder="Prime" type="number">
                     </div>
                 </div>
 				
 				<div class="form-group">
                     <label class="col-sm-2" for=
-                    "mercoxit_units">Mercoxit<br>(<?php $string=implode(",",$mercoxit); echo number_format($string , 2, ".", ","); ?> ISK/Unit)</label>
+                    "mercoxit_units">Mercoxit<br>(<?php $string=implode(",",$mercoxit); echo number_format(($string * $value), 2, ".", ","); ?> ISK/Unit)</label>
                     <div class="col-sm-3">
-                        <input id="mercoxit_units" class="form-control" placeholder="Base" type="number">
+                        <input id="mercoxit_units" name="mercoxit_units" class="form-control" placeholder="Base" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="mercoxit_units_5" class="form-control" placeholder="Magma" type="number">
+                        <input id="mercoxit_units_5" name="mercoxit_units_5" class="form-control" placeholder="Magma" type="number">
                     </div>
 
                     <div class="col-sm-3">
-                        <input id="mercoxit_units_10" class="form-control" placeholder="Vitreous" type="number">
+                        <input id="mercoxit_units_10" name="mercoxit_units_10" class="form-control" placeholder="Vitreous" type="number">
                     </div>
                 </div>
-				
+		<div class="form-group">
+                    <input class="btn btn-default" type="Submit" value="Submit Contract">
+                </div>
             </form>
         </div>
 
@@ -439,7 +456,7 @@
 
                     <div class="modal-body">
                         <input class="form-control text-right" id=
-                        "clipboard-content" type="text">
+                        "clipboard-content" type="number">
                     </div>
                 </div>
             </div>

@@ -15,5 +15,11 @@ require_once __DIR__.'/../functions/database/dbopen.php';
 
 //HTML functionality
 require_once __DIR__.'/../functions/html/printnavbar.php';
+require_once __DIR__.'/../functions/html/printfooter.php';
+require_once __DIR__.'/../functions/html/printheader.php';
+require_once __DIR__.'/../functions/html/printcontractpage.php';
+
+//Miscellaneous functionality
+require_once __DIR__.'/../functions/misc/calccontract.php';
 
 ?>
