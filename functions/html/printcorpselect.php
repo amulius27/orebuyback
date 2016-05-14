@@ -7,7 +7,7 @@ function PrintCorpSelect() {
     printf("<div class=\"container\">");
     printf("<select class=\"form-control\" name=\"corpselect\" onchange=\"setCorp(this.value)\">");
     printf("<option> </option");
-    foreach($corps as $corp) {
+    foreach($corps['CorpName'] as $corp) {
         printf("<option>$corp</option>");
     }
     printf("</select>");
