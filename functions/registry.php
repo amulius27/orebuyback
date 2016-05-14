@@ -25,6 +25,7 @@ require_once __DIR__.'/../functions/html/printcorpselect.php';
 require_once __DIR__.'/../functions/html/printheaderclosetag.php';
 require_once __DIR__.'/../functions/html/printheadercorpselectscript.php';
 require_once __DIR__.'/../functions/html/printcloseindexpage.php';
+require_once __DIR__.'/../functions/html/printindexpage.php';
 
 //Miscellaneous functionality
 //require_once __DIR__.'/../functions/misc/calccontract.php';
