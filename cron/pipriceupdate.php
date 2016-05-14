@@ -105,7 +105,7 @@ foreach($itemIDs as $id) {
     $price = $xml->marketstat->type->buy->median[0];
     //Multiply the price by 1.00 to put it in decimal format for the sql database
     $price = $price * 1.00;
-    $db->insert('PIPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+    $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
 }
 //Close the database connection
 DBClose($db);
