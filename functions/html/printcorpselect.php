@@ -13,7 +13,7 @@ function PrintCorpSelect() {
     }
     printf("</select>");
     printf("<script>
-            function showCustomer(str) {
+            function setCorp(str) {
                 var xhttp;
                 xhttp = new XMLHttpRequest();
                 xhttp.open(\"GET\", \"corpselect.php?corp=\"+str, true);
