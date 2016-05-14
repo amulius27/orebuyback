@@ -12,13 +12,13 @@ function PrintCorpSelect() {
         printf("<option value=\"$corp\">$corp</option>");
     }
     printf("</select>");
-    printf("<span id=\"text\"></span>");
+    printf("<p><span id=\"text\">Corp not selected</span></p>");
     printf("<script>
             function setCorp(str) {
                 var xhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById(\"text\").innerHTML = \" \";
+                        document.getElementById(\"text\").innerHTML = \"Corp Selected!\";
                     }
                 };
                 xhttp.open(\"GET\", \"corpselect.php?corp=\"+str, true);

@@ -2,7 +2,6 @@
 
 function PrintIndexPage() {
     printf("<div class=\"blocks\">
-            <a href=\"test.php\">Test Page</a>
             <div class=\"container\">
               <h3 class=\"page-header\"> Ore Belt Resources </h3>
               <div class=\"view view-first\"> <a href=\"ore.php\"> <img src=\"https://image.eveonline.com/Type/1230_64.png\" /> </a> </div>
