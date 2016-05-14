@@ -33,12 +33,8 @@
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <link href="css/custom.css" rel="stylesheet">
         <link href="css/eve-link.css" rel="stylesheet">
-        <script src=
-        "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript">
-        </script>
-        <script src=
-        "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
-        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script>
 		$(document).ready(function() {
 		$('.form-control').keyup(function () {
