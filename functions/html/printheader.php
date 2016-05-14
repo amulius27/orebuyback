@@ -38,6 +38,5 @@ function PrintHeader() {
                     $(window).resize(resize);
                     resize();
                 });
-            </script>
-            </head>");
+            </script>");
 }

@@ -19,8 +19,15 @@ require_once __DIR__.'/../functions/html/printfooter.php';
 require_once __DIR__.'/../functions/html/printheader.php';
 require_once __DIR__.'/../functions/html/printcontractpage.php';
 require_once __DIR__.'/../functions/html/printbodytag.php';
+require_once __DIR__.'/../functions/html/printtitle.php';
+require_once __DIR__.'/../functions/html/printpopups.php';
+require_once __DIR__.'/../functions/html/printcorpselect.php';
+require_once __DIR__.'/../functions/html/printheaderclosetag.php';
+require_once __DIR__.'/../functions/html/printheadercorpselectscript.php';
+require_once __DIR__.'/../functions/html/printcloseindexpage.php';
 
 //Miscellaneous functionality
-require_once __DIR__.'/../functions/misc/calccontract.php';
+//require_once __DIR__.'/../functions/misc/calccontract.php';
+require_once __DIR__.'/../functions/misc/corpselect.php';
 
 ?>
