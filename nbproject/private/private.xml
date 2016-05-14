@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/orebuyback/login.html</file>
-            <file>file:/var/www/orebuyback/misc/calccontract.php</file>
-            <file>file:/var/www/orebuyback/ore.php</file>
-            <file>file:/var/www/orebuyback/functions/html/printcontractpage.php</file>
+            <file>file:/var/www/orebuyback/functions/html/extra.txt</file>
             <file>file:/var/www/orebuyback/index.php</file>
-            <file>file:/var/www/orebuyback/cron/orepriceupdate.php</file>
             <file>file:/var/www/orebuyback/functions/registry.php</file>
-            <file>file:/var/www/orebuyback/contract.php</file>
+            <file>file:/var/www/orebuyback/functions/html/printindexpage.php</file>
+            <file>file:/var/www/orebuyback/functions/html/printcorpselect.php</file>
+            <file>file:/var/www/orebuyback/test.php</file>
+            <file>file:/var/www/orebuyback/corpselect.php</file>
         </group>
     </open-files>
 </project-private>
