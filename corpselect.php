@@ -1,6 +1,8 @@
 <?php
 
-$corpTemp = $_GET['corporation'];
+$corpTemp = $_REQUEST["corp"];
 $_SESSION['corporation'] = $corpTemp;
+
+echo "Corporation Set";
 
 ?>
