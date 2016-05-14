@@ -3,17 +3,18 @@
     require_once __DIR__.'/../functions/registry.php';
     include 'misc/input_ore.php';
     
-    if(session_is_registered("username")) {
-        $username = $_SESSION["username"];
-        $db = DBOpen();
-        $corpTax = $db->fetchColumn('SELECT `CorpTax` FROM users WHERE username= :username', array('username' => $username));
-    }
-    else {
-        $corpTax = 0.00;
-    }
     
-    $alliance_tax = 0.04;
+    $corporation = $_SESSION['corporation'];
+    $db = DBOpen();
+    $corpTax = $db->fetchColumn('SELECT `CorpTax` FROM Corps WHERE CorpName= :corporation', array('corporation' => $corporation));
+    DBClose($db);
+    if($corp_tax == 10.00) {
+        $corp_tax = 6.00;
+    }
+    $alliance_tax = 4.00;
     $total_tax = $alliance_tax + $corp_tax;
+    $total_tax = $total_tax / 100.00;
+        
     $value = 1.00 - $total_tax;
     
 ?>
@@ -112,6 +113,8 @@
     <body>
         <?php
             PrintNavBar();
+            printf($corporation);
+            printf("<br>");
         ?>
 
         <div class="clearfix">
