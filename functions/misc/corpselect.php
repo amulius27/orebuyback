@@ -1,6 +1,6 @@
 <?php
 
-$corpTemp = $_REQUEST['corporation'];
+$corpTemp = $_GET['corporation'];
 $_SESSION['corporation'] = $corpTemp;
 
 ?>
