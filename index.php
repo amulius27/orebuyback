@@ -16,7 +16,9 @@
 
 <body>
     <?php 
-        require_once('functions/registry.php');
+        require_once __DIR__.'/../functions/registry.php';
+        PrintHeader();
+        PrintBodyTag();
         PrintNavBar(); 
     ?>
     <!-- Lead -->
