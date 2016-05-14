@@ -14,6 +14,7 @@
     PrintIndexPage();
     PrintFooter();
     PrintPopups();
+    $var_dump($_SESSION['corporation']);
     PrintCloseIndexPage();
 ?>
 
