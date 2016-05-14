@@ -5,7 +5,6 @@
     $_SESSION['corporation'] = "none";
         
     PrintHeader();
-    PrintHeaderCorpSelectScript();
     PrintHeaderCloseTag();
     PrintBodyTag();
     PrintNavBar();
@@ -14,7 +13,6 @@
     PrintIndexPage();
     PrintFooter();
     PrintPopups();
-    $var_dump($_SESSION['corporation']);
     PrintCloseIndexPage();
 ?>
 

@@ -1,4 +1,3 @@
-
 <select id="corpSelect">
         <option value=""></option>
         <option value="Astrocomical">Astrocomical</option>
@@ -15,20 +14,21 @@
     });
 </script>
 
+<form action="">
+<select name="customers" onchange="showCustomer(this.value)">
+<option value="">Select a customer:</option>
+<option value="ALFKI">Alfreds Futterkiste</option>
+<option value="NORTS">North/South</option>
+<option value="WOLZA">Wolski Zajazd</option>
+</select>
+</form>
+<br>
+<div id="txtHint">Customer INfo will be listed here...</div>
 <script>
-    function CorpTax(str) {
+    function showCustomer(str) {
         var xhttp;
-        if(str == "") {
-            document.getElementById("txtHint").innerHTML ="";
-            return;
-        }
         xhttp = new XMLHttpRequest();
-        xhhtp.onreadystatechange = function() {
-            if(xhttp.readyState == 4 && xhttp.status == 200) {
-                document.getElementById("txtHint").innerHTML = xhttp.responseText;
-            }
-        };
-        xhttp.open("GET", "getcustomer.asp?corp="+str, true);
+        xhttp.open("GET", "corpselect.php?corp="+str, true);
         xhttp.send();
     }
 </script>

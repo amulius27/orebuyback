@@ -5,12 +5,21 @@ function PrintCorpSelect() {
     $corps = $db->fetchColumnMany('SELECT CorpName FROM Corps WHERE Deleted= :quit', array('quit' => 0));
     DBClose($db);
     printf("<div class=\"container\">");
-    printf("<select class=\"form-control col-md-5\" onchange=\"setCorp(this.value)\">");
+    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onchange=\"setCorp(this.value)\">");
+    printf("<option value=\"none\"></option>");
+    printf("<option value=\"none\">Not in Warped Intentions</option>");
     foreach($corps as $corp) {
         printf("<option value=\"$corp\">$corp</option>");
     }
     printf("</select>");
-    printf("</div>");
-    
-    
+    printf("<script>
+            function showCustomer(str) {
+                var xhttp;
+                xhttp = new XMLHttpRequest();
+                xhttp.open(\"GET\", \"corpselect.php?corp=\"+str, true);
+                xhttp.send();
+            }
+            </script>");
+    printf("</div>");  
 }
+
