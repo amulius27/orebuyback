@@ -23,51 +23,34 @@ $Gallente_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE Item
 //Minmatar Fuel
 $Minmatar_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4246, 'time' => $update));
 //Helium Isotopes
-$Helium = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16274, 'time' => $update));
+$Helium_Isotopes = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16274, 'time' => $update));
 //Hydrogen Isotopes
-$Hydrogen = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 17889, 'time' => $update));
+$Hydrogen_Isotopes = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 17889, 'time' => $update));
 //Nitrogen Isotopes
-$Nitrogen = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 17888, 'time' => $update));
+$Nitrogen_Isotopes = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 17888, 'time' => $update));
 //Oxygen Isotopes
-$Oxygen = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 17887, 'time' => $update));
+$Oxygen_Isotopes = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 17887, 'time' => $update));
 //Heavy Water
-$Heavy = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16272, 'time' => $update));
+$Heavy_Water = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16272, 'time' => $update));
 //Liquid Ozone
-$Ozone = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16273, 'time' => $update));
+$Liquid_Ozone = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16273, 'time' => $update));
 //Strontium Clathrates
-$Strontium = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16275, 'time' => $update));
+$Strontium_Clathrates = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16275, 'time' => $update));
 
 DBClose($db);
 
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
-    var amarr = <?= $amarr ?>;
-    var caldari = <?= $caldari ?>;
-    var gallente = <?= $gallente ?>;
-    var minmatar = <?= $minmatar ?>;
-    var helium = <?= $helium ?>;
-    var hydrogen = <?= $hydrogen ?>;
-    var nitrogen = <?= $nitrogen ?>;
-    var oxygenIsotopes = <?= $oxygen ?>;
-    var heavyWater = <?= $heavy ?>;
-    var ozone = <?= $ozone ?>;
-    var strontium = <?= $strontium ?>;
+    var amarr = <?= $Amarr_Fuel ?>;
+    var caldari = <?= $Caldari_Fuel ?>;
+    var gallente = <?= $Gallente_Fuel ?>;
+    var minmatar = <?= $Minmatar_Fuel ?>;
+    var helium = <?= $Helium_Isotopes ?>;
+    var hydrogen = <?= $Hydrogen_Isotopes ?>;
+    var nitrogen = <?= $Nitrogen_Isotopes ?>;
+    var oxygenIsotopes = <?= $Oxygen_Isotopes ?>;
+    var heavyWater = <?= $Heavy_Water ?>;
+    var ozone = <?= $Liquid_Ozone ?>;
+    var strontium = <?= $Strontium_Clathrates ?>;
 </script>
-<script src="webroot/js/prod_cal.js"></script>
-<script src="webroot/js/fuel_cal.js"></script>
-<script>
-    var icicle = <?=$Icicle?>;
-    var enrichedIcicle =<?=$Enriched_icicle?>;
-    var glacial = <?=$Glacial?>;
-    var smoothGlacial = <?=$Smooth_glacial?>;
-    var glaze = <?=$Glaze?>;
-    var pristineGlaze = <?=$Pristine_glaze?>;
-    var blue = <?=$Blue?>;
-    var thickBlue = <?=$Thick_blue?>;
-    var glare = <?=$Glare?>;
-    var glitter = <?=$Glitter?>;
-    var gelidus =<?=$Gelidus?>;
-    var krystallos =<?=$Krystallos?>;
-</script>
-<script src="webroot/js/ice_cal.js"></script>
