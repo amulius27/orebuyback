@@ -1,183 +1,66 @@
 <!-- Connect to DB -->
 <?php
-
-if(!defined('indexes')) {
-    die('Direct access not permitted');
-}
-
-function db_connect() {
-    static $connection;
-    if (!isset($connection)) {
-        $config = parse_ini_file('../config.ini');
-        $connection = mysqli_connect($config['host'], $config['username'], $config['password'], $config['dbname']);
+    require_once __DIR__.'/../functions/registry.php';
+    
+    if(!defined('indexes')) {
+        die('Direct access not permitted');
     }
-    if ($connection === false) {
-        return mysqli_connect_error();
-    }
-    return $connection;
-}
+    
+    $db = DBOpen();
 
-function db_error() {
-    $connection = db_connect();
-    return mysqli_error($connection);
-}
 
-function db_query($query) {
-    $connection = db_connect();
-    $result = mysqli_query($connection,$query);
 
-    return $result;
-}
+    //Update timestamp
+    $update = $db->fetchColumn('SELECT MAX(Time) FROM PiPrices WHERE ItemId= :id', array('id' => 2358));
+    
+    $Biotech = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2358, 'time' => $update));
+    $Camera_Drones = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2345, 'time' => $update));
+    $Condensates = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2344, 'time' => $update));
+    $Cryoprotectant_Solution = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2367, 'time' => $update));
+    $Data_Chips = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 17392, 'time' => $update));
+    $Gel_Matrix_Biopaste = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2348, 'time' => $update));
+    $Guidance_Systems = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9834, 'time' => $update));
+    $Hazmat_Detection_Systems = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2366, 'time' => $update));
+    $Hermetic_Membranes = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2361, 'time' => $update));
+    $HighTech_Transmitters = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 17898, 'time' => $update));
+    $Industrial_Explosvies = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2360, 'time' => $update));
+    $Necocoms = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2354, 'time' => $update));
+    $Nuclear_Reactions = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2352, 'time' => $update));
+    $Planetary_Vehicles = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9846, 'time' => $update));
+    $Robotics = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9848, 'time' => $update));
+    $Smartfab_Units = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2351, 'time' => $update));
+    $Supercomputers = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2349, 'time' => $update));
+    $Synthetic_Synapses = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2346, 'time' => $update));
+    $Microcontrollers = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 12836, 'time' => $update));
+    $Ukomi = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 17136, 'time' => $update));
+    $Vaccines = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 28974, 'time' => $update));
 
-function db_select($query) {
-    $rows = array();
-    $result = db_query($query);
-
-    if($result === false) {
-        return false;
-    }
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
-    }
-    return $rows;
-}
-
-//Update timestamp
-$update = db_select("SELECT `update_time` FROM `item_prices` WHERE itemid=34");
-
-$Biotech = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2358");
-if($Biotech === false) {
-    $error = db_error();
-}
-$Camera_Drones = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2345");
-if($Camera_Drones === false) {
-    $error = db_error();
-}
-$Condensates = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2344");
-if($Condensates === false) {
-    $error = db_error();
-}
-$Cryoprotectant_Solution = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2367");
-if($Cryoprotectant_Solution === false) {
-    $error = db_error();
-}
-$Data_Chips = db_select("SELECT `price` FROM `item_prices` WHERE itemid=17392");
-if($Data_Chips === false) {
-    $error = db_error();
-}
-$Gel_Matrix_Biopaste = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2348");
-if($Gel_Matrix_Biopaste=== false) {
-    $error = db_error();
-}
-$Guidance_Systems = db_select("SELECT `price` FROM `item_prices` WHERE itemid=9834");
-if($Guidance_Systems === false) {
-    $error = db_error();
-}
-$Hazmat_Detection_Systems = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2366");
-if($Hazmat_Detection_Systems === false) {
-    $error = db_error();
-}
-$Hermetic_Membranes = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2361");
-if($Hermetic_Membranes === false) {
-    $error = db_error();
-}
-$HighTech_Transmitters = db_select("SELECT `price` FROM `item_prices` WHERE itemid=17898");
-if($HighTech_Transmitters === false) {
-    $error = db_error();
-}
-$Industrial_Explosives = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2360");
-if($Industrial_Explosives === false) {
-    $error = db_error();
-}
-$Neocoms = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2354");
-if($Neocoms === false) {
-    $error = db_error();
-}
-$Nuclear_Reactors = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2352");
-if($Nuclear_Reactors === false) {
-    $error = db_error();
-}
-$Planetary_Vehicles = db_select("SELECT `price` FROM `item_prices` WHERE itemid=9846");
-if($Planetary_Vehicles === false) {
-    $error = db_error();
-}
-$Robotics = db_select("SELECT `price` FROM `item_prices` WHERE itemid=9848");
-if($Robotics === false) {
-    $error = db_error();
-}
-$Smartfab_Units = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2351");
-if($Smartfab_Units === false) {
-    $error = db_error();
-}
-$Supercomputers = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2349");
-if($Supercomputers === false) {
-    $error = db_error();
-}
-$Synthetic_Synapses = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2346");
-if($Synthetic_Synapses === false) {
-    $error = db_error();
-}
-$Microcontrollers = db_select("SELECT `price` FROM `item_prices` WHERE itemid=12836");
-if($Microcontrollers === false) {
-    $error = db_error();
-}
-$Ukomi = db_select("SELECT `price` FROM `item_prices` WHERE itemid=17136");
-if($Ukomi === false) {
-    $error = db_error();
-}
-$Vaccines = db_select("SELECT `price` FROM `item_prices` WHERE itemid=28974");
-if($Vaccines === false) {
-    $error = db_error();
-}
-
-//Calculate Corp Price
-$string=implode(".",$Biotech[0]); $biotech = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Camera_Drones[0]); $camera_drones = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Condensates[0]); $condensates = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Cryoprotectant_Solution[0]); $cryoprotectant = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Data_Chips[0]); $data_chips = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Gel_Matrix_Biopaste[0]); $biopaste = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Guidance_Systems[0]); $guidance_systems = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Hazmat_Detection_Systems[0]); $hazmat_detection = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Hermetic_Membranes[0]); $hermetic_membranes = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$HighTech_Transmitters[0]); $hightech_transmitters = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Industrial_Explosives[0]); $industrial_explosives = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Neocoms[0]); $neocoms = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Nuclear_Reactors[0]); $nuclear_reactors = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Planetary_Vehicles[0]); $planetary_vehicles = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Robotics[0]); $robotics = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Smartfab_Units[0]); $smartfab_units = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Supercomputers[0]); $supercomputers = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Synthetic_Synapses[0]); $synthetic_synapses = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Microcontrollers[0]); $microcontrollers = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Ukomi[0]); $ukomi = number_format($string*0.925 , 2, ".", "");
-$string=implode(".",$Vaccines[0]); $vaccines = number_format($string*0.925 , 2, ".", "");
+    DBClose($db);
 
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
-    var biotech = <?= $biotech ?>;
-    var cameraDrones = <?= $camera_drones ?>;
-    var condensates = <?= $condensates ?>;
-    var cryoprotectant = <?= $cryoprotectant ?>;
-    var dataChips = <?= $data_chips ?>;
-    var biopaste = <?= $biopaste ?>;
-    var guidanceSystems = <?= $guidance_systems ?>;
-    var hazmatDetection = <?= $hazmat_detection ?>;
-    var hermeticMembranes = <?= $hermetic_membranes ?>;
-    var hightechTransmitters = <?= $hightech_transmitters ?>;
-    var industrialExplosives = <?= $industrial_explosives ?>;
-    var neocoms = <?= $neocoms ?>;
-    var nuclearReactors = <?= $nuclear_reactors ?>;
-    var planetaryVehicles = <?= $planetary_vehicles ?>;
-    var robotics = <?= $robotics ?>;
-    var smartfab = <?= $smartfab_units ?>;
-    var supercomputers = <?= $supercomputers ?>;
-    var syntheticSynapses = <?= $synthetic_synapses ?>;
-    var microcontrollers = <?= $microcontrollers ?>;
-    var ukomi = <?= $ukomi ?>;
-    var vaccines = <?= $vaccines ?>;
+    var biotech = <?= $Biotech ?>;
+    var cameraDrones = <?= $Camera_Drones ?>;
+    var condensates = <?= $Condensates ?>;
+    var cryoprotectant = <?= $Cryoprotectant_Solution ?>;
+    var dataChips = <?= $Data_Chips ?>;
+    var biopaste = <?= $Biopaste ?>;
+    var guidanceSystems = <?= $Guidance_Systems ?>;
+    var hazmatDetection = <?= $Hazmat_Detection ?>;
+    var hermeticMembranes = <?= $Hermetic_Membranes ?>;
+    var hightechTransmitters = <?= $Hightech_Transmitters ?>;
+    var industrialExplosives = <?= $Industrial_Explosives ?>;
+    var neocoms = <?= $Neocoms ?>;
+    var nuclearReactors = <?= $Nuclear_Reactors ?>;
+    var planetaryVehicles = <?= $Planetary_Vehicles ?>;
+    var robotics = <?= $Robotics ?>;
+    var smartfab = <?= $Smartfab_Units ?>;
+    var supercomputers = <?= $Supercomputers ?>;
+    var syntheticSynapses = <?= $Synthetic_Synapses ?>;
+    var microcontrollers = <?= $Microcontrollers ?>;
+    var ukomi = <?= $Ukomi ?>;
+    var vaccines = <?= $Vaccines ?>;
 </script>
 <script src="webroot/js/t3_pi_cal.js"></script>

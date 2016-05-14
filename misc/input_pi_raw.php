@@ -1,146 +1,65 @@
 <!-- Connect to DB -->
 <?php
-
-if(!defined('indexes')) {
-   die('Direct access not permitted');
-}
-
-function db_connect() {
-    static $connection;
-    if (!isset($connection)) {
-        $config = parse_ini_file('../config.ini');
-        $connection = mysqli_connect($config['host'], $config['username'], $config['password'], $config['dbname']);
+    require_once __DIR__.'/../functions/registry.php';
+    
+    if(!defined('indexes')) {
+        die('Direct access not permitted');
     }
-    if ($connection === false) {
-        return mysqli_connect_error();
-    }
-    return $connection;
-}
+    
+    $db = DBOpen();
 
-function db_error() {
-    $connection = db_connect();
-    return mysqli_error($connection);
-}
-
-function db_query($query) {
-    $connection = db_connect();
-    $result = mysqli_query($connection,$query);
-
-    return $result;
-}
-
-function db_select($query) {
-    $rows = array();
-    $result = db_query($query);
-
-    if($result === false) {
-        return false;
-    }
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
-    }
-    return $rows;
-}
-
-//Update timestamp
-	$update = db_select("SELECT `update_time` FROM `item_prices` WHERE itemid=34");
-
-$Aqueous = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2268");
-if($Aqueous === false) {
-    $error = db_error();
-}
-$Ionic = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2309");
-if($Ionic === false) {
-    $error = db_error();
-}
-$Base = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2267");
-if($Base === false) {
-    $error = db_error();
-}
-$Heavy = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2272");
-if($Heavy === false) {
-    $error = db_error();
-}
-$Noble = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2270");
-if($Noble === false) {
-    $error = db_error();
-}
-$Carbon = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2288");
-if($Carbon === false) {
-    $error = db_error();
-}
-$Micro = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2073");
-if($Micro === false) {
-    $error = db_error();
-}
-$Complex = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2287");
-if($Complex === false) {
-    $error = db_error();
-}
-$Planktic = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2286");
-if($Planktic === false) {
-    $error = db_error();
-}
-$Noble_Gas = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2310");
-if($Noble_Gas === false) {
-    $error = db_error();
-}
-$Reactive = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2398");
-if($Reactive === false) {
-    $error = db_error();
-}
-$Felsic = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2307");
-if($Felsic === false) {
-    $error = db_error();
-}
-$Non = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2306");
-if($Non === false) {
-    $error = db_error();
-}
-$Suspended = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2308");
-if($Suspended === false) {
-    $error = db_error();
-}
-$Autotrophs = db_select("SELECT `price` FROM `item_prices` WHERE itemid=2305");
-if($Autotrophs === false) {
-    $error = db_error();
-}
-
-//Calculate Corp Price
-$string=implode(",",$Aqueous[0]); $aqueous = number_format($string*0.925 , 2, ",", "."); //Aqueous Liquids
-$string=implode(",",$Ionic[0]); $ionic = number_format($string*0.925 , 2, ",", "."); //Ionic Solutions
-$string=implode(",",$Base[0]); $base = number_format($string*0.925 , 2, ",", "."); //Base Metals
-$string=implode(",",$Heavy[0]); $heavy = number_format($string*0.925 , 2, ",", "."); //Heavy Metals
-$string=implode(",",$Noble[0]); $noble = number_format($string*0.925 , 2, ",", "."); //Noble Metals
-$string=implode(",",$Carbon[0]); $carbon = number_format($string*0.925 , 2, ",", "."); //Carbon Compounds
-$string=implode(",",$Micro[0]); $micro = number_format($string*0.925 , 2, ",", "."); //Microorganisms
-$string=implode(",",$Complex[0]); $complex = number_format($string*0.925 , 2, ",", "."); //Complex Organisms
-$string=implode(",",$Planktic[0]); $planktic = number_format($string*0.925 , 2, ",", "."); //Planktic Colonies
-$string=implode(",",$Noble_Gas[0]); $noble_gas = number_format($string*0.925 , 2, ",", "."); //Noble Gas
-$string=implode(",",$Reactive[0]); $reactive = number_format($string*0.925 , 2, ",", "."); //Reactive Gas
-$string=implode(",",$Felsic[0]); $felsic = number_format($string*0.925 , 2, ",", "."); //Felsic Magma
-$string=implode(",",$Non[0]); $non_cs = number_format($string*0.925 , 2, ",", "."); //Non-CS Crystals
-$string=implode(",",$Suspended[0]); $suspended = number_format($string*0.925 , 2, ",", "."); //Suspended Plasma
-$string=implode(",",$Autotrophs[0]); $autotrophs = number_format($string*0.925 , 2, ",", "."); //Autotrophs
+    //Update timestamp
+    $update = $db->fetchColumn('SELECT MAX(Time) FROM Prices WHERE ItemId= :id', array('id' => 2268));
+    //Aqueous Liquids
+    $Aqueous = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2268, 'time' => $update));
+    //Ionic Solutions
+    $Ionic = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2309, 'time' => $update));
+    //Base Metals
+    $Base = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2267, 'time' => $update));
+    //Heavy Metals
+    $Heavy = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2272, 'time' => $update));
+    //Noble Metals
+    $Noble = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2270, 'time' => $update));
+    //Carbon Compounds
+    $Carbon = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2288, 'time' => $update));
+    //Microorganisms
+    $Micro = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2073, 'time' => $update));
+    //Complex Organisms
+    $Complex = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2287, 'time' => $update));
+    //Planktic Colonies
+    $Planktic = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2286, 'time' => $update));
+    //Noble Gas
+    $Noble_Gas = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2310, 'time' => $update));
+    //Reactive Metals
+    $Reactive = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2398, 'time' => $update));
+    //Felsic Magma
+    $Felsic = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2307, 'time' => $update));
+    //Non CS Materials
+    $Non = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2306, 'time' => $update));
+    //Suspended Plasma
+    $Suspended = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2308, 'time' => $update));
+    //Autotrophs
+    $Autotrophs = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2305, 'time' => $update));
+    
+    DBClose($db);
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
-    var aqueous = "<?= $aqueous ?>";
-    var ionic = "<?= $ionic ?>";
-    var base = "<?= $base ?>";
-    var heavy = "<?= $heavy ?>";
-    var noble = "<?= $noble ?>";
-    var carbon = "<?= $carbon ?>";
-    var micro = "<?= $micro ?>";
-    var complex = "<?= $complex ?>";
-    var planktic = "<?= $planktic ?>";
-    var noble_gas = "<?= $noble_gas ?>";
-    var reactive = "<?= $reactive ?>";
-    var felsic = "<?= $felsic ?>";
-    var non_cs = "<?= $non_cs ?>";
-    var suspended = "<?= $suspended ?>";
-    var autotrophs = "<?= $autotrophs ?>";
+    var aqueous = "<?= Aaqueous ?>";
+    var ionic = "<?= $Ionic ?>";
+    var base = "<?= $Base ?>";
+    var heavy = "<?= $Heavy ?>";
+    var noble = "<?= $Noble ?>";
+    var carbon = "<?= $Carbon ?>";
+    var micro = "<?= $Micro ?>";
+    var complex = "<?= $Complex ?>";
+    var planktic = "<?= $Planktic ?>";
+    var noble_gas = "<?= $Noble_Gas ?>";
+    var reactive = "<?= $Reactive ?>";
+    var felsic = "<?= $Felsic ?>";
+    var non_cs = "<?= $Non ?>";
+    var suspended = "<?= $Suspended ?>";
+    var autotrophs = "<?= $Autotrophs ?>";
 </script>
 <script src="js/rawpi_cal.js"></script>

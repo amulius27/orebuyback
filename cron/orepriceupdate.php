@@ -10,6 +10,8 @@ $db = DBOpen();
 $regionlimit = 10000043;
 //Set our Refining Rate
 $refineRate = 0.80;
+//Get the time
+$time = date("Y-m-d H:i:s");
 
 //Get the price of the base minerals
 $tritaniumPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id', array('id' => 34));
@@ -39,7 +41,7 @@ foreach($items['ItemId'] as $item){
                ($composition[StrontiumClathratesNum] * $strontiumClathratesPrice));
     $price = $price / $composition[BatchSize];
     $price = $price * $refineRate;
-    $db->insert(OrePrices, array('Price' => $price, 'ItemId' => $item));
+    $db->insert(OrePrices, array('Price' => $price, 'ItemId' => $item, 'Time' => $time));
 }
 
 

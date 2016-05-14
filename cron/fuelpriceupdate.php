@@ -34,6 +34,8 @@ $ItemIDs = array(
     16273,
     16275,
 );
+//Get the current time for the update
+$time = date("Y-m-d H:i:s");
 //Open the database connection
 $db = DBOpen();
 //Get the price for each of the ice products, and then insert into the database
@@ -43,7 +45,7 @@ foreach($itemIDs as $id) {
     $price = $xml->marketstat->type->buy->median[0];
     //Multiply the price by 1.00 to put it in decimal format for the sql database
     $price = $price * 1.00;
-    $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $price));
+    $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
 }
 
 DBClose($db);

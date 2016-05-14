@@ -19,11 +19,12 @@ $itemIDs = array(
     "heavyWater" => 16272,
     "strontiumClathrates" => 16275,  
 );
-
+//Get the region
 $regionlimit = 10000043;
-
-
+//Open the database
 $db = DBOpen();
+//Get the current time
+$time = date("Y-m-d H:i:s");
 
 foreach($itemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
@@ -32,7 +33,7 @@ foreach($itemIDs as $id) {
     //Multiply the price by 1.00 to put it in a float format for the database.  The
     //database is expecting a decimal and not a character
     $price = $price * 1.00;
-    $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price));
+    $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
 }
 
 DBClose($db);
