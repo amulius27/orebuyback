@@ -82,7 +82,7 @@
             <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract max is 500m ISK at a time, will allow for faster processing of the contracts.</strong></span>
             <hr>
                 <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
-                        on: <?php echo $string = implode("", $update); ?></strong></span><br>
+                        on: <?php echo $update; ?></strong></span><br>
             <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span>
         </div>
     </div>
