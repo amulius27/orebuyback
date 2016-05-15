@@ -1,6 +1,6 @@
 <?php
 //Load the required functions for the sql calls
-require_once __DIR__.'/../functions/registry.php';
+require_once __DIR__.'/../cronfunctions/registry.php';
 
 $itemIDs = array(
     "tritanium" => 34,

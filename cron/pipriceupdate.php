@@ -1,6 +1,6 @@
 <?php
 //Get the required files in order to run sql calls
-require_once __DIR__.'/../functions/registry.php';
+require_once __DIR__.'/../cronfunctions/registry.php';
 
 $ItemIDs = array(
     // Raw PI
