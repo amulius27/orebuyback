@@ -87,7 +87,8 @@
                         on: <?php echo $update; ?></strong></span><br>
                         <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
                         <?php
-                        var_dump($corporation);
+                        printf($corporation);
+                        printf("<br>");
                         var_dump($alliance_tax);
                         var_dump($corp_tax);
                         var_dump($total_tax);
