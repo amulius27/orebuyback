@@ -22,7 +22,7 @@
     $pyroxeres = $db->fetchColumn('SELECT Price from OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1224, 'time' => $update));
 
     //Plagioclase
-    $plagioclase = $db->fetchColumn('SELECT Price FROM OrePrice WHERE ItemId= :id AND Time= :time', array('id' => 18, 'time' => $update));
+    $plagioclase = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 18, 'time' => $update));
 
     //Omber
     $omber = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1227, 'time' => $update));
