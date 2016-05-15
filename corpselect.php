@@ -2,9 +2,13 @@
 
 session_start();
 
+
 $corpTemp = $_REQUEST["corp"];
 $_SESSION["corporation"] = $corpTemp;
-
-echo "Corp Set";
+if(isset($_SESSION["corporation"])) {
+    echo "Corp Set";
+} else {
+    echo "Corp Not Set";
+}
 
 ?>
