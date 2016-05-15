@@ -82,27 +82,9 @@
 	var bistot = <?= $Bistot ?>;
 	var arkonor = <?= $Arkonor ?>;
 	var mercoxit = <?= $Mercoxit ?>;
-	
-	var veldspar_comp = <?= $Veldspar_comp ?>;
-	var scordite_comp = <?= $Scordite_comp ?>;
-	var pyroxeres_comp = <?= $Pyroxeres_comp ?>;
-	var plagioclase_comp = <?= $Plagioclase_comp ?>;
-	var omber_comp = <?= $Omber_comp ?>;
-	var kernite_comp = <?= $Kernite_comp ?>;
-	var jaspet_comp = <?= $Jaspet_comp ?>;
-	var hemorphite_comp = <?= $Hemorphite_comp ?>;
-	var hedbergite_comp = <?= $Hedbergite_comp ?>;	
-	var gneiss_comp = <?= $Gneiss_comp ?>;
-	var dark_ochre_comp = <?= $Dark_Ochre_comp ?>;
-	var spodumain_comp = <?= $Spodumain_comp ?>;
-	var crokite_comp = <?= $Crokite_comp ?>;
-	var bistot_comp = <?= $Bistot_comp ?>;
-	var arkonor_comp = <?= $Arkonor_comp ?>;
-	var mercoxit_comp = <?= $Mercoxit_comp ?>;
-    </script>
+</script>
 
     <script src="webroot/js/ore_cal.js"></script>
-    <script src="webroot/js/ore_comp_cal.js"></script>
 
 
    
