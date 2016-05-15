@@ -87,7 +87,7 @@
                         on: <?php echo $update; ?></strong></span><br>
                         <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
                         <span style="font-family: Arial; color: white;"<strong>Corporation: </strong> <?php echo $corporation ?></span><br>
-                        <span style="font-family: Arial; color: white;"<strong>Tax Rate: </strong> <?php printf($total_tax . "%"); ?></span><br>
+                        <span style="font-family: Arial; color: white;"<strong>Tax Rate: </strong> <?php echo $total_tax; ?>%</span><br>
         </div>
     </div>
 </div>
