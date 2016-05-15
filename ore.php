@@ -16,7 +16,7 @@
     
     $alliance_tax = 4.00;
     $total_tax = $alliance_tax + $corp_tax;
-    $value = 1.00 - $total_tax;
+    $value = 1.00 - ( $total_tax / 100.00 );
     
 ?>
 

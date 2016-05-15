@@ -29,6 +29,5 @@ require_once __DIR__.'/../functions/html/printindexpage.php';
 
 //Miscellaneous functionality
 //require_once __DIR__.'/../functions/misc/calccontract.php';
-require_once __DIR__.'/../functions/misc/corpselect.php';
 
 ?>
