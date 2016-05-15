@@ -25,7 +25,7 @@
 <head>
     <!--metas-->
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta content="Lone Star Buyback Calculator" name="description">
+    <meta content="Warped Intentions Buy Back Program" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>
@@ -77,7 +77,7 @@
             - In the Calculator below you can enter the amounts for each Ore that you want to sell.<br>
             - Once done click on the <strong>Invoice</strong> price to submit the contract.<br>
             - The contract will be submitted to the database, and contract details will be printed on the next page.<br>
-            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 200-300 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
+            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract max is 500m ISK at a time, this to allow for faster processing of the contracts.</strong></span>
             <hr>
                 <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
                         on: <?php echo $string = implode("", $update); ?></strong></span><br>
