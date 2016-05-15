@@ -17,10 +17,7 @@
     $alliance_tax = 4.00;
     $total_tax = $alliance_tax + $corp_tax;
     $value = 1.00 - ( $total_tax / 100.00 );
-    var_dump($alliance_tax);
-    var_dump($corp_tax);
-    var_dump($total_tax);
-    var_dump($value);
+    
     
     $update = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
     
@@ -87,7 +84,13 @@
             <hr>
                 <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
                         on: <?php echo $update; ?></strong></span><br>
-            <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span>
+                        <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
+                        <?php
+                        var_dump($alliance_tax);
+                        var_dump($corp_tax);
+                        var_dump($total_tax);
+                        var_dump($value);
+                        ?>
         </div>
     </div>
 </div>
