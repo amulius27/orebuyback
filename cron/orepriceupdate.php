@@ -34,7 +34,7 @@ $strontiumClathratesPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WH
 
 $items = $db->fetchRowMany('SELECT * FROM itemComposition');
 
-foreach($items['ItemId'] as $item){
+foreach($items[ItemId] as $item){
     $composition = $db->fetchRow('SELECT * FROM itemComposition WHERE id= :itemid', array("itemid" => $item));
     $price = ( ($composition[TritaniumNum] * $tritaniumPrice) + ($composition[PyeriteNum] * $pyeritePrice) + ($composition[MexallonNum] * $mexallonPrice) + ($composition[IsogenNum] * $isogenPrice) +
                ($composition[NocxiumNum] * $nocxiumPrice) + ($composition[ZydrineNum] * $zydrinePrice) + ($composition[MegacyteNum] * $megacytePrice) + ($composition[MorphiteNum] * $morphitePrice) +
