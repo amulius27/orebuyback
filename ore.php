@@ -103,7 +103,7 @@
                 </div>
                 <div class="panel-body">
                     <p>
-                        <label>Veldspar <?php echo number_format($Veldspar, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Veldspar <?php echo number_format($Veldspar, 2, '.', ',');?> ISK/Unit</label>
                     <div class="input-group form-control" id="veldspar" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Veldspar" id="calc-input-Veldspar_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Concentrated Veldspar" id="calc-input-Veldspar_units_5-value">
@@ -111,7 +111,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Scordite <?php echo number_format($Scordite, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Scordite <?php echo number_format($Scordite, 2, '.', ',');?> ISK/Unit</label>
                     <div class="input-group form-control" id="scordite" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Scordite" id="calc-input-Scordite_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Condensed Scordite" id="calc-input-Scordite_units_5-value">
@@ -119,7 +119,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Pyroxeres <?php echo number_format($Pyroxeres, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Pyroxeres <?php echo number_format($Pyroxeres, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="pyroxeres" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Pyroxeres" id="calc-input-Pyroxeres_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Solid Pyroxeres" id="calc-input-Pyroxeres_units_5-value">
@@ -127,7 +127,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Plagioclase <?php echo number_format($Plagioclase, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Plagioclase <?php echo number_format($Plagioclase, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="plagioclase" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Plagioclase" id="calc-input-Plagioclase_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Azure Plagioclase" id="calc-input-Plagioclase_units_5-value">
@@ -135,7 +135,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Omber <?php echo number_format($Omber, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Omber <?php echo number_format($Omber, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="omber" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Omber" id="calc-input-Omber_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Silvery Omber" id="calc-input-Omber_units_5-value">
@@ -143,7 +143,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Kernite <?php echo number_format($Kernite, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Kernite <?php echo number_format($Kernite, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="kernite" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Kernite" id="calc-input-Kernite_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Luminous Kernite" id="calc-input-Kernite_units_5-value">
@@ -151,7 +151,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Jaspet <?php echo number_format($Jaspet, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Jaspet <?php echo number_format($Jaspet, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="jaspet" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Jaspet" id="calc-input-Jaspet_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Pure Jaspet" id="calc-input-Jaspet_units_5-value">
@@ -159,7 +159,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Hemorphite <?php echo number_format($Hemorphite, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Hemorphite <?php echo number_format($Hemorphite, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="hemorphite" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Hemorphite" id="calc-input-Hemorphite_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Vivid Hemorphite" id="calc-input-Hemorphite_units_5-value">
@@ -167,7 +167,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Hedbergite <?php echo number_format($Hedbergite, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Hedbergite <?php echo number_format($Hedbergite, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="hedbergite" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Hedbergite" id="calc-input-Hedbergite_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Vitric Hedbergite" id="calc-input-Hedbergite_units_5-value">
@@ -175,7 +175,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Gneiss <?php echo number_format($Gneiss, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Gneiss <?php echo number_format($Gneiss, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="gneiss" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Gneiss" id="calc-input-Gneiss_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Iridescent Gneiss" id="calc-input-Gneiss_units_5-value">
@@ -183,7 +183,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Dark Ochre <?php echo number_format($Dark_Ochre, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Dark Ochre <?php echo number_format($Dark_Ochre, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="dark_ochre" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Dark Ochre" id="calc-input-Dark_Ochre_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Onyx Dark Ochre" id="calc-input-Dark_Ochre_units_5-value">
@@ -191,7 +191,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Spodumain <?php echo number_format($Spodumain, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Spodumain <?php echo number_format($Spodumain, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="spodumain" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Spodumain" id="calc-input-Spodumain_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Bright Spodumain" id="calc-input-Spodumain_units_5-value">
@@ -199,7 +199,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Crokite <?php echo number_format($Crokite, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Crokite <?php echo number_format($Crokite, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="crokite" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Crokite" id="calc-input-Crokite_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Sharp Crokite" id="calc-input-Crokite_units_5-value">
@@ -207,7 +207,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Bistot <?php echo number_format($Bistot, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Bistot <?php echo number_format($Bistot, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="bistot" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Bistot" id="calc-input-Bistot_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Triclinic Bistot" id="calc-input-Bistot_units_5-value">
@@ -215,7 +215,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Arkonor <?php echo number_format($Arkonor, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Arkonor <?php echo number_format($Arkonor, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="arkonor" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Arkonor" id="calc-input-Arkonor_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Crimson Arkonor" id="calc-input-Arkonor_units_5-value">
@@ -223,7 +223,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Mercoxit <?php echo number_format($Mercoxit, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Mercoxit <?php echo number_format($Mercoxit, 2, '.', '.');?> ISK/Unit</label>
                     <div class="input-group form-control" id="mercoxit" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Mercoxit" id="calc-input-Mercoxit_units-value">
                         <input type="number" class="form-control text-right typeahead" placeholder="Magma Mercoxit" id="calc-input-Mercoxit_units_5-value">
