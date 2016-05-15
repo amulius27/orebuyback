@@ -10,7 +10,7 @@
 require_once __DIR__.'/../../vendor/autoload.php';
 
 //Database functionality
-require_once __DIR__.'/../cronfunctions/database/dbclose.php';
-require_once __DIR__.'/../cronfunctions/database/dbopen.php';
+require_once __DIR__.'/cronfunctions/database/dbclose.php';
+require_once __DIR__.'/cronfunctions/database/dbopen.php';
 
 ?>
