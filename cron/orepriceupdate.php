@@ -43,7 +43,7 @@ foreach($items as $item){
                ($composition['StrontiumClathratesNum'] * $strontiumClathratesPrice));
     $price = $price / $composition['BatchSize'];
     $price = $price * $refineRate;
-    $db->insert('OrePrices', array('Price' => $price, 'ItemId' => $item, 'Time' => $time));
+    $db->insert('OrePrices', array('Price' => $price, 'ItemId' => $item['ItemId'], 'Time' => $time));
 }
 
 
