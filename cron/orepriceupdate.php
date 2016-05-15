@@ -1,7 +1,7 @@
 <?php
 
 //Register the necessary functions
-require_once __DIR__.'/../functions/registry.php';
+require_once __DIR__.'/functions/registry.php';
 
 //Open the database connection
 $db = DBOpen();
