@@ -266,10 +266,8 @@
                     <p id="calc-output-row">Total Mercoxit value <span class="pull-right"><span id="calc-output-mercoxit-value"></span></p>
                     <hr>
                     <p id="calc-output-reward-row">
+                        <b>Contract Value</b> <a href="#" class="pull-right" onclick="$('#clipboard').modal('show');$('#clipboard-content').val(calcNow()).select();"><strong id="calc-output-reward-value"></strong></a><br>
                         <input class="form-contorl pull-right" type="submit" value="Submit Contract">
-                        <b>Contract Value</b> <a href="#" class="pull-right" onclick="$('#clipboard').modal('show');$('#clipboard-content').val(calcNow()).select();">
-                            <strong id="calc-output-reward-value"></strong>
-                        </a>
                     </p>
                     <br>
                 </div>
