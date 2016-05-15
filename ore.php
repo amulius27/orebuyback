@@ -10,13 +10,13 @@
     if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
         $corporation = str_replace('"', "", $corporation);
-        $corpTax = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+        $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
     } else {
         $corpTax = 10.00;
     }
     
     $alliance_tax = 4.00;
-    $total_tax = $alliance_tax + $corp_tax;
+    $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
     
     
@@ -89,10 +89,7 @@
                         <?php
                         printf($corporation);
                         printf("<br>");
-                        var_dump($alliance_tax);
                         var_dump($corp_tax);
-                        var_dump($total_tax);
-                        var_dump($value);
                         ?>
         </div>
     </div>
