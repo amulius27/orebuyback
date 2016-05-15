@@ -2,6 +2,9 @@
 //Get the required files in order to run sql calls
 require_once __DIR__.'/cronfunctions/cronregistry.php';
 
+//Set our region for EVE-Central
+$regionlimit = 10000043;
+
 $ItemIDs = array(
     // Raw PI
     2268,

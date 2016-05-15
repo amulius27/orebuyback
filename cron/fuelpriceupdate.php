@@ -36,8 +36,6 @@ $ItemIDs = array(
 );
 //Get the current time for the update
 $time = date("Y-m-d H:i:s");
-//Open the database connection
-$db = DBOpen();
 //Get the price for each of the ice products, and then insert into the database
 foreach($ItemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
