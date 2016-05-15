@@ -17,20 +17,20 @@ $maxMineralTime = $db->fetchColumn('SELECT MAX(Time) FROM MineralPrices WHERE It
 
 //Get the price of the base minerals
 $tritaniumPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 34, 'time' => $maxMineralTime));
-$pyeritePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 35, 'time' => $maxMineralTime));
-$mexallonPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 36, 'time' => $maxMineralTime));
-$isogenPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 37, 'time' => $maxMineralTime));
-$nocxiumPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 38, 'time' => $maxMineralTime));
-$zydrinePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 39, 'time' => $maxMineralTime));
-$megacytePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 40, 'time' => $maxMineralTime));
-$morphitePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 11399, 'time' => $maxMineralTime));
-$heliumIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 16274, 'time' => $maxMineralTime));
-$nitrogenIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 17888, 'time' => $maxMineralTime));
-$oxygenIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 17887, 'time' => $maxMineralTime));
-$hydrogenIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 17889, 'time' => $maxMineralTime));
-$liquidOzonePrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 16273, 'time' => $maxMineralTime));
-$heavyWaterPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 16272, 'time' => $maxMineralTime));
-$strontiumClathratesPrice = $db->fetchColumn('SELECT Price FROM MineralPrice WHERE ItemId= :id AND Time= :time', array('id' => 16275, 'time' => $maxMineralTime));
+$pyeritePrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 35, 'time' => $maxMineralTime));
+$mexallonPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 36, 'time' => $maxMineralTime));
+$isogenPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 37, 'time' => $maxMineralTime));
+$nocxiumPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 38, 'time' => $maxMineralTime));
+$zydrinePrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 39, 'time' => $maxMineralTime));
+$megacytePrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 40, 'time' => $maxMineralTime));
+$morphitePrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 11399, 'time' => $maxMineralTime));
+$heliumIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 16274, 'time' => $maxMineralTime));
+$nitrogenIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 17888, 'time' => $maxMineralTime));
+$oxygenIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 17887, 'time' => $maxMineralTime));
+$hydrogenIsotopesPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 17889, 'time' => $maxMineralTime));
+$liquidOzonePrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 16273, 'time' => $maxMineralTime));
+$heavyWaterPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 16272, 'time' => $maxMineralTime));
+$strontiumClathratesPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 16275, 'time' => $maxMineralTime));
 
 $items = $db->fetchRowMany('SELECT * FROM itemComposition');
 
