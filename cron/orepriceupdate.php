@@ -41,7 +41,7 @@ foreach($items as $item){
                ($composition['HeliumIsotopesNum'] * $heliumIsotopesPrice) + ($composition['NitrogenIsotopesNum'] * $nitrogenIsotopesPrice) + ($composition['OxygenIsotopesNum'] * $oxygenIsotopesPrice) +
                ($composition['HydrogenIsotopesNum'] * $hydrogenIsotopesPrice) + ($composition['LiquidOzoneNum'] * $liquidOzonePrice) + ($composition['HeavyWaterNum'] * $heavyWaterPrice) + 
                ($composition['StrontiumClathratesNum'] * $strontiumClathratesPrice));
-    $price = $price / $composition[BatchSize];
+    $price = $price / $composition['BatchSize'];
     $price = $price * $refineRate;
     $db->insert('OrePrices', array('Price' => $price, 'ItemId' => $item, 'Time' => $time));
 }
