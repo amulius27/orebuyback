@@ -36,11 +36,11 @@ $items = $db->fetchRowMany('SELECT * FROM itemComposition');
 
 foreach($items as $item){
     $composition = $db->fetchRow('SELECT * FROM itemComposition WHERE ItemId= :id', array('id' => $item['ItemId']));
-    $price = ( ($composition[TritaniumNum] * $tritaniumPrice) + ($composition[PyeriteNum] * $pyeritePrice) + ($composition[MexallonNum] * $mexallonPrice) + ($composition[IsogenNum] * $isogenPrice) +
-               ($composition[NocxiumNum] * $nocxiumPrice) + ($composition[ZydrineNum] * $zydrinePrice) + ($composition[MegacyteNum] * $megacytePrice) + ($composition[MorphiteNum] * $morphitePrice) +
-               ($composition[HeliumIsotopesNum] * $heliumIsotopesPrice) + ($composition[NitrogenIsotopesNum] * $nitrogenIsotopesPrice) + ($composition[OxygenIsotopesNum] * $oxygenIsotopesPrice) +
-               ($composition[HydrogenIsotopesNum] * $hydrogenIsotopesPrice) + ($composition[LiquidOzoneNum] * $liquidOzonePrice) + ($composition[HeavyWaterNum] * $heavyWaterPrice) + 
-               ($composition[StrontiumClathratesNum] * $strontiumClathratesPrice));
+    $price = ( ($composition['TritaniumNum'] * $tritaniumPrice) + ($composition['PyeriteNum'] * $pyeritePrice) + ($composition['MexallonNum'] * $mexallonPrice) + ($composition['IsogenNum'] * $isogenPrice) +
+               ($composition['NocxiumNum'] * $nocxiumPrice) + ($composition['ZydrineNum'] * $zydrinePrice) + ($composition['MegacyteNum'] * $megacytePrice) + ($composition['MorphiteNum'] * $morphitePrice) +
+               ($composition['HeliumIsotopesNum'] * $heliumIsotopesPrice) + ($composition['NitrogenIsotopesNum'] * $nitrogenIsotopesPrice) + ($composition['OxygenIsotopesNum'] * $oxygenIsotopesPrice) +
+               ($composition['HydrogenIsotopesNum'] * $hydrogenIsotopesPrice) + ($composition['LiquidOzoneNum'] * $liquidOzonePrice) + ($composition['HeavyWaterNum'] * $heavyWaterPrice) + 
+               ($composition['StrontiumClathratesNum'] * $strontiumClathratesPrice));
     $price = $price / $composition[BatchSize];
     $price = $price * $refineRate;
     $db->insert('OrePrices', array('Price' => $price, 'ItemId' => $item, 'Time' => $time));
