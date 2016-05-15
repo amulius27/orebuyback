@@ -97,7 +97,7 @@ $time = date("Y-m-d H:i:s");
 //Open the database connection
 $db = DBOpen();
 //Get the price for each of the ice products, and then insert into the database
-foreach($itemIDs as $id) {
+foreach($ItemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
     $xml = simplexml_load_file($url);
     $price = $xml->marketstat->type->buy->median[0];
