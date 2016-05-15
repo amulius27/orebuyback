@@ -80,8 +80,8 @@
             <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 200-300 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
             <hr>
                 <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
-                        on: <?php echo $string = implode("", $update[0]); ?></strong></span><br>
-            <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are now mineral based</strong></span>
+                        on: <?php echo $string = implode("", $update); ?></strong></span><br>
+            <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span>
         </div>
     </div>
 </div>
