@@ -86,11 +86,8 @@
                 <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
                         on: <?php echo $update; ?></strong></span><br>
                         <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
-                        <?php
-                        printf($corporation);
-                        printf("<br>");
-                        var_dump($corp_tax);
-                        ?>
+                        <span style="font-family: Arial; color: white;"<strong>Corporation: </strong> <?php echo $corporation ?></span><br>
+                        <span style="font-family: Arial; color: white;"<strong>Tax Rate: </strong> <?php echo $corpTax ?></span><br>
         </div>
     </div>
 </div>
