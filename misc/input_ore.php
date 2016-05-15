@@ -9,7 +9,7 @@
     $db = DBOpen();
     
     //Update timestamp
-    $update = $db->fetchColumn('SELECT MAX(time) FROM OrePricese WHERE ItemId= :item', array('item' => 1230));
+    $update = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
 	
     //Ores
 	//Veldspar
