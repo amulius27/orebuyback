@@ -6,9 +6,6 @@
         die('Direct access not permitted');
     }
 
-    
-    
-    
     $db = DBOpen();
     
     //Update timestamp
