@@ -118,35 +118,35 @@ function calcNow() {
 
     var aqueousUnits = calcInputGetValue('aqueous_units');
     var ionicUnits = calcInputGetValue('ionic_units');
-    var baseUnits = calcInputGetValue('base_units');
+	var baseUnits = calcInputGetValue('base_units');
     var heavyUnits = calcInputGetValue('heavy_units');
-    var nobleUnits = calcInputGetValue('noble_units');
+	var nobleUnits = calcInputGetValue('noble_units');
     var carbonUnits = calcInputGetValue('carbon_units');
-    var microUnits = calcInputGetValue('micro_units');
+	var microUnits = calcInputGetValue('micro_units');
     var complexUnits = calcInputGetValue('complex_units');
-    var plankticUnits = calcInputGetValue('planktic_units');
+	var plankticUnits = calcInputGetValue('planktic_units');
     var noble_gasUnits = calcInputGetValue('noble_gas_units');
-    var reactiveUnits = calcInputGetValue('reactive_units');
+	var reactiveUnits = calcInputGetValue('reactive_units');
     var felsicUnits = calcInputGetValue('felsic_units');
-    var non_csUnits = calcInputGetValue('non_cs_units');
+	var non_csUnits = calcInputGetValue('non_cs_units');
     var suspendedUnits = calcInputGetValue('suspended_units');
-    var autotrophsUnits = calcInputGetValue('autotrophs_units');
+	var autotrophsUnits = calcInputGetValue('autotrophs_units');
 
     var aqueousReward = aqueousUnits * aqueous;
     var ionicReward = ionicUnits * ionic;
-    var baseReward = baseUnits * base;
+	var baseReward = baseUnits * base;
     var heavyReward = heavyUnits * heavy;
-    var nobleReward = nobleUnits * noble;
+	var nobleReward = nobleUnits * noble;
     var carbonReward = carbonUnits * carbon;
-    var microReward = microUnits * micro;
+	var microReward = microUnits * micro;
     var complexReward = complexUnits * complex;
-    var plankticReward = plankticUnits * planktic;
+	var plankticReward = plankticUnits * planktic;
     var nobleReward = noble_gasUnits * noble_gas;
-    var reactiveReward = reactiveUnits * reactive;
+	var reactiveReward = reactiveUnits * reactive;
     var felsicReward = felsicUnits * felsic;
-    var non_csReward = non_csUnits * non_cs;
+	var non_csReward = non_csUnits * non_cs;
     var suspendedReward = suspendedUnits * suspended;
-    var autotrophsReward = autotrophsUnits * autotrophs;
+	var autotrophsReward = autotrophsUnits * autotrophs;
 
     var aqueousPrice = aqueousReward;
     var ionicPrice = ionicReward;
@@ -163,6 +163,19 @@ function calcNow() {
     var non_csPrice = non_csReward;
     var suspendedPrice = suspendedReward;
     var autotrophsPrice = autotrophsReward;
+	var basePrice = baseReward;
+	var heavyPrice = heavyReward;
+	var noblePrice = nobleReward;
+	var carbonPrice = carbonReward;
+	var microPrice = microReward;
+	var complexPrice = complexReward;
+	var plankticPrice = plankticReward;
+	var noble_gasPrice = nobleReward;
+	var reactivePrice = reactiveReward;
+	var felsicPrice = felsicReward;
+	var non_csPrice = non_csReward;
+	var suspendedPrice = suspendedReward;
+	var autotrophsPrice = autotrophsReward;
 
     var totalReward = aqueousPrice+ionicPrice+basePrice+heavyPrice+noblePrice+carbonPrice+microPrice+complexPrice+plankticPrice+
 	noble_gasPrice+reactivePrice+felsicPrice+non_csPrice+suspendedPrice+autotrophsPrice;
@@ -171,19 +184,19 @@ function calcNow() {
 
     $('#calc-output-aqueous-value').html(number_format(aqueousReward) + ' ISK');
     $('#calc-output-ionic-value').html(number_format(ionicReward) + ' ISK');
-    $('#calc-output-base-value').html(number_format(baseReward) + ' ISK');
+	$('#calc-output-base-value').html(number_format(baseReward) + ' ISK');
     $('#calc-output-heavy-value').html(number_format(heavyReward) + ' ISK');
-    $('#calc-output-noble-value').html(number_format(nobleReward) + ' ISK');
+	$('#calc-output-noble-value').html(number_format(nobleReward) + ' ISK');
     $('#calc-output-carbon-value').html(number_format(carbonReward) + ' ISK');
-    $('#calc-output-micro-value').html(number_format(microReward) + ' ISK');
+	$('#calc-output-micro-value').html(number_format(microReward) + ' ISK');
     $('#calc-output-complex-value').html(number_format(complexReward) + ' ISK');
-    $('#calc-output-planktic-value').html(number_format(plankticReward) + ' ISK');
+	$('#calc-output-planktic-value').html(number_format(plankticReward) + ' ISK');
     $('#calc-output-noble_gas-value').html(number_format(nobleReward) + ' ISK');
-    $('#calc-output-reactive-value').html(number_format(reactiveReward) + ' ISK');
+	$('#calc-output-reactive-value').html(number_format(reactiveReward) + ' ISK');
     $('#calc-output-felsic-value').html(number_format(felsicReward) + ' ISK');
-    $('#calc-output-non_cs-value').html(number_format(non_csReward) + ' ISK');
+	$('#calc-output-non_cs-value').html(number_format(non_csReward) + ' ISK');
     $('#calc-output-suspended-value').html(number_format(suspendedReward) + ' ISK');
-    $('#calc-output-autotrophs-value').html(number_format(autotrophsReward) + ' ISK');
+	$('#calc-output-autotrophs-value').html(number_format(autotrophsReward) + ' ISK');
 
     $('#calc-output-reward-value').html(number_format(totalReward) + ' ISK');
 
@@ -213,4 +226,5 @@ function number_format (number, decimals, dec_point, thousands_sep)
         s[1] += new Array(prec - s[1].length + 1).join('0');
     }
     return s.join(dec);
+
 }
