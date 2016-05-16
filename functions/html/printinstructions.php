@@ -12,19 +12,12 @@ function PrintInstructions($update, $corporation, $total_tax) {
                         - The contract will be submitted to the database, and contract details will be printed on the next page.<br>
                         <span style=\"font-family: Arial; color: #FF2A2A;\"><strong>- Contract max is 500m ISK at a time, will allow for faster processing of the contracts.</strong></span>
                         <hr>
-                        <span style=\"font-family: Arial; color: #8FEF2F;\"><strong>Database was last updated on: ");
-    printf($update);
-    printf("</strong></span><br>
+                        <span style=\"font-family: Arial; color: #8FEF2F;\"><strong>Database was last updated on: $update</strong></span><br>
                         <span style=\"font-family: Arial; color: #8FEF2F;\"><strong>Ore prices are mineral based</strong></span><br>
-                        <span style=\"font-family: Arial; color: white;\"<strong>Corporation: </strong> ");
-    printf($corporation);
-    printf("</span><br>
-                        <span style=\"font-family: Arial; color: white;\"<strong>Tax Rate: </strong>  ");
-    printf($total_tax);
-    printf("%</span><br>
+                        <span style=\"font-family: Arial; color: white;\"<strong>Corporation: </strong> $corporation</span><br>
+                        <span style=\"font-family: Arial; color: white;\"<strong>Tax Rate: </strong>  $total_tax %</span><br>
                     </div>
                 </div>
-            </div>
             </div>");
 }
 
