@@ -6,8 +6,7 @@ function PrintCorpSelect() {
     DBClose($db);
     printf("<div class=\"container\">");
     printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onchange=\"setCorp(this.value)\">");
-    printf("<option value=\"none\"></option>");
-    printf("<option value=\"none\">Not in Warped Intentions</option>");
+    printf("<option></option>");
     foreach($corps as $corp) {
         printf("<option value=\"$corp\">$corp</option>");
     }

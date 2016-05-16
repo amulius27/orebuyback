@@ -2,26 +2,6 @@
     define('indexes', TRUE);
     require_once __DIR__.'/functions/registry.php';
     include 'misc/input_ore.php';
-    //Open the connection to the database
-    $db = DBOpen();    
-/*    
-//Start our session so we can retrieve data
-    session_start();
-    //Get the corporation from the session
-    if(isset($_SESSION["corporation"])) {
-        $corporation = $_SESSION["corporation"];
-        $corporation = str_replace('"', "", $corporation);
-        $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
-    } else {
-        $corpTax = 10.00;
-    }
-    
-    $alliance_tax = 4.00;
-    $total_tax = $alliance_tax + $corpTax;
-    $value = 1.00 - ( $total_tax / 100.00 );
- */
-    
-    $update = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
 ?>
 
 <!DOCTYPE html>
