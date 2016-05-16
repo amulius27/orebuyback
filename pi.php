@@ -181,7 +181,7 @@
                         <p id="calc-output-aqueous-row">Total Autotrophs value <span class="pull-right"><span id="calc-output-autotrophs-value"></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
-                            <b>Contract Value</b><strong id="calc-output-reward-value"></strong>
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong>
                         </p>
                         <br>
                     </div>

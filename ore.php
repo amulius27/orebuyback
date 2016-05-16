@@ -208,8 +208,8 @@
                         <p id="calc-output-row">Total Mercoxit value <span class="pull-right"><span id="calc-output-mercoxit-value"></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
-                            <b>Contract Value</b><strong id="calc-output-reward-value"></strong><br>
-                            <br><input class="form-contorl pull-right" type="submit" value="Submit Contract">
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
+                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
                         </p>
                         <br>
                     </div>
