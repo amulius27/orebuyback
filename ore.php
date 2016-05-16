@@ -29,7 +29,7 @@
             background-attachment: fixed;
         }
         .affix {
-            top: 72px;
+            top: 75px;
         }
         .affix-bottom {
             position: absolute;
