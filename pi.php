@@ -1,7 +1,6 @@
 <?php 
     define('indexes', TRUE);
     require_once __DIR__.'/functions/registry.php';
-    require_once __DIR__.'/functions/html/printpiheader.php';
     include 'misc/input_pi_raw.php';
     //Open the connection to the database
     $db = DBOpen();    
