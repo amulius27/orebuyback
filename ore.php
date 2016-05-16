@@ -203,7 +203,7 @@
                         </span>">[?]</label>
                         </h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body col-md-6">
                         <p id="calc-output-row">Total Veldspar value <span class="pull-right"><span id="calc-output-veldspar-value"></span></p>
                         <p id="calc-output-row">Total Scordite value <span class="pull-right"><span id="calc-output-scordite-value"></span></p>
                         <p id="calc-output-row">Total Pyroxeres value <span class="pull-right"><span id="calc-output-pyroxeres-value"></span></p>
