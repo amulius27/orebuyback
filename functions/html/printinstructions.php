@@ -25,7 +25,7 @@ function PrintInstructions($update, $corporation, $total_tax) {
                     </div>
                 </div>
             </div>
-            </div");
+            </div>");
 }
 
 ?>
