@@ -192,18 +192,9 @@
             <div class="col-md-6">
                 <div class="panel panel-default" data-spy="affix" data-offset-top="450" data-offset-bottom="370" id="invoice-panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Invoice</strong>
-                            <label data-html="true" data-original-title="<b>Fees</b>" class="popover-reward text-info"
-                                   data-toggle="popover" data-content="
-                        <span>
-                            <p>In this invoice window you can see how the price is build up for each individual mineral</p>
-                            <p>The <strong>Contract Value</strong> price is the total of the material values.</p>
-                            <hr>
-                            <p>The <b>Contract Value</b> is what you have to use as <i>'I will receive'</i> in the contract.</p>
-                        </span>">[?]</label>
-                        </h3>
+                        <h3 class="panel-title"><strong>Invoice</strong></h3>
                     </div>
-                    <div class="panel-body col-md-6">
+                    <div class="panel-body">
                         <p id="calc-output-row">Total Veldspar value <span class="pull-right"><span id="calc-output-veldspar-value"></span></p>
                         <p id="calc-output-row">Total Scordite value <span class="pull-right"><span id="calc-output-scordite-value"></span></p>
                         <p id="calc-output-row">Total Pyroxeres value <span class="pull-right"><span id="calc-output-pyroxeres-value"></span></p>
@@ -228,8 +219,8 @@
                         <br>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 <!-- Calculate -->
