@@ -217,13 +217,7 @@
 <script src="js/typeahead.bundle.js"></script>
 <script src="js/handlebars-v1.3.0.js"></script>
 <script src="js/rawpi_cal.js"></script>
-<<<<<<< HEAD
 <!--<script src="js/fixed_div.js"></script>-->
 
 </body>
 </html>
-=======
-
-</body>
-</html>
->>>>>>> ccffdfdeebfc515e0fb12d0405c5f6842859013c
