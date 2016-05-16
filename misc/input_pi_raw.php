@@ -9,7 +9,7 @@
     $db = DBOpen();
 
     //Update timestamp
-    $update = $db->fetchColumn('SELECT MAX(Time) FROM Prices WHERE ItemId= :id', array('id' => 2268));
+    $update = $db->fetchColumn('SELECT MAX(Time) FROM PiPrices WHERE ItemId= :id', array('id' => 2268));
     //Aqueous Liquids
     $Aqueous = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2268, 'time' => $update));
     //Ionic Solutions
