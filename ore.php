@@ -69,7 +69,7 @@
 <?php
     PrintNavBar();
     PrintTitle();
-    PrintInstructions();
+    PrintInstructions($update, $corporation, $total_tax);
 ?>
 
 
