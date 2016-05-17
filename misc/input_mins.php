@@ -1,13 +1,25 @@
 <?php
-
     require_once __DIR__.'/../functions/registry.php';
-
+    
     if(!defined('indexes')) {
         die('Direct access not permitted');
     }
-
-    //Open the database connection
+    //Open the database
     $db = DBOpen();
+    //Start the session to retrieve session data
+    session_start();
+    //Get the corporation from the session
+    if(isset($_SESSION["corporation"])) {
+        $corporation = $_SESSION["corporation"];
+        $corporation = str_replace('"', "", $corporation);
+        $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+    } else {
+        $corpTax = 10.00;
+    }
+    
+    $alliance_tax = 4.00;
+    $total_tax = $alliance_tax + $corpTax;
+    $value = 1.00 - ( $total_tax / 100.00 );
     //Update timestamp
     $update = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices WHERE ItemId= :item', array('item' => 34));
 
