@@ -5,8 +5,22 @@
     if(!defined('indexes')) {
         die('Direct access not permitted');
     }
-    
+    //Open the database
     $db = DBOpen();
+    //Start the session in order to retrieve data
+    session_start();
+    //Get the corporation from the session
+    if(isset($_SESSION["corporation"])) {
+        $corporation = $_SESSION["corporation"];
+        $corporation = str_replace('"', "", $corporation);
+        $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+    } else {
+        $corpTax = 10.00;
+    }
+    
+    $alliance_tax = 4.00;
+    $total_tax = $alliance_tax + $corpTax;
+    $value = 1.00 - ( $total_tax / 100.00 );
 
     //Update timestamp
     $update = $db->fetchColumn('SELECT MAX(Time) FROM PiPrices WHERE ItemId= :id', array('id' => 2268));
@@ -42,11 +56,13 @@
     $Autotrophs = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2305, 'time' => $update));
     
     DBClose($db);
+    
+    
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
-    var aqueous = "<?= Aaqueous ?>";
+    var aqueous = "<?= $Aqueous ?>";
     var ionic = "<?= $Ionic ?>";
     var base = "<?= $Base ?>";
     var heavy = "<?= $Heavy ?>";

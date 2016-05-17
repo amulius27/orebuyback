@@ -78,8 +78,8 @@
 <!-- Calculate -->
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <form action="contract.php" method="POST">
+        <form action="contracts/ore_contract.php" method="POST">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><strong>Calculator</strong></h3>

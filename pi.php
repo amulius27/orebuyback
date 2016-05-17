@@ -42,7 +42,7 @@
             background-attachment: fixed;
         }
         .affix {
-            top: 60px;
+            top: 75px;
         }
         .affix-bottom {
             position: absolute;
@@ -128,7 +128,7 @@
 <!-- Calculate -->
 
 <div class="container">
-    <form action="pi_contract.php" method="POST">
+    <form action="contracts/pi_contract.php" method="POST">
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
