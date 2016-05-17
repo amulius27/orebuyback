@@ -136,91 +136,91 @@
                 </div>
                 <div class="panel-body">
                     <p>
-                        <label>Aqueous Liquids <?php echo $aqueous; ?> ISK/Unit</label>
+                        <label>Aqueous Liquids <?php echo $Aqueous; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="aqueous" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Aqueous Liquids" id="calc-input-aqueous_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Ionic Solutions <?php echo $ionic; ?> ISK/Unit</label>
+                        <label>Ionic Solutions <?php echo $Ionic; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="ionic" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Ionic Solutions" id="calc-input-ionic_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Base Metals <?php echo $base; ?> ISK/Unit</label>
+                        <label>Base Metals <?php echo $Base; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="base" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Base Metals" id="calc-input-base_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Heavy Metals <?php echo $heavy; ?> ISK/Unit</label>
+                        <label>Heavy Metals <?php echo $Heavy; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="heavy" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Heavy Metals" id="calc-input-heavy_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Noble Metals <?php echo $noble; ?> ISK/Unit</label>
+                        <label>Noble Metals <?php echo $Noble; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="noble" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Noble Metals" id="calc-input-noble_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Carbon Compounds <?php echo $carbon; ?> ISK/Unit</label>
+                        <label>Carbon Compounds <?php echo $Carbon; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="carbon" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Carbon Compounds" id="calc-input-carbon_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Micro Organisms <?php echo $micro; ?> ISK/Unit</label>
+                        <label>Micro Organisms <?php echo $Micro; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="micro" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Micro Organisms" id="calc-input-micro_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Complex Organisms <?php echo $complex; ?> ISK/Unit</label>
+                        <label>Complex Organisms <?php echo $Complex; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="complex" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Complex Organisms" id="calc-input-complex_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Planktic Colonies <?php echo $planktic; ?> ISK/Unit</label>
+                        <label>Planktic Colonies <?php echo $Planktic; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="planktic" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Planktic Colonies" id="calc-input-planktic_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Noble Gas <?php echo $noble_gas; ?> ISK/Unit</label>
+                        <label>Noble Gas <?php echo $Noble_Gas; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="noble_gas" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Noble Gas" id="calc-input-noble_gas_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Reactive Gas <?php echo $reactive; ?> ISK/Unit</label>
+                        <label>Reactive Gas <?php echo $Reactive; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="reactive" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Reactive Gas" id="calc-input-reactive_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Felsic Magma <?php echo $felsic; ?> ISK/Unit</label>
+                        <label>Felsic Magma <?php echo $Felsic; ?> ISK/Unit</label>
                     <div class="input-group form-control" id="felsic" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Felsic Magma" id="calc-input-felsic_units-value">
                     </div>
                     </p>
                     <p>
-                        <label>Non-CS Crystals <?php echo $non_cs; ?> ISK/Unit</label>
+                        <label>Non-CS Crystals <?php echo $Non; ?> ISK/Unit</label>
                         <div class="input-group form-control" id="non_cs" style="padding: 0; border: none;">
                             <input type="number" class="form-control text-right typeahead" placeholder="Non-CS Crystals" id="calc-input-non_cs_units-value">
                         </div>
                     </p>
                     <p>
-                        <label>Suspended Plasma <?php echo $suspended; ?> ISK/Unit</label>
+                        <label>Suspended Plasma <?php echo $Suspended; ?> ISK/Unit</label>
                         <div class="input-group form-control" id="suspended" style="padding: 0; border: none;">
                             <input type="number" class="form-control text-right typeahead" placeholder="Suspended Plasma" id="calc-input-suspended_units-value">
                         </div>
                     </p>
                     <p>
-                        <label>Autotrophs <?php echo $autotrophs; ?> ISK/Unit</label>
+                        <label>Autotrophs <?php echo $Autotrophs; ?> ISK/Unit</label>
                         <div class="input-group form-control" id="autotrophs" style="padding: 0; border: none;">
                             <input type="number" class="form-control text-right typeahead" placeholder="Autotrophs" id="calc-input-autotrophs_units-value">
                         </div>
