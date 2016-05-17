@@ -25,15 +25,7 @@
 //Update timestamp
 $update = $db->fetchColumn('SELECT MAX(time) FROM IceProductPrices WHERE ItemId= :item', array('item' => 4247));
 
-//Ice
-//Amarr Fuel
-$Amarr_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4247, 'time' => $update));
-//Caldari Fuel
-$Caldari_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4051, 'time' => $update));
-//Gallente Fuel
-$Gallente_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4312, 'time' => $update));
-//Minmatar Fuel
-$Minmatar_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4246, 'time' => $update));
+//Ice Products
 //Helium Isotopes
 $Helium_Isotopes = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16274, 'time' => $update));
 //Hydrogen Isotopes
@@ -54,10 +46,6 @@ DBClose($db);
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
-    var amarr = <?= $Amarr_Fuel ?>;
-    var caldari = <?= $Caldari_Fuel ?>;
-    var gallente = <?= $Gallente_Fuel ?>;
-    var minmatar = <?= $Minmatar_Fuel ?>;
     var helium = <?= $Helium_Isotopes ?>;
     var hydrogen = <?= $Hydrogen_Isotopes ?>;
     var nitrogen = <?= $Nitrogen_Isotopes ?>;

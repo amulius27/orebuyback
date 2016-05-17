@@ -1,7 +1,7 @@
 <?php  
     define('indexes', TRUE);
     require_once __DIR__.'/functions/registry.php';
-    include 'misc/input_iceProd_fuel.php';
+    include 'misc/input_ice.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,100 +85,76 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            <label>Clear Icicle <?php echo number_format($Clear_Icicle, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Icicle" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Clear Icicle"
-                                   id="calc-input-Icicle_units-value">
-                        </div>
+                            <label>Clear Icicle <?php echo number_format($Clear_Icicle, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Icicle" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Clear_Icicle" placeholder="Clear Icicle" id="calc-input-Icicle_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Enriched Clear Icicle  <?php echo number_format($Enriched_Clear_Icicle, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Enriched" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Enriched Clear Icicle"
-                                   id="calc-input-Enriched_units-value">
-                        </div>
+                            <label>Enriched Clear Icicle  <?php echo number_format($Enriched_Clear_Icicle, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Enriched" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Enriched_Clear_Icicle" placeholder="Enriched Clear Icicle" id="calc-input-Enriched_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Glacial Mass <?php echo number_format($Glacial_Mass, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Glacial" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Glacial Mass"
-                                   id="calc-input-Glacial_units-value">
-                        </div>
+                            <label>Glacial Mass <?php echo number_format($Glacial_Mass, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Glacial" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Glacial_Mass" placeholder="Glacial Mass" id="calc-input-Glacial_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Smooth Glacial Mass  <?php echo number_format($Smooth_Glacial_Mass, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Smooth" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Smooth Glacial Mass"
-                                   id="calc-input-Smooth_units-value">
-                        </div>
+                            <label>Smooth Glacial Mass  <?php echo number_format($Smooth_Glacial_Mass, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Smooth" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Smooth_Glacial_Mass" placeholder="Smooth Glacial Mass" id="calc-input-Smooth_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>White Glaze <?php echo number_format($White_Glaze, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Glaze" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="White Glaze"
-                                   id="calc-input-Glaze_units-value">
-                        </div>
+                            <label>White Glaze <?php echo number_format($White_Glaze, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Glaze" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="White_Glaze" placeholder="White Glaze" id="calc-input-Glaze_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Pristine White Glaze <?php echo number_format($Pristine_White_Glaze, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Pristine" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Pristine White Glaze"
-                                   id="calc-input-Pristine_units-value">
-                        </div>
+                            <label>Pristine White Glaze <?php echo number_format($Pristine_White_Glaze, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Pristine" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Pristine_White_Glaze" placeholder="Pristine White Glaze" id="calc-input-Pristine_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Blue Ice <?php echo number_format($Blue_Ice, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Blue" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Blue Ice"
-                                   id="calc-input-Blue_units-value">
-                        </div>
+                            <label>Blue Ice <?php echo number_format($Blue_Ice, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Blue" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Blue_Ice" placeholder="Blue Ice" id="calc-input-Blue_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Thick Blue Ice <?php echo number_format($Thick_Blue_Ice, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Thick" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Thick Blue Ice"
-                                   id="calc-input-Thick_units-value">
-                        </div>
+                            <label>Thick Blue Ice <?php echo number_format($Thick_Blue_Ice, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Thick" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Thick_Blue_Ice" placeholder="Thick Blue Ice" id="calc-input-Thick_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Glare Crust <?php echo number_format($Glare_Crust, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Glare" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Glare Crust"
-                                   id="calc-input-Glare_units-value">
-                        </div>
+                            <label>Glare Crust <?php echo number_format($Glare_Crust, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Glare" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Glare_Crust" placeholder="Glare Crust" id="calc-input-Glare_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Dark Glitter  <?php echo number_format($Dark_Glitter, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Glitter" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Dark Glitter"
-                                   id="calc-input-Glitter_units-value">
-                        </div>
+                            <label>Dark Glitter  <?php echo number_format($Dark_Glitter, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Glitter" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Dark_Glitter" placeholder="Dark Glitter" id="calc-input-Glitter_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Gelidus <?php echo number_format($Gelidus, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Gelidus" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Gelidus"
-                                   id="calc-input-Gelidus_units-value">
-                        </div>
+                            <label>Gelidus <?php echo number_format($Gelidus, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Gelidus" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Gelidus" placeholder="Gelidus" id="calc-input-Gelidus_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Krystallos <?php echo number_format($Krystallos, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Krystallos" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Krystallos"
-                                   id="calc-input-Krystallos_units-value">
-                        </div>
+                            <label>Krystallos <?php echo number_format($Krystallos, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Krystallos" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Krystallos" placeholder="Krystallos" id="calc-input-Krystallos_units-value">
+                            </div>
                         </p>
                     </div>
                 </div>

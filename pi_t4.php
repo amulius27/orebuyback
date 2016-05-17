@@ -1,5 +1,7 @@
-<?php define('indexes', TRUE);
-include '../input_pi_t4.php';
+<?php 
+    define('indexes', TRUE);
+    require_once '/../functions/registry.php';
+    include 'misc/input_pi_t4.php';
 ?>
 
 <!DOCTYPE html>
@@ -82,68 +84,52 @@ include '../input_pi_t4.php';
                     </div>
                     <div class="panel-body">
                         <p>
-                            <label>Broadcast Node <?php echo number_format($Broadcast, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Broadcast Node" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Broadcast Node"
-                                   id="calc-input-Broadcast_Node_units-value">
-                        </div>
+                            <label>Broadcast Node <?php echo number_format($Broadcast, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Broadcast Node" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Broadcast_Node" placeholder="Broadcast Node" id="calc-input-Broadcast_Node_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Integrity Response Drones <?php echo number_format($Response_Drones, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Integrity Response Drones" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Integrity Response Drones"
-                                   id="calc-input-Integrity_Response_Drones_units-value">
-                        </div>
+                            <label>Integrity Response Drones <?php echo number_format($Response_Drones, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Integrity Response Drones" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Integrity_Response_Drones" placeholder="Integrity Response Drones" id="calc-input-Integrity_Response_Drones_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Nano-Factory <?php echo number_format($Nanofactory, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Nano-Factory" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Nano-Factory"
-                                   id="calc-input-NanoFactory_units-value">
-                        </div>
+                            <label>Nano-Factory <?php echo number_format($Nanofactory, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Nano-Factory" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Nano-Factory" placeholder="Nano-Factory" id="calc-input-NanoFactory_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Organic Mortar Applicators <?php echo number_format($Organic_Mortar, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Organic Mortar Applicators" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Organic Mortar Applicators"
-                                   id="calc-input-Organic_Mortar_Applicators_units-value">
-                        </div>
+                            <label>Organic Mortar Applicators <?php echo number_format($Organic_Mortar, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Organic Mortar Applicators" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Organic_Mortar_Applicators" placeholder="Organic Mortar Applicators" id="calc-input-Organic_Mortar_Applicators_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Recursive Computing Module <?php echo number_format($Recursive_Computing, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Recursive Computing Module" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Recursive Computing Module"
-                                   id="calc-input-Recursive_Computing_Module_units-value">
-                        </div>
+                            <label>Recursive Computing Module <?php echo number_format($Recursive_Computing, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Recursive Computing Module" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Recursive_Computing_Module" placeholder="Recursive Computing Module" id="calc-input-Recursive_Computing_Module_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Self-Harmonizing Power Core <?php echo number_format($Power_Core, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Self-Harmonizing Power Core" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Self-Harmonizing Power Core"
-                                   id="calc-input-Self_Harmonizing_Power_Core_units-value">
-                        </div>
+                            <label>Self-Harmonizing Power Core <?php echo number_format($Power_Core, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Self-Harmonizing Power Core" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Self-Harmonizing_Power_Core" placeholder="Self-Harmonizing Power Core" id="calc-input-Self_Harmonizing_Power_Core_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Sterile Conduits <?php echo number_format($Sterile_Conduits, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Sterile Conduits" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Sterile Conduits"
-                                   id="calc-input-Sterile_Conduits_units-value">
-                        </div>
+                            <label>Sterile Conduits <?php echo number_format($Sterile_Conduits, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Sterile Conduits" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Sterile_Conduits" placeholder="Sterile Conduits" id="calc-input-Sterile_Conduits_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Wetware Mainframe <?php echo number_format($Mainframe, 2, ',', '.');?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Wetware Mainframe" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Wetware Mainframe"
-                                   id="calc-input-Wetware_Mainframe_units-value">
-                        </div>
+                            <label>Wetware Mainframe <?php echo number_format($Mainframe, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Wetware Mainframe" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Wetware_Mainframe" placeholder="Wetware Mainframe" id="calc-input-Wetware_Mainframe_units-value">
+                            </div>
                         </p>
                     </div>
                 </div>
@@ -164,8 +150,8 @@ include '../input_pi_t4.php';
                         <p id="calc-output-row">Total Wetware Mainframe value <span class="pull-right"><span id="calc-output-Mainframe-value"></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
-                                <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
-                                <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
+                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
                         </p>
                         <br>
                     </div>

@@ -23,7 +23,6 @@
     //Update timestamp
     $update = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices WHERE ItemId= :item', array('item' => 34));
 
-    //Ice
     //Tritanium
     $Tritanium = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 34, 'time' => $update));
     //Pyerite

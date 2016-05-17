@@ -1,5 +1,7 @@
-<?php  define('indexes', TRUE);
-include '../input_iceProd_fuel.php';
+<?php  
+    define('indexes', TRUE);
+    require_once __DIR__.'/functions/registry.php';
+    include 'misc/input_iceProd.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,60 +85,46 @@ include '../input_iceProd_fuel.php';
                     </div>
                     <div class="panel-body">
                         <p>
-                            <label>Helium Isotopes <?php echo number_format($Helium_Isotopes, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Helium" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Helium Isotopes"
-                                   id="calc-input-Helium_units-value">
-                        </div>
+                            <label>Helium Isotopes <?php echo number_format($Helium_Isotopes, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Helium" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Helium_Isotopes" placeholder="Helium Isotopes" id="calc-input-Helium_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Hydrogen Isotopes <?php echo number_format($Hydrogen_Isotopes, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Hydrogen" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Hydrogen Isotopes"
-                                   id="calc-input-Hydrogen_units-value">
-                        </div>
+                            <label>Hydrogen Isotopes <?php echo number_format($Hydrogen_Isotopes, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Hydrogen" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Hydrogen_Isotopes" placeholder="Hydrogen Isotopes" id="calc-input-Hydrogen_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Nitrogen Isotopes <?php echo number_format($Nitrogen_Isotopes, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Nitrogen" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Nitrogen Isotopes"
-                                   id="calc-input-Nitrogen_units-value">
-                        </div>
+                            <label>Nitrogen Isotopes <?php echo number_format($Nitrogen_Isotopes, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Nitrogen" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Nitrogen_Isotopes" placeholder="Nitrogen Isotopes" id="calc-input-Nitrogen_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Oxygen Isotopes <?php echo number_format($Oxygen_Isotopes, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Oxygen" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Oxygen Isotopes"
-                                   id="calc-input-Oxygen_units-value">
-                        </div>
+                            <label>Oxygen Isotopes <?php echo number_format($Oxygen_Isotopes, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Oxygen" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Oxygen_Isotopes" placeholder="Oxygen Isotopes" id="calc-input-Oxygen_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Heavy Water <?php echo number_format($Heavy_Water, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Heavy" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Heavy Water"
-                                   id="calc-input-Heavy_units-value">
-                        </div>
+                            <label>Heavy Water <?php echo number_format($Heavy_Water, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Heavy" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Heavy_Water" placeholder="Heavy Water" id="calc-input-Heavy_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Liquid Ozone <?php echo number_format($Liquid_Ozone, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Ozone" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Liquid Ozone"
-                                   id="calc-input-Ozone_units-value">
-                        </div>
+                            <label>Liquid Ozone <?php echo number_format($Liquid_Ozone, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Ozone" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Liquid_Ozone" placeholder="Liquid Ozone" id="calc-input-Ozone_units-value">
+                            </div>
                         </p>
                         <p>
-                            <label>Strontium Clathrates <?php echo number_format($Strontium_Clathrates, 2, ',', '.'); ?> ISK/Unit</label>
-
-                        <div class="input-group form-control" id="Strontium" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Strontium Clathrates"
-                                   id="calc-input-Strontium_units-value">
-                        </div>
+                            <label>Strontium Clathrates <?php echo number_format($Strontium_Clathrates, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Strontium" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Strontium_Clathrates" placeholder="Strontium Clathrates" id="calc-input-Strontium_units-value">
+                            </div>
                         </p>
                     </div>
                 </div>
@@ -156,8 +144,8 @@ include '../input_iceProd_fuel.php';
                         <p id="calc-outputb-row">Total Strontium Clathrates value <span class="pull-right" id="calc-output-Strontium-value"></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
-                                <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
-                                <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
+                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
                         </p>
                         <br>
                     </div>

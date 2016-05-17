@@ -1,16 +1,18 @@
-<?php  define('indexes', TRUE);
-include '../input_mins.php';
+<?php 
+    define('indexes', TRUE);
+    require_once __DIR__.'/functions/registry.php';
+    include 'misc/input_mins.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!--metas-->
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta content="Lone Star Buyback Calculator" name="description">
+    <meta content="Warped Intentions Buy Back Program" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>
-        Buy Up Indexes | Lone Star Warriors
+        Warped Intentions Buy Back Program
     </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -26,7 +28,7 @@ include '../input_mins.php';
             background-attachment: fixed;
         }
         .affix {
-            top: 60px;
+            top: 75px;
         }
         .affix-bottom {
             position: absolute;
@@ -43,41 +45,11 @@ include '../input_mins.php';
     </script>
 </head>
 <body>
-<!--Navigation-->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.php"><img src="images/logo-wide.png" style="margin-top: -7px;"></a>
-    </div>
-    <div class="collapse navbar-collapse pull-right">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="../../index.html">Mainpage</a></li>
-            <li><a href="../../eve.html">Eve Page</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img
-                        src="images/settings.png"><b class="caret"></b></a>
-                <ul class="dropdown-menu pull-right">
-                    <li class="dropdown-header">Applications</li>
-                    <li><a href="#">EvE Online Applications</a></li>
-                    <li><a href="#" onclick="clearCookies();location.reload();">Clear all cookies</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-<!--Navigation-->
 
-<div class="central-header">
-    <h1>Buying to make your lives easier.</h1>
-    <h4 class="text-danger">These pages are still undergoing heavy development. Report any issues on our public
-        forums!</h4>
-</div>
+<?php
+    PrintNavBar();
+    PrintTitle();
+?>
 
 <div class="container">
     <div class="panel panel-default">
@@ -85,155 +57,110 @@ include '../input_mins.php';
             <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Instruction Sheet</strong></span><br></h3>
         </div>
         <div class="panel-body" align="center">
-
-            - In the Calculator below you can enter the amounts for each Raw PI material that you want to sell.<br>
-            - Once done you can see the total value of each item and the final price in the <strong>Invoice</strong>
-            panel.<br>
-            - All you have to do now is click on the <strong>Contract Value</strong> price that is given<br>
-            - This will open a "Copy to clipboard" window with a easy to copy number to use in the EVE Contract window.<br>
-            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 200-300 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
+            - In the Calculator below you can enter the amounts for each Ore that you want to sell.<br>
+            - Once done click on the <strong>Invoice</strong> price to submit the contract.<br>
+            - The contract will be submitted to the database, and contract details will be printed on the next page.<br>
+            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract max is 500m ISK at a time, will allow for faster processing of the contracts.</strong></span>
             <hr>
-                <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
-                        on: <?php echo $string = implode("", $update[0]); ?></strong></span>
+            <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated on: <?php echo $update ?></strong></span><br>
+            <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
+            <span style="font-family: Arial; color: white;"<strong>Corporation: </strong> <?php echo $corporation ?></span><br>
+            <span style="font-family: Arial; color: white;"<strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"<strong>Corp Tax Rate: </strong>  <?php echo $corpTax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"<strong>TotalTax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
         </div>
     </div>
 </div>
-
+    
 <div class="clearfix"></div>
-
-<div class="container">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Contract Type</th>
-            <th class="text-right">Availability</th>
-            <th class="text-right">I will receive</th>
-            <th class="text-right">Expire</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Item Exchange</td>
-            <td class="text-right">My Corporation or <strong><span class="eve-link" onmouseover="popCorp($(this), 98259161, 'Lone Star Warriors');">Lone Star Warriors</span></strong>
-            </td>
-            <td class="text-right">Value from Invoice below</td>
-            <td class="text-right">2 Weeks</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
 <!-- Calculate -->
-
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Calculator</strong></h3>
+        <form action="contracts/mins_contract.php" method="post">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Calculator</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <label>Tritanium <?php echo number_format($Tritanium, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Tritanium" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Tritanium" placeholder="Tritanium" id="calc-input-tritanium_units-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>Pyerite <?php echo number_format($Pyerite, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Pyerite" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Pyerite" placeholder="Pyerite" id="calc-input-pyerite_units-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>Mexallon <?php echo number_format($Mexallon, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Mexallon" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Mexallon" placeholder="Mexallon" id="calc-input-mexallon_units-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>Isogen <?php echo number_format($Isogen, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Isogen" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Isogen" placeholder="Isogen" id="calc-input-isogen_units-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>Nocxium <?php echo number_format($Nocxium, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Nocxium" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Nocxium" placeholder="Nocxium" id="calc-input-nocxium_units-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>Zydrine <?php echo number_format($Zydrine, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Zydrine" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Zydrine" placeholder="Zydrine" id="calc-input-zydrine_units-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>Megacyte <?php echo number_format($Megacyte, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Megacyte" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Megacyte" placeholder="Megacyte" id="calc-input-megacyte_units-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>Morphite <?php echo number_format($Morphite, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Morphite" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Morphite" placeholder="Morphite" id="calc-input-morphite_units-value">
+                            </div>
+                        </p>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <p>
-                        <label>Tritanium <?php echo number_format($tritanium, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Tritanium" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Tritanium"
-                               id="calc-input-tritanium_units-value">
-                    </div>
-                    </p>
-                    <p>
-                        <label>Pyerite <?php echo number_format($pyerite, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Pyerite" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Pyerite"
-                               id="calc-input-pyerite_units-value">
-                    </div>
-                    </p>
-                    <p>
-                        <label>Mexallon <?php echo number_format($mexallon, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Mexallon" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Mexallon"
-                               id="calc-input-mexallon_units-value">
-                    </div>
-                    </p>
-                    <p>
-                        <label>Isogen <?php echo number_format($isogen, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Isogen" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Isogen"
-                               id="calc-input-isogen_units-value">
-                    </div>
-                    </p>
-                    <p>
-                        <label>Nocxium <?php echo number_format($nocxium, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Nocxium" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Nocxium"
-                               id="calc-input-nocxium_units-value">
-                    </div>
-                    </p>
-                    <p>
-                        <label>Zydrine <?php echo number_format($zydrine, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Zydrine" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Zydrine"
-                               id="calc-input-zydrine_units-value">
-                    </div>
-                    </p>
-                    <p>
-                        <label>Megacyte <?php echo number_format($megacyte, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Megacyte" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Megacyte"
-                               id="calc-input-megacyte_units-value">
-                    </div>
-                    </p>
-                    <p>
-                        <label>Morphite <?php echo number_format($morphite, 2, ',', '.'); ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Morphite" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Morphite"
-                               id="calc-input-morphite_units-value">
-                    </div>
-                    </p>
-                    </div>
-      </div>
-                </div>
-    <div class="col-md-6">
-                  <div class="panel panel-default" data-spy="affix" data-offset-top="450" data-offset-bottom="370" id="invoice-panel">
-        <div class="panel-heading">
-                      <h3 class="panel-title"> <strong>Invoice</strong>
-            <label data-html="true" data-original-title="<b>Fees</b>" class="popover-reward text-info" data-toggle="popover" data-content="
-                    <span>
-			<p>In this invoice window you can see how the price is build up for each individual mineral</p>
-			<p>The total <strong>Contract Value</strong> price is made up by the mineral values.</p>
-			<hr>
-                        <p>The <b>Contract Value</b> is what you have to use as <i>'I will receive'</i> in the contract.</p>
-                    </span>">[?]</label>
-          </h3>
-                    </div>
-        <div class="panel-body">
-                      <p id="calc-output-row">Total Tritanium value <span class="pull-right"><span id="calc-output-tritanium-value"></span></p>
-                      <p id="calc-output-row">Total Pyerite value <span class="pull-right"><span id="calc-output-pyerite-value"></span></p>
-                      <p id="calc-output-row">Total Mexallon value<span class="pull-right"><span id="calc-output-mexallon-value"></span></p>
-                      <p id="calc-output-row">Total Isogen value <span class="pull-right"><span id="calc-output-isogen-value"></span></p>
-                      <p id="calc-output-row">Total Nocxium value <span class="pull-right" id="calc-output-nocxium-value"></span></p>
-                      <p id="calc-output-row">Total Zydrine value <span class="pull-right" id="calc-output-zydrine-value"></span></p>
-                      <p id="calc-output-row">Total Megactye value <span class="pull-right" id="calc-output-megacyte-value"></span></p>
-                      <p id="calc-outputb-row">Total Morphite value <span class="pull-right" id="calc-output-morphite-value"></span></p>
-                      <hr>
-            <p id="calc-output-reward-row">
-                <b>Contract Value</b> <a href="#" class="pull-right" onclick="$('#clipboard').modal('show');$('#clipboard-content').val(calcNow()).select();">
-                    <strong id="calc-output-reward-value"></strong>
-                </a>
-            </p>
-                      <br>
-                    </div>
-      </div>
-                </div>
-  </div>
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default" data-spy="affix" data-offset-top="450" data-offset-bottom="370" id="invoice-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> <strong>Invoice</strong>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <p id="calc-output-row">Total Tritanium value <span class="pull-right"><span id="calc-output-tritanium-value"></span></p>
+                        <p id="calc-output-row">Total Pyerite value <span class="pull-right"><span id="calc-output-pyerite-value"></span></p>
+                        <p id="calc-output-row">Total Mexallon value<span class="pull-right"><span id="calc-output-mexallon-value"></span></p>
+                        <p id="calc-output-row">Total Isogen value <span class="pull-right"><span id="calc-output-isogen-value"></span></p>
+                        <p id="calc-output-row">Total Nocxium value <span class="pull-right" id="calc-output-nocxium-value"></span></p>
+                        <p id="calc-output-row">Total Zydrine value <span class="pull-right" id="calc-output-zydrine-value"></span></p>
+                        <p id="calc-output-row">Total Megactye value <span class="pull-right" id="calc-output-megacyte-value"></span></p>
+                        <p id="calc-outputb-row">Total Morphite value <span class="pull-right" id="calc-output-morphite-value"></span></p>
+                        <hr>
+                        <p id="calc-output-reward-row">
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
+                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
+                        </p>
+                        <br>
+                    </div>
+                </div>   
+            </div>
+        </form>
+    </div>
+</div>
 <!-- Calculate -->
 
 <!-- Calculate -->
