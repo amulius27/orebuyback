@@ -20,11 +20,7 @@
     $alliance_tax = 4.00;
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
-    
-    $db = DBOpen();
-
-
-
+   
     //Update timestamp
     $update = $db->fetchColumn('SELECT MAX(Time) FROM SalvagePrices WHERE ItemId= :id', array('id' => 25595));
     
