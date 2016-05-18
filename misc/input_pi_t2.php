@@ -73,7 +73,7 @@
     var microfibreShielding = <?= $microfiber_shielding ?>;
     var miniatureElectronics = <?= $miniature_electronics ?>;
     var nanites = <?= $nanites ?>;
-    var oxides = <?= $oxydes ?>;
+    var oxides = <?= $oxides ?>;
     var polyaramids = <?= $polyaramids ?>;
     var polytextiles = <?= $polytextiles ?>;
     var rocketFuel = <?= $rocket_fuel ?>;
