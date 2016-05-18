@@ -4,28 +4,28 @@ $(document).ready(function() {
     calcNow();
 });
 
-$('#calc-input-Amarr_units-value').on('propertychange change keyup paste input', function() {
+$('#calc-input-Amarr-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
-$('#calc-input-Amarr_units-value').on('focusout', function(){
+$('#calc-input-Amarr-value').on('focusout', function(){
     calcInputGetValue('Amarr_units');
 });
-$('#calc-input-Caldari_units-value').on('propertychange change keyup paste input', function() {
+$('#calc-input-Caldari-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
-$('#calc-input-Caldari_units-value').on('focusout', function(){
+$('#calc-input-Caldari-value').on('focusout', function(){
     calcInputGetValue('Caldari_units');
 });
-$('#calc-input-Gallente_units-value').on('propertychange change keyup paste input', function() {
+$('#calc-input-Gallente-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
-$('#calc-input-Gallente_units-value').on('focusout', function(){
+$('#calc-input-Gallente-value').on('focusout', function(){
     calcInputGetValue('Gallente_units');
 });
-$('#calc-input-Minmatar_units-value').on('propertychange change keyup paste input', function() {
+$('#calc-input-Minmatar-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
-$('#calc-input-Minmatar_units-value').on('focusout', function(){
+$('#calc-input-Minmatar-value').on('focusout', function(){
     calcInputGetValue('Minmatar_units');
 });
 
