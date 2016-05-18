@@ -78,7 +78,7 @@ function calcNow() {
     var nanoFactoryUnits = calcInputGetValue('NanoFactory_units');
     var applicatorUnits = calcInputGetValue('Organic_Mortar_Applicators_units');
     var computingModuleUnits = calcInputGetValue('Recursive_Computing_Module_units');
-    var powerCoreUnits = calcInputGetValue('Self_Harmonizing_Power_Core_units')
+    var powerCoreUnits = calcInputGetValue('Self_Harmonizing_Power_Core_units');
     var sterileConduitsUnits = calcInputGetValue('Sterile_Conduits_units');
     var mainframeUnits = calcInputGetValue('Wetware_Mainframe_units');
 

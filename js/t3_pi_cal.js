@@ -156,7 +156,7 @@ function calcNow() {
     var condensatesUnits = calcInputGetValue('Condensates_units');
     var cryoprotectantUnits = calcInputGetValue('Cryoprotectant_Solution_units');
     var dataChipsUnits = calcInputGetValue('Data_Chips_units');
-    var gelMatrixUnits = calcInputGetValue('Gel_Matrix_Biopaste_units')
+    var gelMatrixUnits = calcInputGetValue('Gel_Matrix_Biopaste_units');
     var guidanceSystemsUnits = calcInputGetValue('Guidance_Systems_units');
     var hazmatUnits = calcInputGetValue('Hazmat_Detection_Systems_units');
     var hermeticMembranesUnits = calcInputGetValue('Hermetic_Membranes_units');

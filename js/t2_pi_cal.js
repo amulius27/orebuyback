@@ -174,7 +174,7 @@ function calcNow() {
     var consumerElectronicsUnits = calcInputGetValue('Consumer_Electronics_units');
     var coolantUnits = calcInputGetValue('Coolant_units');
     var enrichedUraniumUnits = calcInputGetValue('Enriched_Uranium_units');
-    var fertilizerUnits = calcInputGetValue('Fertilizer_units')
+    var fertilizerUnits = calcInputGetValue('Fertilizer_units');
     var genEnhancedLivestockUnits = calcInputGetValue('Gen_Enhanced_Livestock_units');
     var livestockUnits = calcInputGetValue('Livestock_units');
     var mechanicalPartsUnits = calcInputGetValue('Mechanical_Parts_units');
