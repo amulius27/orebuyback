@@ -256,7 +256,7 @@ function calcNow() {
 
     var alloyedTritaniumBarUnits = calcInputGetValue('Alloyed_Tritanium_Bar_units');
     var armorPlatesUnits = calcInputGetValue('Armor_Plates_units');
-    var artificialNeuralNetworkUnits = calcInputGetValue('Artificial_Neural_Network_units')
+    var artificialNeuralNetworkUnits = calcInputGetValue('Artificial_Neural_Network_units');
     var brokenDroneTransceiverUnits = calcInputGetValue('Broken_Drone_Transceiver_units');
     var burnedLogicCircuitUnits = calcInputGetValue('Burned_Logic_Circuit_units');
     var capacitorConsoleUnits = calcInputGetValue('Capacitor_Console_units');
@@ -271,7 +271,7 @@ function calcNow() {
     var droneTransceiverUnits = calcInputGetValue('Drone_Transceiver_units');
     var enhancedWardConsoleUnits = calcInputGetValue('Enhanced_Ward_Console_units');
     var friedInterfaceCircuitUnits = calcInputGetValue('Fried_Interface_Circuit_units');
-    var impetusConsoleUnits = calcInputGetValue('Impetus_Console_units')
+    var impetusConsoleUnits = calcInputGetValue('Impetus_Console_units');
     var intactArmorPlatesUnits = calcInputGetValue('Intact_Armor_Plates_units');
     var intactShieldEmitterUnits = calcInputGetValue('Intact_Shield_Emitter_units');
     var interfaceCircuitUnits = calcInputGetValue('Interface_Circuit_units');
