@@ -1,6 +1,5 @@
 <?php 
     define('indexes', TRUE);
-    require_once __DIR__.'/functions/registry.php';
     include 'misc/input_pi_t1.php';
 ?>
 
@@ -91,7 +90,7 @@
             - This will open a "Copy to clipboard" window with a easy to copy number to use in the EVE Contract window.<br>
             <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 200-300 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
         <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
-                on: <?php echo $string = implode("", $update[0]); ?></strong></span>
+                on: <?php echo $string = implode("", $update); ?></strong></span>
         </div>
     </div>
 </div>
@@ -257,14 +256,6 @@
             <div class="panel panel-default" data-spy="affix" data-offset-top="450" data-offset-bottom="370" id="invoice-panel">
                 <div class="panel-heading">
                     <h3 class="panel-title"><strong>Invoice</strong>
-                        <label data-html="true" data-original-title="<b>Fees</b>" class="popover-reward text-info"
-                               data-toggle="popover" data-content="
-                    <span>
-			<p>In this invoice window you can see how the price is build up for each individual mineral</p>
-			<p>The <strong>Contract Value</strong> price is the total of the material values.</p>
-			<hr>
-                        <p>The <b>Contract Value</b> is what you have to use as <i>'I will receive'</i> in the contract.</p>
-                    </span>">[?]</label>
                     </h3>
                 </div>
                 <div class="panel-body">
