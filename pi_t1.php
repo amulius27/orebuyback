@@ -228,11 +228,10 @@
                     <p id="calc-output-row">Total Water value <span class="pull-right"><span id="calc-output-water-value"></span></p>
                     <hr>
                     <p id="calc-output-reward-row">
-                        <b>Contract Value</b> <a href="#" class="pull-right" onclick="$('#clipboard').modal('show');$('#clipboard-content').val(calcNow()).select();">
-                            <strong id="calc-output-reward-value"></strong>
-                        </a>
-                    </p>
-                    <br>
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
+                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
+                        </p>
+                        <br>
                 </div>
             </div>
         </div>
@@ -240,95 +239,10 @@
 </div>
 <!-- Calculate -->
 
-<!-- Footer -->
-<div class="clearfix"></div>
-
-<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading" align="center">
-            <h3 class="panel-title"><strong>Buy Up Indexes brought to you by <span class="eve-link" onmouseover="popCorp($(this), 98259161, 'Lone Star Warriors');">Lone Star Warriors</span></strong></h3>
-        </div>
-        <div class="panel-body" align="center">
-            <ul class="social">
-                <li>
-                    <a href=
-                       "https://www.facebook.com/lonestarwarriorsgaming"><i class="fa">
-                        </i></a>
-                </li>
-
-                <li>
-                    <a href="https://twitter.com/lone_warriors"><i class=
-                                                                   "fb"></i></a>
-                </li>
-
-                <li>
-                    <a href=
-                       "https://plus.google.com/+lonestarwarriorsgaming"><i class="fc">
-                        </i></a>
-                </li>
-            </ul>
-
-            <p>
-                2015 Design by <a href="#">Joery Pigmans</a>. All rights
-                reserved.
-            </p>
-
-            <p>
-                EVE Online and the EVE logo are the registered trademarks
-                of CCP hf. All rights are reserved worldwide. All other
-                trademarks are the property of their respective owners. EVE
-                Online, the EVE logo, EVE and all associated logos and
-                designs are the intellectual property of CCP hf. All
-                artwork, screenshots, characters, vehicles, storylines,
-                world facts or other recognizable features of the
-                intellectual property relating to these trademarks are
-                likewise the intellectual property of CCP hf. CCP hf. has
-                granted permission to Joery Pigmans to use EVE Online and
-                all associated logos and designs for promotional and
-                information purposes on its website but does not endorse,
-                and is not in any way affiliated with, Joery Pigmans. CCP
-                is in no way responsible for the content on or functioning
-                of this website, nor can it be liable for any damage
-                arising from the use of this website.
-            </p>
-        </div>
-    </div>
-    <!-- Footer -->
-
-    <!-- Popups -->
-    <div class="hide" id="popcorp" style="background:white;">
-        <table style='border: 1px solid;'>
-            <thead>
-            <tr style='border-bottom: 1px solid;'>
-                <th colspan='3' style='padding-left:2px;' id="popcorp-name">&nbsp;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td width='64' height='64' style='padding:2px; background-repeat:no-repeat; background-position:center;' id="popcorp-image">&nbsp;</td>
-                <td style='padding-left:5px; padding-right:5px; padding-top:3px; vertical-align:top;' id="popcorp-content-1">&nbsp;</td>
-                <td style='padding-left:5px; padding-right:5px; padding-top:3px; vertical-align:top;' id="popcorp-content-2">&nbsp;</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- Popups -->
-
-    <!-- Clipboard -->
-    <div class="modal" id="clipboard" tabindex="-1" role="dialog" aria-labelledby="clipboardLabel" aria-hidden="true" onkeydown="if (event.keyCode == 13) $('#clipboard').modal('hide');">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="clipboardLabel">Copy to clipboard: CTRL-C, Enter</h4>
-                </div>
-                <div class="modal-body">
-                    <input type="text" class="form-control text-right" id="clipboard-content">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Clipboard -->
+<?php
+    PrintFooter();
+    PrintPopups();
+?>
 
     <script src="js/jquery.cookie.js"></script>
     <script src="js/custom.js"></script>
