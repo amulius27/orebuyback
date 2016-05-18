@@ -1,4 +1,3 @@
-<!-- Connect to DB -->
 <?php
     require_once __DIR__.'/../functions/registry.php';
 
@@ -13,7 +12,7 @@
     if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
         $corporation = str_replace('"', "", $corporation);
-        $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+        $corpTax = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
     } else {
         $corpTax = 10.00;
     }
