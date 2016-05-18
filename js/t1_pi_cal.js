@@ -34,17 +34,18 @@ function calcInputGetValue(name) {
 
 function calcNow() {
 
-    var bacteriaUnits = calcInputGetValue('Bacteria_units');
+    //var bacteriaUnits = calcInputGetValue('Bacteria_units');
     
     
-    var bacteriaReward = bacteriaUnits * bacteria;
-    
+    //var bacteriaReward = bacteriaUnits * bacteria;
+    var bacteriaReward = 0.00;
 
-    var totalReward = bacteriaReward;
+    //var totalReward = bacteriaReward;
+    var totalReward = 0.00;
 	
     var reward = totalReward.toFixed(2);
 
-    $('#calc-output-bacteria-value').html(number_format(bacteriaReward) + ' ISK');
+    $('#calc-output-bacteria-value').html('0 ISK');
     
 
     $('#calc-output-reward-value').html('0 ISK');
