@@ -25,7 +25,7 @@ $('#calc-input-Biomass_units-value').on('focusout', function(){
 $('#calc-input-Chiral_Structures_units-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
-$('#calc-input-Chiral_Structures_units-value<script src="/../js/t1_pi_cal.js"></script>').on('focusout', function(){
+$('#calc-input-Chiral_Structures_units-value').on('focusout', function(){
     calcInputGetValue('Chiral_Structures_units');
 });
 $('#calc-input-Electrolytes_units-value').on('propertychange change keyup paste input', function() {
