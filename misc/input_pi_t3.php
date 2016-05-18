@@ -39,9 +39,9 @@
     $Hazmat_Detection_Systems = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2366, 'time' => $update));
     $Hermetic_Membranes = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2361, 'time' => $update));
     $HighTech_Transmitters = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 17898, 'time' => $update));
-    $Industrial_Explosvies = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2360, 'time' => $update));
-    $Necocoms = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2354, 'time' => $update));
-    $Nuclear_Reactions = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2352, 'time' => $update));
+    $Industrial_Explosives = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2360, 'time' => $update));
+    $Neocoms = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2354, 'time' => $update));
+    $Nuclear_Reactors = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2352, 'time' => $update));
     $Planetary_Vehicles = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9846, 'time' => $update));
     $Robotics = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9848, 'time' => $update));
     $Smartfab_Units = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2351, 'time' => $update));
@@ -67,7 +67,7 @@
     var guidanceSystems = <?= $Guidance_Systems ?>;
     var hazmatDetection = <?= $Hazmat_Detection_Systems ?>;
     var hermeticMembranes = <?= $Hermetic_Membranes ?>;
-    var hightechTransmitters = <?= $Hightech_Transmitters ?>;
+    var hightechTransmitters = <?= $HighTech_Transmitters ?>;
     var industrialExplosives = <?= $Industrial_Explosives ?>;
     var neocoms = <?= $Neocoms ?>;
     var nuclearReactors = <?= $Nuclear_Reactors ?>;
