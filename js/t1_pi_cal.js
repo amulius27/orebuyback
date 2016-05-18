@@ -1,3 +1,5 @@
+/* global bacteria, biofuels, biomass, chiralStructures, electrolytes, industrialFibers, oxidizingCompound, oxygenPI2, plasmoids, preciousMetals, proteins, reactiveMetals, silicon, toxicMetals, water */
+
 $(document).ready(function() {
     calcNow();
 });
@@ -6,7 +8,7 @@ $('#calc-input-Bacteria_units-value').on('propertychange change keyup paste inpu
     calcNow();
 });
 $('#calc-input-Bacteria_units-value').on('focusout', function(){
-    calcInputGetValue('Bacteria');
+    calcInputGetValue('Bacteria_units');
 });
 $('#calc-input-Biofuels_units-value').on('propertychange change keyup paste input', function() {
     calcNow();
@@ -23,7 +25,7 @@ $('#calc-input-Biomass_units-value').on('focusout', function(){
 $('#calc-input-Chiral_Structures_units-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
-$('#calc-input-Chiral_Structures_units-value').on('focusout', function(){
+$('#calc-input-Chiral_Structures_units-value<script src="/../js/t1_pi_cal.js"></script>').on('focusout', function(){
     calcInputGetValue('Chiral_Structures_units');
 });
 $('#calc-input-Electrolytes_units-value').on('propertychange change keyup paste input', function() {
