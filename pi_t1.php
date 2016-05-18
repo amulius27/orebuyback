@@ -82,13 +82,13 @@
                     <div class="panel-body">
                         <p>
                             <label>Bacteria <?php echo number_format($Bacteria, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="bacteria" style="padding: 0; border: none;">
+                            <div class="input-group form-control" id="Bacteria" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Bacteria" placeholder="Bacteria" id="calc-input-Bacteria_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Biofuels <?php echo number_format($Biofuels, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="biofuels" style="padding: 0; border: none;">
+                            <div class="input-group form-control" id="Biofuels" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Biofuels" placeholder="Biofuels" id="calc-input-Biofuels_units-value">
                             </div>
                         </p>

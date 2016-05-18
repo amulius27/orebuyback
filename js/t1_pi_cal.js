@@ -6,7 +6,7 @@ $('#calc-input-Bacteria_units-value').on('propertychange change keyup paste inpu
     calcNow();
 });
 $('#calc-input-Bacteria_units-value').on('focusout', function(){
-    calcInputGetValue('Bacteria_units');
+    calcInputGetValue('Bacteria');
 });
 $('#calc-input-Biofuels_units-value').on('propertychange change keyup paste input', function() {
     calcNow();
@@ -115,7 +115,7 @@ function calcInputGetValue(name) {
 
 function calcNow() {
 
-    var bacteriaUnits = calcInputGetValue('Bacteria');
+    var bacteriaUnits = calcInputGetValue('Bacteria_units');
     var biofuelUnits = calcInputGetValue('Biofuels_units');
     var biomassUnits = calcInputGetValue('Biomass_units');
     var chiralUnits = calcInputGetValue('Chiral_Structures_units');
