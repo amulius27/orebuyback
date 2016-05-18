@@ -44,83 +44,33 @@
 
 </head>
 <body>
-<!--Navigation-->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.php"><img src="images/logo-wide.png" style="margin-top: -7px;"></a>
-    </div>
-    <div class="collapse navbar-collapse pull-right">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="../../index.html">Mainpage</a></li>
-            <li><a href="../../eve.html">Eve Page</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img
-                        src="images/settings.png"><b class="caret"></b></a>
-                <ul class="dropdown-menu pull-right">
-                    <li class="dropdown-header">Applications</li>
-                    <li><a href="#">EvE Online Applications</a></li>
-                    <li><a href="#" onclick="clearCookies();location.reload();">Clear all cookies</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-<!--Navigation-->
-
-<div class="central-header">
-    <h1>Buying to make your lives easier.</h1>
-    <h4 class="text-danger">These pages are still undergoing heavy development. Report any issues on our public
-        forums!</h4>
-</div>
+<?php
+    PrintNavBar();
+    PrintTitle();
+?>
+    
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading" align="center">
             <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Instruction Sheet</strong></span><br></h3>
         </div>
         <div class="panel-body" align="center">
-            - In the Calculator below you can enter the amounts for each Raw PI material that you want to sell.<br>
-            - Once done you can see the total value of each item and the final price in the <strong>Invoice</strong>
-            panel.<br>
-            - All you have to do now is click on the <strong>Contract Value</strong> price that is given<br>
-            - This will open a "Copy to clipboard" window with a easy to copy number to use in the EVE Contract window.<br>
-            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 500 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
-        <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
-                on: <?php echo $string = implode("", $update); ?></strong></span>
+            - In the Calculator below you can enter the amounts for each Ore that you want to sell.<br>
+            - Once done click on the <strong>Invoice</strong> price to submit the contract.<br>
+            - The contract will be submitted to the database, and contract details will be printed on the next page.<br>
+            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract max is 500m ISK at a time, will allow for faster processing of the contracts.</strong></span>
+            <hr>
+            <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated on: <?php echo $update ?></strong></span><br>
+            <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
+            <span style="font-family: Arial; color: white;"><strong>Corporation: </strong> <?php echo $corporation ?></span><br>
+            <span style="font-family: Arial; color: white;"><strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"><strong>Corp Tax Rate: </strong>  <?php echo $corpTax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"><strong>TotalTax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
         </div>
     </div>
 </div>
 
 <div class="clearfix"></div>
-
-<div class="container">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Contract Type</th>
-            <th class="text-right">Availability</th>
-            <th class="text-right">I will receive</th>
-            <th class="text-right">Expire</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Item Exchange</td>
-            <td class="text-right">My Corporation or <strong><span class="eve-link" onmouseover="popCorp($(this), 98259161, 'Lone Star Warriors');">Lone Star Warriors</span></strong>
-            </td>
-            <td class="text-right">Value from Invoice below</td>
-            <td class="text-right">2 Weeks</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
 <!-- Calculate -->
 
 <div class="container">
@@ -132,7 +82,7 @@
                 </div>
                 <div class="panel-body">
                     <p>
-                        <label>Biocells <?php echo number_format($biocells, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Biocells <?php echo number_format($biocells, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Biocells" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Biocells"
@@ -140,7 +90,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Construction Blocks <?php echo number_format($construction_blocks, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Construction Blocks <?php echo number_format($construction_blocks, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Construction Blocks" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="	Construction Blocks"
@@ -148,7 +98,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Consumer Electronics <?php echo number_format($consumer_electronics, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Consumer Electronics <?php echo number_format($consumer_electronics, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Consumer Electronics" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Consumer Electronics"
@@ -156,7 +106,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Coolant <?php echo number_format($coolant, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Coolant <?php echo number_format($coolant, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Coolant" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Coolant"
@@ -164,7 +114,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Enriched Uranium <?php echo number_format($enriched_uranium, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Enriched Uranium <?php echo number_format($enriched_uranium, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Enriched Uranium" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Enriched Uranium"
@@ -172,7 +122,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Fertilizer <?php echo number_format($fertilizer, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Fertilizer <?php echo number_format($fertilizer, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Fertilizer" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Fertilizer"
@@ -180,7 +130,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Gen. Enhanced Livestock <?php echo number_format($gen_enhanced_livestock, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Gen. Enhanced Livestock <?php echo number_format($gen_enhanced_livestock, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Gen. Enhanced Livestock" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Gen. Enhanced Livestock"
@@ -188,7 +138,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Livestock <?php echo number_format($livestock, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Livestock <?php echo number_format($livestock, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Livestock" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Livestock"
@@ -196,7 +146,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Mechanical Parts <?php echo number_format($mechanical_parts, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Mechanical Parts <?php echo number_format($mechanical_parts, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Mechanical Parts" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Mechanical Parts"
@@ -204,7 +154,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Microfiber Shielding <?php echo number_format($microfiber_shielding, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Microfiber Shielding <?php echo number_format($microfiber_shielding, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Microfiber Shielding" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Microfiber Shielding"
@@ -212,7 +162,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Miniature Electronics <?php echo number_format($miniature_electronics, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Miniature Electronics <?php echo number_format($miniature_electronics, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Miniature Electronics" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Miniature Electronics"
@@ -220,7 +170,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Nanites <?php echo number_format($nanites, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Nanites <?php echo number_format($nanites, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Nanites" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Nanites"
@@ -228,7 +178,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Oxides <?php echo number_format($oxydes, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Oxides <?php echo number_format($oxydes, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Oxides" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Oxides"
@@ -236,7 +186,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Polyaramids <?php echo number_format($polyaramids, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Polyaramids <?php echo number_format($polyaramids, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Polyaramids" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Polyaramids"
@@ -244,7 +194,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Polytextiles <?php echo number_format($polytextiles, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Polytextiles <?php echo number_format($polytextiles, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Polytextiles" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Polytextiles"
@@ -252,7 +202,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Rocket Fuel <?php echo number_format($rocket_fuel, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Rocket Fuel <?php echo number_format($rocket_fuel, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Rocket Fuel" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Rocket Fuel"
@@ -260,7 +210,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Silicate Glass <?php echo number_format($silicate_glass, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Silicate Glass <?php echo number_format($silicate_glass, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Silicate Glass" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Silicate Glass"
@@ -268,7 +218,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Superconductors <?php echo number_format($superconductors, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Superconductors <?php echo number_format($superconductors, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Superconductors" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Superconductors"
@@ -276,7 +226,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Supertensile Plastics <?php echo number_format($supertensile_plastics, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Supertensile Plastics <?php echo number_format($supertensile_plastics, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Supertensile Plastics" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Supertensile Plastics"
@@ -284,7 +234,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Synthetic Oil <?php echo number_format($synthetic_oil, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Synthetic Oil <?php echo number_format($synthetic_oil, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Synthetic Oil" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Synthetic Oil"
@@ -292,7 +242,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Test Cultures <?php echo number_format($test_cultures, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Test Cultures <?php echo number_format($test_cultures, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Test Cultures" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Test Cultures"
@@ -300,7 +250,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Transmitter <?php echo number_format($transmitter, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Transmitter <?php echo number_format($transmitter, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Transmitter" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Transmitter"
@@ -308,7 +258,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Viral Agent <?php echo number_format($viral_agent, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Viral Agent <?php echo number_format($viral_agent, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Viral Agent" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Viral Agent"
@@ -316,7 +266,7 @@
                     </div>
                     </p>
                     <p>
-                        <label>Water-Cooled CPU <?php echo number_format($water_cooled_cpu, 2, ',', '.');?> ISK/Unit</label>
+                        <label>Water-Cooled CPU <?php echo number_format($water_cooled_cpu, 2, '.', ',');?> ISK/Unit</label>
 
                     <div class="input-group form-control" id="Water-Cooled CPU" style="padding: 0; border: none;">
                         <input type="number" class="form-control text-right typeahead" placeholder="Water-Cooled CPU"
@@ -330,14 +280,6 @@
             <div class="panel panel-default" data-spy="affix" data-offset-top="450" data-offset-bottom="370" id="invoice-panel">
                 <div class="panel-heading">
                     <h3 class="panel-title"><strong>Invoice</strong>
-                        <label data-html="true" data-original-title="<b>Fees</b>" class="popover-reward text-info"
-                               data-toggle="popover" data-content="
-                    <span>
-			<p>In this invoice window you can see how the price is build up for each individual mineral</p>
-			<p>The <strong>Contract Value</strong> price is the total of the material values.</p>
-			<hr>
-                        <p>The <b>Contract Value</b> is what you have to use as <i>'I will receive'</i> in the contract.</p>
-                    </span>">[?]</label>
                     </h3>
                 </div>
                 <div class="panel-body">
@@ -379,79 +321,10 @@
 </div>
 <!-- Calculate -->
 
-<!-- Footer -->
-<div class="clearfix"></div>
-
-<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading" align="center">
-            <h3 class="panel-title"><strong>Buy Up Indexes brought to you by <span class="eve-link" onmouseover="popCorp($(this), 98259161, 'Lone Star Warriors');">Lone Star Warriors</span></strong></h3>
-        </div>
-        <div class="panel-body" align="center">
-            <ul class="social">
-                <li>
-                    <a href=
-                       "https://www.facebook.com/lonestarwarriorsgaming"><i class="fa">
-                        </i></a>
-                </li>
-
-                <li>
-                    <a href="https://twitter.com/lone_warriors"><i class=
-                                                                   "fb"></i></a>
-                </li>
-
-                <li>
-                    <a href=
-                       "https://plus.google.com/+lonestarwarriorsgaming"><i class="fc">
-                        </i></a>
-                </li>
-            </ul>
-
-            <p>
-                2015 Design by <a href="#">Joery Pigmans</a>. All rights
-                reserved.
-            </p>
-
-            <p>
-                EVE Online and the EVE logo are the registered trademarks
-                of CCP hf. All rights are reserved worldwide. All other
-                trademarks are the property of their respective owners. EVE
-                Online, the EVE logo, EVE and all associated logos and
-                designs are the intellectual property of CCP hf. All
-                artwork, screenshots, characters, vehicles, storylines,
-                world facts or other recognizable features of the
-                intellectual property relating to these trademarks are
-                likewise the intellectual property of CCP hf. CCP hf. has
-                granted permission to Joery Pigmans to use EVE Online and
-                all associated logos and designs for promotional and
-                information purposes on its website but does not endorse,
-                and is not in any way affiliated with, Joery Pigmans. CCP
-                is in no way responsible for the content on or functioning
-                of this website, nor can it be liable for any damage
-                arising from the use of this website.
-            </p>
-        </div>
-    </div>
-    <!-- Footer -->
-
-    <!-- Popups -->
-    <div class="hide" id="popcorp" style="background:white;">
-        <table style='border: 1px solid;'>
-            <thead>
-            <tr style='border-bottom: 1px solid;'>
-                <th colspan='3' style='padding-left:2px;' id="popcorp-name">&nbsp;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td width='64' height='64' style='padding:2px; background-repeat:no-repeat; background-position:center;' id="popcorp-image">&nbsp;</td>
-                <td style='padding-left:5px; padding-right:5px; padding-top:3px; vertical-align:top;' id="popcorp-content-1">&nbsp;</td>
-                <td style='padding-left:5px; padding-right:5px; padding-top:3px; vertical-align:top;' id="popcorp-content-2">&nbsp;</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- Popups -->
+<?php
+    PrintFooter();
+    PrintPopups();
+?>
 
     <!-- Clipboard -->
     <div class="modal" id="clipboard" tabindex="-1" role="dialog" aria-labelledby="clipboardLabel" aria-hidden="true" onkeydown="if (event.keyCode === 13) $('#clipboard').modal('hide');">
