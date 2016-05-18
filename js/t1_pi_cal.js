@@ -37,8 +37,8 @@ function calcNow() {
     var bacteriaUnits = calcInputGetValue('Bacteria_units');
     
     
-    var bacteriaReward = bacteriaUnits * bacteria;
-
+    //var bacteriaReward = bacteriaUnits * bacteria;
+    var bacteriaReward = 0.00;
     //var totalReward = bacteriaReward;
     var totalReward = 0.00;
 	
