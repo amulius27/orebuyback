@@ -23,20 +23,20 @@
     $value = 1.00 - ( $total_tax / 100.00 );
     
     //Get timestamp
-    $update = $db->fetchColumn('SELECT MAX(time) FROM IcePrices WHERE ItemId= :item', array('item' => 16262));
+    $update = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 16262));
     
-    $Clear_Icicle = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16262, 'time' => $update));
-    $Enriched_Clear_Icicle = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 17978, 'time' => $update));
-    $Glacial_Mass = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16263, 'time' => $update));
-    $Smooth_Glacial_Mass = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 17977, 'time' => $update));
-    $White_Glaze = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16265, 'time' => $update));
-    $Pristine_White_Glaze = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 17976, 'time' => $update));
-    $Blue_Ice = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16264, 'time' => $update));
-    $Thick_Blue_Ice = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 17975, 'time' => $update));
-    $Glare_Crust = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16266, 'time' => $update));
-    $Dark_Glitter = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16267, 'time' => $update));
-    $Gelidus = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16268, 'time' => $update));
-    $Krystallos = $db->fetchColumn('SELECT Price FROM IcePrices WHERE ItemId= :item AND Time= :time', array('id' => 16269, 'time' => $update));
+    $Clear_Icicle = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16262, 'time' => $update));
+    $Enriched_Clear_Icicle = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 17978, 'time' => $update));
+    $Glacial_Mass = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16263, 'time' => $update));
+    $Smooth_Glacial_Mass = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 17977, 'time' => $update));
+    $White_Glaze = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16265, 'time' => $update));
+    $Pristine_White_Glaze = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 17976, 'time' => $update));
+    $Blue_Ice = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16264, 'time' => $update));
+    $Thick_Blue_Ice = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 17975, 'time' => $update));
+    $Glare_Crust = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16266, 'time' => $update));
+    $Dark_Glitter = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16267, 'time' => $update));
+    $Gelidus = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16268, 'time' => $update));
+    $Krystallos = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :item AND Time= :time', array('id' => 16269, 'time' => $update));
 
 ?>
 
