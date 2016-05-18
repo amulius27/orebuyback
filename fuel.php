@@ -43,11 +43,6 @@
             resize();
         });
     </script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/typeahead.bundle.js"></script>
-    <script src="js/handlebars-v1.3.0.js"></script>
-    <script src="js/fuel_cal.js"></script>
 </head>
 <body>
 <?php
@@ -90,7 +85,7 @@
                     <div class="panel-body">
                         <p>
                             <label>Amarr Fuel Block <?php echo number_format($Amarr_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Amarr" style="padding: 0; border: none;">
+                            <div class="input-group form-control" id="Amarr_units" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Amarr_Fuel_Block" placeholder="Amarr Fuel Block" id="calc-input-Amarr_units-value">
                             </div>
                         </p>
