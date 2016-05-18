@@ -47,7 +47,7 @@ function calcNow() {
     $('#calc-output-bacteria-value').html(number_format(bacteriaReward) + ' ISK');
     
 
-    $('#calc-output-reward-value').html(number_format(totalReward) + ' ISK');
+    $('#calc-output-reward-value').html('0 ISK');
 
 
     return reward;
