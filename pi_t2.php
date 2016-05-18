@@ -90,7 +90,7 @@
             - This will open a "Copy to clipboard" window with a easy to copy number to use in the EVE Contract window.<br>
             <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 200-300 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
         <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
-                on: <?php echo $string = implode("", $update[0]); ?></strong></span>
+                on: <?php echo $string = implode("", $update); ?></strong></span>
         </div>
     </div>
 </div>
