@@ -1,7 +1,7 @@
 <?php  
     define('indexes', TRUE);
     require_once __DIR__.'/functions/registry.php';
-    
+    include 'misc/input_fuel.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,9 +43,9 @@
             resize();
         });
     </script>
-    <?php 
-        include 'misc/input_fuel.php';
-    ?>
+    <script>
+        var amarr = 1000.00;
+    </script>
 </head>
 <body>
 <?php
