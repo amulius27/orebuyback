@@ -101,7 +101,7 @@
 	var mercoxit = <?= $Mercoxit ?>;
 </script>
 
-    <script src="/../js/ore_cal.js"></script>
+    
 
 
    
