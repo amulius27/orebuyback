@@ -1,6 +1,6 @@
 <?php 
     define('indexes', TRUE);
-    include '../input_pi_t2.php';
+    include 'misc/input_pi_t2.php';
 ?>
 
 <!DOCTYPE html>
