@@ -1,6 +1,6 @@
 <?php 
     define('indexes', TRUE);
-    require_once '/../functions/registry.php';
+    require_once '/functions/registry.php';
     include 'misc/input_pi_t2.php';
 ?>
 

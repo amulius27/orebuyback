@@ -81,91 +81,91 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            <label>Bacteria <?php echo $Bacteria; ?> ISK/Unit</label>
+                            <label>Bacteria <?php echo number_format($Bacteria, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Bacteria" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Bacteria" placeholder="Bacteria" id="calc-input-Bacteria_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Biofuels <?php echo $Biofuels; ?> ISK/Unit</label>
+                            <label>Biofuels <?php echo number_format($Biofuels, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Biofuels" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Biofuels" placeholder="Biofuels" id="calc-input-Biofuels_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Biomass <?php echo $Biomass; ?> ISK/Unit</label>
+                            <label>Biomass <?php echo number_format($Biomass, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Biomass" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Biomass" placeholder="Biomass" id="calc-input-Biomass_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Chiral Structures <?php echo $Chiral_Structures; ?> ISK/Unit</label>
+                            <label>Chiral Structures <?php echo number_format($Chiral_Structures, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Chiral_Structures" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Chiral_Structures" placeholder="Chiral Structures" id="calc-input-Chiral_Structures_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Electrolytes <?php echo $Electrolytes; ?> ISK/Unit</label>
+                            <label>Electrolytes <?php echo number_format($Electrolytes, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Electrolytes" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Electrolytes" placeholder="Electrolytes" id="calc-input-Electrolytes_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Industrial Fibers <?php echo $Industrial_Fibers; ?> ISK/Unit</label>
+                            <label>Industrial Fibers <?php echo number_format($Industrial_Fibers, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Industrial_Fibers" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Industrial_Fibers" placeholder="Industrial Fibers" id="calc-input-industrial_fibers_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Oxidizing Compound <?php echo $Oxidizing_Compound; ?> ISK/Unit</label>
+                            <label>Oxidizing Compound <?php echo number_format($Oxidizing_Compound, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Oxydizing Compound" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Oxidizing_Compound" placeholder="Oxidizing Compound" id="calc-input-Oxidizing_Compound-value">
                             </div>
                         </p>
                         <p>
-                            <label>Oxygen <?php echo $Oxygen; ?> ISK/Unit</label>
+                            <label>Oxygen <?php echo number_format($Oxygen, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Oxygen" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Oxygen" placeholder="Oxygen" id="calc-input-Oxygen_pi_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Plasmoids <?php echo $Plasmoids; ?> ISK/Unit</label>
+                            <label>Plasmoids <?php echo number_format($Plasmoids, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Plasmoids" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Plasmoids" placeholder="Plasmoids" id="calc-input-Plasmoids_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Precious Metals <?php echo $Precious_Metals; ?> ISK/Unit</label>
+                            <label>Precious Metals <?php echo number_format($Precious_Metals, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Precious Metals" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Precious_Metals" placeholder="Precious Metals" id="calc-input-Precious_Metals_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Proteins <?php echo $Proteins; ?> ISK/Unit</label>
+                            <label>Proteins <?php echo number_format($Proteins, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Proteins" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Proteins" placeholder="Proteins" id="calc-input-Proteins_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Reactive Metals <?php echo $Reactive_Metals; ?> ISK/Unit</label>
+                            <label>Reactive Metals <?php echo number_format($Reactive_Metals, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Reactive Metals" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Reactive_Metals" placeholder="Reactive Metals" id="calc-input-Reactive_Metals_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Silicon <?php echo $Silicon; ?> ISK/Unit</label>
+                            <label>Silicon <?php echo number_format($Silicon, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Silicon" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Silicon" placeholder="Silicon" id="calc-input-Silicon_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Toxic Metals  <?php echo $Toxic_Metals; ?> ISK/Unit</label>
+                            <label>Toxic Metals  <?php echo number_format($Toxic_Metals, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Toxic Metals" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Toxic_Metals" placeholder="Toxic Metals" id="calc-input-Toxic_Metals_units-value">
                             </div>
                         </p>
                         <p>
-                            <label>Water <?php echo $Water; ?> ISK/Unit</label>
+                            <label>Water <?php echo number_format($Water, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Water" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Water" placeholder="Water" id="calc-input-Water_units-value">
                             </div>

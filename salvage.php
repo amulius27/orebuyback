@@ -82,7 +82,7 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            <label>Alloyed Tritanium Bar <?php echo number_format($AlloyedTritaniumBar, 2, '.', ',');?> ISK/Unit </label>
+                            <label>Alloyed Tritanium Bar <?php echo number_format($AlloyedTritaniumBar, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Alloyed Tritanium Bar" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" placeholder="Alloyed Tritanium Bar" id="calc-input-Alloyed_Tritanium_Bar_units-value">
                             </div>
