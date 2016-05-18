@@ -203,7 +203,7 @@ function calcNow() {
     var genEnhancedLivestockReward = genEnhancedLivestockUnits * genEnhancedLivestock;
     var livestockReward = livestockUnits * livestock;
     var mechanicalPartsReward = mechanicalPartsUnits * mechanicalParts;
-    var microfiberShieldingReward = microfiberShieldingUnits * microfibreShielding;
+    var microfiberShieldingReward = microfiberShieldingUnits * microfiberShielding;
     var miniatureElectronicsReward = miniatureElectronicsUnits * miniatureElectronics;
     var nanitesReward = nanitesUnits * nanites;
     var oxidesReward = oxidesUnits * oxides;
