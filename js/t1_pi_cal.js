@@ -38,7 +38,7 @@ $('#calc-input-Industrial_Fibers_units-value').on('propertychange change keyup p
     calcNow();
 });
 $('#calc-input-Industrial_Fibers_units-value').on('focusout', function(){
-    calcInputGetValue('industrial_fibers_units');
+    calcInputGetValue('Industrial_Fibers_units');
 });
 $('#calc-input-Oxidizing_Compound-value').on('propertychange change keyup paste input', function() {
     calcNow();
