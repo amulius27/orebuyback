@@ -40,8 +40,8 @@ DBClose($db);
 ?>
 
 <script>
-    var amarr = <?= $Amarr_Fuel ?>;
-    var caldari = <?= $Caldari_Fuel ?>;
-    var gallente = <?= $Gallente_Fuel ?>;
-    var minmatar = <?= $Minmatar_Fuel ?>;
+    var Amarr = <?= $Amarr_Fuel ?>;
+    var Caldari = <?= $Caldari_Fuel ?>;
+    var Gallente = <?= $Gallente_Fuel ?>;
+    var Minmatar = <?= $Minmatar_Fuel ?>;
 </script>
