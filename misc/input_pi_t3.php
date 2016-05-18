@@ -62,7 +62,7 @@
     var condensates = <?= $Condensates ?>;
     var cryoprotectant = <?= $Cryoprotectant_Solution ?>;
     var dataChips = <?= $Data_Chips ?>;
-    var biopaste = <?= $Biopaste ?>;
+    var biopaste = <?= $Gel_Matrix_Biopaste ?>;
     var guidanceSystems = <?= $Guidance_Systems ?>;
     var hazmatDetection = <?= $Hazmat_Detection ?>;
     var hermeticMembranes = <?= $Hermetic_Membranes ?>;
