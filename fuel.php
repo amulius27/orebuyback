@@ -43,15 +43,16 @@
             resize();
         });
     </script>
-    <script>
-        var amarr = 1000.00;
-    </script>
 </head>
 <body>
 <?php
     PrintNavBar();
     PrintTitle();
 ?>
+    
+    <script>
+        var amarr = 1000.00;
+    </script>
 
 <div class="container">
     <div class="panel panel-default">
