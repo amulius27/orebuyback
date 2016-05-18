@@ -57,6 +57,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
+    
     var biotech = <?= $Biotech ?>;
     var cameraDrones = <?= $Camera_Drones ?>;
     var condensates = <?= $Condensates ?>;
@@ -64,7 +65,7 @@
     var dataChips = <?= $Data_Chips ?>;
     var biopaste = <?= $Gel_Matrix_Biopaste ?>;
     var guidanceSystems = <?= $Guidance_Systems ?>;
-    var hazmatDetection = <?= $Hazmat_Detection ?>;
+    var hazmatDetection = <?= $Hazmat_Detection_Systems ?>;
     var hermeticMembranes = <?= $Hermetic_Membranes ?>;
     var hightechTransmitters = <?= $Hightech_Transmitters ?>;
     var industrialExplosives = <?= $Industrial_Explosives ?>;
