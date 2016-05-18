@@ -1,5 +1,7 @@
-<?php define('indexes', TRUE);
-include 'misc/input_salvage.php';
+<?php 
+    define('indexes', TRUE);
+    require_once __DIR__.'/functions/registry.php';
+    include 'misc/input_salvage.php';
 ?>
 
 <!DOCTYPE html>
