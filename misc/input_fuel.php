@@ -44,5 +44,4 @@ DBClose($db);
     var caldari = <?= $Caldari_Fuel ?>;
     var gallente = <?= $Gallente_Fuel ?>;
     var minmatar = <?= $Minmatar_Fuel ?>;
-    var helium = <?= $Helium_Isotopes ?>;
 </script>
