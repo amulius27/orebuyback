@@ -1,6 +1,6 @@
 <?php 
     define('indexes', TRUE);
-    require_once '/../functions/registry.php';
+    require_once '/functions/registry.php';
     include 'misc/input_salvage.php';
 ?>
 
@@ -90,265 +90,224 @@
                         <p>
                             <label>Armor Plates <?php echo number_format($ArmorPlates, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Armor Plates" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Armor Plates"
-                                   id="calc-input-Armor_Plates_units-value">
+                                <input type="number" class="form-control text-right typeahead" placeholder="Armor Plates" id="calc-input-Armor_Plates_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Artificial Neural Network <?php echo number_format($ArtificialNeuralNetwork, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Artificial Neural Network" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Artificial Neural Network"
-                                   id="calc-input-Artificial_Neural_Network_units-value">
+                                <input type="number" class="form-control text-right typeahead" placeholder="Artificial Neural Network" id="calc-input-Artificial_Neural_Network_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Broken Drone Transceiver <?php echo number_format($BrokenDroneTransceiver, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Broken Drone Transceiver" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Broken Drone Transceiver"
-                                   id="calc-input-Broken_Drone_Transceiver_units-value">
+                            <input type="number" class="form-control text-right typeahead" nmae="Broken_Drone_Transceiver" placeholder="Broken Drone Transceiver" id="calc-input-Broken_Drone_Transceiver_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Burned Logic Circuit <?php echo number_format($BurnedLogicCircuit, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Burned Logic Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Burned Logic Circuit"
-                                   id="calc-input-Burned_Logic_Circuit_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Burned_Logic_Circuit" placeholder="Burned Logic Circuit" id="calc-input-Burned_Logic_Circuit_units-value">
                             </div>
                         </p>
-                        
-                         
-                        
-                        
-                        <p style="text-align:left;"><strong>Capacitor Console <span style="float:right;"><?php echo number_format($CapacitorConsole, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Capacitor Console" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Capacitor Console"
-                                   id="calc-input-Capacitor_Console_units-value">
-                        </div>
+                        <p>
+                            <label>Capacitor Console <?php echo number_format($CapacitorConsole, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Capacitor Console" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Capacitor_Console" placeholder="Capacitor Console" id="calc-input-Capacitor_Console_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Charred Micro Circuit <span style="float:right;"><?php echo number_format($CharredMicroCircuit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Charred Micro Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Charred Micro Circuit"
-                                   id="calc-input-Charred_Micro_Circuit_units-value">
-                        </div>
+                        <p>
+                            <label>Charred Micro Circuit <?php echo number_format($CharredMicroCircuit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Charred Micro Circuit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Charred_Micro_Circuit" placeholder="Charred Micro Circuit" id="calc-input-Charred_Micro_Circuit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Conductive Polymer <span style="float:right;"><?php echo number_format($ConductivePolymer, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Conductive Polymer" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Conductive Polymer"
-                                   id="calc-input-Conductive_Polymer_units-value">
-                        </div>
+                        <p>
+                            <label>Conductive Polymer <?php echo number_format($ConductivePolymer, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Conductive Polymer" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Conductive_Polymer" placeholder="Conductive Polymer" id="calc-input-Conductive_Polymer_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Conductive Thermoplastic <span style="float:right;"><?php echo number_format($ConductiveThermoplastic, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Conductive Thermoplastic" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Conductive Thermoplastic"
-                                   id="calc-input-Conductive_Thermoplastic_units-value">
-                        </div>
+                        <p>
+                            <label>Conductive Thermoplastic <?php echo number_format($ConductiveThermoplastic, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Conductive Thermoplastic" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Conductive_Thermoplastic" placeholder="Conductive Thermoplastic" id="calc-input-Conductive_Thermoplastic_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Contaminated Lorentz Fluid <span style="float:right;"><?php echo number_format($ContaminatedLorentzFluid, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Contaminated Lorentz Fluid" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Contaminated Lorentz Fluid"
-                                   id="calc-input-Contaminated_Lorentz_Fluid_units-value">
-                        </div>
+                        <p>
+                            <label>Contaminated Lorentz Fluid <?php echo number_format($ContaminatedLorentzFluid, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Contaminated Lorentz Fluid" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Contaminated_Lorentz_Fluid" placeholder="Contaminated Lorentz Fluid" id="calc-input-Contaminated_Lorentz_Fluid_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Contaminated Nanite Compound <span style="float:right;"><?php echo number_format($ContaminatedNaniteCompound, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Contaminated Nanite Compound" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Contaminated Nanite Compound"
-                                   id="calc-input-Contaminated_Nanite_Compound_units-value">
-                        </div>
+                        <p>
+                            <label>Contaminated Nanite Compound <?php echo number_format($ContaminatedNaniteCompound, 2, '.', ',');?> ISK/Unit/<label>
+                            <div class="input-group form-control" id="Contaminated Nanite Compound" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Contaminated_Nanite_Compound" placeholder="Contaminated Nanite Compound" id="calc-input-Contaminated_Nanite_Compound_units-value">
+                            </div>   
                         </p>
-                        <p style="text-align:left;"><strong>Current Pump<span style="float:right;"> <?php echo number_format($CurrentPump, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Current Pump" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Current Pump"
-                                   id="calc-input-Current_Pump_units-value">
-                        </div>
+                        <p>
+                            <label>Current Pump <?php echo number_format($CurrentPump, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Current Pump" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Current_Pump" placeholder="Current Pump" id="calc-input-Current_Pump_units-value">
+                            </div>                              
                         </p>
-                        <p style="text-align:left;"><strong>Damaged Artificial Neural Network<span style="float:right;"> <?php echo number_format($DamagedArtificialNeuralNetwork, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Damaged Artificial Neural Network" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Damaged Artificial Neural Network"
-                                   id="calc-input-Damaged_Artificial_Neural_Network_units-value">
-                        </div>
+                        <p>
+                            <label>Damaged Artificial Neural Network <?php echo number_format($DamagedArtificialNeuralNetwork, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Damaged Artificial Neural Network" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Damaged_Artifical_Neural_Network" placeholder="Damaged Artificial Neural Network" id="calc-input-Damaged_Artificial_Neural_Network_units-value">
+                            </div>    
                         </p>
-                        <p style="text-align:left;"><strong>Defective Current Pump <span style="float:right;"> <?php echo number_format($DefectiveCurrentPump, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Defective Current Pump" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Defective Current Pump"
-                                   id="calc-input-Defective_Current_Pump_units-value">
-                        </div>
+                        <p>
+                            <label>Defective Current Pump <?php echo number_format($DefectiveCurrentPump, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Defective Current Pump" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Defective_Current_Pump" placeholder="Defective Current Pump" id="calc-input-Defective_Current_Pump_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Drone Transceiver<span style="float:right;"> <?php echo number_format($DroneTransceiver, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Drone Transceiver" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Drone Transceiver"
-                                   id="calc-input-Drone_Transceiver_units-value">
-                        </div>
+                        <p>
+                            <label>Drone Transceiver <?php echo number_format($DroneTransceiver, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Drone Transceiver" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Drone_Transceiver" placeholder="Drone Transceiver" id="calc-input-Drone_Transceiver_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Enhanced Ward Console<span style="float:right;">  <?php echo number_format($EnhancedWardConsole, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Enhanced Ward Console" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Enhanced Ward Console"
-                                   id="calc-input-Enhanced_Ward_Console_units-value">
-                        </div>
+                        <p>
+                            <label>Enhanced Ward Console <?php echo number_format($EnhancedWardConsole, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Enhanced Ward Console" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Enhanced_Ward_Console" placeholder="Enhanced Ward Console" id="calc-input-Enhanced_Ward_Console_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Fried Interface Circuit <span style="float:right;"><?php echo number_format($FriedInterfaceCircuit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Fried Interface Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Fried Interface Circuit"
-                                   id="calc-input-Fried_Interface_Circuit_units-value">
-                        </div>
+                        <p>
+                            <label>Fried Interface Circuit <?php echo number_format($FriedInterfaceCircuit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Fried Interface Circuit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Fried_Interface_Circuit" placeholder="Fried Interface Circuit" id="calc-input-Fried_Interface_Circuit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Impetus Console  <span style="float:right;"><?php echo number_format($ImpetusConsole, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Impetus Console" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Impetus Console"
-                                   id="calc-input-Impetus_Console_units-value">
-                        </div>
+                        <p>
+                            <label>Impetus Console <?php echo number_format($ImpetusConsole, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Impetus Console" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Impetus_Console" placeholder="Impetus Console" id="calc-input-Impetus_Console_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Intact Armor Plates<span style="float:right;"> <?php echo number_format($IntactArmorPlates, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Intact Armor Plates" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Intact Armor Plates"
-                                   id="calc-input-Intact_Armor_Plates_units-value">
-                        </div>
+                        <p>
+                            <label>Intact Armor Plates <?php echo number_format($IntactArmorPlates, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Intact Armor Plates" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Intact_Armor_Plates" placeholder="Intact Armor Plates" id="calc-input-Intact_Armor_Plates_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Intact Shield Emitter <span style="float:right;"> <?php echo number_format($IntactShieldEmitter, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Intact Shield Emitter" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Intact Shield Emitter"
-                                   id="calc-input-Intact_Shield_Emitter_units-value">
-                        </div>
+                        <p>
+                            <label>Intact Shield Emitter <?php echo number_format($IntactShieldEmitter, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Intact Shield Emitter" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Intact_Shield_Emitter" placeholder="Intact Shield Emitter" id="calc-input-Intact_Shield_Emitter_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Interface Circuit<span style="float:right;"> <?php echo number_format($InterfaceCircuit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Interface Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Interface Circuit"
-                                   id="calc-input-Interface_Circuit_units-value">
-                        </div>
+                        <p>
+                            <label>Interface Circuit <?php echo number_format($InterfaceCircuit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Interface Circuit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Interface_Circuit" placeholder="Interface Circuit" id="calc-input-Interface_Circuit_units-value">
+                            </div>                                
                         </p>
-                        <p style="text-align:left;"><strong>Logic Circuit <span style="float:right;"> <?php echo number_format($LogicCircuit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Logic Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Logic Circuit"
-                                   id="calc-input-Logic_Circuit_units-value">
-                        </div>
+                        <p>
+                            <label>Logic Circuit <?php echo number_format($LogicCircuit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Logic Circuit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Logic_Circuit" placeholder="Logic Circuit" id="calc-input-Logic_Circuit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Lorentz Fluid <span style="float:right;"> <?php echo number_format($LorentzFluid, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Lorentz Fluid" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Lorentz Fluid"
-                                   id="calc-input-Lorentz_Fluid_units-value">
-                        </div>
+                        <p>
+                            <label>Lorentz Fluid <?php echo number_format($LorentzFluid, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Lorentz Fluid" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Lorentz_Fluid" placeholder="Lorentz Fluid" id="calc-input-Lorentz_Fluid_units-value">
+                            </div>
+                        </p>    
+                        <p>
+                            <label>Malfunctioning Shield Emitter <?php echo number_format($MalfunctioningShieldEmitter, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Malfunctioning Shield Emitter" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Malfunctioning_Shield_Emitter" placeholder="Malfunctioning Shield Emitter" id="calc-input-Malfunctioning_Shield_Emitter_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Malfunctioning Shield Emitter  <span style="float:right;"><?php echo number_format($MalfunctioningShieldEmitter, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Malfunctioning Shield Emitter" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Malfunctioning Shield Emitter"
-                                   id="calc-input-Malfunctioning_Shield_Emitter_units-value">
-                        </div>
+                        <p>
+                            <label>Melted Capacitor Console <?php echo number_format($MeltedCapacitorConsole, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Melted Capacitor Console" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Melted_Capacitor_Console" placeholder="Melted Capacitor Console" id="calc-input-Melted_Capacitor_Console_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Melted Capacitor Console <span style="float:right;"><?php echo number_format($MeltedCapacitorConsole, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Melted Capacitor Console" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Melted Capacitor Console"
-                                   id="calc-input-Melted_Capacitor_Console_units-value">
-                        </div>
+                        <p>
+                            <label>Micro Circuit <?php echo number_format($MicroCircuit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Micro Circuit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Micro_Circuit" placeholder="Micro Circuit" id="calc-input-Micro_Circuit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Micro Circuit  <span style="float:right;"><?php echo number_format($MicroCircuit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Micro Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Micro Circuit"
-                                   id="calc-input-Micro_Circuit_units-value">
-                        </div>
+                        <p>
+                            <label>Nanite Compound <?php echo number_format($NaniteCompound, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Nanite Compound" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Nanite_Compound" placeholder="Nanite Compound" id="calc-input-Nanite_Compound_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Nanite Compound <span style="float:right;"><?php echo number_format($NaniteCompound, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Nanite Compound" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Nanite Compound"
-                                   id="calc-input-Nanite_Compound_units-value">
-                        </div>
+                        <p>
+                            <label>Power Circuit <?php echo number_format($PowerCircuit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Power Circuit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Power_Circuit" placeholder="Power Circuit" id="calc-input-Power_Circuit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Power Circuit  <span style="float:right;"><?php echo number_format($PowerCircuit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Power Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Power Circuit"
-                                   id="calc-input-Power_Circuit_units-value">
-                        </div>
+                        <p>
+                            <label>Power Conduit <?php echo number_format($PowerConduit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Power Conduit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Power_Conduit" placeholder="Power Conduit" id="calc-input-Power_Conduit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Power Conduit <span style="float:right;"><?php echo number_format($PowerConduit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Power Conduit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Power Conduit"
-                                   id="calc-input-Power_Conduit_units-value">
-                        </div>
+                        <p>
+                            <label>Scorched Telemetry Processor <?php echo number_format($ScorchedTelemetryProcessor, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Scorched Telemetry Processor" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Scorched_Telemetry_Processor" placeholder="Scorched Telemetry Processor" id="calc-input-Scorched_Telemetry_Processor_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Scorched Telemetry Processor  <span style="float:right;"><?php echo number_format($ScorchedTelemetryProcessor, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Scorched Telemetry Processor" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Scorched Telemetry Processor"
-                                   id="calc-input-Scorched_Telemetry_Processor_units-value">
-                        </div>
+                        <p>
+                            <label>Single-crystal Superalloy I-Beam <?php echo number_format($SingleCrystalSuperalloyIBeam, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Single-crystal Superalloy I-beam" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Single-Crystal_Superalloy_I-Beam" placeholder="Single-crystal Superalloy I-Beam" id="calc-input-Single_crystal_Superalloy_I_beam_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Single-crystal Superalloy I-beam <span style="float:right;"><?php echo number_format($SingleCrystalSuperalloyIBeam, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Single-crystal Superalloy I-beam" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Single-crystal Superalloy I-beam"
-                                   id="calc-input-Single_crystal_Superalloy_I_beam_units-value">
-                        </div>
+                        <p>
+                            <label>Smashed Trigger Unit <?php echo number_format($SmashedTriggerUnit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Smashed Trigger" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Smashed_Trigger" placeholder="Smashed Trigger" id="calc-input-Smashed_Trigger_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Smashed Trigger Unit <span style="float:right;"><?php echo number_format($SmashedTriggerUnit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Smashed Trigger" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Smashed Trigger"
-                                   id="calc-input-Smashed_Trigger_units-value">
-                        </div>
+                        <p>
+                            <label>Tangled Power Conduit <?php echo number_format($TangledPowerConduit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Tangled Power Conduit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Tangled_Power_Conduit" placeholder="Tangled Power Conduit" id="calc-input-Tangled_Power_Conduit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Tangled Power Conduit <span style="float:right;"><?php echo number_format($TangledPowerConduit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Tangled Power Conduit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Tangled Power Conduit"
-                                   id="calc-input-Tangled_Power_Conduit_units-value">
-                        </div>
+                        <p>
+                            <label>Telemetry Processor <?php echo number_format($TelemetryProcessor, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Telemetry Processor" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Telemetry_Processor" placeholder="Telemetry Processor" id="calc-input-Telemetry_Processor_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Telemetry Processor <span style="float:right;"><?php echo number_format($TelemetryProcessor, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Telemetry Processor" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Telemetry Processor"
-                                   id="calc-input-Telemetry_Processor_units-value">
-                        </div>
+                        <p>
+                            <label>Thruster Console <?php echo number_format($ThrusterConsole, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Thruster Console" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Thruster_Console" placeholder="Thruster Console" id="calc-input-Thruster_Console_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Thruster Console <span style="float:right;"><?php echo number_format($ThrusterConsole, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Thruster Console" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Thruster Console"
-                                   id="calc-input-Thruster_Console_units-value">
-                        </div>
+                        <p>
+                            <label>Trigger Unit <?php echo number_format($TriggerUnit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Trigger Unit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Trigger_Unit" placeholder="Trigger Unit" id="calc-input-Trigger_Unit_units-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Trigger Unit  <span style="float:right;"><?php echo number_format($TriggerUnit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Trigger Unit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Trigger Unit"
-                                   id="calc-input-Trigger_Unit_units-value">
-                        </div>
+                        <p>
+                            <label>Tripped Power Circuit <?php echo number_format($TrippedPowerCircuit, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Tripped Power Circuit" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Tripped_Power_Circuit" placeholder="Tripped Power Circuit" id="calc-input-Tripped_Power_Circuit-value">
+                            </div>
                         </p>
-                        <p style="text-align:left;"><strong>Tripped Power Circuit <span style="float:right;"><?php echo number_format($TrippedPowerCircuit, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Tripped Power Circuit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Tripped Power Circuit"
-                                   id="calc-input-Tripped_Power_Circuit-value">
-                        </div>
-                        </p>
-                        <p style="text-align:left;"><strong>Ward Console  <span style="float:right;"><?php echo number_format($WardConsole, 2, '.', ',');?> ISK/Unit</span></strong></p>
-
-                        <div class="input-group form-control" id="Ward Console" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Ward Console"
-                                   id="calc-input-Ward_Console_units-value">
-                        </div>
+                        <p>
+                            <label>Ward Console <?php echo number_format($WardConsole, 2, '.', ',');?> ISK/Unit</label>
+                            <div class="input-group form-control" id="Ward Console" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="Ward_Console" placeholder="Ward Console" id="calc-input-Ward_Console_units-value">
+                            </div>
                         </p>
                     </div>
                 </div>
@@ -399,8 +358,8 @@
                         <p id="calc-output-row">Total Ward Console value <span class="pull-right"><span id="calc-output-Ward_Console-value"></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
-                                <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
-                                <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
+                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
                         </p>
                         <br>
                     </div>

@@ -20,13 +20,9 @@ function PrintIndexPage() {
               <div class=\"view view-first\"> <a href=\"pi_t3.php\"><img src=\"https://image.eveonline.com/Type/2869_64.png\" /></a> </div>
               <div class=\"view view-first\"> <a href=\"pi_t4.php\"><img src=\"https://image.eveonline.com/Type/2345_64.png\" /></a> </div>
               <div class=\"clearfix\"></div>
-              <h3 class=\"page-header\"> Gas Cloud Materials <strong>(Work In Progress)</strong></h3>
-              <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/25268_64.png\" />
-                <div class=\"mask\"> <a href=\"booster.php\" class=\"info\">Booster Gas</a> </div>
-              </div>
-              <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/30375_64.png\" />
-                <div class=\"mask\"> <a href=\"full.php\" class=\"info\">Fullerenes</a> </div>
-              </div>
+              <h3 class=\"page-header\"> Gas Cloud Materials <strong>(Coming Soon)</strong></h3>
+              <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/25268_64.png\" /></div>
+              <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/30375_64.png\" /></div>
               <div class=\"clearfix\"></div>
               <h3 class=\"page-header\"> Salvage Materials <strong>(Work In Progress)</strong></h3>
               <div class=\"view view-first\"><a href=\"salvage.php\"><img src=\"https://image.eveonline.com/Type/25605_64.png\" /></a> </div>
