@@ -1,4 +1,4 @@
-/* global biocells, consumerElectronics, constructionBlocks, enrichedUranium, coolant, fertilizer, genEnhancedLivestock, mechanica, microfiberShieldinglParts, livestock, miniatureElectronics, nanites, microfiberShielding, mechanicalParts, oxides, polytextiles, polyaramids, rocketFuel, superconducto, supertensilePlasticsrs, silicateGlass, superconductors, supertensilePlastics, syntheticOil, testCultures, transmitter, viralAgent, waterCooledCpu */
+/* global biocells, consumerElectronics, constructionBlocks, enrichedUranium, coolant, fertilizer, genEnhancedLivestock, mechanica, microfiberShieldinglParts, livestock, miniatureElectronics, nanites, microfiberShielding, mechanicalParts, oxides, polytextiles, polyaramids, rocketFuel, superconducto, supertensilePlasticsrs, silicateGlass, superconductors, supertensilePlastics, syntheticOil, testCultures, transmitter, viralAgent, waterCooledCpu, microfibreShielding */
 
 $(document).ready(function() {
     calcNow();
@@ -205,7 +205,7 @@ function calcNow() {
     var genEnhancedLivestockReward = genEnhancedLivestockUnits * genEnhancedLivestock;
     var livestockReward = livestockUnits * livestock;
     var mechanicalPartsReward = mechanicalPartsUnits * mechanicalParts;
-    var microfiberShieldingReward = microfiberShieldingUnits * microfiberShielding;
+    var microfiberShieldingReward = microfiberShieldingUnits * microfibreShielding;
     var miniatureElectronicsReward = miniatureElectronicsUnits * miniatureElectronics;
     var nanitesReward = nanitesUnits * nanites;
     var oxidesReward = oxidesUnits * oxides;
