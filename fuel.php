@@ -116,10 +116,10 @@
                         <h3 class="panel-title"> <strong>Invoice</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <p id="calc-output-row">Total Amarr Fuel Block value <span class="pull-right"><span id="calc-output-Amarr-value"></span></p>
-                        <p id="calc-output-row">Total Caldari Fuel Block value <span class="pull-right"><span id="calc-output-Caldari-value"></span></p>
-                        <p id="calc-output-row">Total Gallente Fuel Block value<span class="pull-right"><span id="calc-output-Gallente-value"></span></p>
-                        <p id="calc-output-row">Total Minmatar Fuel Block value <span class="pull-right" id="calc-output-Minmatar-value"></span></p>
+                        <p id="calc-output-row">Total Amarr Fuel Block value <span class="pull-right"><span id="calc-output-Amarr-value"></span></span></p>
+                        <p id="calc-output-row">Total Caldari Fuel Block value <span class="pull-right"><span id="calc-output-Caldari-value"></span></span></p>
+                        <p id="calc-output-row">Total Gallente Fuel Block value<span class="pull-right"><span id="calc-output-Gallente-value"></span></span></p>
+                        <p id="calc-output-row">Total Minmatar Fuel Block value <span class="pull-right" id="calc-output-Minmatar-value"></span></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
                                 <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
