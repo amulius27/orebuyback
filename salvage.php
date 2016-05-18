@@ -1,5 +1,5 @@
 <?php define('indexes', TRUE);
-include '../input_salvage.php';
+include 'misc/input_salvage.php';
 ?>
 
 <!DOCTYPE html>
