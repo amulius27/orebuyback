@@ -1,6 +1,6 @@
 <?php 
     define('indexes', TRUE);
-    require_once '/functions/registry.php';
+    require_once __DIR__.'/functions/registry.php';
     include 'misc/input_pi_t4.php';
 ?>
 
