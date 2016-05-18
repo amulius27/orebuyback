@@ -42,83 +42,8 @@
     </script>
 </head>
 <body>
-<!--Navigation-->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.php"><img src="images/logo-wide.png" style="margin-top: -7px;"></a>
-    </div>
-    <div class="collapse navbar-collapse pull-right">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li><a href="../../index.html">Mainpage</a></li>
-            <li><a href="../../eve.html">Eve Page</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><img
-                        src="images/settings.png"><b class="caret"></b></a>
-                <ul class="dropdown-menu pull-right">
-                    <li class="dropdown-header">Applications</li>
-                    <li><a href="#">EvE Online Applications</a></li>
-                    <li><a href="#" onclick="clearCookies();location.reload();">Clear all cookies</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-<!--Navigation-->
-
-<div class="central-header">
-    <h1>Buying to make your lives easier.</h1>
-    <h4 class="text-danger">These pages are still undergoing heavy development. Report any issues on our public
-        forums!</h4>
-</div>
-<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading" align="center">
-            <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Instruction Sheet</strong></span><br></h3>
-        </div>
-        <div class="panel-body" align="center">
-            - In the Calculator below you can enter the amounts for each Raw PI material that you want to sell.<br>
-            - Once done you can see the total value of each item and the final price in the <strong>Invoice</strong>
-            panel.<br>
-            - All you have to do now is click on the <strong>Contract Value</strong> price that is given<br>
-            - This will open a "Copy to clipboard" window with a easy to copy number to use in the EVE Contract window.<br>
-            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 200-300 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
-        <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
-                on: <?php echo $string = implode("", $update); ?></strong></span>
-        </div>
-    </div>
-</div>
 
 <div class="clearfix"></div>
-
-<div class="container">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Contract Type</th>
-            <th class="text-right">Availability</th>
-            <th class="text-right">I will receive</th>
-            <th class="text-right">Expire</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Item Exchange</td>
-            <td class="text-right">My Corporation or <strong><span class="eve-link" onmouseover="popCorp($(this), 98259161, 'Lone Star Warriors');">Lone Star Warriors</span></strong>
-            </td>
-            <td class="text-right">Value from Invoice below</td>
-            <td class="text-right">2 Weeks</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
 <!-- Calculate -->
 
 <div class="container">
