@@ -48,7 +48,7 @@
     $superconductors = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 9838, 'time' => $update));
     $supertensile_plastics = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2312, 'time' => $update));
     $synthetic_oil = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 3691, 'time' => $update));
-    $test_cutlures = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2319, 'time' => $update));
+    $testcutlures = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2319, 'time' => $update));
     $transmitter = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 9840, 'time' => $update));
     $viral_agent = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 3775, 'time' => $update));
     $water_cooled_cpu = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2328, 'time' => $update));
@@ -81,7 +81,7 @@
     var superconductors = <?= $superconductors ?>;
     var supertensilePlastics = <?= $supertensile_plastics ?>;
     var syntheticOil = <?= $synthetic_oil ?>;
-    var testCultures = <?= $test_cultures ?>;
+    var testCultures = <?= $testcultures ?>;
     var transmitter = <?= $transmitter ?>;
     var viralAgent = <?= $viral_agent ?>;
     var waterCooledCpu = <?= $water_cooled_cpu ?>;
