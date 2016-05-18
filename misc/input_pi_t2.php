@@ -70,7 +70,7 @@
     var genEnhancedLivestock = <?= $gen_enhanced_livestock ?>;
     var livestock = <?= $livestock ?>;
     var mechanicalParts = <?= $mechanical_parts ?>;
-    var microfibreShielding = <?= $microfiber_shielding ?>;
+    var microfiberShielding = <?= $microfiber_shielding ?>;
     var miniatureElectronics = <?= $miniature_electronics ?>;
     var nanites = <?= $nanites ?>;
     var oxides = <?= $oxides ?>;

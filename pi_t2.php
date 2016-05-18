@@ -452,7 +452,7 @@
     <!-- Popups -->
 
     <!-- Clipboard -->
-    <div class="modal" id="clipboard" tabindex="-1" role="dialog" aria-labelledby="clipboardLabel" aria-hidden="true" onkeydown="if (event.keyCode == 13) $('#clipboard').modal('hide');">
+    <div class="modal" id="clipboard" tabindex="-1" role="dialog" aria-labelledby="clipboardLabel" aria-hidden="true" onkeydown="if (event.keyCode === 13) $('#clipboard').modal('hide');">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
