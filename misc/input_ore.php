@@ -82,23 +82,23 @@
 ?>
     
 
-    <script>
-	var veldspar = <?= $Veldspar ?>;
-	var scordite = <?= $Scordite ?>;
-	var pyroxeres = <?= $Pyroxeres ?>;
-	var plagioclase = <?= $Plagioclase ?>;
-	var omber = <?= $Omber ?>;
-	var kernite = <?= $Kernite ?>;
-	var jaspet = <?= $Jaspet ?>;
-	var hemorphite = <?= $Hemorphite ?>;
-	var hedbergite = <?= $Hedbergite ?>;	
-	var gneiss = <?= $Gneiss ?>;
-	var dark_ochre = <?= $Dark_Ochre ?>;
-	var spodumain = <?= $Spodumain ?>;
-	var crokite = <?= $Crokite ?>;
-	var bistot = <?= $Bistot ?>;
-	var arkonor = <?= $Arkonor ?>;
-	var mercoxit = <?= $Mercoxit ?>;
+<script>
+    var veldspar = <?= $Veldspar ?>;
+    var scordite = <?= $Scordite ?>;
+    var pyroxeres = <?= $Pyroxeres ?>;
+    var plagioclase = <?= $Plagioclase ?>;
+    var omber = <?= $Omber ?>;
+    var kernite = <?= $Kernite ?>;
+    var jaspet = <?= $Jaspet ?>;
+    var hemorphite = <?= $Hemorphite ?>;
+    var hedbergite = <?= $Hedbergite ?>;	
+    var gneiss = <?= $Gneiss ?>;
+    var dark_ochre = <?= $Dark_Ochre ?>;
+    var spodumain = <?= $Spodumain ?>;
+    var crokite = <?= $Crokite ?>;
+    var bistot = <?= $Bistot ?>;
+    var arkonor = <?= $Arkonor ?>;
+    var mercoxit = <?= $Mercoxit ?>;
 </script>
 
     

@@ -38,7 +38,7 @@ $Minmatar_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE Item
 DBClose($db);
 
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+
 <script>
     var amarr = <?= $Amarr_Fuel ?>;
     var caldari = <?= $Caldari_Fuel ?>;
