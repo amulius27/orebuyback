@@ -43,6 +43,11 @@
     </script>
 </head>
 <body>
+    
+<?php 
+    PrintNavBar();
+    PrintTitle();    
+?>
 
 <div class="clearfix"></div>
 <!-- Calculate -->
