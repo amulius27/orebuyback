@@ -34,10 +34,10 @@ $('#calc-input-Electrolytes_units-value').on('propertychange change keyup paste 
 $('#calc-input-Electrolytes_units-value').on('focusout', function(){
     calcInputGetValue('Electrolytes_units');
 });
-$('#calc-input-industrial_fibers_units-value').on('propertychange change keyup paste input', function() {
+$('#calc-input-Industrial_Fibers_units-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
-$('#calc-input-industrial_fibers_units-value').on('focusout', function(){
+$('#calc-input-Industrial_Fibers_units-value').on('focusout', function(){
     calcInputGetValue('industrial_fibers_units');
 });
 $('#calc-input-Oxidizing_Compound-value').on('propertychange change keyup paste input', function() {

@@ -113,7 +113,7 @@
                         <p>
                             <label>Industrial Fibers <?php echo number_format($Industrial_Fibers, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Industrial_Fibers" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Industrial_Fibers" placeholder="Industrial Fibers" id="calc-input-industrial_fibers_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Industrial_Fibers" placeholder="Industrial Fibers" id="calc-input-Industrial_Fibers_units-value">
                             </div>
                         </p>
                         <p>
