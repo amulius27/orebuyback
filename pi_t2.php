@@ -90,7 +90,7 @@
             panel.<br>
             - All you have to do now is click on the <strong>Contract Value</strong> price that is given<br>
             - This will open a "Copy to clipboard" window with a easy to copy number to use in the EVE Contract window.<br>
-            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 200-300 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
+            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract between 500 mil ISK at a time, this to allow for faster processing of the contracts.</strong></span>
         <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated
                 on: <?php echo $string = implode("", $update); ?></strong></span>
         </div>
