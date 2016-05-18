@@ -1,4 +1,8 @@
-
+<?php 
+    define('indexes', TRUE);
+    require_once __DIR__.'/functions/registry.php';
+    include 'misc/input_pi_t2.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,11 +41,7 @@
             resize();
         });
     </script>
-    <?php 
-    define('indexes', TRUE);
-    require_once __DIR__.'/functions/registry.php';
-    include 'misc/input_pi_t2.php';
-?>
+
 </head>
 <body>
 <!--Navigation-->
