@@ -83,108 +83,93 @@
                 <div class="panel-body">
                     <p>
                         <label>Bacteria <?php echo $bacteria; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Bacteria" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Bacteria" placeholder="Bacteria" id="calc-input-Bacteria_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Bacteria" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Bacteria" placeholder="Bacteria" id="calc-input-Bacteria_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Biofuels <?php echo $biofuels; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Biofuels" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Biofuels" placeholder="Biofuels" id="calc-input-Biofuels_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Biofuels" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Biofuels" placeholder="Biofuels" id="calc-input-Biofuels_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Biomass <?php echo $biomass; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Biomass" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Biomass" placeholder="Biomass" id="calc-input-Biomass_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Biomass" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Biomass" placeholder="Biomass" id="calc-input-Biomass_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Chiral Structures <?php echo $chiral_structures; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Chiral_Structures" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Chiral_Structures" placeholder="Chiral Structures" id="calc-input-Chiral_Structures_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Chiral_Structures" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Chiral_Structures" placeholder="Chiral Structures" id="calc-input-Chiral_Structures_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Electrolytes <?php echo $electrolytes; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Electrolytes" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Electrolytes" placeholder="Electrolytes" id="calc-input-Electrolytes_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Electrolytes" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Electrolytes" placeholder="Electrolytes" id="calc-input-Electrolytes_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Industrial Fibers <?php echo $industrial_fibers; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Industrial_Fibers" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Industrial_Fibers" placeholder="Industrial Fibers" id="calc-input-industrial_fibers_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Industrial_Fibers" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Industrial_Fibers" placeholder="Industrial Fibers" id="calc-input-industrial_fibers_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Oxidizing Compound <?php echo $oxidizing_compound; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Oxydizing Compound" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Oxidizing_Compound" placeholder="Oxidizing Compound" id="calc-input-Oxidizing_Compound-value">
-                    </div>
+                        <div class="input-group form-control" id="Oxydizing Compound" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Oxidizing_Compound" placeholder="Oxidizing Compound" id="calc-input-Oxidizing_Compound-value">
+                        </div>
                     </p>
                     <p>
                         <label>Oxygen <?php echo $oxygen; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Oxygen" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Oxygen" placeholder="Oxygen" id="calc-input-Oxygen_pi_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Oxygen" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Oxygen" placeholder="Oxygen" id="calc-input-Oxygen_pi_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Plasmoids <?php echo $plasmoids; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Plasmoids" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Plasmoids" placeholder="Plasmoids" id="calc-input-Plasmoids_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Plasmoids" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Plasmoids" placeholder="Plasmoids" id="calc-input-Plasmoids_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Precious Metals <?php echo $precious_metals; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Precious Metals" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Precious_Metals" placeholder="Precious Metals" id="calc-input-Precious_Metals_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Precious Metals" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Precious_Metals" placeholder="Precious Metals" id="calc-input-Precious_Metals_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Proteins <?php echo $proteins; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Proteins" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Proteins" placeholder="Proteins" id="calc-input-Proteins_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Proteins" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Proteins" placeholder="Proteins" id="calc-input-Proteins_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Reactive Metals <?php echo $reactive_metals; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Reactive Metals" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Reactive_Metals" placeholder="Reactive Metals" id="calc-input-Reactive_Metals_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Reactive Metals" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Reactive_Metals" placeholder="Reactive Metals" id="calc-input-Reactive_Metals_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Silicon <?php echo $silicon; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Silicon" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Silicon" placeholder="Silicon" id="calc-input-Silicon_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Silicon" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Silicon" placeholder="Silicon" id="calc-input-Silicon_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Toxic Metals  <?php echo $toxic_metals; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Toxic Metals" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Toxic_Metals" placeholder="Toxic Metals" id="calc-input-Toxic_Metals_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Toxic Metals" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Toxic_Metals" placeholder="Toxic Metals" id="calc-input-Toxic_Metals_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Water <?php echo $water; ?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Water" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" name="Water" placeholder="Water" id="calc-input-Water_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Water" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Water" placeholder="Water" id="calc-input-Water_units-value">
+                        </div>
                     </p>
                 </div>
             </div>
