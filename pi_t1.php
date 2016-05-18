@@ -180,7 +180,7 @@
                         </h3>
                     </div>
                     <div class="panel-body">
-                        <p id="calc-output-row">Total Bacteria value <span class="pull-right"><span id="calc-output-bacteria-value"></span></p>
+                        <p id="calc-output-row">Total Bacteria value <span class="pull-right"><span id="calc-output-Bacteria-value"></span></p>
                         <p id="calc-output-row">Total Biofuels value <span class="pull-right"><span id="calc-output-biofuels-value"></span></p>
                         <p id="calc-output-row">Total Biomass value <span class="pull-right"><span id="calc-output-biomass-value"></span></p>
                         <p id="calc-output-row">Total Chiral Structures value <span class="pull-right"><span id="calc-output-chiral_structures-value"></span></p>

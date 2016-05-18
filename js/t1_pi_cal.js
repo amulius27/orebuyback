@@ -153,7 +153,7 @@ function calcNow() {
 	
     var reward = totalReward.toFixed(2);
 
-    $('#calc-output-bacteria-value').html(number_format(bacteriaReward) + ' ISK');
+    $('#calc-output-Bacteria-value').html(number_format(bacteriaReward) + ' ISK');
     $('#calc-output-biofuels-value').html(number_format(biofuelReward) + ' ISK');
     $('#calc-output-biomass-value').html(number_format(biomassReward) + ' ISK');
     $('#calc-output-chiral_structures-value').html(number_format(chiralReward) + ' ISK');
