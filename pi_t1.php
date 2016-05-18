@@ -180,21 +180,21 @@
                         </h3>
                     </div>
                     <div class="panel-body">
-                        <p id="calc-output-row">Total Bacteria value <span class="pull-right"><span id="calc-output-bacteria-value"></span></p>
-                        <p id="calc-output-row">Total Biofuels value <span class="pull-right"><span id="calc-output-biofuels-value"></span></p>
-                        <p id="calc-output-row">Total Biomass value <span class="pull-right"><span id="calc-output-biomass-value"></span></p>
-                        <p id="calc-output-row">Total Chiral Structures value <span class="pull-right"><span id="calc-output-chiral_structures-value"></span></p>
-                        <p id="calc-output-row">Total Electrolytes value <span class="pull-right"><span id="calc-output-electrolytes-value"></span></p>
-                        <p id="calc-output-row">Total Industrial Fibers value <span class="pull-right"><span id="calc-output-industrial_fibers-value"></span></p>
-                        <p id="calc-output-row">Total Oxidizing Compound value <span class="pull-right"><span id="calc-output-oxidizing_compound-value"></span></p>
-                        <p id="calc-output-row">Total Oxygen value <span class="pull-right"><span id="calc-output-oxygen-value"></span></p>
-                        <p id="calc-output-row">Total Plasmoids value <span class="pull-right"><span id="calc-output-plasmoids-value"></span></p>
-                        <p id="calc-output-row">Total Precious Metals value <span class="pull-right"><span id="calc-output-precious-value"></span></p>
-                        <p id="calc-output-row">Total Proteins value <span class="pull-right"><span id="calc-output-proteins-value"></span></p>
-                        <p id="calc-output-row">Total Reactive Metals value <span class="pull-right"><span id="calc-output-reactive_metals-value"></span></p>
-                        <p id="calc-output-row">Total Silicon value <span class="pull-right"><span id="calc-output-silicon-value"></span></p>
-                        <p id="calc-output-row">Total Toxic Metals value <span class="pull-right"><span id="calc-output-toxic_metals-value"></span></p>
-                        <p id="calc-output-row">Total Water value <span class="pull-right"><span id="calc-output-water-value"></span></p>
+                        <p id="calc-output-row">Total Bacteria value <span class="pull-right"><span id="calc-output-bacteria-value"></span></span></p>
+                        <p id="calc-output-row">Total Biofuels value <span class="pull-right"><span id="calc-output-biofuels-value"></span></span></p>
+                        <p id="calc-output-row">Total Biomass value <span class="pull-right"><span id="calc-output-biomass-value"></span></span></p>
+                        <p id="calc-output-row">Total Chiral Structures value <span class="pull-right"><span id="calc-output-chiral_structures-value"></span></span></p>
+                        <p id="calc-output-row">Total Electrolytes value <span class="pull-right"><span id="calc-output-electrolytes-value"></span></span></p>
+                        <p id="calc-output-row">Total Industrial Fibers value <span class="pull-right"><span id="calc-output-industrial_fibers-value"></span></span></p>
+                        <p id="calc-output-row">Total Oxidizing Compound value <span class="pull-right"><span id="calc-output-oxidizing_compound-value"></span></span></p>
+                        <p id="calc-output-row">Total Oxygen value <span class="pull-right"><span id="calc-output-oxygen-value"></span></span></p>
+                        <p id="calc-output-row">Total Plasmoids value <span class="pull-right"><span id="calc-output-plasmoids-value"></span></span></p>
+                        <p id="calc-output-row">Total Precious Metals value <span class="pull-right"><span id="calc-output-precious-value"></span></span></p>
+                        <p id="calc-output-row">Total Proteins value <span class="pull-right"><span id="calc-output-proteins-value"></span></span></p>
+                        <p id="calc-output-row">Total Reactive Metals value <span class="pull-right"><span id="calc-output-reactive_metals-value"></span></span></p>
+                        <p id="calc-output-row">Total Silicon value <span class="pull-right"><span id="calc-output-silicon-value"></span></span></p>
+                        <p id="calc-output-row">Total Toxic Metals value <span class="pull-right"><span id="calc-output-toxic_metals-value"></span></span></p>
+                        <p id="calc-output-row">Total Water value <span class="pull-right"><span id="calc-output-water-value"></span></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
                             <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
