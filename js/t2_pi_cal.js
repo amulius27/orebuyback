@@ -1,3 +1,5 @@
+/* global biocells, consumerElectronics, constructionBlocks, enrichedUranium, coolant, fertilizer, genEnhancedLivestock, mechanica, microfiberShieldinglParts, livestock, miniatureElectronics, nanites, microfiberShielding, mechanicalParts, oxides, polytextiles, polyaramids, rocketFuel, superconducto, supertensilePlasticsrs, silicateGlass, superconductors, supertensilePlastics, syntheticOil, testCultures, transmitter, viralAgent, waterCooledCpu */
+
 $(document).ready(function() {
     calcNow();
 });
@@ -203,7 +205,7 @@ function calcNow() {
     var genEnhancedLivestockReward = genEnhancedLivestockUnits * genEnhancedLivestock;
     var livestockReward = livestockUnits * livestock;
     var mechanicalPartsReward = mechanicalPartsUnits * mechanicalParts;
-    var microfiberShieldingReward = microfiberShieldingUnits * 10.00;//microfiberShielding;
+    var microfiberShieldingReward = microfiberShieldingUnits * microfiberShielding;
     var miniatureElectronicsReward = miniatureElectronicsUnits * miniatureElectronics;
     var nanitesReward = nanitesUnits * nanites;
     var oxidesReward = oxidesUnits * oxides;
