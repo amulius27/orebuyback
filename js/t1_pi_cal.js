@@ -117,7 +117,7 @@ function calcNow() {
 
     var bacteriaUnits = calcInputGetValue('Bacteria_units');
     var biofuelUnits = calcInputGetValue('Biofuels_units');
-    var biomassUnits = calcInputGetValue('Biomass_units')
+    var biomassUnits = calcInputGetValue('Biomass_units');
     var chiralUnits = calcInputGetValue('Chiral_Structures_units');
     var electrolyteUnits = calcInputGetValue('Electrolytes_units');
     var industrialFiberUnits = calcInputGetValue('industrial_fibers_units');
@@ -130,7 +130,7 @@ function calcNow() {
     var siliconUnits = calcInputGetValue('Silicon_units');
     var toxicUnits = calcInputGetValue('Toxic_Metals_units');
     var waterUnits = calcInputGetValue('Water_units');
-
+    
     var bacteriaReward = bacteriaUnits * bacteria;
     var biofuelReward = biofuelUnits * biofuels;
     var biomassReward = biomassUnits * biomass;
@@ -150,7 +150,6 @@ function calcNow() {
     var totalReward = bacteriaReward+biofuelReward+biomassReward+chiralReward+electrolyteReward+industrialReward+
         oxidizingReward+oxygenReward+plasmoidsReward+preciousReward+proteinsReward+reactiveReward+siliconReward+
         toxicReward+waterReward;
-    console.debug(totalReward)
 	
     var reward = totalReward.toFixed(2);
 
