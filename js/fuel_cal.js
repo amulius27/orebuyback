@@ -49,10 +49,10 @@ function calcInputGetValue(name) {
 
 function calcNow() {
 
-    var amarrUnits = calcInputGetValue('Amarr_units');
-    var caldariUnits = calcInputGetValue('Caldari_units');
-    var gallenteUnits = calcInputGetValue('Gallente_units');
-    var minmatarUnits = calcInputGetValue('Minmatar_units');
+    var amarrUnits = calcInputGetValue('Amarr');
+    var caldariUnits = calcInputGetValue('Caldari');
+    var gallenteUnits = calcInputGetValue('Gallente');
+    var minmatarUnits = calcInputGetValue('Minmatar');
 
     var amarrReward = amarrUnits * amarr;
     var caldariReward = caldariUnits * caldari;
