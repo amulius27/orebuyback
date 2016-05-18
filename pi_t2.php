@@ -1,17 +1,16 @@
 <?php 
     define('indexes', TRUE);
-    require_once __DIR__.'/functions/registry.php';
-    include 'misc/input_pi_t2.php';
+    include '../input_pi_t2.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta content="Warped Intentions Buy Back Program" name="description">
+    <meta content="Lone Star Buyback Calculator" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Warped Intentions Buy Back Program</title>
+    <title>Buy Up Indexes | Lone Star Warriors</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/custom.css" rel="stylesheet">
