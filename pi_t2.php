@@ -26,7 +26,7 @@
             background-attachment: fixed;
         }
         .affix {
-            top: 60px;
+            top: 75px;
         }
         .affix-bottom {
             position: absolute;
@@ -83,195 +83,147 @@
                 <div class="panel-body">
                     <p>
                         <label>Biocells <?php echo number_format($biocells, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Biocells" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Biocells"
-                               id="calc-input-Biocells_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Biocells" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Biocells" placeholder="Biocells" id="calc-input-Biocells_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Construction Blocks <?php echo number_format($construction_blocks, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Construction Blocks" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="	Construction Blocks"
-                               id="calc-input-Construction_Blocks_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Construction Blocks" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Construction_Block" placeholder="Construction Blocks" id="calc-input-Construction_Blocks_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Consumer Electronics <?php echo number_format($consumer_electronics, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Consumer Electronics" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Consumer Electronics"
-                               id="calc-input-Consumer_Electronics_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Consumer Electronics" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Consumer_Eletronics" placeholder="Consumer Electronics" id="calc-input-Consumer_Electronics_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Coolant <?php echo number_format($coolant, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Coolant" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Coolant"
-                               id="calc-input-Coolant_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Coolant" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Coolant" placeholder="Coolant" id="calc-input-Coolant_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Enriched Uranium <?php echo number_format($enriched_uranium, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Enriched Uranium" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Enriched Uranium"
-                               id="calc-input-Enriched_Uranium_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Enriched Uranium" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Enriched_Uranium" placeholder="Enriched Uranium" id="calc-input-Enriched_Uranium_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Fertilizer <?php echo number_format($fertilizer, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Fertilizer" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Fertilizer"
-                               id="calc-input-Fertilizer_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Fertilizer" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Fertilizer" placeholder="Fertilizer" id="calc-input-Fertilizer_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Gen. Enhanced Livestock <?php echo number_format($gen_enhanced_livestock, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Gen. Enhanced Livestock" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Gen. Enhanced Livestock"
-                               id="calc-input-Gen_Enhanced_Livestock_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Gen. Enhanced Livestock" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Gen_Enhanced_Livestock" placeholder="Gen. Enhanced Livestock" id="calc-input-Gen_Enhanced_Livestock_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Livestock <?php echo number_format($livestock, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Livestock" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Livestock"
-                               id="calc-input-Livestock_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Livestock" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Livestock" placeholder="Livestock" id="calc-input-Livestock_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Mechanical Parts <?php echo number_format($mechanical_parts, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Mechanical Parts" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Mechanical Parts"
-                               id="calc-input-Mechanical_Parts_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Mechanical Parts" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Mechanical_Parts" placeholder="Mechanical Parts" id="calc-input-Mechanical_Parts_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Microfiber Shielding <?php echo number_format($microfiber_shielding, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Microfiber Shielding" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Microfiber Shielding"
-                               id="calc-input-Microfiber_Shielding_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Microfiber Shielding" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Microfiber_Shielding" placeholder="Microfiber Shielding" id="calc-input-Microfiber_Shielding_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Miniature Electronics <?php echo number_format($miniature_electronics, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Miniature Electronics" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Miniature Electronics"
-                               id="calc-input-Miniature_Electronics_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Miniature Electronics" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Miniature_Electronics" placeholder="Miniature Electronics" id="calc-input-Miniature_Electronics_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Nanites <?php echo number_format($nanites, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Nanites" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Nanites"
-                               id="calc-input-Nanites_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Nanites" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Nanites" placeholder="Nanites" id="calc-input-Nanites_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Oxides <?php echo number_format($oxydes, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Oxides" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Oxides"
-                               id="calc-input-Oxides_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Oxides" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Oxides" placeholder="Oxides" id="calc-input-Oxides_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Polyaramids <?php echo number_format($polyaramids, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Polyaramids" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Polyaramids"
-                               id="calc-input-Polyaramids_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Polyaramids" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Polyaramids" placeholder="Polyaramids" id="calc-input-Polyaramids_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Polytextiles <?php echo number_format($polytextiles, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Polytextiles" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Polytextiles"
-                               id="calc-input-Polytextiles_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Polytextiles" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Polytextiles" placeholder="Polytextiles" id="calc-input-Polytextiles_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Rocket Fuel <?php echo number_format($rocket_fuel, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Rocket Fuel" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Rocket Fuel"
-                               id="calc-input-Rocket_Fuel_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Rocket Fuel" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Rocket_Fuel" placeholder="Rocket Fuel" id="calc-input-Rocket_Fuel_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Silicate Glass <?php echo number_format($silicate_glass, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Silicate Glass" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Silicate Glass"
-                               id="calc-input-Silicate_Glass_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Silicate Glass" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Silicate_Glass" placeholder="Silicate Glass" id="calc-input-Silicate_Glass_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Superconductors <?php echo number_format($superconductors, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Superconductors" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Superconductors"
-                               id="calc-input-Superconductors_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Superconductors" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Superconductors" placeholder="Superconductors" id="calc-input-Superconductors_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Supertensile Plastics <?php echo number_format($supertensile_plastics, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Supertensile Plastics" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Supertensile Plastics"
-                               id="calc-input-Supertensile_Plastics_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Supertensile Plastics" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Supertensile_Plastics" placeholder="Supertensile Plastics" id="calc-input-Supertensile_Plastics_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Synthetic Oil <?php echo number_format($synthetic_oil, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Synthetic Oil" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Synthetic Oil"
-                               id="calc-input-Synthetic_Oil_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Synthetic Oil" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Synthetic_Oil" placeholder="Synthetic Oil" id="calc-input-Synthetic_Oil_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Test Cultures <?php echo number_format($test_cultures, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Test Cultures" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Test Cultures"
-                               id="calc-input-Test_Cultures_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Test Cultures" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Test_Cultures" placeholder="Test Cultures" id="calc-input-Test_Cultures_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Transmitter <?php echo number_format($transmitter, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Transmitter" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Transmitter"
-                               id="calc-input-Transmitter_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Transmitter" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Transmitter" placeholder="Transmitter" id="calc-input-Transmitter_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Viral Agent <?php echo number_format($viral_agent, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Viral Agent" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Viral Agent"
-                               id="calc-input-Viral_Agent_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Viral Agent" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Viral_Agent" placeholder="Viral Agent" id="calc-input-Viral_Agent_units-value">
+                        </div>
                     </p>
                     <p>
                         <label>Water-Cooled CPU <?php echo number_format($water_cooled_cpu, 2, '.', ',');?> ISK/Unit</label>
-
-                    <div class="input-group form-control" id="Water-Cooled CPU" style="padding: 0; border: none;">
-                        <input type="number" class="form-control text-right typeahead" placeholder="Water-Cooled CPU"
-                               id="calc-input-Water_Cooled_CPU_units-value">
-                    </div>
+                        <div class="input-group form-control" id="Water-Cooled CPU" style="padding: 0; border: none;">
+                            <input type="number" class="form-control text-right typeahead" name="Water-Cooled_CPU" placeholder="Water-Cooled CPU" id="calc-input-Water_Cooled_CPU_units-value">
+                        </div>
                     </p>
                 </div>
             </div>
