@@ -85,25 +85,25 @@
                     <div class="panel-body">
                         <p>
                             <label>Amarr Fuel Block <?php echo number_format($Amarr_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Amarr" style="padding: 0; border: none;">
+                            <div class="input-group form-control" id="Amarr_units" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Amarr_Fuel_Block" placeholder="Amarr Fuel Block" id="calc-input-Amarr_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Caldari Fuel Block <?php echo number_format($Caldari_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Caldari" style="padding: 0; border: none;">
+                            <div class="input-group form-control" id="Caldari_units" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Caldari_Fuel_Block" placeholder="Caldari Fuel Block" id="calc-input-Caldari_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Gallente Fuel Block <?php echo number_format($Gallente_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Gallente" style="padding: 0; border: none;">
+                            <div class="input-group form-control" id="Gallente_units" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Gallente_Fuel_Block" placeholder="Gallente Fuel Block" id="calc-input-Gallente_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Minmatar Fuel Block <?php echo number_format($Minmatar_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Minmatar" style="padding: 0; border: none;">
+                            <div class="input-group form-control" id="Minmatar_units" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Minmatar_Fuel_Block" placeholder="Minmatar Fuel Block" id="calc-input-Minmatar_units-value">
                             </div>
                         </p>
