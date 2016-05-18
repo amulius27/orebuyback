@@ -115,7 +115,7 @@ function calcInputGetValue(name) {
 
 function calcNow() {
 
-    var bacteriaUnits = calcInputGetValue('Bacteria_units');
+    var bacteriaUnits = calcInputGetValue('Bacteria');
     var biofuelUnits = calcInputGetValue('Biofuels_units');
     var biomassUnits = calcInputGetValue('Biomass_units');
     var chiralUnits = calcInputGetValue('Chiral_Structures_units');

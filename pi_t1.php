@@ -61,10 +61,10 @@
             <hr>
             <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated on: <?php echo $update ?></strong></span><br>
             <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
-            <span style="font-family: Arial; color: white;"<strong>Corporation: </strong> <?php echo $corporation ?></span><br>
-            <span style="font-family: Arial; color: white;"<strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax ?> %</span><br>
-            <span style="font-family: Arial; color: white;"<strong>Corp Tax Rate: </strong>  <?php echo $corpTax ?> %</span><br>
-            <span style="font-family: Arial; color: white;"<strong>TotalTax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"><strong>Corporation: </strong> <?php echo $corporation ?></span><br>
+            <span style="font-family: Arial; color: white;"><strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"><strong>Corp Tax Rate: </strong>  <?php echo $corpTax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"><strong>TotalTax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
         </div>
     </div>
 </div>
@@ -83,7 +83,7 @@
                         <p>
                             <label>Bacteria <?php echo number_format($Bacteria, 2, '.', ','); ?> ISK/Unit</label>
                             <div class="input-group form-control" id="Bacteria" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Bacteria" placeholder="Bacteria" id="calc-input-Bacteria_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Bacteria" placeholder="Bacteria" id="calc-input-Bacteria-value">
                             </div>
                         </p>
                         <p>

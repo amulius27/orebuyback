@@ -26,9 +26,7 @@ function PrintIndexPage() {
               <div class=\"clearfix\"></div>
               <h3 class=\"page-header\"> Salvage Materials <strong>(Work In Progress)</strong></h3>
               <div class=\"view view-first\"><a href=\"salvage.php\"><img src=\"https://image.eveonline.com/Type/25605_64.png\" /></a> </div>
-                  <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/30024_64.png\" />
-                <div class=\"mask\"> <a href=\"ancient.php\" class=\"info\">Ancient Salvaged Materials</a> </div>
-              </div>
+              <div class=\"view view-first\"><img src=\"https://image.eveonline.com/Type/30024_64.png\" /></div>
               <div class=\"clearfix\"></div>
             </div>
           </div>
