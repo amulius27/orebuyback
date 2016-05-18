@@ -1,3 +1,5 @@
+/* global amarr, caldari, gallente, minmatar */
+
 $(document).ready(function() {
     calcNow();
 });
