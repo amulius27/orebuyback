@@ -55,5 +55,5 @@
     var morphite = <?= $Morphite ?>;
 </script>
 
-<script src="webroot/js/min_cal.js"></script>
+<script src="/../js/min_cal.js"></script>
 

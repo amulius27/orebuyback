@@ -58,4 +58,3 @@
     var gelidus =<?= $Gelidus ?>;
     var krystallos =<?= $Krystallos ?>;
 </script>
-<script src="webroot/js/ice_cal.js"></script>

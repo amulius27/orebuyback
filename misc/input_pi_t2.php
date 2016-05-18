@@ -85,4 +85,3 @@
     var viralAgent = <?= $Viral_Agent ?>;
     var waterCooledCpu = <?= $Water_Cooled_CPU ?>;
 </script>
-<script src="webroot/js/t2_pi_cal.js"></script>

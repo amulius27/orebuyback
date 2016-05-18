@@ -111,4 +111,3 @@
     var trippedPowerCircuit = <?= $TrippedPowerCircuit ?>;
     var wardConsole = <?= $WardConsole ?>;
 </script>
-<script src="webroot/js/sal_cal.js"></script>

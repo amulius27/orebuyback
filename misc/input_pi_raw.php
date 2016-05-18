@@ -78,4 +78,3 @@
     var suspended = "<?= $Suspended ?>";
     var autotrophs = "<?= $Autotrophs ?>";
 </script>
-<script src="js/rawpi_cal.js"></script>

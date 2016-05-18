@@ -51,4 +51,3 @@
     var sterileConduits = <?= $Sterile_Conduits ?>;
     var Mainframe = <?= $Mainframe ?>;
 </script>
-<script src="webroot/js/t4_pi_cal.js"></script>

@@ -79,4 +79,3 @@
     var ukomi = <?= $Ukomi ?>;
     var vaccines = <?= $Vaccines ?>;
 </script>
-<script src="webroot/js/t3_pi_cal.js"></script>

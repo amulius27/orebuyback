@@ -63,4 +63,4 @@
     var toxicMetals = <?= $Toxic_Metals ?>;
     var water = <?= $Water ?>;
 </script>
-<script src="webroot/js/t1_pi_cal.js"></script>
+<script src="/../js/t1_pi_cal.js"></script>

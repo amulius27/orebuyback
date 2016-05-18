@@ -116,8 +116,4 @@
 	var arkonor_comp = <?= $Arkonor_comp ?>;
 	var mercoxit_comp = <?= $Mercoxit_comp ?>;
 </script>
-
-    <script src="webroot/js/ore_comp_cal.js"></script>
-
-
    
