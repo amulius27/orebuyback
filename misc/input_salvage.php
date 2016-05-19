@@ -51,14 +51,14 @@
     $MeltedCapacitorConsole = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25603, 'time' => $update));
     $MicroCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25618, 'time' => $update));
     $NaniteCompound = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25609, 'time' => $update));
-    $PoewrCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25617, 'time' => $update));
+    $PowerCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25617, 'time' => $update));
     $PowerConduit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25613, 'time' => $update));
     $ScorchedTelemetryProcessor = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25588, 'time' => $update));
     $SingleCrystalSuperalloyIBeam = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25614, 'time' => $update));
     $SmashedTriggerUnit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25593, 'time' => $update));
     $TangledPowerConduit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25594, 'time' => $update));
     $TelemetryProcessor = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25607, 'time' => $update));
-    $ThursterConsole = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25602, 'time' => $update));
+    $ThrusterConsole = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25602, 'time' => $update));
     $TriggerUnit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25612, 'time' => $update));
     $TrippedPowerCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25598, 'time' => $update));
     $WardConsole = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25606, 'time' => $update));
