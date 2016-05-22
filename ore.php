@@ -79,6 +79,7 @@
 <div class="container">
     <div class="row">
         <form action="contracts/ore_contract.php" method="POST">
+            <input type="hidden" class="form-control" name="Quote_Time" id="update_time" value="<?php echo $update; ?>">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
