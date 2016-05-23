@@ -167,8 +167,12 @@ function OreContractValue($db, $update) {
    $db->insert('OreContractContents', $oreContents);
    $db->insert('Contracts', $contract);
    
+   $contract = array(
+       "Value" => $contractValue,
+       "Number" => $contractNum,
+   );
     
-    return $contractValue;
+    return $contract;
 }
 
 ?>

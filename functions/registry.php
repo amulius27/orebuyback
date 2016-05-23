@@ -31,4 +31,7 @@ require_once __DIR__.'/../functions/html/printinstructions.php';
 //Miscellaneous functionality
 //require_once __DIR__.'/../functions/misc/calccontract.php';
 
+//Contract Functionality
+require_once __DIR__.'/../functions/contracts/orecontractvalue.php';
+require_once __DIR__.'/../functions/contracts/printorecontractcontents.php';
 ?>

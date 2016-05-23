@@ -290,6 +290,16 @@ CREATE TABLE IF NOT EXISTS `SalvagePrices` (
   UNIQUE KEY `index` (`index`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=115 ;
 
+--
+-- Table structure for `Users`
+--
+
+CREATE TABLE IF NOT EXISTS `Users` (
+    `UserId` int(9) NOT NULL AUTO_INCREMENT,
+    `Username` varchar(40) NOT NULL,
+    `Password` varchar(40) NOT NULL,
+    PRIMARY KEY(UserId)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
