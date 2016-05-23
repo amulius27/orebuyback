@@ -17,6 +17,7 @@
  */
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
+require_once __DIR__.'/functions/registry.php';
 
 sec_session_start();
 ?>
@@ -24,7 +25,7 @@ sec_session_start();
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Secure Login: Protected Page</title>
+        <title>Warped Intentions Buy Back Dashboard</title>
         <link rel="stylesheet" href="styles/main.css" />
     </head>
     <body>

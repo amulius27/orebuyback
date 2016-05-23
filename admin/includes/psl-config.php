@@ -28,10 +28,12 @@
 /**
  * These are the database login details
  */
-define("HOST", "localhost"); 			// The host you want to connect to. 
-define("USER", "sec_user"); 			// The database username. 
-define("PASSWORD", "4Fa98xkHVd2XmnfK"); 	// The database password. 
-define("DATABASE", "secure_login");             // The database name.
+
+$config = parse_ini_file('/../functions/database/config.ini');
+define("HOST", $config['server']); 			// The host you want to connect to. 
+define("USER", $config['username']); 			// The database username. 
+define("PASSWORD", $config['password']);                // The database password. 
+define("DATABASE", $config['database']);                   // The database name.
 
 /**
  * Who can register and what the default role will be
@@ -45,7 +47,7 @@ define("DATABASE", "secure_login");             // The database name.
  * However, additional roles can be added and so there's nothing stopping
  * anyone from defining a different default.
  */
-define("CAN_REGISTER", "any");
+define("CAN_REGISTER", "admin");
 define("DEFAULT_ROLE", "member");
 
 /**
