@@ -28,9 +28,6 @@ $gdImgHandler = $graph->Stroke(_IMG_HANDLER);
 // Default is PNG so use ".png" as suffix
 $fileName = "/images/orequantity.png";
 $graph->img->Stream($fileName);
-// Send it back to browser
-$graph->img->Headers();
-$graph->img->Stream();
 
 
 sec_session_start();
