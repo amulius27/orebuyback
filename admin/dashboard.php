@@ -33,7 +33,7 @@ sec_session_start();
             background-attachment: fixed;
         }
         .affix {
-            top: 72px;
+            top: 60px;
         }
         .affix-bottom {
             position: absolute;
