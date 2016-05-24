@@ -3,9 +3,30 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
-require_once __DIR__.'/jpgraph/jpgraph.php';
-require_once __DIR__.'/jpgraph/jpgraph_pie.php';
-require_once __DIR__.'/jpgraph/jpgraph_pie3d.php';
+require_once ('jpgraph/jpgraph.php');
+require_once ('jpgraph/jpgraph_pie.php');
+require_once ('jpgraph/jpgraph_pie3d.php');
+
+// Some data
+$data = array(40,60,21,33);
+
+// Create the Pie Graph. 
+$graph = new PieGraph(350,250);
+
+$theme_class= new VividTheme;
+$graph->SetTheme($theme_class);
+
+// Set A title for the plot
+$graph->title->Set("A Simple 3D Pie Plot");
+
+// Create
+$p1 = new PiePlot3D($data);
+$graph->Add($p1);
+
+$p1->ShowBorder();
+$p1->SetColor('black');
+$p1->ExplodeSlice(1);
+$graph->Stroke();
 
 sec_session_start();
 ?>
