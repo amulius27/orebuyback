@@ -76,7 +76,7 @@ sec_session_start();
                             
                             //Create the 3D Pie Graph
                             $graph = new PieGraph(350,250);
-                            $theme_class = new VividTheme;
+                            $theme_class = new VividTheme();
                             $graph->setTheme($theme_class);
                             //Set the title for the plot
                             $graph->title->Set("Distribution of Ore Mined");
