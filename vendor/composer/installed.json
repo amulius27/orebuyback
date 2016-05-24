@@ -52,40 +52,6 @@
         ]
     },
     {
-        "name": "elliottb/phpgraphlib",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/elliottb/phpgraphlib.git",
-            "reference": "479ec384e80ee5cda3f081b5715ab6f86982d38d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/elliottb/phpgraphlib/zipball/479ec384e80ee5cda3f081b5715ab6f86982d38d",
-            "reference": "479ec384e80ee5cda3f081b5715ab6f86982d38d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.0.0"
-        },
-        "time": "2016-01-10 08:49:41",
-        "type": "library",
-        "installation-source": "source",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "PHP Graphing Library that creates graphs natively in PHP",
-        "homepage": "http://github.com/elliottb/phpgraphlib",
-        "keywords": [
-            "gd",
-            "graph",
-            "graphing",
-            "graphs"
-        ]
-    },
-    {
         "name": "simplon/mysql",
         "version": "dev-master",
         "version_normalized": "9999999-dev",

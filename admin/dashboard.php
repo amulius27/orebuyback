@@ -3,6 +3,9 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
+require_once __DIR__.'/jpgraph/jpgraph.php';
+require_once __DIR__.'/jpgraph/jpgraph_pie.php';
+require_once __DIR__.'/jpgraph/jpgraph_pie3d.php';
 
 sec_session_start();
 ?>
@@ -61,7 +64,35 @@ sec_session_start();
             </ul>
         </div>
     </div>
-    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1 class="page-header">Dashboard</h1>
+                <div class="row placeholders">
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <?php 
+                            //Create the data array for the graph
+                            $data = array(50,5,40,5);
+                            
+                            //Create the 3D Pie Graph
+                            $graph = new PieGraph(350,250);
+                            $theme_class = new VividTheme;
+                            $graph->setTheme($theme_class);
+                            //Set the title for the plot
+                            $graph->title->Set("Distribution of Ore Mined");
+                            //Create the graph
+                            $p1 = new PiePlot3D($data);
+                            $graph->Add($p1);
+                            $p1->ShowBorder();
+                            $p1->SetColor('black');
+                            $p1->ExplodeSlice(1);
+                            $graph->Stroke();
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
       <div class="row">          
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
