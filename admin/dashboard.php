@@ -16,7 +16,6 @@ sec_session_start();
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <title>Warped Intentions Buy Back Dashboard</title>
 
@@ -27,6 +26,9 @@ sec_session_start();
     <link href="dashboard.css" rel="stylesheet">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="js/sha512.js" type="text/javascript"></script>
+    <script src="forms.js" type="text/javascript"></script>
+    
   </head>
 
   <body>
