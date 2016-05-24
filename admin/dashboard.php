@@ -42,7 +42,7 @@ sec_session_start();
 </head>
 <body>
     <?php if (login_check($mysqli) == true) : ?>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="height: 72px;" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="height: 60px;" role="navigation">
         <div class="navbar-header">
             <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
                 <span class="sr-only">Toggle navigation</span>
@@ -50,16 +50,13 @@ sec_session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button> 
-            <a class="navbar-brand" href="/../index.php">
-                <img src="http://image.eveonline.com/Alliance/99004116_64.png" style="margin-top: -10px;">
-            </a>
+            </button>
         </div>
         <div class="collapse navbar-collapse pull-left">
             <ul class="nav navbar-nav">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="quote.php">Price Quotes</a></li>
-                <li><a href="http://forums.warpedintentions.com">Forum</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="contracts.php">Contracts</a></li>
+                <li><a href="corppayouts.php">Corp Payouts</a></li>
             </ul>
         </div>
     </div>
