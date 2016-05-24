@@ -9,7 +9,7 @@ sec_session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -33,7 +33,7 @@ sec_session_start();
             background-attachment: fixed;
         }
         .affix {
-            top: 60px;
+            top: 72px;
         }
         .affix-bottom {
             position: absolute;
@@ -64,7 +64,6 @@ sec_session_start();
         </div>
     </div>
 
-    
 
     <script src="js/jquery.cookie.js"></script> 
     <script src="js/eve-link.js"></script>
