@@ -65,6 +65,7 @@ sec_session_start();
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
+              <li></li>
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Contracts</a></li>
             <li><a href="#">Corp Payouts</a></li>
