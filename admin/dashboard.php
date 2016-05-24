@@ -23,7 +23,6 @@ sec_session_start();
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/dashboard.css" rel="stylesheet">
     <script src="/js/sha512.js" type="text/javascript"></script>
     <script src="/js/forms.js" type="text/javascript"></script>
     
@@ -48,24 +47,19 @@ sec_session_start();
   <body>
     <?php if (login_check($mysqli) == true) : ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
+        Welcome <?php echo htmlentities($_SESSION['username']); ?>!
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="/../index.php">Warped Intentions Buy Back Program</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="contracts.php">Contracts</a></li>
+            <li><a href="corppayouts.php">Corp Payouts</a></li>
+            <li><a href="settings.php">Settings</a></li>
+            <li><a href="profile.php">Profile</a></li>
           </ul>
-            Welcome <?php echo htmlentities($_SESSION['username']); ?>!
         </div>
       </div>
     </nav>
