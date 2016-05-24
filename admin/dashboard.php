@@ -73,7 +73,7 @@ sec_session_start();
                         <?php 
                             //Create the data array for the graph
                             $data = array(50,5,40,5);
-                            
+                            /*
                             //Create the 3D Pie Graph
                             $graph = new PieGraph(350,250);
                             $theme_class = new VividTheme;
@@ -87,6 +87,7 @@ sec_session_start();
                             $p1->SetColor('black');
                             $p1->ExplodeSlice(1);
                             $graph->Stroke();
+                         * */
                         ?>
                     </div>
                 </div>
