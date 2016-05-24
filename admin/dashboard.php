@@ -26,7 +26,7 @@ $graph->Add($p1);
 $p1->ShowBorder();
 $p1->SetColor('black');
 $p1->ExplodeSlice(1);
-$graph->Stroke();
+
 
 sec_session_start();
 ?>
@@ -91,7 +91,7 @@ sec_session_start();
                 <h1 class="page-header">Dashboard</h1>
                 <div class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder">
-                        
+                        <?php $graph->Stroke(); ?>
                     </div>
                 </div>
             </div>
