@@ -1,52 +1,5 @@
 [
     {
-        "name": "simplon/mysql",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/fightbulc/simplon_mysql.git",
-            "reference": "f30caf51251122a29b95bcff1695f44101719023"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/fightbulc/simplon_mysql/zipball/f30caf51251122a29b95bcff1695f44101719023",
-            "reference": "f30caf51251122a29b95bcff1695f44101719023",
-            "shasum": ""
-        },
-        "require": {
-            "ext-pdo": "*",
-            "php": ">=5.4"
-        },
-        "time": "2015-12-15 16:31:26",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Simplon\\Mysql\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Tino Ehrich",
-                "email": "tino@bigpun.me",
-                "role": "developer"
-            }
-        ],
-        "description": "Simplon MySQL Library",
-        "homepage": "https://github.com/fightbulc/simplon_mysql",
-        "keywords": [
-            "db",
-            "manager",
-            "mysql",
-            "pdo"
-        ]
-    },
-    {
         "name": "predis/predis",
         "version": "v1.0.3",
         "version_normalized": "1.0.3.0",
@@ -96,6 +49,87 @@
             "nosql",
             "predis",
             "redis"
+        ]
+    },
+    {
+        "name": "elliottb/phpgraphlib",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/elliottb/phpgraphlib.git",
+            "reference": "479ec384e80ee5cda3f081b5715ab6f86982d38d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/elliottb/phpgraphlib/zipball/479ec384e80ee5cda3f081b5715ab6f86982d38d",
+            "reference": "479ec384e80ee5cda3f081b5715ab6f86982d38d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "time": "2016-01-10 08:49:41",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "PHP Graphing Library that creates graphs natively in PHP",
+        "homepage": "http://github.com/elliottb/phpgraphlib",
+        "keywords": [
+            "gd",
+            "graph",
+            "graphing",
+            "graphs"
+        ]
+    },
+    {
+        "name": "simplon/mysql",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fightbulc/simplon_mysql.git",
+            "reference": "c60b96b829b882b8a4d0a631b85a98f489673cd8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fightbulc/simplon_mysql/zipball/c60b96b829b882b8a4d0a631b85a98f489673cd8",
+            "reference": "c60b96b829b882b8a4d0a631b85a98f489673cd8",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pdo": "*",
+            "php": ">=5.4"
+        },
+        "time": "2016-05-13 14:06:48",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Simplon\\Mysql\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tino Ehrich",
+                "email": "tino@bigpun.me",
+                "role": "developer"
+            }
+        ],
+        "description": "Simplon MySQL Library",
+        "homepage": "https://github.com/fightbulc/simplon_mysql",
+        "keywords": [
+            "db",
+            "manager",
+            "mysql",
+            "pdo"
         ]
     }
 ]

@@ -57,22 +57,13 @@ sec_session_start();
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="contracts.php">Contracts</a></li>
                 <li><a href="corppayouts.php">Corp Payouts</a></li>
+                <li><a href="corpsettings.php">Corp Settings</a></li>
             </ul>
         </div>
     </div>
     
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-              <li></li>
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Contracts</a></li>
-            <li><a href="#">Corp Payouts</a></li>
-            <li><a href="#">Corp Settings</a></li>
-          </ul>
-        </div>  
-          
+      <div class="row">          
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 

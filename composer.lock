@@ -4,9 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "88a00ceff13cc07c730ea538fcf32893",
-    "content-hash": "ab458ac04cbde4a9dcaf7dee5645d488",
+    "hash": "2f1346b4da4142df8b24460acf50206b",
+    "content-hash": "041057760a3c6dd641ac53caa4b40967",
     "packages": [
+        {
+            "name": "elliottb/phpgraphlib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elliottb/phpgraphlib.git",
+                "reference": "479ec384e80ee5cda3f081b5715ab6f86982d38d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elliottb/phpgraphlib/zipball/479ec384e80ee5cda3f081b5715ab6f86982d38d",
+                "reference": "479ec384e80ee5cda3f081b5715ab6f86982d38d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP Graphing Library that creates graphs natively in PHP",
+            "homepage": "http://github.com/elliottb/phpgraphlib",
+            "keywords": [
+                "gd",
+                "graph",
+                "graphing",
+                "graphs"
+            ],
+            "time": "2016-01-10 08:49:41"
+        },
         {
             "name": "predis/predis",
             "version": "v1.0.3",
@@ -63,12 +95,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fightbulc/simplon_mysql.git",
-                "reference": "f30caf51251122a29b95bcff1695f44101719023"
+                "reference": "c60b96b829b882b8a4d0a631b85a98f489673cd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fightbulc/simplon_mysql/zipball/f30caf51251122a29b95bcff1695f44101719023",
-                "reference": "f30caf51251122a29b95bcff1695f44101719023",
+                "url": "https://api.github.com/repos/fightbulc/simplon_mysql/zipball/c60b96b829b882b8a4d0a631b85a98f489673cd8",
+                "reference": "c60b96b829b882b8a4d0a631b85a98f489673cd8",
                 "shasum": ""
             },
             "require": {
@@ -100,14 +132,15 @@
                 "mysql",
                 "pdo"
             ],
-            "time": "2015-12-15 16:31:26"
+            "time": "2016-05-13 14:06:48"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "simplon/mysql": 20
+        "simplon/mysql": 20,
+        "elliottb/phpgraphlib": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

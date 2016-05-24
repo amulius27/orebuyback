@@ -9,6 +9,7 @@
     ],
     "require": {
         "simplon/mysql": "dev-master",
-        "predis/predis": "1.0.3"
+        "predis/predis": "1.0.3",
+        "elliottb/phpgraphlib": "dev-master"
     }
 }
