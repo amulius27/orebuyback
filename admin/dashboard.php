@@ -3,9 +3,9 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
-require_once __DIR__.'/jpgraph/jpgraph.php';
-require_once __DIR__.'/jpgraph/jpgraph_pie.php';
-require_once __DIR__.'/jpgraph/jpgraph_pie3d.php';
+//require_once __DIR__.'/jpgraph/jpgraph.php';
+//require_once __DIR__.'/jpgraph/jpgraph_pie.php';
+//require_once __DIR__.'/jpgraph/jpgraph_pie3d.php';
 
 sec_session_start();
 ?>
