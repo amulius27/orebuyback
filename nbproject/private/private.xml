@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/orebuyback/functions/contracts/orecontractvalue.php</file>
+            <file>file:/var/www/orebuyback/admin/functions/registry.php</file>
             <file>file:/var/www/orebuyback/admin/dashboard.php</file>
+            <file>file:/var/www/orebuyback/admin/functions/html/printcontractlisting.php</file>
+            <file>file:/var/www/orebuyback/admin/corppayouts.php</file>
+            <file>file:/var/www/orebuyback/admin/functions/html/printcorporationpayoutlist.php</file>
         </group>
     </open-files>
 </project-private>
