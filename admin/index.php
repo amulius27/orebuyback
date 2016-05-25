@@ -49,12 +49,6 @@ if (login_check($mysqli) == true) {
                 background-repeat:no-repeat;
                 background-attachment: fixed;
             }
-            .affix {
-                top: 60px;
-            }
-            .affix-bottom {
-                position: absolute;
-            }
         </style>
         <script type="text/JavaScript" src="js/sha512.js"></script> 
         <script type="text/JavaScript" src="js/forms.js"></script> 
@@ -67,16 +61,16 @@ if (login_check($mysqli) == true) {
         ?>
         <div class="container">
             <div class="row">          
-              <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
+              <div class="col-sm-9 col-md-10 main">
                   <br>
                 <h2 class="sub-header">Dashboard Login</h2>
                 <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
                     <div class="col-md-6">
-                        <label>Email</label>
-                        <input type="text" name="email" class="form-control" />
-                        <label>Password</label>
-                        <input type="password" name="password" id="password" class="form-control" />
-                        <input type="button" value="Login" class="form-control" onclick="formhash(this.form, this.form.password);" /> 
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email" />
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" />
+                        <input type="button" class="form-control" value="Login" onclick="formhash(this.form, this.form.password);" /> 
                     </div>
                 </form>
           
@@ -85,9 +79,11 @@ if (login_check($mysqli) == true) {
         </div>
         <div class="container">
             <div class="row">
+                <div class="col-md-6">
                 <p>If you don't have a login, please <a href="register.php">register</a></p>
                 <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
                 <p>You are currently logged <?php echo $logged ?>.</p>
+                </div>
             </div>
         </div>
     </body>

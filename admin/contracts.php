@@ -32,12 +32,6 @@ sec_session_start();
             background-repeat:no-repeat;
             background-attachment: fixed;
         }
-        .affix {
-            top: 60px;
-        }
-        .affix-bottom {
-            position: absolute;
-        }
     </style>
 </head>
 <body>
