@@ -66,6 +66,9 @@ sec_session_start();
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
             <br>
           <h2 class="sub-header">Corporation Payouts</h2>
+          <div class="container">
+              <h3>Please only process one payout at a time.</h3>
+          </div>
           <div class="table-responsive">
               <form action="processcorppayout.php" method="GET">
                 <table class="table table-striped">
@@ -74,7 +77,6 @@ sec_session_start();
                       <th>Corporation</th>
                       <th>Account Amount</th>
                       <th>Requested Amount</th>
-                      <th>Confirm Payout</th>
                       <th>Process Payout</th>
                     </tr>
                   </thead>
