@@ -59,9 +59,9 @@ if (login_check($mysqli) == true) {
             echo '<p class="error">Error Logging In!</p>';
         }
         ?>
-        <div class="container">
+        <div class="well">
             <div class="row">          
-              <div class="col-sm-9 col-md-10 main">
+              <div class="col-sm-5 col-md-6">
                   <br>
                 <h2 class="sub-header">Dashboard Login</h2>
                 <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
@@ -77,7 +77,7 @@ if (login_check($mysqli) == true) {
               </div>
             </div>
         </div>
-        <div class="container">
+        <div class="well">
             <div class="row">
                 <div class="col-md-6">
                 <p>If you don't have a login, please <a href="register.php">register</a></p>
