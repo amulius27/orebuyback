@@ -66,7 +66,6 @@ if (login_check($mysqli) == true) {
             </div>
         </div>
         <div class="well">
-            <div class="row">
                 <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
                     <div class="col-md-6">
                         <label for="email">Email</label>
@@ -76,17 +75,14 @@ if (login_check($mysqli) == true) {
                         <input type="button" class="form-control" value="Login" onclick="formhash(this.form, this.form.password);" /> 
                     </div>
                 </form>
-            </div>
         </div>
        
         <div class="well">
-            <div class="row">
                 <div class="col-md-6">
                 <p>If you don't have a login, please <a href="register.php">register</a></p>
                 <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
                 <p>You are currently logged <?php echo $logged ?>.</p>
                 </div>
-            </div>
         </div>
     </body>
 </html>
