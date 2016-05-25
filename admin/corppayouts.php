@@ -73,7 +73,7 @@ sec_session_start();
                     <tr>
                       <th>Corporation</th>
                       <th>Account Amount</th>
-                      <th>Requested Amount/th>
+                      <th>Requested Amount</th>
                       <th>Confirm Payout</th>
                       <th>Process Payout</th>
                     </tr>
