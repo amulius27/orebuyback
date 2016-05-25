@@ -66,47 +66,23 @@ if (login_check($mysqli) == true) {
         }
         ?>
         <div class="container">
-      <div class="row">          
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
-            <br>
-          <h2 class="sub-header">Contract Listing</h2>
-          <div class="table-responsive">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Contract Number</th>
-                      <th>Contract Type</th>
-                      <th>Corporation</th>
-                      <th>Contract Value</th>
-                      <th>Confirm Contract</th>
-                      <th>Process Payment</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table>
-          </div>
-        </div>
-      </div>
-    </div>
-        
-        
-        <div class="container">
-            <div class="row">
-                <div class="container">
-                    <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
-                        <div class="col-md-6">
-                            <label>Email</label>
-                            <input type="text" name="email" class="form-control" />
-                            <label>Password</label>
-                            <input type="password" name="password" id="password" class="form-control" />
-                            <input type="button" value="Login" class="form-control" onclick="formhash(this.form, this.form.password);" /> 
-                        </div>
-                    </form>
-                </div>
+            <div class="row">          
+              <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
+                  <br>
+                <h2 class="sub-header">Dashboard Login</h2>
+                <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
+                    <div class="col-md-6">
+                        <label>Email</label>
+                        <input type="text" name="email" class="form-control" />
+                        <label>Password</label>
+                        <input type="password" name="password" id="password" class="form-control" />
+                        <input type="button" value="Login" class="form-control" onclick="formhash(this.form, this.form.password);" /> 
+                    </div>
+                </form>
+          
+              </div>
             </div>
         </div>
-        
         <div class="container">
             <div class="row">
                 <p>If you don't have a login, please <a href="register.php">register</a></p>
