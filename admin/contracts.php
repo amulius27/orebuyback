@@ -54,6 +54,11 @@ sec_session_start();
                 <li><a href="corpsettings.php">Corp Settings</a></li>
             </ul>
         </div>
+        <div class="collapse navbar-collapse pull-right">
+            <ul class="nav navbar-nav">
+                <li><a href="includes/logout.php">Log Out</a></li>
+            </ul>
+        </div>
     </div>
     <div class="container">
       <div class="row">          
