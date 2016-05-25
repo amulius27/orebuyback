@@ -1,5 +1,5 @@
 <?php
-    require_once '/functions/registry.php';
+    require_once __DIR__.'/functions/registry.php';
 
     $db = DBOpen();
     $contract = $_GET["ContractNumber"];
