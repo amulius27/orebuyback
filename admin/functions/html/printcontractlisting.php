@@ -13,7 +13,7 @@ function PrintContractListAdminDashboard() {
             printf("<td>" . $contract['Corporation'] . "</td>");
             printf("<td>" . $contract['Value'] . "</td>");
             printf("<td><input type=\"radio\" class=\"form-control\" name=\"" . $contract["ContractNum"] . " value=\"" . $contract["ContractNum"] . "\"</td>");
-            printf("<input type=\"submit\" value=\"Process\">");
+            printf("<td><input type=\"submit\" value=\"Process\"></td>");
             printf("</tr>");
         }    
     }
