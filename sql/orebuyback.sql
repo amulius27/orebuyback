@@ -118,7 +118,20 @@ CREATE TABLE IF NOT EXISTS `Corps` (
   `TaxRate` decimal(5,2) DEFAULT NULL,
   `Deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `CorporationPayouts`
+-- Type = 0 for adding, and Type = 1 for subtracting
+--
+
+CREATE TABLE IF NOT EXISTS `CorporationPayouts` (
+    `index` int(11) NOT NULL AUTO_INCREMENT,
+    `CorpName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+    `Amount` decimal(12,2) DEFAULT NULL,
+    `Type` tinyint(1) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`index`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `IceProductPrices`
