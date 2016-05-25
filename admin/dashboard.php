@@ -61,33 +61,7 @@ sec_session_start();
             </ul>
         </div>
     </div>
-    <div class="container">
-      <div class="row">          
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
-            <br>
-          <h2 class="sub-header">Contract Listing</h2>
-          <div class="table-responsive">
-              <form action="processpayout.php" method="GET">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Contract Number</th>
-                      <th>Contract Type</th>
-                      <th>Corporation</th>
-                      <th>Contract Value</th>
-                      <th>Confirm Contract</th>
-                      <th>Process Payment</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php PrintContractListAdminDashboard(); ?>
-                  </tbody>
-                </table>
-              </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 
     <script src="js/jquery.cookie.js"></script> 

@@ -57,7 +57,7 @@ sec_session_start();
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="contracts.php">Contracts</a></li>
                 <li><a href="corppayouts.php">Corp Payouts</a></li>
-                <li><a href="#">Corp Settings</a></li>
+                <li><a href="corpsettings.php">Corp Settings</a></li>
             </ul>
         </div>
     </div>
@@ -65,21 +65,22 @@ sec_session_start();
       <div class="row">          
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
             <br>
-          <h2 class="sub-header">Corporation Payouts</h2>
+          <h2 class="sub-header">Contract Listing</h2>
           <div class="table-responsive">
-              <form action="processcorppayout.php" method="GET">
+              <form action="processpayout.php" method="GET">
                 <table class="table table-striped">
                   <thead>
                     <tr>
+                      <th>Contract Number</th>
+                      <th>Contract Type</th>
                       <th>Corporation</th>
-                      <th>Account Amount</th>
-                      <th>Requested Amount</th>
-                      <th>Confirm Payout</th>
-                      <th>Process Payout</th>
+                      <th>Contract Value</th>
+                      <th>Confirm Contract</th>
+                      <th>Process Payment</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php PrintCorporationPayoutListAdminDashboard(); ?>
+                    <?php PrintContractListAdminDashboard(); ?>
                   </tbody>
                 </table>
               </form>
