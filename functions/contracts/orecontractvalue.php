@@ -1,6 +1,6 @@
 <?php
 
-function OreContractValue($db, $update) {
+function OreContractValue($db, $update, $corporation) {
     //Get all of the values from the contract update time
    
     //Veldspar
@@ -103,9 +103,9 @@ function OreContractValue($db, $update) {
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $oreContents = array(
-        "Contract_Num" => $contractNum,
-        "Contract_Time" =>  $now,
-        "Quote_Time" => $update,
+        "ContractNum" => $contractNum,
+        "ContractTime" =>  $now,
+        "QuoteTime" => $update,
         "Veldspar" => $_POST["Veldspar"],
         "Concentrated_Veldspar" => $_POST["Concentrated_Veldspar"],
         "Dense_Veldspar" => $_POST["Dense_Veldspar"],
@@ -158,8 +158,10 @@ function OreContractValue($db, $update) {
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "Contract_Num" => $contractNum,
-        "Quote_Time" =>  $update,
+        "ContractNum" => $contractNum,
+        "ContractType" => "Ore",
+        "Corporation" => $corporation,
+        "QuoteTime" =>  $update,
         "Value" => $contractValue,
         
     );
@@ -167,12 +169,12 @@ function OreContractValue($db, $update) {
    $db->insert('OreContractContents', $oreContents);
    $db->insert('Contracts', $contract);
    
-   $contract = array(
+   $contractReturn = array(
        "Value" => $contractValue,
        "Number" => $contractNum,
    );
     
-    return $contract;
+    return $contractReturn;
 }
 
 ?>

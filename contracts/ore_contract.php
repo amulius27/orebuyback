@@ -3,7 +3,8 @@
     
     $db = DBOpen();
     $contractTime = $_POST["Quote_Time"];
-    $contract= OreContractValue($db, $contractTime);
+    $corporation = $_POST["Corporation"];
+    $contract= OreContractValue($db, $contractTime, $corporation);
 ?>
 
 <!DOCTYPE html>

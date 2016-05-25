@@ -38,10 +38,12 @@ INSERT INTO `Configuration` (`refineRate`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `Contracts` (
-  `Contract_Num` int(11) NOT NULL AUTO_INCREMENT,
-  `Quote_Time` timestamp NOT NULL,
-  `amount` decimal(20,2) DEFAULT NULL,
-  `paid` tinyint(1) NOT NULL DEFAULT '0',
+  `ContractNum` int(11) NOT NULL AUTO_INCREMENT,
+  `ContractType` varchar(50) NOT NULL,
+  `Corporation` varchar(50) NOT NULL,
+  `QuoteTime` timestamp NOT NULL,
+  `Value` decimal(20,2) DEFAULT NULL,
+  `Paid` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Contract_Num`),
   UNIQUE KEY `Contract_Num` (`Contract_Num`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
@@ -51,9 +53,9 @@ CREATE TABLE IF NOT EXISTS `Contracts` (
 --
 
 CREATE TABLE IF NOT EXISTS `OreContractContents` (
-    `Contract_Num` int(11) NOT NULL AUTO_INCREMENT,
-    `Contract_Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `Quote_Time` timestamp NOT NULL,
+    `ContractNum` int(11) NOT NULL AUTO_INCREMENT,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
     `Veldspar` int(20) NOT NULL DEFAULT '0',
     `Concentrated_Veldspar` int(20) NOT NULL DEFAULT '0',
     `Dense_Veldspar` int(20) NOT NULL DEFAULT '0',
