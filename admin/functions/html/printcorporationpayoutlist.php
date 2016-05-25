@@ -7,8 +7,8 @@ function PrintCorporationPayoutListAdminDashboard() {
     
     foreach($corporations as $corporation) {
         $corporationName = $corporation["CorpName"];
-        $paidTaxes = $db->fetchColumn('SELECT SUM(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 0));
-        $paidOutTaxes = $db->fetchColum('SELECT SUM(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
+        $paidTaxes = $db->fetchColumn('SELECT sum(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 0));
+        $paidOutTaxes = $db->fetchColum('SELECT sum(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
         $taxes = $paidTaxes - $paidOutTaxes;
         if($taxes > 0.00) {
             printf("<tr>");
