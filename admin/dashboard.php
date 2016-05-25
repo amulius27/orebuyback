@@ -67,20 +67,22 @@ sec_session_start();
             <br>
           <h2 class="sub-header">Contract Listing</h2>
           <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Contract Number</th>
-                  <th>Contract Type</th>
-                  <th>Corporation</th>
-                  <th>Contract Value</th>
-                  <th>Confirm Contract</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php PrintContractListAdminDashboard(); ?>
-              </tbody>
-            </table>
+              <form action="processpayout.php" method="GET">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Contract Number</th>
+                      <th>Contract Type</th>
+                      <th>Corporation</th>
+                      <th>Contract Value</th>
+                      <th>Confirm Contract</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php PrintContractListAdminDashboard(); ?>
+                  </tbody>
+                </table>
+              </form>
           </div>
         </div>
       </div>
