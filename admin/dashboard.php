@@ -76,6 +76,7 @@ sec_session_start();
                       <th>Corporation</th>
                       <th>Contract Value</th>
                       <th>Confirm Contract</th>
+                      <th>Process Payment</th>
                     </tr>
                   </thead>
                   <tbody>
