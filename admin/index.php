@@ -59,11 +59,11 @@ if (login_check($mysqli) == true) {
             echo '<p class="error">Error Logging In!</p>';
         }
         ?>
-        <div class="well">
+        <div class="container">
             <div class="row">          
-              <div class="col-sm-5 col-md-6">
-                  <br>
+                <br>
                 <h2 class="sub-header">Dashboard Login</h2>
+                <div class="well">
                 <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
                     <div class="col-md-6">
                         <label for="email">Email</label>
@@ -73,8 +73,7 @@ if (login_check($mysqli) == true) {
                         <input type="button" class="form-control" value="Login" onclick="formhash(this.form, this.form.password);" /> 
                     </div>
                 </form>
-          
-              </div>
+                </div>
             </div>
         </div>
         <div class="well">
