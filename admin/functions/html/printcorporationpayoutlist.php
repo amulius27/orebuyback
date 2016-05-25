@@ -12,10 +12,9 @@ function PrintCorporationPayoutListAdminDashboard() {
         $taxes = $paidTaxes - $paidOutTaxes;
         if($taxes > 0.00) {
             printf("<tr>");
-            var_dump($corporations);
             printf("<td>" . $corporationName . "</td>");
             printf("<td>" . $taxes . "</td>");
-            printf("<td><input type=\"number\" class=\"form-control\" name=\"taxes\"><input type=\"hidden\" name=\"corporation\" value=\"" . $corporationName . "\"</td>");
+            printf("<td><input type=\"number\" class=\"form-control\" name=\"taxes\"><input type=\"hidden\" name=\"corporation\" value=\"" . $corporationName . "\"></td>");
             printf("<td><input type=\"submit\" value=\"Process Corp Payout\"</td>");
             printf("</tr>"); 
         }
