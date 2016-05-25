@@ -6,10 +6,11 @@ function PrintCorporationPayoutListAdminDashboard() {
     $db = DBOpen();
     //Get all of the corporations from the list
     $corporations = $db->fetchRowMany('SELECT * FROM Corps WHERE Deleted= :deleted', array('deleted' => 0));
-    var_dump($corporations);
-    /*
+    
     foreach($corporations as $corp) {
         $corporationName = $corp["CorpName"];
+        var_dump($corporationName);
+        /*
         //Get the taxes paid into the corporation's account
         $paidTaxes = $db->fetchColumn('SELECT sum(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 0));
         //Get the taxes already paid out to the corporation
