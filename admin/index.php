@@ -45,7 +45,7 @@ if (login_check($mysqli) == true) {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <style type="text/css">
             body{
-                background-image:url(images/bgs/ore_bg_blur.jpg);
+                background-image:url(images/bgs/EVE_asteroid_ice.jpg);
                 background-repeat:no-repeat;
                 background-attachment: fixed;
             }
@@ -67,9 +67,9 @@ if (login_check($mysqli) == true) {
         ?> 
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="container">
                     <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
-                        <div class="container">
+                        <div class="col-md-6">
                             <label>Email</label>
                             <input type="text" name="email" class="form-control" />
                             <label>Password</label>
