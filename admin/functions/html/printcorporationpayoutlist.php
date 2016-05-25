@@ -1,12 +1,12 @@
 <?php
 
 function PrintCorporationPayoutListAdminDashboard() {
-/*    
-//Open the database connection
+  
+    //Open the database connection
     $db = DBOpen();
     //Get all of the corporations from the list
     $corporations = $db->fetchRowMany('SELECT * FROM Corps WHERE Deleted= :deleted', array('deleted' => 0));
-    
+    /*
     foreach($corporations as $corp) {
         $corporationName = $corp["CorpName"];
         //Get the taxes paid into the corporation's account
@@ -30,25 +30,6 @@ function PrintCorporationPayoutListAdminDashboard() {
     DBClose($db);
  *
  */
-    
-    $db = DBOpen();
-    //Get the list of contracts from the database
-    $contracts = $db->fetchRowMany('SELECT * FROM Contracts WHERE Paid= :paid', array('paid' => 0));
-    
-    if( $db->getRowCount() > 0 ) {
-        foreach($contracts as $contract) {
-            print("<tr>");
-            printf("<td>" . $contract['ContractNum'] . "</td>");
-            printf("<td>" . $contract['ContractType'] . "</td>");
-            printf("<td>" . $contract['Corporation'] . "</td>");
-            printf("<td>" . $contract['Value'] . "</td>");
-            printf("<td><input type=\"radio\" class=\"form-control\" name=\"ContractNumber\" value=\"" . $contract["ContractNum"] . "\"</td>");
-            printf("<td><input type=\"submit\" value=\"Process\"></td>");
-            printf("</tr>");
-        }    
-    }
-    
-    DBClose($db);
 }
 
 ?>
