@@ -62,7 +62,7 @@ if (login_check($mysqli) == true) {
         <div class="container">
             <div class="row">
                 <form action="includes/process_login.php" method="POST" name="login_form">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-md-offset-2">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Dashboard Login</strong></h3>
@@ -70,9 +70,9 @@ if (login_check($mysqli) == true) {
                             <div class="panel-body">
                                 <p>
                                     <label>Email</label>
-                                    <input type="text" class="form-control text-right typeahead" name="email" id="email">
+                                    <input type="text" class="form-control text-left typeahead" name="email" id="email">
                                     <label>Password</label>
-                                    <input type="password" class="form-control text-right typeahead" name="password" id="password">
+                                    <input type="password" class="form-control text-left typeahead" name="password" id="password">
                                     <input type="button" class="form-control" value="Login" onclick="formhash(this.form, this.form.password);">
                                 </p>
                                 <br>
