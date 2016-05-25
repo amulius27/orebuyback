@@ -17,7 +17,7 @@ function PrintCorporationPayoutListAdminDashboard() {
             $paidInTaxes = $paidInTaxes + $paidIn;
         }
         //Get the taxes already paid out to the corporation
-        $paidOutTaxesTemp = $db->fetchColumMany('SELECT Amount as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
+        $paidOutTaxesTemp = $db->fetchColumMany('SELECT Amount FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
         foreach($paidOutTaxesTemp as $paidOut) {
             $paidOutTaxes = $paidOutTaxes + $paidOut;
         }
