@@ -64,7 +64,33 @@ if (login_check($mysqli) == true) {
         if (isset($_GET['error'])) {
             echo '<p class="error">Error Logging In!</p>';
         }
-        ?> 
+        ?>
+        <div class="container">
+      <div class="row">          
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
+            <br>
+          <h2 class="sub-header">Contract Listing</h2>
+          <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Contract Number</th>
+                      <th>Contract Type</th>
+                      <th>Corporation</th>
+                      <th>Contract Value</th>
+                      <th>Confirm Contract</th>
+                      <th>Process Payment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+        
         <div class="container">
             <div class="row">
                 <div class="container">
