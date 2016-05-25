@@ -67,19 +67,26 @@ if (login_check($mysqli) == true) {
             echo '<p class="error">Error Logging In!</p>';
         }
         ?> 
-        <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
-            <div class="container">
-                <label for="email">Email</label>
-                <input type="text" name="email" class="form-control" />
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" />
-                <input type="button" value="Login" class="form-control" onclick="formhash(this.form, this.form.password);" /> 
-            </div>
-        </form>
         <div class="container">
-            <p>If you don't have a login, please <a href="register.php">register</a></p>
-            <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
-            <p>You are currently logged <?php echo $logged ?>.</p>
+            <div class="row">
+                <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
+                    <div class="container">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" class="form-control" />
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" />
+                        <input type="button" value="Login" class="form-control" onclick="formhash(this.form, this.form.password);" /> 
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <p>If you don't have a login, please <a href="register.php">register</a></p>
+                <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
+                <p>You are currently logged <?php echo $logged ?>.</p>
+            </div>
         </div>
     </body>
 </html>
