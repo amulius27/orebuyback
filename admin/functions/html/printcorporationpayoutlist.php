@@ -9,21 +9,15 @@ function PrintCorporationPayoutListAdminDashboard() {
     
     foreach($corporations as $corp) {
         $corporationName = $corp["CorpName"];
-        $paidInTaxes = 0.00;
-        $paidOutTaxes = 0.00;
+        
         //Get the taxes paid into the corporation's account
-        $paidInTaxesTemp = $db->fetchColumnMany('SELECT Amount FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 0));
-        foreach($paidInTaxesTemp as $paidIn) {
-            $paidInTaxes = $paidInTaxes + $paidIn;
-        }
+        $paidTaxes = $db->fetchColumn('SELECT sum(Amount) as taxes FROM CorporationPayouts WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 0));
         //Get the taxes already paid out to the corporation
-        $paidOutTaxesTemp = $db->fetchColumMany('SELECT Amount FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
-        foreach($paidOutTaxesTemp as $paidOut) {
-            $paidOutTaxes = $paidOutTaxes + $paidOut;
-        }
+        $paidOutTaxes = $db->fetchColum('SELECT sum(Amount) as taxes FROM CorporationPayouts WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
         //Calculate the taxes left over that are not paid out.
-        $taxes = $paidInTaxes - $paidOutTaxes;
+        $taxes = $paidTaxes - $paidOutTaxes;
         //If the taxes are greater than zero, then display the table row for each corporation
+        
         if($taxes > 0.00) {
             printf("<tr>");
             printf("<td>" . $corporationName . "</td>");
