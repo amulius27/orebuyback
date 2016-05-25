@@ -55,9 +55,9 @@ sec_session_start();
         <div class="collapse navbar-collapse pull-left">
             <ul class="nav navbar-nav">
                 <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="contracts.php">Contracts</a></li>
+                <li><a href="#">Contracts</a></li>
                 <li><a href="corppayouts.php">Corp Payouts</a></li>
-                <li><a href="corpsettings.php">Corp Settings</a></li>
+                <li><a href="#">Corp Settings</a></li>
             </ul>
         </div>
     </div>

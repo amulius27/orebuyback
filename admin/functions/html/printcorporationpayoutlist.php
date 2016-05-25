@@ -9,6 +9,9 @@ function PrintCorporationPayoutListAdminDashboard() {
         $corporationName = $corporation["CorpName"];
         $paidTaxes = $db->fetchColumn('SELECT SUM(Amount) WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 0));
         $paidOutTaxes = $db->fetchColum('SELECT SUM(Amount) WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
+        var_dump($corporationName);
+        var_dump($paidTaxes);
+        var_dump($paidoutTaxes);
         $taxes = $paidTaxes - $paidOutTaxes;
         if($taxes > 0.00) {
             printf("<tr>");
