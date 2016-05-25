@@ -30,6 +30,32 @@ if (login_check($mysqli) == true) {
 <!DOCTYPE html>
 <html>
     <head>
+        <!--metas-->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta content="Warped Intentions Buy Back Program Admin Dashboard" name="description">
+        <meta content="index,follow" name="robots">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>W4RP Buy Back Program Admin Dashboard Login</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/eve-link.css" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <style type="text/css">
+            body{
+                background-image:url(images/bgs/ore_bg_blur.jpg);
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+            }
+            .affix {
+                top: 60px;
+            }
+            .affix-bottom {
+                position: absolute;
+            }
+        </style>
         <title>Secure Login: Log In</title>
         <link rel="stylesheet" href="styles/main.css" />
         <script type="text/JavaScript" src="js/sha512.js"></script> 
@@ -41,10 +67,12 @@ if (login_check($mysqli) == true) {
             echo '<p class="error">Error Logging In!</p>';
         }
         ?> 
-        <form action="includes/process_login.php" method="post" name="login_form"> 			
-            Email: <input type="text" name="email" />
-            Password: <input type="password" name="password" id="password"/>
-            <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
+        <form action="includes/process_login.php" class="form-control" method="post" name="login_form">
+            <div class="container">
+                Email: <input type="text" name="email" class="form-control" />
+                Password: <input type="password" name="password" id="password" class="form-control" />
+                <input type="button" value="Login" class="form-control" onclick="formhash(this.form, this.form.password);" /> 
+            </div>
         </form>
         <p>If you don't have a login, please <a href="register.php">register</a></p>
         <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
