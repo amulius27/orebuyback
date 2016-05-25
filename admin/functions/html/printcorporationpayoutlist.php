@@ -13,7 +13,7 @@ function PrintCorporationPayoutListAdminDashboard() {
         //Get the taxes paid into the corporation's account
         $paidTaxes = $db->fetchColumn('SELECT sum(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 0));
         //Get the taxes already paid out to the corporation
-        $paidOutTaxes = $db->fetchColum('SELECT sum(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
+        //$paidOutTaxes = $db->fetchColum('SELECT sum(Amount) as taxes FROM Corps WHERE CorpName= :corpname AND Type= :type', array('corpname' => $corporationName, 'type' => 1));
         //Calculate the taxes left over that are not paid out.
         //$taxes = $paidTaxes - $paidOutTaxes;
         //If the taxes are greater than zero, then display the table row for each corporation
