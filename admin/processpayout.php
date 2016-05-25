@@ -1,4 +1,5 @@
 <?php
+    require_once '/functions/registry.php';
 
     $db = DBOpen();
     $contract = $_GET["ContractNumber"];
