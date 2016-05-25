@@ -9,10 +9,10 @@ function PrintContractListAdminDashboard() {
     if( $db->getRowCount() > 0 ) {
         foreach($contracts as $contract) {
             print("<tr>");
-            printf("<td>" . $contract["ContractNum"] . "</td>");
-            printf("<td>" . $contract["ContractType"] . "</td>");
-            printf("<td>" . $contract["Corporation"] . "</td>");
-            printf("<td>" . $contract["Value"] . "</td>");
+            printf("<td>" . $contract['ContractNum'] . "</td>");
+            printf("<td>" . $contract['ContractType'] . "</td>");
+            printf("<td>" . $contract['Corporation'] . "</td>");
+            printf("<td>" . $contract['Value'] . "</td>");
             printf("<td><input type=\"radio\" class=\"form-control\" name=\"" . $contract["ContractNum"] . "\"</td>");
             printf("</tr>");
         }    
