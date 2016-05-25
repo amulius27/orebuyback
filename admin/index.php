@@ -65,7 +65,7 @@ if (login_check($mysqli) == true) {
                     <div class="col-md-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Calculator</strong></h3>
+                                <h3 class="panel-title"><strong>Dashboard Login</strong></h3>
                             </div>
                             <div class="panel-body">
                                 <p>
@@ -75,19 +75,15 @@ if (login_check($mysqli) == true) {
                                     <input type="password" class="form-control text-right typeahead" name="password" id="password">
                                     <input type="button" class="form-control" value="Login" onclick="formhash(this.form, this.form.password);">
                                 </p>
+                                <br>
+                                <p>If you don't have a login, please <a href="register.php">register</a></p>
+                                <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
+                                <p>You are currently logged <?php echo $logged ?>.</p>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <p>If you don't have a login, please <a href="register.php">register</a></p>
-                <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
-                <p>You are currently logged <?php echo $logged ?>.</p>
-            </div>
-        </div>
-        <br>
     </body>
 </html>
