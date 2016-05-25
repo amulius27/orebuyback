@@ -6,6 +6,7 @@ function PrintCorporationPayoutListAdminDashboard() {
     $db = DBOpen();
     //Get all of the corporations from the list
     $corporations = $db->fetchRowMany('SELECT * FROM Corps WHERE Deleted= :deleted', array('deleted' => 0));
+    var_dump($corporations);
     /*
     foreach($corporations as $corp) {
         $corporationName = $corp["CorpName"];
