@@ -30,7 +30,7 @@ function PrintContractListAdminDashboard() {
             printf("<tr>");
             printf("<td>");
             printf("<h4>Contract Details</h4>");
-            printf("<ul>");
+            printf("<ul class=\"col-md-offset-1\">");
             if($contractType == 'Ore') {
                 for($i = 2; $i < $size - 1; $i++) {
                     if($contents[$headers[$i]] > 0){
@@ -54,4 +54,5 @@ function PrintContractListAdminDashboard() {
 }
 
 ?>
+
 
