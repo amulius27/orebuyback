@@ -27,12 +27,13 @@ function PrintContractListAdminDashboard() {
             printf("<h4>Contract Details</h4>");
             printf("<ul>");
             foreach( $headers as $index => $header ) {
-                printf("<li>");
-                printf($header);
-                printf(": ");
-                printf($contents[$index]);
-                printf("</li>");
-                
+                if($contents[$index != (NULL or 0)]) {
+                   printf("<li>");
+                    printf($header);
+                    printf(": ");
+                    printf($contents[$index]);
+                    printf("</li>"); 
+                } 
             }
             printf("</ul>");
             printf("</td>");

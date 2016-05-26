@@ -69,7 +69,7 @@ sec_session_start();
           <h2 class="sub-header">Contract Listing</h2>
           <div class="table-responsive">
               <form action="processpayout.php" method="GET">
-                <table class="table table-striped">
+                <table class="table table-striped table-expandable">
                   <thead>
                     <tr>
                       <th>Contract Number</th>
