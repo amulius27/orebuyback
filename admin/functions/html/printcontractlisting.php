@@ -33,12 +33,14 @@ function PrintContractListAdminDashboard() {
             printf("<ul>");
             if($contractType == 'Ore') {
                 for($i = 2; $i < $size - 1; $i++) {
-                    $header[$i] = str_replace('_', ' ', $headers[$i]);
-                    printf("<li>");
-                    printf($header[$i]);
-                    printf(": ");
-                    printf($contents[$headers[$i]]);
-                    printf("</li>"); 
+                    if($contents[$headers[$i]] > 0){
+                        $header[$i] = str_replace('_', ' ', $headers[$i]);
+                        printf("<li>");
+                        printf($header[$i]);
+                        printf(": ");
+                        printf($contents[$headers[$i]]);
+                        printf("</li>"); 
+                    }
                 }
             }
             printf("</ul>");
