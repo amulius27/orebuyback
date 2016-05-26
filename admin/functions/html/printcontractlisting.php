@@ -28,7 +28,7 @@ function PrintContractListAdminDashboard() {
             
             //Print the expandable contents for each row
             printf("<tr>");
-            printf("<td colspan=\"5\">");
+            printf("<td>");
             printf("<h4>Contract Details</h4>");
             printf("<ul>");
             if($contractType == 'Ore') {
