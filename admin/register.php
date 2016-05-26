@@ -58,12 +58,12 @@ include_once 'includes/functions.php';
                             ?>
                         </div>
                         <div class="panel-body">
-                            <ul>
+                            <ul class="list-inline">
                                 <li>Usernames may contain only digits, upper and lower case letters and underscores</li>
                                 <li>Emails must have a valid email format</li>
                                 <li>Passwords must be at least 6 characters long</li>
                                 <li>Passwords must contain
-                                    <ul>
+                                    <ul class="list-inline">
                                         <li>At least one upper case letter (A..Z)</li>
                                         <li>At least one lower case letter (a..z)</li>
                                         <li>At least one number (0..9)</li>
