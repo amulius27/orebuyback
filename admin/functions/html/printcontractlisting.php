@@ -27,6 +27,7 @@ function PrintContractListAdminDashboard() {
             printf("<h4>Contract Details</h4>");
             printf("<ul>");
             foreach( $headers as $index => $header ) {
+                $header = str_replace('_', ' ', $header);
                 if($contents[$index != (NULL or 0)]) {
                    printf("<li>");
                     printf($header);
