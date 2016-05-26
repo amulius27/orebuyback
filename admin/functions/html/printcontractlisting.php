@@ -7,9 +7,10 @@ function PrintContractListAdminDashboard() {
     
     if( $db->getRowCount() > 0 ) {
         foreach($contracts as $contract) {
+            $contractNumber = $contract['ContractNum'];
             if($contract['ContractType'] == "Ore") {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OreContractContents'));
-                $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contract['ContractNum']));
+                $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
             }
             $size = sizeof($headers);
             
