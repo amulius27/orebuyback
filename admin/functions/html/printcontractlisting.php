@@ -29,13 +29,11 @@ function PrintContractListAdminDashboard() {
             printf("<ul>");
             for($i = 0; $i < $size - 1; $i++) {
                 $headers[$i] = str_replace('_', ' ', $headers[$i]);
-                if( ($contents[$i] != 0) AND ($contents[$i] != NULL)) {
                    printf("<li>");
                     printf($headers[$i]);
                     printf(": ");
                     printf($contents[$i]);
                     printf("</li>"); 
-                } 
             }
             //foreach( $headers as $index => $header ) {
             //    
