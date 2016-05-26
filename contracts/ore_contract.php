@@ -64,7 +64,9 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintOreContractContents($contract["Number"], $db); ?>
+        <?php PrintOreContractContents($contract["Number"], $db); 
+              DBClose($db);
+        ?>
     </div>
     
 </body>
