@@ -28,19 +28,17 @@ function PrintContractListAdminDashboard() {
             printf("<td colspan=\"5\">");
             printf("<h4>Contract Details</h4>");
             printf("<ul>");
-            for($i = 0; $i < $size - 1; $i++) {
+            for($i = 2; $i < $size - 1; $i++) {
                 $headers[$i] = str_replace('_', ' ', $headers[$i]);
-                   printf("<li>");
-                    printf($headers[$i]);
-                    printf(": ");
-                    printf($contents[$i]);
-                    printf("</li>"); 
+                printf("<li>");
+                printf($headers[$i]);
+                printf(": ");
+                printf($contents[$i]);
+                printf("</li>"); 
             }
-            //foreach( $headers as $index => $header ) {
-            //    
-            //}
             printf("</ul>");
             printf("</td>");
+            printf("</tr>");
             
         }    
     }
