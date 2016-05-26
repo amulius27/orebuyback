@@ -15,7 +15,7 @@ function PrintContractListAdminDashboard() {
             $size = sizeof($headers);
             
             printf("<tr>");
-            printf("<td>" . $contract['ContractNum'] . "</td>");
+            printf("<td>" . $contractNumber . "</td>");
             printf("<td>" . $contract['ContractType'] . "</td>");
             printf("<td>" . $contract['Corporation'] . "</td>");
             printf("<td>" . $contract['Value'] . "</td>");
