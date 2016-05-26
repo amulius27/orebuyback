@@ -8,7 +8,10 @@ function PrintContractListAdminDashboard() {
     if( $db->getRowCount() > 0 ) {
         foreach($contracts as $contract) {
             $contractNumber = $contract['ContractNum'];
-            if($contract['ContractType'] == "Ore") {
+            $contractType = $contract['ContractType'];
+            $contractCorporation = $contract['Corporation'];
+            $contractValue = $contract['Value'];
+            if($contractType == 'Ore') {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OreContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
             }
@@ -16,10 +19,10 @@ function PrintContractListAdminDashboard() {
             
             printf("<tr>");
             printf("<td>" . $contractNumber . "</td>");
-            printf("<td>" . $contract['ContractType'] . "</td>");
-            printf("<td>" . $contract['Corporation'] . "</td>");
-            printf("<td>" . $contract['Value'] . "</td>");
-            printf("<td><input type=\"radio\" class=\"form-control\" name=\"ContractNumber\" value=\"" . $contract["ContractNum"] . "\"</td>");
+            printf("<td>" . $contractType . "</td>");
+            printf("<td>" . $contractCorporation . "</td>");
+            printf("<td>" . $contractValue . "</td>");
+            printf("<td><input type=\"radio\" class=\"form-control\" name=\"ContractNumber\" value=\"" . $contractNumber . "\"</td>");
             printf("<td><input type=\"submit\" value=\"Process\"></td>");
             printf("</tr>");
             

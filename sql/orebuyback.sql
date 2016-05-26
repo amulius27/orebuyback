@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `Contracts` (
 --
 
 CREATE TABLE IF NOT EXISTS `OreContractContents` (
-    `ContractNum` int(11) NOT NULL AUTO_INCREMENT,
+    `ContractNum` int(11) NOT NULL,
     `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `QuoteTime` timestamp NOT NULL,
     `Veldspar` int(20) NOT NULL DEFAULT '0',
