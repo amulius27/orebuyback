@@ -23,6 +23,10 @@ function PrintContractListAdminDashboard() {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'IceContractcontents'));
                 $contents = $db->fetchRow('SELECT * FROM IceContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
+            if($contractType == 'IceProd') {
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'IceProdContractcontents'));
+                $contents = $db->fetchRow('SELECT * FROM IceProdContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
+            }
             if($contractType == 'CompOre') {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'CompOreContractcontents'));
                 $contents = $db->fetchRow('SELECT * FROM CompOreContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
