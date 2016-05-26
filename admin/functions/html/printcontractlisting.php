@@ -12,7 +12,7 @@ function PrintContractListAdminDashboard() {
                 $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contract['ContractNum']));
             }
             
-            print("<tr>");
+            printf("<tr>");
             printf("<td>" . $contract['ContractNum'] . "</td>");
             printf("<td>" . $contract['ContractType'] . "</td>");
             printf("<td>" . $contract['Corporation'] . "</td>");
