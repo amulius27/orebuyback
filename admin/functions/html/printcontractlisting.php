@@ -37,7 +37,7 @@ function PrintContractListAdminDashboard() {
                     printf("<li>");
                     printf($header[$i]);
                     printf(": ");
-                    var_dump($contents[$headers[$i]]);
+                    printf($contents[$headers[$i]]);
                     printf("</li>"); 
                 }
             }
