@@ -11,6 +11,7 @@ function PrintContractListAdminDashboard() {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OreContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contract['ContractNum']));
             }
+            $size = sizeof($headers);
             
             printf("<tr>");
             printf("<td>" . $contract['ContractNum'] . "</td>");
@@ -26,16 +27,19 @@ function PrintContractListAdminDashboard() {
             printf("<td colspan=\"5\">");
             printf("<h4>Contract Details</h4>");
             printf("<ul>");
-            foreach( $headers as $index => $header ) {
-                $header = str_replace('_', ' ', $header);
-                if($contents[$index] != (NULL OR 0)) {
+            for($i = 0; $i < $size - 1; $i++) {
+                $headers[$i] = str_replace('_', ' ', $headers[$i]);
+                if( ($contents[$i] != 0) AND ($contents[$i] != NULL)) {
                    printf("<li>");
-                    printf($header);
+                    printf($headers[$i]);
                     printf(": ");
-                    printf($contents[$index]);
+                    printf($contents[$i]);
                     printf("</li>"); 
                 } 
             }
+            //foreach( $headers as $index => $header ) {
+            //    
+            //}
             printf("</ul>");
             printf("</td>");
             
