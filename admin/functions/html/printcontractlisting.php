@@ -13,7 +13,7 @@ function PrintContractListAdminDashboard() {
             $contractValue = $contract['Value'];
             if($contractType == 'Ore') {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OreContractContents'));
-                $contents = $db->fetchColumnMany('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
+                $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
             }
             $size = sizeof($headers);
             
@@ -31,13 +31,15 @@ function PrintContractListAdminDashboard() {
             printf("<td colspan=\"5\">");
             printf("<h4>Contract Details</h4>");
             printf("<ul>");
-            for($i = 2; $i < $size - 1; $i++) {
-                $headers[$i] = str_replace('_', ' ', $headers[$i]);
-                printf("<li>");
-                printf($headers[$i]);
-                printf(": ");
-                var_dump($contents[$i]);
-                printf("</li>"); 
+            if($contractType == 'Ore') {
+                for($i = 2; $i < $size - 1; $i++) {
+                    $header[$i] = str_replace('_', ' ', $headers[$i]);
+                    printf("<li>");
+                    printf($header[$i]);
+                    printf(": ");
+                    var_dump($contents[$headers[$i]]);
+                    printf("</li>"); 
+                }
             }
             printf("</ul>");
             printf("</td>");
