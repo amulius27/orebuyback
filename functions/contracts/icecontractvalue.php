@@ -73,7 +73,7 @@ function IceContractValue($db, $update, $corporation) {
         "Value" => $contractValue,
     );
    
-   $db->insert('IceContractContents', $mineralContents);
+   $db->insert('IceContractContents', $iceContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(

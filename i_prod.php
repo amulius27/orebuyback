@@ -77,7 +77,7 @@
 
 <div class="container">
     <div class="row">
-        <form action="contracts/i_prod_contract.php" method="post">
+        <form action="contracts/ice_prod_contract.php" method="post">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">

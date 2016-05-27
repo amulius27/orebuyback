@@ -108,7 +108,7 @@
                         <p>
                             <label>Data Chips <?php echo number_format($Data_Chips, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Data Chips" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Data_Chipds" placeholder="Data Chips" id="calc-input-Data_Chips_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Data_Chips" placeholder="Data Chips" id="calc-input-Data_Chips_units-value">
                             </div>
                         </p>
                         <p>

@@ -1,6 +1,6 @@
 <?php
 
-function MineralContractValue($db, $update, $corporation) {
+function MineralsContractValue($db, $update, $corporation) {
     //Get all of the values from the contract update time
    
     //Tritanium

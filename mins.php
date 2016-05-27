@@ -76,7 +76,7 @@
 <!-- Calculate -->
 <div class="container">
     <div class="row">
-        <form action="contracts/mins_contract.php" method="post">
+        <form action="contracts/minerals_contract.php" method="post">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">

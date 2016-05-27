@@ -4,7 +4,7 @@
     $db = DBOpen();
     $contractTime = $_POST["Quote_Time"];
     $corporation = $_POST["Corporation"];
-    $contract= PiContractValue($db, $contractTime, $corporation);
+    $contract= MineralsContractValue($db, $contractTime, $corporation);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style type="text/css">
         body{
-            background-image:url(images/bgs/pi_bg_blur.jpg);
+            background-image:url(images/bgs/ore_bg_blur.jpg);
             background-repeat:no-repeat;
             background-attachment: fixed;
         }
@@ -64,7 +64,7 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintPiContractContents($contract["Number"], $db); 
+        <?php PrintMineralsContractContents($contract["Number"], $db); 
               DBClose($db);
         ?>
     </div>

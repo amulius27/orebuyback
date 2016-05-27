@@ -4,7 +4,7 @@
     $db = DBOpen();
     $contractTime = $_POST["Quote_Time"];
     $corporation = $_POST["Corporation"];
-    $contract= PiContractValue($db, $contractTime, $corporation);
+    $contract= PiT2ContractValue($db, $contractTime, $corporation);
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +64,7 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintPiContractContents($contract["Number"], $db); 
+        <?php PrintPiT2ContractContents($contract["Number"], $db); 
               DBClose($db);
         ?>
     </div>

@@ -150,7 +150,7 @@
                         <p>
                             <label>Planktic Colonies <?php echo $Planktic; ?> ISK/Unit</label>
                             <div class="input-group form-control" id="planktic" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Planktic Colonies" placeholder="Planktic Colonies" id="calc-input-planktic_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Planktic_Colonies" placeholder="Planktic Colonies" id="calc-input-planktic_units-value">
                             </div>
                         </p>
                         <p>
@@ -174,7 +174,7 @@
                         <p>
                             <label>Non-CS Crystals <?php echo $Non; ?> ISK/Unit</label>
                             <div class="input-group form-control" id="non_cs" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" placeholder="Non-CS Crystals" id="calc-input-non_cs_units-value">
+                                <input type="number" class="form-control text-right typeahead" placeholder="Non-CS_Crystals" id="calc-input-non_cs_units-value">
                             </div>
                         </p>
                         <p>

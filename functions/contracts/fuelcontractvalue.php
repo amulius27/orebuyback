@@ -34,7 +34,7 @@ function FuelContractValue($db, $update, $corporation) {
     }
    
    //Set the ore contents array up to be insert into the OreContractContents database
-   $oreContents = array(
+   $fuelBlockContents = array(
         "ContractNum" => $contractNum,
         "ContractTime" =>  $now,
         "QuoteTime" => $update,

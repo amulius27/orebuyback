@@ -34,7 +34,15 @@ require_once __DIR__.'/../functions/misc/corpselect.php';
 
 //Contract Functionality
 require_once __DIR__.'/../functions/contracts/comporecontractvalue.php';
+require_once __DIR__.'/../functions/contracts/fuelcontractvalue.php';
+require_once __DIR__.'/../functions/contracts/icecontractvalue.php';
+require_once __DIR__.'/../functions/contracts/mineralcontractvalue.php';
 require_once __DIR__.'/../functions/contracts/orecontractvalue.php';
+require_once __DIR__.'/../functions/contracts/picontractvalue.php';
+require_once __DIR__.'/../functions/contracts/pit1contractvalue.php';
+require_once __DIR__.'/../functions/contracts/pit2contractvalue.php';
+require_once __DIR__.'/../functions/contracts/pit3contractvalue.php';
+require_once __DIR__.'/../functions/contracts/pit4contractvalue.php';
 require_once __DIR__.'/../functions/contracts/printcomporecontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printfuelcontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printicecontractcontents.php';

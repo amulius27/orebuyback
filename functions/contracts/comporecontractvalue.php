@@ -45,7 +45,7 @@ function CompOreContractValue($db, $update, $corporation) {
     //Set the initial contract value to 0.00 before adding everything up
     $contractValue = 0.00;
     //Create the ore value array for summing later
-    $oreValue = array(
+    $compOreValue = array(
         "Compressed_Veldspar" => $_POST["Veldspar"] * ($Veldspar * 100),
         "Compressed_Concentrated_Veldspar" => $_POST["Concentrated_Veldspar"] * (($Veldspar * 100) * 1.05),
         "Compressed_Dense_Veldspar" => $_POST["Dense_Veldspar"] * (($Veldspar * 100) * 1.10),
@@ -97,12 +97,12 @@ function CompOreContractValue($db, $update, $corporation) {
     );
     
     //Add the contract value up from the ore
-    foreach($oreValue as $value) {
+    foreach($compOreValue as $value) {
        $contractValue = $contractValue + $value;
     }
    
    //Set the ore contents array up to be insert into the OreContractContents database
-   $oreContents = array(
+   $compOreContents = array(
         "ContractNum" => $contractNum,
         "ContractTime" =>  $now,
         "QuoteTime" => $update,
@@ -166,7 +166,7 @@ function CompOreContractValue($db, $update, $corporation) {
         
     );
    
-   $db->insert('CompOreContractContents', $oreContents);
+   $db->insert('CompOreContractContents', $compOreContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
