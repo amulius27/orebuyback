@@ -67,10 +67,13 @@ $username = $_SESSION['username'];
             </ul>
         </div>
     </div>
+    <br>
     <div class="container">
         <h2>Welcome to the Warped Intentions Buy Back Program Dashboard, <?php echo $username; ?></h2>
-        <p>Select an option from the navigation bar at the top of the screen.  This screen</p>
-        <p>will be used for statistics in a future release.</p>        
+        <h3>
+            <p>Select an option from the navigation bar at the top of the screen.  This screen</p>
+            <p>will be used for statistics in a future release.</p>      
+        </h3>
     </div>
     
 
