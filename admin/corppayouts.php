@@ -57,11 +57,12 @@ sec_session_start();
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="contracts.php">Contracts</a></li>
                 <li><a href="corppayouts.php">Corp Payouts</a></li>
-                <li><a href="#">Corp Settings</a></li>
+                <li><a href="corpsettings">Corp Settings</a></li>
             </ul>
         </div>
         <div class="collapse navbar-collapse pull-right">
             <ul class="nav navbar-nav">
+                <li><?php echo $username ?></li>
                 <li><a href="includes/logout.php">Log Out</a></li>
             </ul>
         </div>
