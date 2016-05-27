@@ -40,10 +40,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
         $error_msg .= '<p class="error">Invalid password configuration.</p>';
     }
     
-    //Sanitize the corporation to be entered into the database
-    $corporation = filter_input(INPUT_POST, 'corporation', FILTER_SANITIZE_STRING);
-    $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
-
+   
     // Username validity and password validity have been checked client side.
     // This should should be adequate as nobody gains any advantage from
     // breaking these rules.
@@ -78,8 +75,8 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
         $password = hash('sha512', $password . $random_salt);
 
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, corporation, role, password, salt) VALUES (?, ?, ?, ?, ?, ?)")) {
-            $insert_stmt->bind_param('ssss', $username, $email, $corporation, $role, $password, $random_salt);
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt) VALUES (?, ?, ?, ?)")) {
+            $insert_stmt->bind_param('ssss', $username, $email, $password, $random_salt);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ./error.php?err=Registration failure: INSERT');
