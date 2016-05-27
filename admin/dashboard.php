@@ -63,7 +63,7 @@ $username = $_SESSION['username'];
         </div>
         <div class="collapse navbar-collapse pull-right">
             <ul class="nav navbar-nav">
-                <li><?php echo $username ?></li>
+                <li><h2><?php echo $username; ?>  </h2></li>
                 <li><a href="includes/logout.php">Log Out</a></li>
             </ul>
         </div>
