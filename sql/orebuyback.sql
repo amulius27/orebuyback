@@ -577,17 +577,6 @@ CREATE TABLE IF NOT EXISTS `SalvagePrices` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
--- Table structure for `Users`
---
-
-CREATE TABLE IF NOT EXISTS `Users` (
-    `UserId` int(9) NOT NULL AUTO_INCREMENT,
-    `Username` varchar(40) NOT NULL,
-    `Password` varchar(40) NOT NULL,
-    PRIMARY KEY(UserId)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
 -- Table structure for table `login_attempts`
 --
 
@@ -604,6 +593,8 @@ CREATE TABLE IF NOT EXISTS `members` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `corporation` varchar(50) NOT NULL,
+  `role` varchar(20) NOT NULL,
   `password` char(128) NOT NULL,
   `salt` char(128) NOT NULL,
   PRIMARY KEY (`id`)

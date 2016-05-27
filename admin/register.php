@@ -75,7 +75,7 @@ include_once 'includes/functions.php';
                                 Username: <input type='text' class="form-control text-left typeahead" name='username' id='username' /><br>
                                 Email: <input type="text" class="form-control text-left typeahead" name="email" id="email" /><br>
                                 Corporation: <input type="text" class="form-control text-left typeahead" name="corporation" id="corporation" /><br>
-                                Role: <select><option value="CEO">CEO</option><option value="Director">Director</option></select>
+                                Role: <select class="form-control"><option value="CEO">CEO</option><option value="Director">Director</option></select>
                                 Password: <input type="password" class="form-control text-left typeahead" name="password" id="password"/><br>
                                 Confirm password: <input type="password" class="form-control text-left typeahead" name="confirmpwd" id="confirmpwd" /><br>
                                 <input type="button" class="form-control" value="Register" onclick="return regformhash(this.form, this.form.username, this.form.email, this.form.password, this.form.confirmpwd);" /> 
