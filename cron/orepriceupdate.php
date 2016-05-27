@@ -6,10 +6,11 @@ require_once __DIR__.'/cronfunctions/cronregistry.php';
 //Open the database connection
 $db = DBOpen();
 
+//Get the refine rate from the database
+$refineRate = $db->fetchColumn('SELECT refineRate FROM Configuration');
+
 //Set our region for EVE-Central
 $regionlimit = 10000043;
-//Set our Refining Rate
-$refineRate = 0.80;
 //Get the time
 $time = date("Y-m-d H:i:s");
 

@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `Configuration` (
 --
 
 INSERT INTO `Configuration` (`refineRate`) VALUES
-(84.00);
+(80.00);
 
 --
 -- Table structure for table `Contracts`
@@ -109,6 +109,290 @@ CREATE TABLE IF NOT EXISTS `OreContractContents` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
+-- Table structure for table 'OreCompContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `OreCompContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Compressed_Veldspar` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Concentrated_Veldspar` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Dense_Veldspar` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Scordite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Condensed_Scordite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Massive_Scordite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Pyroxeres` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Solid_Pyroxeres` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Viscous_Pyroxers` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Plagioclase` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Azure_Plagioclase` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Rich_Plagioclase` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Omber` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Silvery_Omber` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Golden_Omber` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Kernite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Luminous_Kernite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Fiery_Kernite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Jaspet` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Pure_Jaspet` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Pristine_Jaspet` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Hemorphite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Vivid_Hemorphite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Radiant_Hemorphite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Hedbergite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Vitric_Hedbergite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Glazed_Hedbergite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Gneiss` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Iridescent_Gneiss` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Prismatic_Gneiss` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Dark_Ochre` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Onyx_Ochre` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Obsidian_Ochre` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Spodumain` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Bright_Spodumain` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Gleaming_Spodumain` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Crokite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Sharp_Crokite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Crystalline_Crokite` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Bistot` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Triclinic_Bistot` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Monoclinic_Bistot` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Arkonor` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Crimson_Arkonor` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Prime_Arkonor` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Mercoxit` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Magma_Mercoxit` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Vitreous_Mercoxit` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table 'FuelContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `FuelContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Amarr_Fuel_Block` int(20) NOT NULL DEFAULT '0',
+    `Caldari_Fuel_Block` int(20) NOT NULL DEFAULT '0',
+    `Gallente_Fuel_Block` int(20) NOT NULL DEFAULT '0',
+    `Minmatar_Fuel_Block` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table 'IceContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `IceContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Clear_Icicle` int(20) NOT NULL DEFAULT '0',
+    `Enriched_Clear_Icicle` int(20) NOT NULL DEFAULT '0',
+    `Glacial_Mass` int(20) NOT NULL DEFAULT '0',
+    `Smooth_Glacial_Mass` int(20) NOT NULL DEFAULT '0',
+    `White_Glaze` int(20) NOT NULL DEFAULT '0',
+    `Pristine_White_Glaze` int(20) NOT NULL DEFAULT '0',
+    `Blue_Ice` int(20) NOT NULL DEFAULT '0',
+    `Thick_Blue_Ice` int(20) NOT NULL DEFAULT '0',
+    `Glare_Crust` int(20) NOT NULL DEFAULT '0',
+    `Dark_Glitter` int(20) NOT NULL DEFAULT '0',
+    `Gelidus` int(20) NOT NULL DEFAULT '0',
+    `Krystallos` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table 'IceProdContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `IceProdContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Helium_Isotopes` int(20) NOT NULL DEFAULT '0',
+    `Hydrogen_Isotopes` int(20) NOT NULL DEFAULT '0',
+    `Nitrogen_Isotopes` int(20) NOT NULL DEFAULT '0',
+    `Oxygen_Isotopes` int(20) NOT NULL DEFAULT '0',
+    `Heavy_Water` int(20) NOT NULL DEFAULT '0',
+    `Liquid_Ozone` int(20) NOT NULL DEFAULT '0',
+    `Strontium_Clathrates` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table 'MineralContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `MineralContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Tritanium` int(20) NOT NULL DEFAULT '0',
+    `Pyerite` int(20) NOT NULL DEFAULT '0',
+    `Mexallon` int(20) NOT NULL DEFAULT '0',
+    `Nocxium` int(20) NOT NULL DEFAULT '0',
+    `Isogen` int(20) NOT NULL DEFAULT '0',
+    `Megacyte` int(20) NOT NULL DEFAULT '0',
+    `Zydrine` int(20) NOT NULL DEFAULT '0',
+    `Morphite` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+
+--
+-- Table structure for table 'PiContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `PiContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Aqueous_Liquids` int(20) NOT NULL DEFAULT '0',
+    `Ionic_Solutions` int(20) NOT NULL DEFAULT '0',
+    `Base_Metals` int(20) NOT NULL DEFAULT '0',
+    `Heavy_Metals` int(20) NOT NULL DEFAULT '0',
+    `Noble_Metals` int(20) NOT NULL DEFAULT '0',
+    `Carbon_Compounds` int(20) NOT NULL DEFAULT '0',
+    `Micro_Organisms` int(20) NOT NULL DEFAULT '0',
+    `Complex_Organisms` int(20) NOT NULL DEFAULT '0',
+    `Planktic_Colonies` int(20) NOT NULL DEFAULT '0',
+    `Noble_Gas` int(20) NOT NULL DEFAULT '0',
+    `Reactive_Metals` int(20) NOT NULL DEFAULT '0',
+    `Felsic_Magma` int(20) NOT NULL DEFAULT '0',
+    `Non-CS_Materials` int(20) NOT NULL DEFAULT '0',
+    `Suspended_Plasma` int(20) NOT NULL DEFAULT '0',
+    `Autotrophs` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table 'PiT1ContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `PiT1ContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Bacteria` int(20) NOT NULL DEFAULT '0', 
+    `Biofuels` int(20) NOT NULL DEFAULT '0',
+    `Biomass` int(20) NOT NULL DEFAULT '0',
+    `Chiral_Structures` int(20) NOT NULL DEFAULT '0',
+    `Electrolytes` int(20) NOT NULL DEFAULT '0',
+    `Industrial_Fibers` int(20) NOT NULL DEFAULT '0',
+    `Oxidizing_Compound` int(20) NOT NULL DEFAULT '0',
+    `Oxygen` int(20) NOT NULL DEFAULT '0',
+    `Plasmoids` int(20) NOT NULL DEFAULT '0',
+    `Precious_Metals` int(20) NOT NULL DEFAULT '0',
+    `Proteins` int(20) NOT NULL DEFAULT '0',
+    `Reactive_Metals` int(20) NOT NULL DEFAULT '0',
+    `Silicon` int(20) NOT NULL DEFAULT '0',
+    `Toxic_Metals` int(20) NOT NULL DEFAULT '0',
+    `Water` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+
+--
+-- Table structure for table 'PiT2ContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `PiT2ContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Biocells` int(20) NOT NULL DEFAULT '0',
+    `Construction_Blocks` int(20) NOT NULL DEFAULT '0',
+    `Consumer_Electronics` int(20) NOT NULL DEFAULT '0',
+    `Coolant` int(20) NOT NULL DEFAULT '0',
+    `Enriched_Uranium` int(20) NOT NULL DEFAULT '0',
+    `Fertilizer` int(20) NOT NULL DEFAULT '0',
+    `Genetically_Enhanced_Livestock` int(20) NOT NULL DEFAULT '0',
+    `Livestock` int(20) NOT NULL DEFAULT '0',
+    `Mechanical_Parts` int(20) NOT NULL DEFAULT '0',
+    `Microfiber_Shielding` int(20) NOT NULL DEFAULT '0',
+    `Miniature_Electronics` int(20) NOT NULL DEFAULT '0',
+    `Nanites` int(20) NOT NULL DEFAULT '0',
+    `Oxides` int(20) NOT NULL DEFAULT '0',
+    `Polyaramids` int(20) NOT NULL DEFAULT '0',
+    `Polytextiles` int(20) NOT NULL DEFAULT '0',
+    `Rocket_Fuel` int(20) NOT NULL DEFAULT '0',
+    `Silicate_Glass` int(20) NOT NULL DEFAULT '0',
+    `Superconductors` int(20) NOT NULL DEFAULT '0',
+    `Synthetic_Oil` int(20) NOT NULL DEFAULT '0',
+    `Test_Cultures` int(20) NOT NULL DEFAULT '0',
+    `Transmitter` int(20) NOT NULL DEFAULT '0',
+    `Viral_Agent` int(20) NOT NULL DEFAULT '0',
+    `Water-Cooled_CPU` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+
+--
+-- Table structure for table 'PiT3ContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `PiT3ContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Biotech_Research_Reports` int(20) NOT NULL DEFAULT '0',
+    `Camera_Drones` int(20) NOT NULL DEFAULT '0',
+    `Cryprotectant_Solution` int(20) NOT NULL DEFAULT '0',
+    `Data_Chips` int(20) NOT NULL DEFAULT '0',
+    `Gel-Matrix_Biopaste` int(20) NOT NULL DEFAULT '0',
+    `Guidance_Systems` int(20) NOT NULL DEFAULT '0',
+    `Hazmat_Detection_Systems` int(20) NOT NULL DEFAULT '0',
+    `Hermetic_Membranes` int(20) NOT NULL DEFAULT '0',
+    `High-Tech_Transmitters` int(20) NOT NULL DEFAULT '0',
+    `Industrial_Explosives` int(20) NOT NULL DEFAULT '0',
+    `Necoms` int(20) NOT NULL DEFAULT '0',
+    `Nuclear_Reactors` int(20) NOT NULL DEFAULT '0',
+    `Planetary_Vehicles` int(20) NOT NULL DEFAULT '0',
+    `Robotics` int(20) NOT NULL DEFAULT '0',
+    `Smartfab_Units` int(20) NOT NULL DEFAULT '0',
+    `Supercomputers` int(20) NOT NULL DEFAULT '0',
+    `Synthetic_Synapses` int(20) NOT NULL DEFAULT '0',
+    `Transcranial_Microcontrollers` int(20) NOT NULL DEFAULT '0',
+    `Ukomi_Superconductors` int(20) NOT NULL DEFAULT '0',
+    `Vaccines` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+
+--
+-- Table structure for table 'PiT4ContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Broadcast_Node` int(20) NOT NULL DEFAULT '0',
+    `Integrity_Response_Drones` int(20) NOT NULL DEFAULT '0',
+    `Nanofactory` int(20) NOT NULL DEFAULT '0',
+    `Organic_Mortar_Applicator` int(20) NOT NULL DEFAULT '0',
+    `Recursive_Computing_Module` int(20) NOT NULL DEFAULT '0',
+    `Self-Harmonizing_Power_Core` int(20) NOT NULL DEFAULT '0',
+    `Sterile_Conduits` int(20) NOT NULL DEFAULT '0',
+    `Wetware_Mainframe` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`Contract_Num`),
+    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `Corps`
 --
 
@@ -132,20 +416,6 @@ CREATE TABLE IF NOT EXISTS `CorporationPayouts` (
     `Type` tinyint(1) NOT NULL DEFAULT '0',
     PRIMARY KEY (`index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Table structure for table `IceProductPrices`
---
-
-CREATE TABLE IF NOT EXISTS `IceProductPrices` (
-  `index` int(11) NOT NULL AUTO_INCREMENT,
-  `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `ItemId` int(11) DEFAULT NULL,
-  `Price` decimal(10,2) DEFAULT NULL,
-  PRIMARY KEY (`index`),
-  UNIQUE KEY `index` (`index`),
-  KEY `index_2` (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=162 ;
 
 --
 -- Table structure for table `itemComposition`
@@ -240,6 +510,20 @@ INSERT INTO `itemComposition` (`Name`, `ItemId`, `BatchSize`, `TritaniumNum`, `P
 ('Krystallos', 16269, 1, 0, 0, 0, 0, 0, 0, 0, 0, 173, 691, 0, 0, 0, 0, 173);
 
 --
+-- Table structure for table `IceProductPrices`
+--
+
+CREATE TABLE IF NOT EXISTS `IceProductPrices` (
+  `index` int(11) NOT NULL AUTO_INCREMENT,
+  `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ItemId` int(11) DEFAULT NULL,
+  `Price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`index`),
+  UNIQUE KEY `index` (`index`),
+  KEY `index_2` (`index`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `MineralPrices`
 --
 
@@ -251,7 +535,7 @@ CREATE TABLE IF NOT EXISTS `MineralPrices` (
   PRIMARY KEY (`index`),
   UNIQUE KEY `index` (`index`),
   KEY `index_2` (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1072 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `OrePrices`
@@ -264,20 +548,7 @@ CREATE TABLE IF NOT EXISTS `OrePrices` (
   `Price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`index`),
   UNIQUE KEY `index` (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=421 ;
-
---
--- Table structure for table `OrePrices`
---
-
-CREATE TABLE IF NOT EXISTS `OrePrices` (
-  `index` int(11) NOT NULL AUTO_INCREMENT,
-  `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `ItemId` int(11) DEFAULT NULL,
-  `Price` decimal(10,2) DEFAULT NULL,
-  PRIMARY KEY (`index`),
-  UNIQUE KEY `index` (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=421 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `PiPrices`
@@ -290,7 +561,7 @@ CREATE TABLE IF NOT EXISTS `PiPrices` (
   `Price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`index`),
   UNIQUE KEY `index` (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=522 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `SalvagePrices`
@@ -303,7 +574,7 @@ CREATE TABLE IF NOT EXISTS `SalvagePrices` (
   `Price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`index`),
   UNIQUE KEY `index` (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=115 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for `Users`
@@ -336,7 +607,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `password` char(128) NOT NULL,
   `salt` char(128) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
