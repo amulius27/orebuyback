@@ -5,6 +5,7 @@ include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
 
 sec_session_start();
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +66,11 @@ sec_session_start();
                 <li><a href="includes/logout.php">Log Out</a></li>
             </ul>
         </div>
+    </div>
+    <div class="container">
+        <h2>Welcome to the Warped Intentions Buy Back Program Dashboard, <?php echo $username; ?></h2>
+        <p>Select an option from the navigation bar at the top of the screen.  This screen</p>
+        <p>will be used for statistics in a future release.</p>        
     </div>
     
 
