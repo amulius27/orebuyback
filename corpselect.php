@@ -1,7 +1,7 @@
 <?php
 
 
-sec_session_start();
+session_start();
 
 
 $corpTemp = $_REQUEST["corp"];
