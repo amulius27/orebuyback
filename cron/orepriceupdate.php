@@ -8,6 +8,7 @@ $db = DBOpen();
 
 //Get the refine rate from the database
 $refineRate = $db->fetchColumn('SELECT refineRate FROM Configuration');
+$refineRate = $refineRate / 100.0;
 
 //Set our region for EVE-Central
 $regionlimit = 10000043;
