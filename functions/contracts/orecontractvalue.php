@@ -37,7 +37,7 @@ function OreContractValue($db, $update, $corporation) {
     $Mercoxit = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 11396, 'time' => $update));
     
 //Get the last contract number
-    $lastContractNum = $db->fetchColumn('SELECT MAX(Contract_Num) FROM Contracts');
+    $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');
     //Set the current contract number
     $contractNum = $lastContractNum + 1;
     //Set the time for the contract being inserted into the database

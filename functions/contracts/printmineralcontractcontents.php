@@ -2,7 +2,7 @@
 
 function PrintMineralsContractContents($contractNum, \Simplon\Mysql\Mysql $db) {
     $columns = $db->executeSql('SELECT COLUMN_NAME FROM INFORMATION_SCHEME.COLUMNS WHERE TABLE_NAME = `MineralsContractContents`');
-    $contents = $db->fetchRow('SELECT * FROM `MineralsContractContents` WHERE Contract_Num= :number', array('number' => $contractNum));
+    $contents = $db->fetchRow('SELECT * FROM `MineralsContractContents` WHERE ContractNum= :number', array('number' => $contractNum));
     
     $columnsNum = sizeof($colums);
     

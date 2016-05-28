@@ -2,7 +2,7 @@
 
 function PrintPiT3ContractContents($contractNum, \Simplon\Mysql\Mysql $db) {
     $columns = $db->executeSql('SELECT COLUMN_NAME FROM INFORMATION_SCHEME.COLUMNS WHERE TABLE_NAME = `PiT3ContractContents`');
-    $contents = $db->fetchRow('SELECT * FROM `PiT3ContractContents` WHERE Contract_Num= :number', array('number' => $contractNum));
+    $contents = $db->fetchRow('SELECT * FROM `PiT3ContractContents` WHERE ContractNum= :number', array('number' => $contractNum));
     
     $columnsNum = sizeof($colums);
     
