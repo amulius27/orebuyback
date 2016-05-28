@@ -8,7 +8,7 @@
     $db = DBOpen();
     //Start the session to retrieve session data
     
-    sec_session_start();
+    session_start();
     //Get the corporation from the session
     if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
