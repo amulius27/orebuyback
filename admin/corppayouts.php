@@ -60,7 +60,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="contracts.php">Contracts</a></li>
                 <li><a href="corppayouts.php">Corp Payouts</a></li>
-                <li><a href="corpsettings">Corp Settings</a></li>
+                <li><a href="corpsettings.php">Corp Settings</a></li>
             </ul>
         </div>
         <div class="collapse navbar-collapse pull-right">
@@ -107,8 +107,10 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
     <?php else : ?>
             <div class="container">
                 <div class="col-md-6">
+                    <h2>
                     <span class="error">You are not authorized to access this page.</span>
-                    Please <a href="index.php">login</a>.
+                    Please <a href="index.php">login</a> or speak to your site administrator.
+                    </h2>
                 </div>
             </div>
     <?php endif; 
