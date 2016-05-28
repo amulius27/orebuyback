@@ -44,7 +44,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
     </style>
 </head>
 <body>
-    <?php if ((login_check($mysqli) == true) AND ($role != ('SiteAdmin'))) : ?>
+    <?php if ((login_check($mysqli) == true) AND ($role == ('SiteAdmin'))) : ?>
     <div class="navbar navbar-inverse navbar-fixed-top" style="height: 60px;" role="navigation">
         <div class="navbar-header">
             <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
