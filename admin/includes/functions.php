@@ -21,6 +21,7 @@ include_once 'psl-config.php';
 
 function sec_session_start() {
     $session_name = 'obb_admin_dashboard';   // Set a custom session name 
+    /*
     $secure = SECURE;
 
     // This stops JavaScript being able to access the session id.
@@ -31,6 +32,8 @@ function sec_session_start() {
         header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
         exit();
     }
+     * 
+     */
 
     // Gets current cookies params.
     $cookieParams = session_get_cookie_params();
