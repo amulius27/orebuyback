@@ -158,8 +158,8 @@ CREATE TABLE IF NOT EXISTS `OreContractContents` (
     `Mercoxit` int(20) NOT NULL DEFAULT '0',
     `Magma_Mercoxit` int(20) NOT NULL DEFAULT '0',
     `Vitreous_Mercoxit` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
@@ -218,8 +218,8 @@ CREATE TABLE IF NOT EXISTS `OreCompContractContents` (
     `Compressed_Mercoxit` int(20) NOT NULL DEFAULT '0',
     `Compressed_Magma_Mercoxit` int(20) NOT NULL DEFAULT '0',
     `Compressed_Vitreous_Mercoxit` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
@@ -234,8 +234,8 @@ CREATE TABLE IF NOT EXISTS `FuelContractContents` (
     `Caldari_Fuel_Block` int(20) NOT NULL DEFAULT '0',
     `Gallente_Fuel_Block` int(20) NOT NULL DEFAULT '0',
     `Minmatar_Fuel_Block` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
@@ -258,8 +258,8 @@ CREATE TABLE IF NOT EXISTS `IceContractContents` (
     `Dark_Glitter` int(20) NOT NULL DEFAULT '0',
     `Gelidus` int(20) NOT NULL DEFAULT '0',
     `Krystallos` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
@@ -277,8 +277,8 @@ CREATE TABLE IF NOT EXISTS `IceProdContractContents` (
     `Heavy_Water` int(20) NOT NULL DEFAULT '0',
     `Liquid_Ozone` int(20) NOT NULL DEFAULT '0',
     `Strontium_Clathrates` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
@@ -297,8 +297,8 @@ CREATE TABLE IF NOT EXISTS `MineralContractContents` (
     `Megacyte` int(20) NOT NULL DEFAULT '0',
     `Zydrine` int(20) NOT NULL DEFAULT '0',
     `Morphite` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 
@@ -325,8 +325,8 @@ CREATE TABLE IF NOT EXISTS `PiContractContents` (
     `Non-CS_Materials` int(20) NOT NULL DEFAULT '0',
     `Suspended_Plasma` int(20) NOT NULL DEFAULT '0',
     `Autotrophs` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
@@ -352,8 +352,8 @@ CREATE TABLE IF NOT EXISTS `PiT1ContractContents` (
     `Silicon` int(20) NOT NULL DEFAULT '0',
     `Toxic_Metals` int(20) NOT NULL DEFAULT '0',
     `Water` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 
@@ -388,8 +388,8 @@ CREATE TABLE IF NOT EXISTS `PiT2ContractContents` (
     `Transmitter` int(20) NOT NULL DEFAULT '0',
     `Viral_Agent` int(20) NOT NULL DEFAULT '0',
     `Water-Cooled_CPU` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 
@@ -421,8 +421,8 @@ CREATE TABLE IF NOT EXISTS `PiT3ContractContents` (
     `Transcranial_Microcontrollers` int(20) NOT NULL DEFAULT '0',
     `Ukomi_Superconductors` int(20) NOT NULL DEFAULT '0',
     `Vaccines` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 
@@ -442,8 +442,8 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
     `Self-Harmonizing_Power_Core` int(20) NOT NULL DEFAULT '0',
     `Sterile_Conduits` int(20) NOT NULL DEFAULT '0',
     `Wetware_Mainframe` int(20) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`Contract_Num`),
-    UNIQUE KEY `Contract_Num` (`Contract_Num`)
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
