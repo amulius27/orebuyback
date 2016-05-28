@@ -149,9 +149,9 @@ function calcNow() {
     var toxicReward = toxicUnits * toxicMetals;
     var waterReward = waterUnits * water;
 
-    var totalReward = bacteriaReward+biofuelReward+biomassReward+chiralReward+electrolyteReward+industrialReward+
+    var totalReward = (bacteriaReward+biofuelReward+biomassReward+chiralReward+electrolyteReward+industrialReward+
         oxidizingReward+oxygenReward+plasmoidsReward+preciousReward+proteinsReward+reactiveReward+siliconReward+
-        toxicReward+waterReward;
+        toxicReward+waterReward) * value;
 	
     var reward = totalReward.toFixed(2);
 

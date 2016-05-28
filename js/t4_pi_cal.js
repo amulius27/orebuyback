@@ -91,8 +91,8 @@ function calcNow() {
     var sterileConduitsReward = sterileConduitsUnits * sterileConduits;
     var mainframeReward = mainframeUnits * Mainframe;
 
-    var totalReward = broadcastReward+responseReward+nanoFactoryReward+applicatorReward+
-            computingModuleReward+powerCoreReward+sterileConduitsReward+mainframeReward;
+    var totalReward = (broadcastReward+responseReward+nanoFactoryReward+applicatorReward+
+            computingModuleReward+powerCoreReward+sterileConduitsReward+mainframeReward) * value;
 
     var reward = totalReward.toFixed(2);
 

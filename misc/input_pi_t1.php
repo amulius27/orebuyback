@@ -17,7 +17,7 @@
         $corpTax = 10.00;
     }
     
-    $alliance_tax = 4.00;
+    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
 
@@ -60,4 +60,5 @@
     var silicon = <?= $silicon ?>;
     var toxicMetals = <?= $toxic_metals ?>;
     var water = <?= $water ?>;
+    var value = <?= $value ?>;
 </script>

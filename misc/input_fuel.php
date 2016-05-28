@@ -18,7 +18,7 @@
         $corpTax = 10.00;
     }
     
-    $alliance_tax = 4.00;
+    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
 
@@ -44,4 +44,5 @@ DBClose($db);
     var caldari = <?= $Caldari_Fuel ?>;
     var gallente = <?= $Gallente_Fuel ?>;
     var minmatar = <?= $Minmatar_Fuel ?>;
+    var value = <?= $value ?>;
 </script>

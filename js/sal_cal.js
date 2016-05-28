@@ -332,11 +332,11 @@ function calcNow() {
     var trippedPowerCircuitReward = trippedPowerCircuitUnits * trippedPowerCircuit;
     var wardConsoleReward = wardConsoleUnits * wardConsole;
 
-    var totalReward = alloyedTritaniumBarReward+armorPlatesReward+artificialNeuralNetworkReward+brokenDroneTransceiverReward+burnedLogicCircuitReward+capacitorConsoleReward+charredMicroCircuitReward
+    var totalReward = (alloyedTritaniumBarReward+armorPlatesReward+artificialNeuralNetworkReward+brokenDroneTransceiverReward+burnedLogicCircuitReward+capacitorConsoleReward+charredMicroCircuitReward
         +conductivePolymerReward+conductiveThermoplasticReward+contaminatedLorentzFluidReward+contaminatedNaniteCompoundReward+currentPumpReward+damagedArtificialNeuralNetworkReward+defectiveCurrentPumpReward
         +droneTransceiverReward+enhancedWardConsoleReward+friedInterfaceCircuitReward+impetusConsoleReward+intactArmorPlatesReward+intactShieldEmitterReward+interfaceCircuitReward+logicCircuitReward
         +lorentzFluidReward+malfunctioningShieldEmitterReward+meltedCapacitorConsoleReward+microCircuitReward+naniteCompoundReward+powerCircuitReward+powerConduitReward+scorchedTelemetryProcessorReward
-        +singleCrystalSuperalloyIBeamReward+smashedTriggerUnitReward+tangledPowerConduitReward+telemetryProcessorReward+thrusterConsoleReward+triggerUnitReward+trippedPowerCircuitReward+wardConsoleReward;
+        +singleCrystalSuperalloyIBeamReward+smashedTriggerUnitReward+tangledPowerConduitReward+telemetryProcessorReward+thrusterConsoleReward+triggerUnitReward+trippedPowerCircuitReward+wardConsoleReward) * value;
 
     var reward = totalReward.toFixed(2);
 

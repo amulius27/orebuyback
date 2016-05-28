@@ -1,3 +1,5 @@
+/* global tritanium, pyerite, mexallon, isogen, nocxium, zydrine, megacyte, morphite, value */
+
 $(document).ready(function() {
     calcNow();
 });
@@ -91,7 +93,7 @@ $(document).ready(function() {
         var megacyteReward = megacyteUnits * megacyte;
         var morphiteReward = morphiteUnits * morphite;
 
-        var totalReward = tritaniumReward+pyeriteReward+mexallonReward+isogenReward+nocxiumReward+zydrineReward+megacyteReward+morphiteReward;
+        var totalReward = (tritaniumReward+pyeriteReward+mexallonReward+isogenReward+nocxiumReward+zydrineReward+megacyteReward+morphiteReward) * value;
 
         $('#calc-output-tritanium-value').html(number_format(tritaniumReward) + ' ISK');
         $('#calc-output-pyerite-value').html(number_format(pyeriteReward) + ' ISK');

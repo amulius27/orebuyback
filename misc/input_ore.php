@@ -18,7 +18,7 @@
         $corpTax = 10.00;
     }
     
-    $alliance_tax = 4.00;
+    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
     
@@ -99,6 +99,7 @@
     var bistot = <?= $Bistot ?>;
     var arkonor = <?= $Arkonor ?>;
     var mercoxit = <?= $Mercoxit ?>;
+    var value = <?= $value ?>;
 </script>
 
     

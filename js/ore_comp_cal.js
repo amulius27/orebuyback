@@ -345,8 +345,8 @@ function calcNow() {
     var arkonorReward = (arkonorUnits*arkonor_comp)+(arkonor_5Units*(arkonor_comp*1.05))+(arkonor_10Units*(arkonor_comp*1.1));
     var mercoxitReward = (mercoxitUnits*mercoxit_comp)+(mercoxit_5Units*(mercoxit_comp*1.05))+(mercoxit_10Units*(mercoxit_comp*1.1));
 
-    var totalReward = veldsparReward+scorditeReward+pyroxeresReward+plagioclaseReward+omberReward+kerniteReward+jaspetReward+
-        hemorphiteReward+hedbergiteReward+gneissReward+darkOchreReward+spodumainReward+crokiteReward+bistotReward+arkonorReward+mercoxitReward;
+    var totalReward = (veldsparReward+scorditeReward+pyroxeresReward+plagioclaseReward+omberReward+kerniteReward+jaspetReward+
+        hemorphiteReward+hedbergiteReward+gneissReward+darkOchreReward+spodumainReward+crokiteReward+bistotReward+arkonorReward+mercoxitReward) * value;
 
     var reward = totalReward.toFixed(2);
 

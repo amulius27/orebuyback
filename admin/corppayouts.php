@@ -5,6 +5,9 @@ include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
 
 sec_session_start();
+$username = $_SESSION['username'];
+$db = DBOpen();
+$role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +44,7 @@ sec_session_start();
     </style>
 </head>
 <body>
-    <?php if (login_check($mysqli) == true) : ?>
+    <?php if ((login_check($mysqli) == true) AND ($role != ('SiteAdmin'))) : ?>
     <div class="navbar navbar-inverse navbar-fixed-top" style="height: 60px;" role="navigation">
         <div class="navbar-header">
             <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
@@ -108,7 +111,9 @@ sec_session_start();
                     Please <a href="index.php">login</a>.
                 </div>
             </div>
-    <?php endif; ?>
+    <?php endif; 
+        DBClose($db);
+    ?>
     
   </body>
 </html>

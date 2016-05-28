@@ -1,3 +1,5 @@
+/* global icicle, enrichedIcicle, glacial, smoothGlacial, glaze, pristineGlaze, blue, thickBlue, glare, glitter, gelidus, krystallos, value */
+
 $(document).ready(function() {
     calcNow();
 });
@@ -123,7 +125,7 @@ function calcNow() {
     var gelidusReward = gelidusUnits * gelidus;
     var krystallosReward = krystallosUnits * krystallos;
 
-    var totalReward = icicleReward+enrichedReward+glacialReward+smoothReward+glazeReward+pristineReward+blueReward+thickReward+glareReward+glitterReward+gelidusReward+krystallosReward;
+    var totalReward = (icicleReward+enrichedReward+glacialReward+smoothReward+glazeReward+pristineReward+blueReward+thickReward+glareReward+glitterReward+gelidusReward+krystallosReward) * value;
 
     $('#calc-output-Icicle-value').html(number_format(icicleReward) + ' ISK');
     $('#calc-output-Enriched-value').html(number_format(enrichedReward) + ' ISK');

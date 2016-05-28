@@ -221,9 +221,9 @@ function calcNow() {
     var viralAgentReward = viralAgentUnits * viralAgent;
     var waterCooledCpuReward = waterCooledCpuUnits * waterCooledCpu;
 
-    var totalReward = biocellsReward+constructionBlocksReward+consumerElectronicsReward+coolantReward+enrichedUraniumReward+fertilizerReward+genEnhancedLivestockReward+livestockReward+mechanicalPartsReward+
+    var totalReward = (biocellsReward+constructionBlocksReward+consumerElectronicsReward+coolantReward+enrichedUraniumReward+fertilizerReward+genEnhancedLivestockReward+livestockReward+mechanicalPartsReward+
             microfiberShieldingReward+miniatureElectronicsReward+nanitesReward+oxidesReward+polyaramidsReward+polytextilesReward+rocketFuelReward+silicateGlassReward+
-            superconductorsReward+supertensilePlasticsReward+syntheticOilReward+testCulturesReward+transmitterReward+viralAgentReward+waterCooledCpuReward;
+            superconductorsReward+supertensilePlasticsReward+syntheticOilReward+testCulturesReward+transmitterReward+viralAgentReward+waterCooledCpuReward) * value;
 
     var reward = totalReward.toFixed(2);
 

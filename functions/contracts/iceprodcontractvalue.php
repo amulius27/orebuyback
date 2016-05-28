@@ -42,12 +42,28 @@ function IceProdContractValue($db, $update, $corporation) {
     foreach($iceProdValue as $value) {
        $contractValue = $contractValue + $value;
     }
+    
+    //Get the tax rates
+    $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
+    $corpTaxRate = $db->fetchColumn('SELECT corpTaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
+    //Calculate the taxes from the contract value
+    $allianceTax = $contractValue * $allianceTaxRate;
+    $corpTax = $contractValue * $corpTaxRate;
+    //Adjust the contract value
+    $contractValue = ($contractValue - $allianceTax) - $corpTax;
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $iceProdContents = array(
         "ContractNum" => $contractNum,
         "ContractTime" =>  $now,
         "QuoteTime" => $update,
+        "Helium_Isotopes" => $_POST["Helium_Isotopes"],
+        "Hydrogen_Isotopes" => $_POST["Hydrogen_Isotopes"],
+        "Nitrogen_Isotopes" => $_POST["Nitrogen_Isotopes"],
+        "Oxygen_Isotopes" => $_POST["Oxygen_Isotopes"],
+        "Heavy_Water" => $_POST["Heavy_Water"],
+        "Liquid_Ozone" => $_POST["Liquid_Ozone"],
+        "Strontium_Clathrates" => $_POST["Strontium_Clathrates"],
         
     );
    
@@ -58,13 +74,8 @@ function IceProdContractValue($db, $update, $corporation) {
         "Corporation" => $corporation,
         "QuoteTime" =>  $update,
         "Value" => $contractValue,
-        "Helium_Isotopes" => $_POST["Helium_Isotopes"],
-        "Hydrogen_Isotopes" => $_POST["Hydrogen_Isotopes"],
-        "Nitrogen_Isotopes" => $_POST["Nitrogen_Isotopes"],
-        "Oxygen_Isotopes" => $_POST["Oxygen_Isotopes"],
-        "Heavy_Water" => $_POST["Heavy_Water"],
-        "Liquid_Ozone" => $_POST["Liquid_Ozone"],
-        "Strontium_Clathrates" => $_POST["Strontium_Clathrates"],
+        "AllianceTax" => $allianceTax,
+        "CorpTax" => $corpTax
     );
    
    $db->insert('IceProdContractContents', $iceProdContents);

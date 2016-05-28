@@ -163,22 +163,22 @@ function calcNow() {
     var non_csPrice = non_csReward;
     var suspendedPrice = suspendedReward;
     var autotrophsPrice = autotrophsReward;
-	var basePrice = baseReward;
-	var heavyPrice = heavyReward;
-	var noblePrice = nobleReward;
-	var carbonPrice = carbonReward;
-	var microPrice = microReward;
-	var complexPrice = complexReward;
-	var plankticPrice = plankticReward;
-	var noble_gasPrice = nobleReward;
-	var reactivePrice = reactiveReward;
-	var felsicPrice = felsicReward;
-	var non_csPrice = non_csReward;
-	var suspendedPrice = suspendedReward;
-	var autotrophsPrice = autotrophsReward;
+    var basePrice = baseReward;
+    var heavyPrice = heavyReward;
+    var noblePrice = nobleReward;
+    var carbonPrice = carbonReward;
+    var microPrice = microReward;
+    var complexPrice = complexReward;
+    var plankticPrice = plankticReward;
+    var noble_gasPrice = nobleReward;
+    var reactivePrice = reactiveReward;
+    var felsicPrice = felsicReward;
+    var non_csPrice = non_csReward;
+    var suspendedPrice = suspendedReward;
+    var autotrophsPrice = autotrophsReward;
 
-    var totalReward = aqueousPrice+ionicPrice+basePrice+heavyPrice+noblePrice+carbonPrice+microPrice+complexPrice+plankticPrice+
-	noble_gasPrice+reactivePrice+felsicPrice+non_csPrice+suspendedPrice+autotrophsPrice;
+    var totalReward = (aqueousPrice+ionicPrice+basePrice+heavyPrice+noblePrice+carbonPrice+microPrice+complexPrice+plankticPrice+
+	noble_gasPrice+reactivePrice+felsicPrice+non_csPrice+suspendedPrice+autotrophsPrice) * value;
 
     var reward = totalReward.toFixed(2);
 

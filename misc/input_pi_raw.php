@@ -18,7 +18,7 @@
         $corpTax = 10.00;
     }
     
-    $alliance_tax = 4.00;
+    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
 
@@ -77,4 +77,5 @@
     var non_cs = "<?= $Non ?>";
     var suspended = "<?= $Suspended ?>";
     var autotrophs = "<?= $Autotrophs ?>";
+    var value = <?= $value ?>;
 </script>

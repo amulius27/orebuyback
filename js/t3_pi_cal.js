@@ -195,10 +195,10 @@ function calcNow() {
     var ukomiReward = ukomiUnits * ukomi;
     var vaccinesReward = vaccinesUnits * vaccines;
 
-    var totalReward = biotechReward+cameraDronesReward+condensatesReward+cryoprotectantReward+dataChipsReward+gelMatrixReward+
+    var totalReward = (biotechReward+cameraDronesReward+condensatesReward+cryoprotectantReward+dataChipsReward+gelMatrixReward+
             guidanceSystemsReward+hazmatReward+hermeticMembranesReward+hightechTransmittersReward+industrialExplosivesReward+
             neocomsReward+nuclearReactorsReward+planetaryVehiclesReward+roboticsReward+smartfabReward+supercomputersReward+syntheticSynapsesReward+
-            transcranialReward+ukomiReward+vaccinesReward;
+            transcranialReward+ukomiReward+vaccinesReward) * value;
 
     var reward = totalReward.toFixed(2);
 

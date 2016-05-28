@@ -17,7 +17,7 @@
         $corpTax = 10.00;
     }
     
-    $alliance_tax = 4.00;
+    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
     //Update timestamp
@@ -53,6 +53,7 @@
     var megacyte = <?= $Megacyte ?>;
     var zydrine = <?= $Zydrine ?>;
     var morphite = <?= $Morphite ?>;
+    var value = <?= $value ?>;
 </script>
 
 <script src="/../js/min_cal.js"></script>

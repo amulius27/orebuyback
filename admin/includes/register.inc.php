@@ -83,6 +83,13 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
                 exit();
             }
         }
+        if(isset($_POST['Corporation'])) {
+            $db = DBOpen();
+            $id = $db->fetchColumn('SELECT id FROM members WHERE username= :user', array('user' => $username));
+            $corporation = $_POST['Corporation'];
+            $db->insert('member_roles', array('id' => $id, 'username' => $username, 'corporation' => $corporation));
+            DBClose($db);
+        }
         header('Location: ./register_success.php');
         exit();
     }

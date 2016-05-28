@@ -23,15 +23,67 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `Configuration` (
-  `refineRate` decimal(5,2) NOT NULL
+  `refineRate` decimal(5,2) NOT NULL,
+  `allianceTaxRate` decimal (5,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Configuration`
 --
 
-INSERT INTO `Configuration` (`refineRate`) VALUES
-(80.00);
+INSERT INTO `Configuration` (`refineRate`) VALUES (80.00);
+INSERT INTO `Configuration` (`allianceTaxRate`) VALUES (4.00);
+
+--
+-- Table structure for table `Corps`
+--
+
+CREATE TABLE IF NOT EXISTS `Corps` (
+  `index` int(11) NOT NULL AUTO_INCREMENT,
+  `CorpName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `TaxRate` decimal(5,2) DEFAULT NULL,
+  `Deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`index`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `login_attempts`
+--
+
+CREATE TABLE IF NOT EXISTS `login_attempts` (
+  `user_id` int(11) NOT NULL,
+  `time` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE IF NOT EXISTS `members` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` char(128) NOT NULL,
+  `salt` char(128) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `member_roles`
+-- Roles are Member, Director, CEO, and SiteAdmin
+--
+
+CREATE TABLE IF NOT EXISTS `member_roles` (
+    `id` int(11) NOT NULL,
+    `username` varchar(30) NOT NULL,
+    `corporation` varchar(50) NOT NULL,
+    `role` varchar(20) NOT NULL DEFAULT 'Member', 
+    `canChangeCorpTax` tinyint(1) NOT NULL DEFAULT '0',
+    `canChangeRefineRate` tinyint(1) NOT NULL DEFAULT '0',
+    `canChangeAllianceTaxRate` tinyint(1) NOT NULL DEFAULT '0',
+    `canAddNewCorp` tinyint(1) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Table structure for table `Contracts`
@@ -43,6 +95,8 @@ CREATE TABLE IF NOT EXISTS `Contracts` (
   `Corporation` varchar(50) NOT NULL,
   `QuoteTime` timestamp NOT NULL,
   `Value` decimal(20,2) DEFAULT NULL,
+  `AllianceTax` decimal(20,2) NOT NULL DEFAULT '0.00',
+  `CorpTax` decimal (20,2) NOT NULL DEFAULT '0.00',
   `Paid` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Contract_Num`),
   UNIQUE KEY `Contract_Num` (`Contract_Num`)
@@ -393,18 +447,6 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
--- Table structure for table `Corps`
---
-
-CREATE TABLE IF NOT EXISTS `Corps` (
-  `index` int(11) NOT NULL AUTO_INCREMENT,
-  `CorpName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-  `TaxRate` decimal(5,2) DEFAULT NULL,
-  `Deleted` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
-
---
 -- Table structure for table `CorporationPayouts`
 -- Type = 0 for adding, and Type = 1 for subtracting
 --
@@ -412,9 +454,23 @@ CREATE TABLE IF NOT EXISTS `Corps` (
 CREATE TABLE IF NOT EXISTS `CorporationPayouts` (
     `index` int(11) NOT NULL AUTO_INCREMENT,
     `CorpName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-    `Amount` decimal(12,2) DEFAULT NULL,
+    `Amount` decimal(12,2) DEFAULT '0.00',
     `Type` tinyint(1) NOT NULL DEFAULT '0',
     PRIMARY KEY (`index`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `AlliancePayouts`
+-- Type = 0 for adding, and Type = 1 for subtracting
+--
+
+CREATE TABLE IF NOT EXISTS `AlliancePayouts` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `ContractNum` int(12) NOT NULL,
+    `CorpName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+    `Amount` decimal(12,2) DEFAULT '0.00',
+    `Type` tinyint(1) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -574,30 +630,6 @@ CREATE TABLE IF NOT EXISTS `SalvagePrices` (
   `Price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`index`),
   UNIQUE KEY `index` (`index`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
-
---
--- Table structure for table `login_attempts`
---
-
-CREATE TABLE IF NOT EXISTS `login_attempts` (
-  `user_id` int(11) NOT NULL,
-  `time` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Table structure for table `members`
---
-
-CREATE TABLE IF NOT EXISTS `members` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `corporation` varchar(50) NOT NULL,
-  `role` varchar(20) NOT NULL,
-  `password` char(128) NOT NULL,
-  `salt` char(128) NOT NULL,
-  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
