@@ -1,5 +1,8 @@
 <?php
 
+//Start the session
+$session_name = 'obb_main';
+session_name($session_name);
 session_start();
 
 
