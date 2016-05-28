@@ -98,8 +98,8 @@ CREATE TABLE IF NOT EXISTS `Contracts` (
   `AllianceTax` decimal(20,2) NOT NULL DEFAULT '0.00',
   `CorpTax` decimal (20,2) NOT NULL DEFAULT '0.00',
   `Paid` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`Contract_Num`),
-  UNIQUE KEY `Contract_Num` (`Contract_Num`)
+  PRIMARY KEY (`ContractNum`),
+  UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
