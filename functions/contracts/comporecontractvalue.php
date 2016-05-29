@@ -165,6 +165,8 @@ function CompOreContractValue($db, $update, $corporation, $post) {
         "Compressed_Vitreous_Mercoxit" => $post["Compressed_Vitreous_Mercoxit"]
     );
    
+   
+   
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
         "ContractNum" => $contractNum,
@@ -176,6 +178,9 @@ function CompOreContractValue($db, $update, $corporation, $post) {
         "CorpTax" => $corpTax
         
     );
+    
+    var_dump($compOreContents);
+    var_dump($contract);
    
    $db->insert('CompOreContractContents', $compOreContents);
    $db->insert('Contracts', $contract);

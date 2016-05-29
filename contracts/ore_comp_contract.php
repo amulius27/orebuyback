@@ -302,10 +302,7 @@
         "Compressed_Mercoxit" => $Compressed_Mercoxit,
         "Compressed_Magma_Mercoxit" => $Compressed_Magma_Mercoxit,
         "Compressed_Vitreous_Mercoxit" => $Compressed_Vitreous_Mercoxit,
-    );
-    
-    var_dump($post);
-    
+    ); 
     
     $contract = CompOreContractValue($db, $contractTime, $corporation, $post);
 ?>
