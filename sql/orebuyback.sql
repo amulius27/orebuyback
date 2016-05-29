@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `Configuration` (
 -- Dumping data for table `Configuration`
 --
 
-INSERT INTO `Configuration` (`refineRate, allianceTaxRate`) VALUES (80.00, 4.00);
+INSERT INTO `Configuration` (`refineRate`, `allianceTaxRate`) VALUES (80.00, 4.00);
 
 --
 -- Table structure for table `Corps`
@@ -162,10 +162,10 @@ CREATE TABLE IF NOT EXISTS `OreContractContents` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
--- Table structure for table 'OreCompContractContents`
+-- Table structure for table 'CompOreContractContents`
 --
 
-CREATE TABLE IF NOT EXISTS `OreCompContractContents` (
+CREATE TABLE IF NOT EXISTS `CompOreContractContents` (
     `ContractNum` int(11) NOT NULL,
     `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `QuoteTime` timestamp NOT NULL,

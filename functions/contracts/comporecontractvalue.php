@@ -162,7 +162,7 @@ function CompOreContractValue($db, $update, $corporation, $post) {
         "Compressed_Prime_Arkonor" => $post["Compressed_Prime_Arkonor"],
         "Compressed_Mercoxit" => $post["Compressed_Mercoxit"],
         "Compressed_Magma_Mercoxit" => $post["Compressed_Magma_Mercoxit"],
-        "Compressed_Vitreous_Mercoxit" => $post["Compressed_Vitreous_Mercoxit"],
+        "Compressed_Vitreous_Mercoxit" => $post["Compressed_Vitreous_Mercoxit"]
     );
    
     //Create the contract value array to be inserted into the Contracts database
