@@ -14,7 +14,7 @@
     }
     
     $post = array(
-        "Compressed_Veldspar" => $_POST["Compressed_Veldspar"],
+        "Compressed_Veldspar" => $_POST["calc-input-Veldspar_units-value"],
         "Compressed_Concentrated_Veldspar" => $_POST["Compressed_Concentrated_Veldspar"],
         "Compressed_Dense_Veldspar" => $_POST["Compressed_Dense_Veldspar"],
         "Compressed_Scordite" => $_POST["Compressed_Scordite"],
