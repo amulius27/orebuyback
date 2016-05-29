@@ -4,7 +4,7 @@
     $db = DBOpen();
     $contractTime = $_POST["Quote_Time"];
     $corporation = $_POST["Corporation"];
-    $contract= OreCompContractValue($db, $contractTime, $corporation);
+    $contract = CompOreContractValue($db, $contractTime, $corporation);
 ?>
 
 <!DOCTYPE html>
