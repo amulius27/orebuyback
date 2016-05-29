@@ -178,8 +178,10 @@ function CompOreContractValue($db, $update, $corporation, $post) {
         "CorpTax" => $corpTax
         
     );
-    
+    var_dump($compOreValue);
+    printf("<br>");
     var_dump($compOreContents);
+    printf("<br>");
     var_dump($contract);
    
    $db->insert('CompOreContractContents', $compOreContents);
