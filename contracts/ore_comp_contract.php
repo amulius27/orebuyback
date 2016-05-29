@@ -1,7 +1,7 @@
 <?php  
     require_once __DIR__.'/../functions/registry.php';
     
-    $db = DBOpen();
+    
     if(isset($_POST["Quote_Time"])) {
         $contractTime = $_POST["Quote_Time"];
     } else {
@@ -304,7 +304,7 @@
         'Compressed_Vitreous_Mercoxit' => $Compressed_Vitreous_Mercoxit,
     ); 
     
-    $contract = CompOreContractValue($db, $contractTime, $corporation, $post);
+    $contract = CompOreContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
@@ -364,8 +364,8 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintCompOreContractContents($contract["Number"], $db); 
-              DBClose($db);
+        <?php PrintCompOreContractContents($contract["Number"]); 
+              
         ?>
     </div>
     

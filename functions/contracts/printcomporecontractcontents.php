@@ -1,7 +1,8 @@
 <?php
 
-function PrintCompOreContractContents($contractNum, \Simplon\Mysql\Mysql $db) {
-    $columns = $db->executeSql("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='CompOreContractContents'");
+function PrintCompOreContractContents($contractNum) {
+    $db = DBOpen();
+    $columns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COUMNS WHERE TABLE_NAME= :table', array('table' => 'CompOreContractContents'));
     $contents = $db->fetchRow('SELECT * FROM CompOreContractContents WHERE ContractNum= :number', array('number' => $contractNum));
     
     $columnsNum = sizeof($colums);
@@ -19,6 +20,8 @@ function PrintCompOreContractContents($contractNum, \Simplon\Mysql\Mysql $db) {
         printf("</tr>");
     }
     printf("</table>");
+    
+    DBClose($db);
 }
 
 ?>

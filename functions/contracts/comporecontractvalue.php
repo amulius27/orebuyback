@@ -1,8 +1,8 @@
 <?php
 
-function CompOreContractValue($db, $update, $corporation, $post) {
+function CompOreContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     //Veldspar
     $Veldspar = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1230, 'time' => $update));
     //Scordite
@@ -186,7 +186,8 @@ function CompOreContractValue($db, $update, $corporation, $post) {
     printf("<br>");
     var_dump($contract);
    
-    $db->insert('CompOreContractContents', array('ContractNum' => $contractNum));
+   $db->insert('CompOreContractContents', array('ContractNum' => $contractNum));
+   
    //$db->insert('CompOreContractContents', $compOreContents);
    $db->insert('Contracts', $contract);
    
@@ -195,7 +196,9 @@ function CompOreContractValue($db, $update, $corporation, $post) {
        "Number" => $contractNum,
    );
     
-    return $contractReturn;
+   DBClose($db);
+   
+   return $contractReturn;
 }
 
 ?>
