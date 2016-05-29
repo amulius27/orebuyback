@@ -349,26 +349,30 @@
 ?>
 
     <div class="container">
-        <table class="table-bordered table-striped">
-            <tr>
-                <td>Contract To</td>
-                <td>Contract Type</td>
-                <td>Contract Length</td>
-                <td>Contract Value</td>
-            </tr>
-            <tr>
-                <td>Spatial Forces</td>
-                <td>Private</td>
-                <td>2 weeks</td>
-                <td><?php echo $contract["Value"]; ?></td>
-            </tr>
-        </table>
+        <div class="row">
+            <table class="table-bordered table-striped">
+                <tr>
+                    <td>Contract To</td>
+                    <td>Contract Type</td>
+                    <td>Contract Length</td>
+                    <td>Contract Value</td>
+                </tr>
+                <tr>
+                    <td>Spatial Forces</td>
+                    <td>Private</td>
+                    <td>2 weeks</td>
+                    <td><?php echo $contract["Value"]; ?></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div class="container">
-        <h1>Contract Contents</h1><br>
-        <?php 
-            PrintCompOreContractContents($contract["Number"]);   
-        ?>
+        <div class="row">
+            <h1>Contract Contents</h1><br>
+            <?php 
+                PrintCompOreContractContents($contract["Number"]);   
+            ?>
+        </div>
     </div>
     
 </body>
