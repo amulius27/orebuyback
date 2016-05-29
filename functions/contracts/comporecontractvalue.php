@@ -145,7 +145,7 @@ function CompOreContractValue($db, $update, $corporation, $post) {
         "Compressed_Gneiss" => $post["Compressed_Gneiss"],
         "Compressed_Iridescent_Gneiss" => $post["Compressed_Iridescent_Gneiss"],
         "Compressed_Prismatic_Gneiss" => $post["Compressed_Prismatic_Gneiss"],
-        "Compressed_Dark_Ochre" => $post["Compressed_Dark Ochre"],
+        "Compressed_Dark_Ochre" => $post["Compressed_Dark_Ochre"],
         "Compressed_Onyx_Ochre" => $post["Compressed_Onyx_Ochre"],
         "Compressed_Obsidian_Ochre" => $post["Compressed_Obsidian_Ochre"],
         "Compressed_Spodumain" => $post["Compressed_Spodumain"],
