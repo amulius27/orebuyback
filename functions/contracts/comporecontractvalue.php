@@ -186,9 +186,9 @@ function CompOreContractValue($update, $corporation, $post) {
     printf("<br>");
     var_dump($contract);
    
-   $db->insert('CompOreContractContents', array('ContractNum' => $contractNum));
+   //$db->insert('CompOreContractContents', array('ContractNum' => $contractNum));
    
-   //$db->insert('CompOreContractContents', $compOreContents);
+   $db->insert('CompOreContractContents', $compOreContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
