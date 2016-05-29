@@ -178,7 +178,7 @@
         $Compressed_Obsidian_Ochre = 0;
     }
     if(isset($_POST["Compressed_Spodumain"])) {
-        $Compressed_Spodumain = $_POST["Compressed_Spoduamin"];
+        $Compressed_Spodumain = $_POST["Compressed_Spodumain"];
     } else {
         $Compressed_Spodumain = 0;
     }
