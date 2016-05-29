@@ -12,7 +12,59 @@
     } else {
         $corporation = 'None';
     }
-    $contract= OreContractValue($db, $contractTime, $corporation);
+    
+    $post = array(
+        "Veldspar" => $CompVeldspar,
+        "Concentrated_Veldspar" => $CompConcentratedVeldspar,
+        "Dense_Veldspar" => $CompDenseVeldspar,
+        "Scordite" => $_POST["Scordite"],
+        "Condensed_Scordite" => $_POST["Condensed_Scordite"],
+        "Massive_Scordite" => $_POST["Massive_Scordite"],
+        "Pyroxeres" => $_POST["Pyroxeres"],
+        "Solid_Pyroxeres" => $_POST["Solid_Pyroxeres"],
+        "Viscous_Pyroxers" => $_POST["Viscous_Pyroxeres"],
+        "Plagioclase" => $_POST["Plagioclase"],
+        "Azure_Plagioclase" => $_POST["Azure_Plagioclase"],
+        "Rich_Plagioclase" => $_POST["Rich_Plagioclase"],
+        "Omber" => $_POST["Omber"],
+        "Silvery_Omber" => $_POST["Silvery_Omber"],
+        "Golden_Omber" => $_POST["Golden_Omber"],
+        "Kernite" => $_POST["Kernite"],
+        "Luminous_Kernite" => $_POST["Luminous_Kernite"],
+        "Fiery_Kernite" => $_POST["Fiery_Kernite"],
+        "Jaspet" => $_POST["Jaspet"],
+        "Pure_Jaspet" => $_POST["Pure_Jaspet"],
+        "Pristine_Jaspet" => $_POST["Pristine_Jaspet"],
+        "Hemorphite" => $_POST["Hemorphite"],
+        "Vivid_Hemorphite" => $_POST["Vivid_Hemorphite"],
+        "Radiant_Hemorphite" => $_POST["Radiant_Hemorphite"],
+        "Hedbergite" => $_POST["Hedbergite"],
+        "Vitric_Hedbergite" => $_POST["Vitric_Hedbergite"],
+        "Glazed_Hedbergite" => $_POST["Glazed_Hedbergite"],
+        "Gneiss" => $_POST["Gneiss"],
+        "Iridescent_Gneiss" => $_POST["Iridescent_Gneiss"],
+        "Prismatic_Gneiss" => $_POST["Prismatic_Gneiss"],
+        "Dark_Ochre" => $_POST["Dark Ochre"],
+        "Onyx_Ochre" => $_POST["Onyx_Ochre"],
+        "Obsidian_Ochre" => $_POST["Obisidian_Ochre"],
+        "Spodumain" => $_POST["Spodumain"],
+        "Bright_Spodumain" => $_POST["Bright_Spodumain"],
+        "Gleaming_Spodumain" => $_POST["Gleaming_Spodumain"],
+        "Crokite" => $_POST["Crokite"],
+        "Sharp_Crokite" => $_POST["Sharp_Crokite"],
+        "Crystalline_Crokite" => $_POST["Crystalline_Crokite"],
+        "Bistot" => $_POST["Bistot"],
+        "Triclinic_Bistot" => $_POST["Triclinic_Bistot"],
+        "Monoclinic_Bistot" => $_POST["Monoclinic_Bistot"],
+        "Arkonor" => $_POST["Arkonor"],
+        "Crimson_Arkonor" => $_POST["Crimson_Arkonor"],
+        "Prime_Arkonor" => $_POST["Prime_Arkonor"],
+        "Mercoxit" => $_POST["Mercoxit"],
+        "Magma_Mercoxit" => $_POST["Magma_Mercoxit"],
+        "Vitreous_Mercoxit" => $_POST["Vitreous_Mercoxit"],
+    );
+    
+    $contract= OreContractValue($db, $contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
