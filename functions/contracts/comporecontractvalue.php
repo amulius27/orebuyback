@@ -195,7 +195,7 @@ function CompOreContractValue($update, $corporation, $post) {
     var_dump($contract);
     printf("<br>");
     var_dump($contractNum);
-   
+   /*
    $db->insert('CompOreContractContents', array('ContractNum' => $contractNum,
                                                 'QuoteTime' => (string)$update,
                                                 'Compressed_Veldspar' => (integer)$post['Compressed_Veldspar'],
@@ -209,8 +209,22 @@ function CompOreContractValue($update, $corporation, $post) {
                                                 'Compressed_Viscous_Pyroxeres' => (integer)$post['Compressed_Viscous_Pyroxeres'],
                                                 'Compressed_Plagioclase' => (integer)$post['Compressed_Plagioclase'],
                                                 'Compressed_Azure_Plagioclase' => (integer)$post['Compressed_Azure_Plagioclase'],
-                                                'Compressed_Rich_Plagioclase' => (integer)$post['Compressed_Rich_Plagioclase']));
-   //$db->insert('CompOreContractContents', $compOreContents);
+                                                'Compressed_Rich_Plagioclase' => (integer)$post['Compressed_Rich_Plagioclase'],
+                                                'Compressed_Omber' => (integer)$post['Compressed_Omber'],
+                                                'Compressed_Silvery_Omber' => (integer)$post['Compressed_Silvery_Omber'],
+                                                'Compressed_Golden_Omber' => (integer)$post['Compressed_Golden_Omber'],
+                                                'Compressed_Kernite' => (integer)$post['Compressed_Kernite'],
+                                                'Compressed_Luminous_Kernite' => (integer)$post['Compressed_Luminous_Kernite'],
+                                                'Compressed_Fiery_Kernite' => (integer)$post['Compressed_Fiery_Kernite'],
+                                                'Compressed_Jaspet' => (integer)$post['Compressed_Jaspet'],
+                                                'Compressed_Pure_Jaspet' => (integer)$post['Compressed_Pure_Jaspet'],
+                                                'Compressed_Pristine_Jaspet' => (integer)$post['Compressed_Pristine_Jaspet'],
+                                                'Compressed_Hemorphite' => (integer)$post['Compressed_Hemorphite'],
+                                                'Compressed_Vivid_Hemorphite' => (integer)$post['Compressed_Vivid_Hemorphite'],
+                                                'Compressed_Radiant_Hemorphite' => (integer)$post['Compressed_Radiant_Hemorphite']));
+    * 
+    */
+   $db->insert('CompOreContractContents', $compOreContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
