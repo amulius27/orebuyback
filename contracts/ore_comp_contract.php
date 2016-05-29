@@ -13,8 +13,13 @@
         $corporation = 'None';
     }
     
+    if(isset($_POST["Compressed_Veldspar"])) {
+        printf("Got number of compressed Veldspar.");
+    }
+        
+    
     $post = array(
-        "Compressed_Veldspar" => $_POST["calc-input-Veldspar_units-value"],
+        "Compressed_Veldspar" => $_POST["Compressed_Veldspar"],
         "Compressed_Concentrated_Veldspar" => $_POST["Compressed_Concentrated_Veldspar"],
         "Compressed_Dense_Veldspar" => $_POST["Compressed_Dense_Veldspar"],
         "Compressed_Scordite" => $_POST["Compressed_Scordite"],
