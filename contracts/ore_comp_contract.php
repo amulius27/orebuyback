@@ -366,8 +366,8 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintCompOreContractContents($contract["Number"]); 
-              
+        <?php 
+            PrintCompOreContractContents($contract["Number"]);   
         ?>
     </div>
     
