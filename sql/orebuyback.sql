@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `CompOreContractContents` (
     `Compressed_Massive_Scordite` int(20) NOT NULL DEFAULT '0',
     `Compressed_Pyroxeres` int(20) NOT NULL DEFAULT '0',
     `Compressed_Solid_Pyroxeres` int(20) NOT NULL DEFAULT '0',
-    `Compressed_Viscous_Pyroxers` int(20) NOT NULL DEFAULT '0',
+    `Compressed_Viscous_Pyroxeres` int(20) NOT NULL DEFAULT '0',
     `Compressed_Plagioclase` int(20) NOT NULL DEFAULT '0',
     `Compressed_Azure_Plagioclase` int(20) NOT NULL DEFAULT '0',
     `Compressed_Rich_Plagioclase` int(20) NOT NULL DEFAULT '0',
