@@ -31,8 +31,7 @@ CREATE TABLE IF NOT EXISTS `Configuration` (
 -- Dumping data for table `Configuration`
 --
 
-INSERT INTO `Configuration` (`refineRate`) VALUES (80.00);
-INSERT INTO `Configuration` (`allianceTaxRate`) VALUES (4.00);
+INSERT INTO `Configuration` (`refineRate, allianceTaxRate`) VALUES (80.00, 4.00);
 
 --
 -- Table structure for table `Corps`
