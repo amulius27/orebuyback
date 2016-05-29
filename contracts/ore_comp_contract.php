@@ -348,7 +348,7 @@
     PrintTitle();
 ?>
 
-    <div class="container">
+    <div class="container col-md-6">
         <div class="row">
             <table class="table-bordered table-striped">
                 <tr>
@@ -366,7 +366,7 @@
             </table>
         </div>
     </div>
-    <div class="container">
+    <div class="container col-md-6">
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 

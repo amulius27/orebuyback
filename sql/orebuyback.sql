@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `OreContractContents` (
     `Massive_Scordite` int(20) NOT NULL DEFAULT '0',
     `Pyroxeres` int(20) NOT NULL DEFAULT '0',
     `Solid_Pyroxeres` int(20) NOT NULL DEFAULT '0',
-    `Viscous_Pyroxers` int(20) NOT NULL DEFAULT '0',
+    `Viscous_Pyroxeres` int(20) NOT NULL DEFAULT '0',
     `Plagioclase` int(20) NOT NULL DEFAULT '0',
     `Azure_Plagioclase` int(20) NOT NULL DEFAULT '0',
     `Rich_Plagioclase` int(20) NOT NULL DEFAULT '0',
