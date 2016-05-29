@@ -129,6 +129,8 @@ function CompOreContractValue($update, $corporation, $post) {
         'Compressed_Plagioclase' => (integer)$post['Compressed_Plagioclase'],
         'Compressed_Azure_Plagioclase' => (integer)$post['Compressed_Azure_Plagioclase'],
         'Compressed_Rich_Plagioclase' => (integer)$post['Compressed_Rich_Plagioclase'],
+    );
+   $compOreContents2 = array(
         'Compressed_Omber' => (integer)$post['Compressed_Omber'],
         'Compressed_Silvery_Omber' => (integer)$post['Compressed_Silvery_Omber'],
         'Compressed_Golden_Omber' => (integer)$post['Compressed_Golden_Omber'],
@@ -141,6 +143,8 @@ function CompOreContractValue($update, $corporation, $post) {
         'Compressed_Hemorphite' => (integer)$post['Compressed_Hemorphite'],
         'Compressed_Vivid_Hemorphite' => (integer)$post['Compressed_Vivid_Hemorphite'],
         'Compressed_Radiant_Hemorphite' => (integer)$post['Compressed_Radiant_Hemorphite'],
+    );
+    $compOreContents3 = array(
         'Compressed_Hedbergite' => (integer)$post['Compressed_Hedbergite'],
         'Compressed_Vitric_Hedbergite' => (integer)$post['Compressed_Vitric_Hedbergite'],
         'Compressed_Glazed_Hedbergite' => (integer)$post['Compressed_Glazed_Hedbergite'],
@@ -153,6 +157,8 @@ function CompOreContractValue($update, $corporation, $post) {
         'Compressed_Spodumain' => (integer)$post['Compressed_Spodumain'],
         'Compressed_Bright_Spodumain' => (integer)$post['Compressed_Bright_Spodumain'],
         'Compressed_Gleaming_Spodumain' => (integer)$post['Compressed_Gleaming_Spodumain'],
+    );
+    $compOreContents4 = array(
         'Compressed_Crokite' => (integer)$post['Compressed_Crokite'],
         'Compressed_Sharp_Crokite' => (integer)$post['Compressed_Sharp_Crokite'],
         'Compressed_Crystalline_Crokite' => (integer)$post['Compressed_Crystalline_Crokite'],
@@ -186,9 +192,12 @@ function CompOreContractValue($update, $corporation, $post) {
     printf("<br>");
     var_dump($contract);
    
-   //$db->insert('CompOreContractContents', array('ContractNum' => $contractNum));
-   
-   $db->insert('CompOreContractContents', $compOreContents);
+   $db->insert('CompOreContractContents', array('ContractNum' => $contractNum));
+   $db->update('ComppOreContractContents', array('ContractNum' => $contractNum), $compOreContents);
+   $db->update('ComppOreContractContents', array('ContractNum' => $contractNum), $compOreContents2);
+   $db->update('ComppOreContractContents', array('ContractNum' => $contractNum), $compOreContents3);
+   $db->update('ComppOreContractContents', array('ContractNum' => $contractNum), $compOreContents4);
+   //$db->insert('CompOreContractContents', $compOreContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
