@@ -113,7 +113,7 @@ function CompOreContractValue($db, $update, $corporation, $post) {
    //Set the ore contents array up to be insert into the OreContractContents database
    $compOreContents = array(
         "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
+        //"ContractTime" =>  $now,
         "QuoteTime" => $update,
         "Compressed_Veldspar" => (integer)$post["Compressed_Veldspar"],
         "Compressed_Concentrated_Veldspar" => (integer)$post["Compressed_Concentrated_Veldspar"],
