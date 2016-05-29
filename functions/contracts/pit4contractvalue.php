@@ -39,7 +39,7 @@ function PiT4ContractValue($db, $update, $corporation) {
     
     //Get the tax rates
     $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
-    $corpTaxRate = $db->fetchColumn('SELECT corpTaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
+    $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
     //Calculate the taxes from the contract value
     $allianceTax = $contractValue * $allianceTaxRate;
     $corpTax = $contractValue * $corpTaxRate;
