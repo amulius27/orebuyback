@@ -43,6 +43,7 @@ function CompOreContractValue($update, $corporation, $post) {
     }
     //Set the current contract number
     $contractNum = $lastContractNum + 1;
+    var_dump($contractNum);
     //Set the time for the contract being inserted into the database
     $now = date("Y-m-d H:i:s");
     //Set the initial contract value to 0.00 before adding everything up
@@ -191,6 +192,8 @@ function CompOreContractValue($update, $corporation, $post) {
     var_dump($compOreContents);
     printf("<br>");
     var_dump($contract);
+    printf("<br>");
+    var_dump($contractNum);
    
    $db->insert('CompOreContractContents', array('ContractNum' => $contractNum,
                                                 'QuoteTime' => (string)$update,
