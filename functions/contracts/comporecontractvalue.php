@@ -43,8 +43,6 @@ function CompOreContractValue($update, $corporation, $post) {
     }
     //Set the current contract number
     $contractNum = $lastContractNum + 1;
-    var_dump($lastContractNum);
-    var_dump($contractNum);
     //Set the time for the contract being inserted into the database
     $now = date("Y-m-d H:i:s");
     //Set the initial contract value to 0.00 before adding everything up
@@ -182,42 +180,7 @@ function CompOreContractValue($update, $corporation, $post) {
         'CorpTax' => $corpTax
         
     );
-    var_dump($compOreValue);
-    printf("<br>");
-    var_dump($compOreContents);
-    printf("<br>");
-    var_dump($contract);
-    printf("<br>");
-    var_dump($contractNum);
-   /*
-   $db->insert('CompOreContractContents', array('ContractNum' => $contractNum,
-                                                'QuoteTime' => (string)$update,
-                                                'Compressed_Veldspar' => (integer)$post['Compressed_Veldspar'],
-                                                'Compressed_Concentrated_Veldspar' => (integer)$post['Compressed_Concentrated_Veldspar'],
-                                                'Compressed_Dense_Veldspar' => (integer)$post['Compressed_Dense_Veldspar'],
-                                                'Compressed_Scordite' => (integer)$post['Compressed_Scordite'],
-                                                'Compressed_Condensed_Scordite' => (integer)$post['Compressed_Condensed_Scordite'],
-                                                'Compressed_Massive_Scordite' => (integer)$post['Compressed_Massive_Scordite'],
-                                                'Compressed_Pyroxeres' => (integer)$post['Compressed_Pyroxeres'],
-                                                'Compressed_Solid_Pyroxeres' => (integer)$post['Compressed_Solid_Pyroxeres'],
-                                                'Compressed_Viscous_Pyroxeres' => (integer)$post['Compressed_Viscous_Pyroxeres'],
-                                                'Compressed_Plagioclase' => (integer)$post['Compressed_Plagioclase'],
-                                                'Compressed_Azure_Plagioclase' => (integer)$post['Compressed_Azure_Plagioclase'],
-                                                'Compressed_Rich_Plagioclase' => (integer)$post['Compressed_Rich_Plagioclase'],
-                                                'Compressed_Omber' => (integer)$post['Compressed_Omber'],
-                                                'Compressed_Silvery_Omber' => (integer)$post['Compressed_Silvery_Omber'],
-                                                'Compressed_Golden_Omber' => (integer)$post['Compressed_Golden_Omber'],
-                                                'Compressed_Kernite' => (integer)$post['Compressed_Kernite'],
-                                                'Compressed_Luminous_Kernite' => (integer)$post['Compressed_Luminous_Kernite'],
-                                                'Compressed_Fiery_Kernite' => (integer)$post['Compressed_Fiery_Kernite'],
-                                                'Compressed_Jaspet' => (integer)$post['Compressed_Jaspet'],
-                                                'Compressed_Pure_Jaspet' => (integer)$post['Compressed_Pure_Jaspet'],
-                                                'Compressed_Pristine_Jaspet' => (integer)$post['Compressed_Pristine_Jaspet'],
-                                                'Compressed_Hemorphite' => (integer)$post['Compressed_Hemorphite'],
-                                                'Compressed_Vivid_Hemorphite' => (integer)$post['Compressed_Vivid_Hemorphite'],
-                                                'Compressed_Radiant_Hemorphite' => (integer)$post['Compressed_Radiant_Hemorphite']));
-    * 
-    */
+   
    $db->insert('CompOreContractContents', $compOreContents);
    $db->insert('Contracts', $contract);
    
