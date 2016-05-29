@@ -2,8 +2,16 @@
     require_once __DIR__.'/../functions/registry.php';
     
     $db = DBOpen();
-    $contractTime = $_POST["Quote_Time"];
-    $corporation = $_POST["Corporation"];
+    if(isset($_POST["Quote_Time"])) {
+        $contractTime = $_POST["Quote_Time"];
+    } else {
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));;
+    }
+    if(isset($_POST["Corporation"])) {
+        $corporation = $_POST["Corporation"];
+    } else {
+        $corporation = 'None';
+    }
     $contract= FuelContractValue($db, $contractTime, $corporation);
 ?>
 

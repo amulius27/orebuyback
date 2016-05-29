@@ -65,10 +65,10 @@
             <hr>
             <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated on: <?php echo $update ?></strong></span><br>
             <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>
-            <span style="font-family: Arial; color: white;"<strong>Corporation: </strong> <?php echo $corporation ?></span><br>
-            <span style="font-family: Arial; color: white;"<strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax ?> %</span><br>
-            <span style="font-family: Arial; color: white;"<strong>Corp Tax Rate: </strong>  <?php echo $corpTax ?> %</span><br>
-            <span style="font-family: Arial; color: white;"<strong>TotalTax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"<strong>Corporation: </strong> <?php echo $corporation; ?></span><br>
+            <span style="font-family: Arial; color: white;"<strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax; ?> %</span><br>
+            <span style="font-family: Arial; color: white;"<strong>Corp Tax Rate: </strong>  <?php echo $corpTax; ?> %</span><br>
+            <span style="font-family: Arial; color: white;"<strong>TotalTax Rate: </strong>  <?php echo $total_tax; ?> %</span><br>
         </div>
     </div>
 </div>
@@ -89,129 +89,129 @@
                         <p>
                             <label>Compressed Veldspar <?php echo number_format($Veldspar_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="veldspar" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Veldspar" id="calc-input-Veldspar_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Concentrated Veldspar" id="calc-input-Veldspar_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Dense Veldspar" id="calc-input-Veldspar_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Veldspar" placeholder="Compressed Veldspar" id="calc-input-Veldspar_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Concentrated_Veldspar" placeholder="Compressed Concentrated Veldspar" id="calc-input-Veldspar_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Dense_Veldspar" placeholder="Compressed Dense Veldspar" id="calc-input-Veldspar_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Scordite <?php echo number_format($Scordite_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="scordite" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Scordite" id="calc-input-Scordite_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Condensed Scordite" id="calc-input-Scordite_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Massive Scordite" id="calc-input-Scordite_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Scordite" placeholder="Compressed Scordite" id="calc-input-Scordite_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Condensed_Scordite" placeholder="Compressed Condensed Scordite" id="calc-input-Scordite_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Massive_Scordite" placeholder="Compressed Massive Scordite" id="calc-input-Scordite_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Pyroxeres <?php echo number_format($Pyroxeres_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="pyroxeres" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Pyroxeres" id="calc-input-Pyroxeres_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Solid Pyroxeres" id="calc-input-Pyroxeres_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Viscous Pyroxeres" id="calc-input-Pyroxeres_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Pyroxeres" placeholder="Compressed Pyroxeres" id="calc-input-Pyroxeres_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Solid_Pyroxeres" placeholder="Compressed Solid Pyroxeres" id="calc-input-Pyroxeres_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Viscous_Pyroxeres" placeholder="Compressed Viscous Pyroxeres" id="calc-input-Pyroxeres_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Plagioclase <?php echo number_format($Plagioclase_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="plagioclase" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Plagioclase" id="calc-input-Plagioclase_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Azure Plagioclase" id="calc-input-Plagioclase_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Rich Plagioclase" id="calc-input-Plagioclase_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Plagioclase" placeholder="Compressed Plagioclase" id="calc-input-Plagioclase_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Azure_Plagioclase" placeholder="Compressed Azure Plagioclase" id="calc-input-Plagioclase_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Rich_Plagioclase" placeholder="Compressed Rich Plagioclase" id="calc-input-Plagioclase_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Omber <?php echo number_format($Omber_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="omber" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Omber" id="calc-input-Omber_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Silvery Omber" id="calc-input-Omber_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Golden Omber" id="calc-input-Omber_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Omber" placeholder="Compressed Omber" id="calc-input-Omber_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Silvery_Omber" placeholder="Compressed Silvery Omber" id="calc-input-Omber_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Golden_Omber" placeholder="Compressed Golden Omber" id="calc-input-Omber_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Kernite <?php echo number_format($Kernite_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="kernite" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Kernite" id="calc-input-Kernite_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Luminous Kernite" id="calc-input-Kernite_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Fiery Kernite" id="calc-input-Kernite_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Kernite" placeholder="Compressed Kernite" id="calc-input-Kernite_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Luminous_Kernite" placeholder="Compressed Luminous Kernite" id="calc-input-Kernite_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" nmae="Compressed_Fiery_Kernite" placeholder="Compressed Fiery Kernite" id="calc-input-Kernite_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Jaspet <?php echo number_format($Jaspet_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="jaspet" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Jaspet" id="calc-input-Jaspet_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Pure Jaspet" id="calc-input-Jaspet_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Pristine Jaspet" id="calc-input-Jaspet_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Jaspet" placeholder="Compressed Jaspet" id="calc-input-Jaspet_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Pure_Jaspet" placeholder="Compressed Pure Jaspet" id="calc-input-Jaspet_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Pristine_Jaspet" placeholder="Compressed Pristine Jaspet" id="calc-input-Jaspet_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Hemorphite <?php echo number_format($Hemorphite_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="hemorphite" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Hemorphite" id="calc-input-Hemorphite_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Vivid Hemorphite" id="calc-input-Hemorphite_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Radiant Hemorphite" id="calc-input-Hemorphite_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Hemorphite" placeholder="Compressed Hemorphite" id="calc-input-Hemorphite_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Vivid_Hemorphite" placeholder="Compressed Vivid Hemorphite" id="calc-input-Hemorphite_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Radiant_Hemorphite" placeholder="Compressed Radiant Hemorphite" id="calc-input-Hemorphite_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Hedbergite <?php echo number_format($Hedbergite_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="hedbergite" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Hedbergite" id="calc-input-Hedbergite_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Vitric Hedbergite" id="calc-input-Hedbergite_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Glazed Hedbergite" id="calc-input-Hedbergite_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Hedbergite" placeholder="Compressed Hedbergite" id="calc-input-Hedbergite_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Vitric_Hedbergite" placeholder="Compressed Vitric Hedbergite" id="calc-input-Hedbergite_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Glazed_Hedbergite" placeholder="Compressed Glazed Hedbergite" id="calc-input-Hedbergite_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Gneiss <?php echo number_format($Gneiss_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="gneiss" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Gneiss" id="calc-input-Gneiss_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Iridescent Gneiss" id="calc-input-Gneiss_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Prismatic Gneiss" id="calc-input-Gneiss_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Gneiss" placeholder="Compressed Gneiss" id="calc-input-Gneiss_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Iridescent_Gneiss" placeholder="Compressed Iridescent Gneiss" id="calc-input-Gneiss_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Prismatic_Gneiss" placeholder="Compressed Prismatic Gneiss" id="calc-input-Gneiss_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Dark Ochre <?php echo number_format($Dark_Ochre_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="dark_ochre" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Dark Ochre" id="calc-input-Dark_Ochre_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Onyx Dark Ochre" id="calc-input-Dark_Ochre_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Obsidian Dark Ochre" id="calc-input-Dark_Ochre_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Dark_Ochre" placeholder="Compressed Dark Ochre" id="calc-input-Dark_Ochre_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Onyx_Dark_Ochre" placeholder="Compressed Onyx Dark Ochre" id="calc-input-Dark_Ochre_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Obsidian_Dark_Ochre" placeholder="Compressed Obsidian Dark Ochre" id="calc-input-Dark_Ochre_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Spodumain <?php echo number_format($Spodumain_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="spodumain" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Spodumain" id="calc-input-Spodumain_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Bright Spodumain" id="calc-input-Spodumain_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Gleaming Spodumain" id="calc-input-Spodumain_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Spodumain" placeholder="Compressed Spodumain" id="calc-input-Spodumain_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Bright_Spodumain" placeholder="Compressed Bright Spodumain" id="calc-input-Spodumain_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Gleaming_Spodumain" placeholder="Compressed Gleaming Spodumain" id="calc-input-Spodumain_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Crokite <?php echo number_format($Crokite_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="crokite" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Crokite" id="calc-input-Crokite_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Sharp Crokite" id="calc-input-Crokite_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Crystalline Crokite" id="calc-input-Crokite_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Crokite" placeholder="Compressed Crokite" id="calc-input-Crokite_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Sharp_Crokite" placeholder="Compressed Sharp Crokite" id="calc-input-Crokite_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Crystalline_Crokite" placeholder="Compressed Crystalline Crokite" id="calc-input-Crokite_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Bistot <?php echo number_format($Bistot_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="bistot" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Bistot" id="calc-input-Bistot_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Triclinic Bistot" id="calc-input-Bistot_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Monoclinic Bistot" id="calc-input-Bistot_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Bistot" placeholder="Compressed Bistot" id="calc-input-Bistot_units-value">
+                            <input type="number" class="form-control text-right typeahead" nmae="Compressed_Triclinic_Bistot" placeholder="Compressed Triclinic Bistot" id="calc-input-Bistot_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Monoclinic_Bistot" placeholder="Compressed Monoclinic Bistot" id="calc-input-Bistot_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Arkonor <?php echo number_format($Arkonor_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="arkonor" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Arkonor" id="calc-input-Arkonor_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Crimson Arkonor" id="calc-input-Arkonor_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Prime Arkonor" id="calc-input-Arkonor_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Arkonor" placeholder="Compressed Arkonor" id="calc-input-Arkonor_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Crimson_Arkonor" placeholder="Compressed Crimson Arkonor" id="calc-input-Arkonor_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Prime_Arkonor" placeholder="Compressed Prime Arkonor" id="calc-input-Arkonor_units_10-value">
                         </div>
                         </p>
                         <p>
                             <label>Compressed Mercoxit <?php echo number_format($Mercoxit_comp, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="mercoxit" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Mercoxit" id="calc-input-Mercoxit_units-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Magma Mercoxit" id="calc-input-Mercoxit_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" placeholder="Compressed Vitreous Mercoxit" id="calc-input-Mercoxit_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Mercoxit" placeholder="Compressed Mercoxit" id="calc-input-Mercoxit_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Magma_Mercoxit" placeholder="Compressed Magma Mercoxit" id="calc-input-Mercoxit_units_5-value">
+                            <input type="number" class="form-control text-right typeahead" name="Compressed_Vitreous_Mercoxit" placeholder="Compressed Vitreous Mercoxit" id="calc-input-Mercoxit_units_10-value">
                         </div>
                         </p>
                     </div>

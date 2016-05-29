@@ -77,6 +77,8 @@
 <div class="container">
     <div class="row">
         <form action="contracts/minerals_contract.php" method="post">
+            <input class="form-control" type="hidden" name="Quote_Time" value="<?php echo $update; ?>">
+            <input class="form-control" type="hidden" name="Corporation" value="<?php echo $corporation; ?>">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">

@@ -16,6 +16,7 @@
         $corporation = str_replace('"', "", $corporation);
         $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
     } else {
+        $corporation = 'None';
         $corpTax = 10.00;
     }
     

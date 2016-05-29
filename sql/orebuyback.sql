@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `members` (
 CREATE TABLE IF NOT EXISTS `member_roles` (
     `id` int(11) NOT NULL,
     `username` varchar(30) NOT NULL,
-    `corporation` varchar(50) NOT NULL,
+    `corporation` varchar(50) DEFAULT 'None',
     `role` varchar(20) NOT NULL DEFAULT 'Member', 
     `canChangeCorpTax` tinyint(1) NOT NULL DEFAULT '0',
     `canChangeRefineRate` tinyint(1) NOT NULL DEFAULT '0',
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `member_roles` (
 CREATE TABLE IF NOT EXISTS `Contracts` (
   `ContractNum` int(11) NOT NULL AUTO_INCREMENT,
   `ContractType` varchar(50) NOT NULL,
-  `Corporation` varchar(50) NOT NULL,
+  `Corporation` varchar(50) DEFAULT 'None',
   `QuoteTime` timestamp NOT NULL,
   `Value` decimal(20,2) DEFAULT NULL,
   `AllianceTax` decimal(20,2) NOT NULL DEFAULT '0.00',
