@@ -13,8 +13,59 @@
         $corporation = 'None';
     }
     
+    $post = array(
+        "Compressed_Veldspar" => $_POST["Compressed_Veldspar"],
+        "Compressed_Concentrated_Veldspar" => $_POST["Compressed_Concentrated_Veldspar"],
+        "Compressed_Dense_Veldspar" => $_POST["Compressed_Dense_Veldspar"],
+        "Compressed_Scordite" => $_POST["Compressed_Scordite"],
+        "Compressed_Condensed_Scordite" => $_POST["Compressed_Condensed_Scordite"],
+        "Compressed_Massive_Scordite" => $_POST["Compressed_Massive_Scordite"],
+        "Compressed_Pyroxeres" => $_POST["Compressed_Pyroxeres"],
+        "Compressed_Solid_Pyroxeres" => $_POST["Compressed_Solid_Pyroxeres"],
+        "Compressed_Viscous_Pyroxers" => $_POST["Compressed_Viscous_Pyroxeres"],
+        "Compressed_Plagioclase" => $_POST["Compressed_Plagioclase"],
+        "Compressed_Azure_Plagioclase" => $_POST["Compressed_Azure_Plagioclase"],
+        "Compressed_Rich_Plagioclase" => $_POST["Compressed_Rich_Plagioclase"],
+        "Compressed_Omber" => $_POST["Compressed_Omber"],
+        "Compressed_Silvery_Omber" => $_POST["Compressed_Silvery_Omber"],
+        "Compressed_Golden_Omber" => $_POST["Compressed_Golden_Omber"],
+        "Compressed_Kernite" => $_POST["Compressed_Kernite"],
+        "Compressed_Luminous_Kernite" => $_POST["Compressed_Luminous_Kernite"],
+        "Compressed_Fiery_Kernite" => $_POST["Compressed_Fiery_Kernite"],
+        "Compressed_Jaspet" => $_POST["Compressed_Jaspet"],
+        "Compressed_Pure_Jaspet" => $_POST["Compressed_Pure_Jaspet"],
+        "Compressed_Pristine_Jaspet" => $_POST["Compressed_Pristine_Jaspet"],
+        "Compressed_Hemorphite" => $_POST["Compressed_Hemorphite"],
+        "Compressed_Vivid_Hemorphite" => $_POST["Compressed_Vivid_Hemorphite"],
+        "Compressed_Radiant_Hemorphite" => $_POST["Compressed_Radiant_Hemorphite"],
+        "Compressed_Hedbergite" => $_POST["Compressed_Hedbergite"],
+        "Compressed_Vitric_Hedbergite" => $_POST["Compressed_Vitric_Hedbergite"],
+        "Compressed_Glazed_Hedbergite" => $_POST["Compressed_Glazed_Hedbergite"],
+        "Compressed_Gneiss" => $_POST["Compressed_Gneiss"],
+        "Compressed_Iridescent_Gneiss" => $_POST["Compressed_Iridescent_Gneiss"],
+        "Compressed_Prismatic_Gneiss" => $_POST["Compressed_Prismatic_Gneiss"],
+        "Compressed_Dark_Ochre" => $_POST["Compressed_Dark Ochre"],
+        "Compressed_Onyx_Ochre" => $_POST["Compressed_Onyx_Ochre"],
+        "Compressed_Obsidian_Ochre" => $_POST["Compressed_Obisidian_Ochre"],
+        "Compressed_Spodumain" => $_POST["Compressed_Spodumain"],
+        "Compressed_Bright_Spodumain" => $_POST["Compressed_Bright_Spodumain"],
+        "Compressed_Gleaming_Spodumain" => $_POST["Compressed_Gleaming_Spodumain"],
+        "Compressed_Crokite" => $_POST["Compressed_Crokite"],
+        "Compressed_Sharp_Crokite" => $_POST["Compressed_Sharp_Crokite"],
+        "Compressed_Crystalline_Crokite" => $_POST["Compressed_Crystalline_Crokite"],
+        "Compressed_Bistot" => $_POST["Compressed_Bistot"],
+        "Compressed_Triclinic_Bistot" => $_POST["Compressed_Triclinic_Bistot"],
+        "Compressed_Monoclinic_Bistot" => $_POST["Compressed_Monoclinic_Bistot"],
+        "Compressed_Arkonor" => $_POST["Compressed_Arkonor"],
+        "Compressed_Crimson_Arkonor" => $_POST["Compressed_Crimson_Arkonor"],
+        "Compressed_Prime_Arkonor" => $_POST["Compressed_Prime_Arkonor"],
+        "Compressed_Mercoxit" => $_POST["Compressed_Mercoxit"],
+        "Compressed_Magma_Mercoxit" => $_POST["Compressed_Magma_Mercoxit"],
+        "Compressed_Vitreous_Mercoxit" => $_POST["Compressed_Vitreous_Mercoxit"],
+    );
     
-    $contract = CompOreContractValue($db, $contractTime, $corporation);
+    
+    $contract = CompOreContractValue($db, $contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
