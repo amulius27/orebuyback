@@ -1,18 +1,71 @@
 <?php  
     require_once __DIR__.'/../functions/registry.php';
     
-    $db = DBOpen();
     if(isset($_POST["Quote_Time"])) {
         $contractTime = $_POST["Quote_Time"];
     } else {
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));;
+        $db = DBOpen();
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
         $corporation = $_POST["Corporation"];
     } else {
         $corporation = 'None';
     }
-    $contract= MineralsContractValue($db, $contractTime, $corporation);
+    if(isset($_POST["Tritanium"])) {
+        $Tritanium = $_POST["Tritanium"]; 
+    } else {
+        $Tritanium = 0;
+    }
+    if(isset($_POST["Pyerite"])) {
+        $Pyerite = $_POST["Pyerite"];
+    } else {
+        $Pyerite = 0;
+    }
+    if(isset($_POST["Mexallon"])) {
+        $Mexallon = $_POST["Mexallon"];
+    } else {
+        $Mexallon = 0;
+    }
+    if(isset($_POST["Nocxium"])) {
+        $Nocxium = $_POST["Nocxium"];
+    } else {
+        $Nocxium = 0;
+    }
+    if(isset($_POST["Isogen"])) {
+        $Isogen = $_POST["Isogen"];
+    } else {
+        $Isogen = 0;
+    }
+    if(isset($_POST["Megacyte"])) {
+        $Megacyte = $_POST["Megacyte"];
+    } else {
+        $Megacyte = 0;
+    }
+    if(isset($_POST["Zydrine"])) {
+        $Zydrine = $_POST["Zydrine"];
+    } else {
+        $Zydrine = 0;
+    }
+    if(isset($_POST["Morphite"])) {
+        $Morphite = $_POST["Morphite"];
+    } else {
+        $Morphite = 0;
+    }
+    
+    $post = array(
+        'Tritanium' => $Tritanium,
+        'Pyerite' => $Pyerite,
+        'Mexallon' => $Mexallon,
+        'Nocxium' => $Nocxium,
+        'Isogen' => $Isogen,
+        'Megacyte' => $Megacyte,
+        'Zydrine' => $Zydrine,
+        'Morphite' => $Morphite
+    );
+    
+    $contract= MineralsContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>

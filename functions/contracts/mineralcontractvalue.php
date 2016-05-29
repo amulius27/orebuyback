@@ -1,8 +1,8 @@
 <?php
 
-function MineralsContractValue($db, $update, $corporation) {
+function MineralsContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     //Tritanium
     $Tritanium = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 34, 'time' => $update));
     //Pyerite
@@ -30,14 +30,14 @@ function MineralsContractValue($db, $update, $corporation) {
     $contractValue = 0.00;
     //Create the ore value array for summing later
     $mineralValue = array(
-        "Tritanium" => $_POST["Tritanium"] * $Tritanium,
-        "Pyerite" => $_POST["Pyerite"] * $Pyerite,
-        "Mexallon" => $_POST["Mexallon"] * $Mexallon,
-        "Nocxium" => $_POST["Nocxium"] * $Nocxium,
-        "Isogen" => $_POST["Isogen"] * $Isogen,
-        "Megacyte" => $_POST["Megacyte"] * $Megacyte,
-        "Zydrine" => $_POST["Zydrine"] * $Zydrine,
-        "Morphite" => $_POST["Morphite"] * $Morphite,
+        'Tritanium' => $post['Tritanium'] * $Tritanium,
+        'Pyerite' => $post['Pyerite'] * $Pyerite,
+        'Mexallon' => $post['Mexallon'] * $Mexallon,
+        'Nocxium' => $post['Nocxium'] * $Nocxium,
+        'Isogen' => $post['Isogen'] * $Isogen,
+        'Megacyte' => $post['Megacyte'] * $Megacyte,
+        'Zydrine' => $post['Zydrine'] * $Zydrine,
+        'Morphite' => $post['Morphite'] * $Morphite,
     );
     
     //Add the contract value up from the ore
@@ -56,28 +56,28 @@ function MineralsContractValue($db, $update, $corporation) {
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $mineralContents = array(
-        "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
-        "QuoteTime" => $update,
-        "Tritanium" => $_POST["Tritanium"],
-        "Pyerite" => $_POST["Pyerite"],
-        "Mexallon" => $_POST["Mexallon"],
-        "Nocxium" => $_POST["Nocxium"],
-        "Isogen" => $_POST["Isogen"],
-        "Megacyte" => $_POST["Megacyte"],
-        "Zydrine" => $_POST["Zydrine"],
-        "Morphite" => $_POST["Morphite"],
+        'ContractNum' => $contractNum,
+        'ContractTime' =>  $now,
+        'QuoteTime' => $update,
+        'Tritanium' => $post['Tritanium'],
+        'Pyerite' => $post['Pyerite'],
+        'Mexallon' => $post['Mexallon'],
+        'Nocxium' => $post['Nocxium'],
+        'Isogen' => $post['Isogen'],
+        'Megacyte' => $post['Megacyte'],
+        'Zydrine' => $post['Zydrine'],
+        'Morphite' => $post['Morphite'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "ContractNum" => $contractNum,
-        "ContractType" => "Mineral",
-        "Corporation" => $corporation,
-        "QuoteTime" =>  $update,
-        "Value" => $contractValue,
-        "AllianceTax" => $allianceTax,
-        "CorpTax" => $corpTax
+        'ContractNum' => $contractNum,
+        'ContractType' => 'Mineral',
+        'Corporation' => $corporation,
+        'QuoteTime' =>  $update,
+        'Value' => $contractValue,
+        'AllianceTax' => $allianceTax,
+        'CorpTax' => $corpTax
     );
    
    $db->insert('MineralContractContents', $mineralContents);
@@ -87,6 +87,8 @@ function MineralsContractValue($db, $update, $corporation) {
        "Value" => $contractValue,
        "Number" => $contractNum,
    );
+   
+   DBClose($db);
     
     return $contractReturn;
 }

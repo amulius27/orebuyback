@@ -1,24 +1,30 @@
 <?php
 
-function PrintOreContractContents($contractNum, \Simplon\Mysql\Mysql $db) {
-    $columns = $db->executeSql('SELECT COLUMN_NAME FROM INFORMATION_SCHEME.COLUMNS WHERE TABLE_NAME = `OreContractContents`');
-    $contents = $db->fetchRow('SELECT * FROM `OreContractContents` WHERE ContractNum= :number', array('number' => $contractNum));
+function PrintOreContractContents($contractNum) {
     
-    $columnsNum = sizeof($colums);
+    $db = DBOpen();
+    $columns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OreContractContents'));
+    $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :number', array('number' => $contractNum));
+    
+    $columnsNum = sizeof($columns);
     
     printf("<table class=\"table-striped\">");
     for($i = 0; $i < $columnsNum - 1; $i++) {
-        $header = str_replace('_', ' ', $column);
-        printf("<tr>");
-        printf("<td>");
-        printf($header);
-        printf("</td>");
-        printf("<td>");
-        printf($contents[$column]);
-        printf("</td>");
-        printf("</tr>");
+        $header = str_replace('_', ' ', $columns[$i]);
+        if($contents[$columns[$i]] > 0) {
+            printf("<tr>");
+            printf("<td>");
+            printf($header);
+            printf("</td>");
+            printf("<td>");
+            printf($contents[$columns[$i]]);
+            printf("</td>");
+            printf("</tr>");
+        }
     }
     printf("</table>");
+    
+    DBClose($db);
 }
 
 ?>
