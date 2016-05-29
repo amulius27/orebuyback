@@ -262,7 +262,7 @@
         "Compressed_Massive_Scordite" => $Compressed_Massive_Scordite,
         "Compressed_Pyroxeres" => $Compressed_Pyroxeres,
         "Compressed_Solid_Pyroxeres" => $Compressed_Solid_Pyroxeres,
-        "Compressed_Viscous_Pyroxers" => $Compressed_Viscous_Pyroxeres,
+        "Compressed_Viscous_Pyroxeres" => $Compressed_Viscous_Pyroxeres,
         "Compressed_Plagioclase" => $Compressed_Plagioclase,
         "Compressed_Azure_Plagioclase" => $Compressed_Azure_Plagioclase,
         "Compressed_Rich_Plagioclase" => $Compressed_Rich_Plagioclase,
