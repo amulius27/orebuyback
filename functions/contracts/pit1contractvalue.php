@@ -1,8 +1,8 @@
 <?php
 
-function PiT1ContractValue($db, $update, $corporation) {
+function PiT1ContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     $bacteria = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2393, 'time' => $update));
     $biofuels = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2396, 'time' => $update));
     $biomass = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3779, 'time' => $update));
@@ -29,21 +29,21 @@ function PiT1ContractValue($db, $update, $corporation) {
     $contractValue = 0.00;
     //Create the ore value array for summing later
     $PiT1Value = array(
-        "Bacteria" => $_POST["Bacteria"] * $bacteria, 
-        "Biofuels" => $_POST["Biofuels"] * $biofuels,
-        "Biomass" => $_POST["Biomass"] * $biomass,
-        "Chiral_Structures" => $_POST["Chiral_Structures"] * $chiral_structures,
-        "Electrolytes" => $_POST["Electrolytes"] * $electrolytes,
-        "Industrial_Fibers" => $_POST["Industrial_Fibers"] * $industrial_fibers,
-        "Oxidizing_Compound" => $_POST["Oxidizing_Compound"] * $oxidizing_compound,
-        "Oxygen" => $_POST["Oxygen"] * $oxygen,
-        "Plasmoids" => $_POST["Plasmoids"] * $plasmoids,
-        "Precious_Metals" => $_POST["Precious_Metals"] * $precious_metals,
-        "Proteins" => $_POST["Proteins"] * $proteins,
-        "Reactive_Metals" => $_POST["Reactive_Metals"] * $reactive_metals,
-        "Silicon" => $_POST["Silicon"] * $silicon,
-        "Toxic_Metals" => $_POST["Toxic_Metals"] * $toxic_metals,
-        "Water" => $_POST["Water"] * $water,
+        'Bacteria' => $post['Bacteria'] * $bacteria, 
+        'Biofuels' => $post['Biofuels'] * $biofuels,
+        'Biomass' => $post['Biomass'] * $biomass,
+        'Chiral_Structures' => $post['Chiral_Structures'] * $chiral_structures,
+        'Electrolytes' => $post['Electrolytes'] * $electrolytes,
+        'Industrial_Fibers' => $post['Industrial_Fibers'] * $industrial_fibers,
+        'Oxidizing_Compound' => $post['Oxidizing_Compound'] * $oxidizing_compound,
+        'Oxygen' => $post['Oxygen'] * $oxygen,
+        'Plasmoids' => $post['Plasmoids'] * $plasmoids,
+        'Precious_Metals' => $post['Precious_Metals'] * $precious_metals,
+        'Proteins' => $post['Proteins'] * $proteins,
+        'Reactive_Metals' => $post['Reactive_Metals'] * $reactive_metals,
+        'Silicon' => $post['Silicon'] * $silicon,
+        'Toxic_Metals' => $post['Toxic_Metals'] * $toxic_metals,
+        'Water' => $post['Water'] * $water,
     );
     
     //Add the contract value up from the ore
@@ -62,35 +62,35 @@ function PiT1ContractValue($db, $update, $corporation) {
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $PiT1Contents = array(
-        "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
-        "QuoteTime" => $update,
-        "Bacteria" => $_POST["Bacteria"], 
-        "Biofuels" => $_POST["Biofuels"],
-        "Biomass" => $_POST["Biomass"],
-        "Chiral_Structures" => $_POST["Chiral_Structures"],
-        "Electrolytes" => $_POST["Electrolytes"],
-        "Industrial_Fibers" => $_POST["Industrial_Fibers"],
-        "Oxidizing_Compound" => $_POST["Oxidizing_Compound"],
-        "Oxygen" => $_POST["Oxygen"],
-        "Plasmoids" => $_POST["Plasmoids"],
-        "Precious_Metals" => $_POST["Precious_Metals"],
-        "Proteins" => $_POST["Proteins"],
-        "Reactive_Metals" => $_POST["Reactive_Metals"],
-        "Silicon" => $_POST["Silicon"],
-        "Toxic_Metals" => $_POST["Toxic_Metals"],
-        "Water" => $_POST["Water"],
+        'ContractNum' => $contractNum,
+        'ContractTime' =>  $now,
+        'QuoteTime' => $update,
+        'Bacteria' => $post['Bacteria'], 
+        'Biofuels' => $post['Biofuels'],
+        'Biomass' => $post['Biomass'],
+        'Chiral_Structures' => $post['Chiral_Structures'],
+        'Electrolytes' => $post['Electrolytes'],
+        'Industrial_Fibers' => $post['Industrial_Fibers'],
+        'Oxidizing_Compound' => $post['Oxidizing_Compound'],
+        'Oxygen' => $post['Oxygen'],
+        'Plasmoids' => $post['Plasmoids'],
+        'Precious_Metals' => $post['Precious_Metals'],
+        'Proteins' => $post['Proteins'],
+        'Reactive_Metals' => $post['Reactive_Metals'],
+        'Silicon' => $post['Silicon'],
+        'Toxic_Metals' => $post['Toxic_Metals'],
+        'Water' => $post['Water'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "ContractNum" => $contractNum,
-        "ContractType" => "Mineral",
-        "Corporation" => $corporation,
-        "QuoteTime" =>  $update,
-        "Value" => $contractValue,
-        "AllianceTax" => $allianceTax,
-        "CorpTax" => $corpTax
+        'ContractNum' => $contractNum,
+        'ContractType' => 'Mineral',
+        'Corporation' => $corporation,
+        'QuoteTime' =>  $update,
+        'Value' => $contractValue,
+        'AllianceTax' => $allianceTax,
+        'CorpTax' => $corpTax
     );
    
    $db->insert('PiT1ContractContents', $PiT1Contents);
@@ -100,6 +100,8 @@ function PiT1ContractValue($db, $update, $corporation) {
        "Value" => $contractValue,
        "Number" => $contractNum,
    );
+   
+   DBClose($db);
     
     return $contractReturn;
 }

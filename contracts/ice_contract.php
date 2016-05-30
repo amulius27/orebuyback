@@ -1,18 +1,96 @@
 <?php  
     require_once __DIR__.'/../functions/registry.php';
     
-    $db = DBOpen();
+   
     if(isset($_POST["Quote_Time"])) {
         $contractTime = $_POST["Quote_Time"];
     } else {
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));;
+        $db = DBOpen();
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
         $corporation = $_POST["Corporation"];
     } else {
         $corporation = 'None';
     }
-    $contract= IceContractValue($db, $contractTime, $corporation);
+    if(isset($_POST["Clear_Icicle"])) {
+        $Clear_Icicle = $_POST["Clear_Icicle"];
+    } else {
+        $Clear_Icicle = 0;
+    }
+    if(isset($_POST["Enriched_Clear_Icicle"])) {
+        $Enriched_Clear_Icicle = $_POST["Enriched_Clear_Icicle"];
+    } else {
+        $Enriched_Clear_Icicle = 0;
+    }
+    if(isset($_POST["Glacial_Mass"])) {
+        $Glacial_Mass = $_POST["Glacial_Mass"];
+    } else {
+        $Glacial_Mass = 0;
+    }
+    if(isset($_POST["Smooth_Glacial_Mass"])) {
+        $Smooth_Glacial_Mass = $_POST["Smooth_Glacial_Mass"];
+    } else {
+        $Smooth_Glacial_Mass = 0;
+    }
+    if(isset($_POST["White_Glaze"])) {
+        $White_Glaze = $_POST["White_Glaze"];
+    } else {
+        $White_Glaze = 0;
+    }
+    if(isset($_POST["Pristine_White_Glaze"])) {
+        $Pristine_White_Glaze = $_POST["Pristine_White_Glaze"];
+    } else {
+        $Pristine_White_Glaze = 0;
+    }
+    if(isset($_POST["Blue_Ice"])) {
+        $Blue_Ice = $_POST["Blue_Ice"];
+    } else {
+        $Blue_Ice = 0;
+    }
+    if(isset($_POST["Thick_Blue_Ice"])) {
+        $Thick_Blue_Ice = $_POST["Thick_Blue_Ice"];
+    } else {
+        $Thick_Blue_Ice = 0;
+    }
+    if(isset($_POST["Glare_Crust"])) {
+        $Glare_Crust = $_POST["Glare_Crust"];
+    } else {
+        $Glare_Crust = 0;
+    }
+    if(isset($_POST["Dark_Glitter"])) {
+        $Dark_Glitter = $_POST["Dark_Glitter"];
+    } else {
+        $Dark_Glitter = 0;
+    }
+    if(isset($_POST["Gelidus"])) {
+        $Gelidus = $_POST["Gelidus"];
+    } else {
+        $Gelidus = 0;
+    }
+    if(isset($_POST["Krystallos"])) {
+        $Krystallos = $_POST["Krystallos"];
+    } else {
+        $Krystallos = 0;
+    }
+    
+    $post = array(
+        'Clear_Icicle' => $Clear_Icicle,
+        'Enriched_Clear_Icicle' => $Enriched_Clear_Icicle,
+        'Glacial_Mass' => $Glacial_Mass,
+        'Smooth_Glacial_Mass' => $Smooth_Glacial_Mass,
+        'White_Glaze' => $White_Glaze,
+        'Pristine_White_Glaze' => $Pristine_White_Glaze,
+        'Blue_Ice' => $Blue_Ice,
+        'Thick_Blue_Ice' => $Thick_Blue_Ice,
+        'Glare_Crust' => $Glare_Crust,
+        'Dark_Glitter' => $Dark_Glitter,
+        'Gelidus' => $Gelidus,
+        'Krystallos' => $Krystallos
+    );
+    
+    $contract= IceContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +150,7 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintIceContractContents($contract["Number"], $db); 
-              DBClose($db);
+        <?php PrintIceContractContents($contract["Number"]); 
         ?>
     </div>
     

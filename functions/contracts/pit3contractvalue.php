@@ -1,8 +1,8 @@
 <?php
 
-function PiT3ContractValue($db, $update, $corporation) {
+function PiT3ContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     $Biotech = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2358, 'time' => $update));
     $Camera_Drones = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2345, 'time' => $update));
     $Condensates = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2344, 'time' => $update));
@@ -35,26 +35,26 @@ function PiT3ContractValue($db, $update, $corporation) {
     $contractValue = 0.00;
     //Create the ore value array for summing later
     $PiT3Value = array(
-        "Biotech_Research_Reports" => $_POST["Biotech_Research_Reports"] * $Biotech,
-        "Camera_Drones" => $_POST["Camera_Drones"] * $Camera_Drones,
-        "Cryprotectant_Solution" => $_POST["Cryoprotectant_Solution"] * $Cryoprotectant_Solution,
-        "Data_Chips" => $_POST["Data_Chips"] * $Data_Chips,
-        "Gel-Matrix_Biopaste" => $_POST["Gel-Matrix_Biopaste"] * $Gel_Matrix_Biopaste,
-        "Guidance_Systems" => $_POST["Guidance_Systems"] * $Guidance_Systems,
-        "Hazmat_Detection_Systems" => $_POST["Hazmat_Detection_System"] * $Hazmat_Detection_Systems,
-        "Hermetic_Membranes" => $_POST["Hermetic_Membranes"] * $Hermetic_Membranes,
-        "High-Tech_Transmitters" => $_POST["High-Tech_Transmitters"] * $HighTech_Transmitters,
-        "Industrial_Explosives" => $_POST["Industrial_Explosives"] * $Industrial_Explosives,
-        "Necoms" => $_POST["Neocoms"] * $Neocoms,
-        "Nuclear_Reactors" => $_POST["Nuclear_Reactors"] * $Nuclear_Reactors,
-        "Planetary_Vehicles" => $_POST["Planetary_Vehicles"] * $Planetary_Vehicles,
-        "Robotics" => $_POST["Robotics"] * $Robotics,
-        "Smartfab_Units" => $_POST["Smartfab_Units"] * $Smartfab_Units,
-        "Supercomputers" => $_POST["Supercomputers"] * $Supercomputers,
-        "Synthetic_Synapses" => $_POST["Synthetic_Synapses"] * $Synthetic_Synapses,
-        "Transcranial_Microcontrollers" => $_POST["Transcranial_Microcontrollers"] * $Microcontrollers,
-        "Ukomi_Superconductors" => $_POST["Ukomi"] * $Ukomi,
-        "Vaccines" => $_POST["Vaccines"] * $Vaccines,
+        'Biotech_Research_Reports' => $post['Biotech_Research_Reports'] * $Biotech,
+        'Camera_Drones' => $post['Camera_Drones'] * $Camera_Drones,
+        'Cryprotectant_Solution' => $post['Cryoprotectant_Solution'] * $Cryoprotectant_Solution,
+        'Data_Chips' => $post['Data_Chips'] * $Data_Chips,
+        'Gel-Matrix_Biopaste' => $post['Gel-Matrix_Biopaste'] * $Gel_Matrix_Biopaste,
+        'Guidance_Systems' => $post['Guidance_Systems'] * $Guidance_Systems,
+        'Hazmat_Detection_Systems' => $post['Hazmat_Detection_System'] * $Hazmat_Detection_Systems,
+        'Hermetic_Membranes' => $post['Hermetic_Membranes'] * $Hermetic_Membranes,
+        'High-Tech_Transmitters' => $post['High-Tech_Transmitters'] * $HighTech_Transmitters,
+        'Industrial_Explosives' => $post['Industrial_Explosives'] * $Industrial_Explosives,
+        'Necoms' => $post['Neocoms'] * $Neocoms,
+        'Nuclear_Reactors' => $post['Nuclear_Reactors'] * $Nuclear_Reactors,
+        'Planetary_Vehicles' => $post['Planetary_Vehicles'] * $Planetary_Vehicles,
+        'Robotics' => $post['Robotics'] * $Robotics,
+        'Smartfab_Units' => $post['Smartfab_Units'] * $Smartfab_Units,
+        'Supercomputers' => $post['Supercomputers'] * $Supercomputers,
+        'Synthetic_Synapses' => $post['Synthetic_Synapses'] * $Synthetic_Synapses,
+        'Transcranial_Microcontrollers' => $post['Transcranial_Microcontrollers'] * $Microcontrollers,
+        'Ukomi_Superconductors' => $post['Ukomi'] * $Ukomi,
+        'Vaccines' => $post['Vaccines'] * $Vaccines,
     );
     
     //Add the contract value up from the ore
@@ -73,49 +73,51 @@ function PiT3ContractValue($db, $update, $corporation) {
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $PiT3Contents = array(
-        "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
-        "QuoteTime" => $update,
-        "Biotech_Research_Reports" => $_POST["Biotech_Research_Reports"],
-        "Camera_Drones" => $_POST["Camera_Drones"],
-        "Cryprotectant_Solution" => $_POST["Cryoprotectant_Solution"],
-        "Data_Chips" => $_POST["Data_Chips"],
-        "Gel-Matrix_Biopaste" => $_POST["Gel-Matrix_Biopaste"],
-        "Guidance_Systems" => $_POST["Guidance_Systems"],
-        "Hazmat_Detection_Systems" => $_POST["Hazmat_Detection_System"],
-        "Hermetic_Membranes" => $_POST["Hermetic_Membranes"],
-        "High-Tech_Transmitters" => $_POST["High-Tech_Transmitters"],
-        "Industrial_Explosives" => $_POST["Industrial_Explosives"],
-        "Necoms" => $_POST["Neocoms"],
-        "Nuclear_Reactors" => $_POST["Nuclear_Reactors"],
-        "Planetary_Vehicles" => $_POST["Planetary_Vehicles"],
-        "Robotics" => $_POST["Robotics"],
-        "Smartfab_Units" => $_POST["Smartfab_Units"],
-        "Supercomputers" => $_POST["Supercomputers"],
-        "Synthetic_Synapses" => $_POST["Synthetic_Synapses"],
-        "Transcranial_Microcontrollers" => $_POST["Transcranial_Microcontrollers"],
-        "Ukomi_Superconductors" => $_POST["Ukomi"],
-        "Vaccines" => $_POST["Vaccines"],
+        'ContractNum' => $contractNum,
+        'ContractTime' =>  $now,
+        'QuoteTime' => $update,
+        'Biotech_Research_Reports' => $post['Biotech_Research_Reports'],
+        'Camera_Drones' => $post['Camera_Drones'],
+        'Cryprotectant_Solution' => $post['Cryoprotectant_Solution'],
+        'Data_Chips' => $post['Data_Chips'],
+        'Gel-Matrix_Biopaste' => $post['Gel-Matrix_Biopaste'],
+        'Guidance_Systems' => $post['Guidance_Systems'],
+        'Hazmat_Detection_Systems' => $post['Hazmat_Detection_System'],
+        'Hermetic_Membranes' => $post['Hermetic_Membranes'],
+        'High-Tech_Transmitters' => $post['High-Tech_Transmitters'],
+        'Industrial_Explosives' => $post['Industrial_Explosives'],
+        'Necoms' => $post['Neocoms'],
+        'Nuclear_Reactors' => $post['Nuclear_Reactors'],
+        'Planetary_Vehicles' => $post['Planetary_Vehicles'],
+        'Robotics' => $post['Robotics'],
+        'Smartfab_Units' => $post['Smartfab_Units'],
+        'Supercomputers' => $post['Supercomputers'],
+        'Synthetic_Synapses' => $post['Synthetic_Synapses'],
+        'Transcranial_Microcontrollers' => $post['Transcranial_Microcontrollers'],
+        'Ukomi_Superconductors' => $post['Ukomi'],
+        'Vaccines' => $post['Vaccines'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "ContractNum" => $contractNum,
-        "ContractType" => "Mineral",
-        "Corporation" => $corporation,
-        "QuoteTime" =>  $update,
-        "Value" => $contractValue,
-        "AllianceTax" => $allianceTax,
-        "CorpTax" => $corpTax
+        'ContractNum' => $contractNum,
+        'ContractType' => 'Mineral',
+        'Corporation' => $corporation,
+        'QuoteTime' =>  $update,
+        'Value' => $contractValue,
+        'AllianceTax' => $allianceTax,
+        'CorpTax' => $corpTax
     );
    
    $db->insert('PiT3ContractContents', $PiT3Contents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
-       "Value" => $contractValue,
-       "Number" => $contractNum,
+       'Value' => $contractValue,
+       'Number' => $contractNum,
    );
+   
+   DBClose($db);
     
     return $contractReturn;
 }

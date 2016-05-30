@@ -1,18 +1,71 @@
 <?php  
     require_once __DIR__.'/../functions/registry.php';
     
-    $db = DBOpen();
     if(isset($_POST["Quote_Time"])) {
         $contractTime = $_POST["Quote_Time"];
     } else {
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));;
+        $db = DBOpen();
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
         $corporation = $_POST["Corporation"];
     } else {
         $corporation = 'None';
     }
-    $contract= PiT4ContractValue($db, $contractTime, $corporation);
+    if(isset($_POST["Broadcast_Node"])) {
+        $Broadcast_Node = $_POST["Broadcast_Node"];
+    } else {
+        $Broadcast_Node = 0;
+    }
+    if(isset($_POST["Integrity_Response_Drones"])) {
+        $Integrity_Response_Drones = $_POST["Integrity_Response_Drones"];
+    } else {
+        $Integrity_Response_Drones = 0;
+    }
+    if(isset($_POST["Nanofactory"])) {
+        $Nanofactory = $_POST["Nanofactory"];
+    } else {
+        $Nanofactory = 0;
+    }
+    if(isset($_POST["Organic_Mortar_Applicator"])) {
+        $Organic_Mortar_Applicator = $_POST["Organic_Mortar_Applicator"];
+    } else {
+        $Organic_Mortar_Applicator = 0;
+    }
+    if(isset($_POST["Recursive_Computing_Module"])) {
+        $Recursive_Computing_Module = $_POST["Recursive_Computing_Module"];
+    } else {
+        $Recursive_Computing_Module = 0;
+    }
+    if(isset($_POST["Self-Harmonizing_Power_Core"])) {
+        $Self_Harmonizing_Power_Core = $_POST["Self-Harmonizing_Power_Core"];
+    } else {
+        $Self_Harmonizing_Power_Core = 0;
+    }
+    if(isset($_POST["Sterile_Conduits"])) {
+        $Sterile_Conduits = $_POST["Sterile_Conduits"];
+    } else {
+        $Sterile_Conduits = 0;
+    }
+    if(isset($_POST["Wetware_Mainframe"])) {
+        $Wetware_Mainframe = $_POST["Wetware_Mainframe"];
+    } else {
+        $Wetware_Mainframe = 0;
+    }
+    
+    $post = array(
+        'Broadcast_Node' => $Broadcast_Node,
+        'Integrity_Response_Drones' => $Integrity_Response_Drones,
+        'Nanofactory' => $Nanofactory,
+        'Organic_Mortar_Applicator' => $Organic_Mortar_Applicator,
+        'Recursive_Computing_Module' => $Recursive_Computing_Module,
+        'Self-Harmonizing_Power_Core' => $Self_Harmonizing_Power_Core,
+        'Sterile_Conduits' => $Sterile_Conduits,
+        'Wetware_Mainframe' => $Wetware_Mainframe
+    );
+    
+    $contract= PiT4ContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +125,8 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintPiT4ContractContents($contract["Number"], $db); 
-              DBClose($db);
+        <?php 
+            PrintPiT4ContractContents($contract["Number"]);
         ?>
     </div>
     

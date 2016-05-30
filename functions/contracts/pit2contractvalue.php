@@ -2,7 +2,7 @@
 
 function PiT2ContractValue($db, $update, $corporation) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     $biocells = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2329, 'time' => $update));
     $construction_blocks = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3828, 'time' => $update));
     $consumer_electronics = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9836, 'time' => $update));
@@ -38,29 +38,29 @@ function PiT2ContractValue($db, $update, $corporation) {
     $contractValue = 0.00;
     //Create the ore value array for summing later
     $Pit2Value = array(
-        "Biocells" => $_POST["Biocells"] * $biocells,
-        "Construction_Blocks" => $_POST["Construction_Blocks"] * $construction_blocks,
-        "Consumer_Electronics" => $_POST["Consumer_Electronics"] * $consumer_electronics,
-        "Coolant" => $_POST["Coolant"] * $coolant,
-        "Enriched_Uranium" => $_POST["Enriched_Uranium"] * $enriched_uranium,
-        "Fertilizer" => $_POST["Fertilizer"] * $fertilizer,
-        "Genetically_Enhanced_Livestock" => $_POST["Gen_Enhanced_Livestock"] * $gen_enhanced_livestock,
-        "Livestock" => $_POST["Livestock"] * $livestock,
-        "Mechanical_Parts" => $_POST["Mechanical_Parts"] * $mechanical_parts,
-        "Microfiber_Shielding" => $_POST["Microfiber_Shielding"] * $microfiber_shielding,
-        "Miniature_Electronics" => $_POST["Miniature_Electronics"] * $miniature_electronics,
-        "Nanites" => $_POST["Nanites"] * $nanites,
-        "Oxides" => $_POST["Oxides"] * $oxides,
-        "Polyaramids" => $_POST["Polyaramids"] * $polyaramids,
-        "Polytextiles" => $_POST["Polytextiles"] * $polytextiles,
-        "Rocket_Fuel" => $_POST["Rocket_Fuel"] * $rocket_fuel,
-        "Silicate_Glass" => $_POST["Silicate_Glass"] * $silicate_glass,
-        "Superconductors" => $_POST["Superconductors"] * $superconductors,
-        "Synthetic_Oil" => $_POST["Synthetic_Oil"] * $synthetic_oil,
-        "Test_Cultures" => $_POST["Test_Cultures"] * $testcultures,
-        "Transmitter" => $_POST["Transmitter"] * $transmitter,
-        "Viral_Agent" => $_POST["Viral_Agent"] * $viral_agent,
-        "Water-Cooled_CPU" => $_POST["Water-Cooled_CPU"] * $water_cooled_cpu,
+        'Biocells' => $post['Biocells'] * $biocells,
+        'Construction_Blocks' => $post['Construction_Blocks'] * $construction_blocks,
+        'Consumer_Electronics' => $post['Consumer_Electronics'] * $consumer_electronics,
+        'Coolant' => $post['Coolant'] * $coolant,
+        'Enriched_Uranium' => $post['Enriched_Uranium'] * $enriched_uranium,
+        'Fertilizer' => $post['Fertilizer'] * $fertilizer,
+        'Genetically_Enhanced_Livestock' => $post['Gen_Enhanced_Livestock'] * $gen_enhanced_livestock,
+        'Livestock' => $post['Livestock'] * $livestock,
+        'Mechanical_Parts' => $post['Mechanical_Parts'] * $mechanical_parts,
+        'Microfiber_Shielding' => $post['Microfiber_Shielding'] * $microfiber_shielding,
+        'Miniature_Electronics' => $post['Miniature_Electronics'] * $miniature_electronics,
+        'Nanites' => $post['Nanites'] * $nanites,
+        'Oxides' => $post['Oxides'] * $oxides,
+        'Polyaramids' => $post['Polyaramids'] * $polyaramids,
+        'Polytextiles' => $post['Polytextiles'] * $polytextiles,
+        'Rocket_Fuel' => $post['Rocket_Fuel'] * $rocket_fuel,
+        'Silicate_Glass' => $post['Silicate_Glass'] * $silicate_glass,
+        'Superconductors' => $post['Superconductors'] * $superconductors,
+        'Synthetic_Oil' => $post['Synthetic_Oil'] * $synthetic_oil,
+        'Test_Cultures' => $post['Test_Cultures'] * $testcultures,
+        'Transmitter' => $post['Transmitter'] * $transmitter,
+        'Viral_Agent' => $post['Viral_Agent'] * $viral_agent,
+        'Water-Cooled_CPU' => $post['Water-Cooled_CPU'] * $water_cooled_cpu,
     );
     
     //Add the contract value up from the ore
@@ -72,59 +72,61 @@ function PiT2ContractValue($db, $update, $corporation) {
     $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
     //Calculate the taxes from the contract value
-    $allianceTax = $contractValue * $allianceTaxRate;
-    $corpTax = $contractValue * $corpTaxRate;
+    $allianceTax = $contractValue * ($allianceTaxRate / 100.0);
+    $corpTax = $contractValue * ($corpTaxRate / 100.0);
     //Adjust the contract value
     $contractValue = ($contractValue - $allianceTax) - $corpTax;
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $Pit2Contents = array(
-        "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
-        "QuoteTime" => $update,
-        "Biocells" => $_POST["Biocells"],
-        "Construction_Blocks" => $_POST["Construction_Blocks"],
-        "Consumer_Electronics" => $_POST["Consumer_Electronics"],
-        "Coolant" => $_POST["Coolant"],
-        "Enriched_Uranium" => $_POST["Enriched_Uranium"],
-        "Fertilizer" => $_POST["Fertilizer"],
-        "Genetically_Enhanced_Livestock" => $_POST["Gen_Enhanced_Livestock"],
-        "Livestock" => $_POST["Livestock"],
-        "Mechanical_Parts" => $_POST["Mechanical_Parts"],
-        "Microfiber_Shielding" => $_POST["Microfiber_Shielding"],
-        "Miniature_Electronics" => $_POST["Miniature_Electronics"],
-        "Nanites" => $_POST["Nanites"],
-        "Oxides" => $_POST["Oxides"],
-        "Polyaramids" => $_POST["Polyaramids"],
-        "Polytextiles" => $_POST["Polytextiles"],
-        "Rocket_Fuel" => $_POST["Rocket_Fuel"],
-        "Silicate_Glass" => $_POST["Silicate_Glass"],
-        "Superconductors" => $_POST["Superconductors"],
-        "Synthetic_Oil" => $_POST["Synthetic_Oil"],
-        "Test_Cultures" => $_POST["Test_Cultures"],
-        "Transmitter" => $_POST["Transmitter"],
-        "Viral_Agent" => $_POST["Viral_Agent"],
-        "Water-Cooled_CPU" => $_POST["Water-Cooled_CPU"],
+        'ContractNum' => $contractNum,
+        'ContractTime' =>  $now,
+        'QuoteTime' => $update,
+        'Biocells' => $post['Biocells'],
+        'Construction_Blocks' => $post['Construction_Blocks'],
+        'Consumer_Electronics' => $post['Consumer_Electronics'],
+        'Coolant' => $post['Coolant'],
+        'Enriched_Uranium' => $post['Enriched_Uranium'],
+        'Fertilizer' => $post['Fertilizer'],
+        'Genetically_Enhanced_Livestock' => $post['Gen_Enhanced_Livestock'],
+        'Livestock' => $post['Livestock'],
+        'Mechanical_Parts' => $post['Mechanical_Parts'],
+        'Microfiber_Shielding' => $post['Microfiber_Shielding'],
+        'Miniature_Electronics' => $post['Miniature_Electronics'],
+        'Nanites' => $post['Nanites'],
+        'Oxides' => $post['Oxides'],
+        'Polyaramids' => $post['Polyaramids'],
+        'Polytextiles' => $post['Polytextiles'],
+        'Rocket_Fuel' => $post['Rocket_Fuel'],
+        'Silicate_Glass' => $post['Silicate_Glass'],
+        'Superconductors' => $post['Superconductors'],
+        'Synthetic_Oil' => $post['Synthetic_Oil'],
+        'Test_Cultures' => $post['Test_Cultures'],
+        'Transmitter' => $post['Transmitter'],
+        'Viral_Agent' => $post['Viral_Agent'],
+        'Water-Cooled_CPU' => $post['Water-Cooled_CPU'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "ContractNum" => $contractNum,
-        "ContractType" => "Mineral",
-        "Corporation" => $corporation,
-        "QuoteTime" =>  $update,
-        "Value" => $contractValue,
-        "AllianceTax" => $allianceTax,
-        "CorpTax" => $corpTax
+        'ContractNum' => $contractNum,
+        'ContractType' => 'Mineral',
+        'Corporation' => $corporation,
+        'QuoteTime' =>  $update,
+        'Value' => $contractValue,
+        'AllianceTax' => $allianceTax,
+        'CorpTax' => $corpTax
     );
    
    $db->insert('PiT2ContractContents', $Pit2Contents);
    $db->insert('Contracts', $contract);
    
-   $contractReturn = array(
-       "Value" => $contractValue,
-       "Number" => $contractNum,
-   );
+    $contractReturn = array(
+       'Value' => $contractValue,
+       'Number' => $contractNum,
+    );
+    
+    DBClose($db);
     
     return $contractReturn;
 }

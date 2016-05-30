@@ -1,8 +1,8 @@
 <?php
 
-function PiT4ContractValue($db, $update, $corporation) {
+function PiT4ContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     $Broadcast = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2867, 'time' => $update));
     $Response_Drones = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2868, 'time' => $update));
     $Nanofactory = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2869, 'time' => $update));
@@ -22,14 +22,14 @@ function PiT4ContractValue($db, $update, $corporation) {
     $contractValue = 0.00;
     //Create the ore value array for summing later
     $mineralValue = array(
-        "Broadcast_Node" => $_POST["Broadcast_Node"] * $Broadcast,
-        "Integrity_Response_Drones" => $_POST["Integrity_Response_Drones"] * $Response_Drones,
-        "Nanofactory" => $_POST["Nanofactory"] * $Nanofactory,
-        "Organic_Mortar_Applicator" => $_POST["Organic_Mortar_Applicator"] * $Organic_Mortar,
-        "Recursive_Computing_Module" => $_POST["Recursive_Computing_Module"] * $Recursive_Computing,
-        "Self-Harmonizing_Power_Core" => $_POST["Self-Harmonizing_Power_Core"] * $Power_Core,
-        "Sterile_Conduits" => $_POST["Sterile_Conduits"] * $Sterile_Conduits,
-        "Wetware_Mainframe" => $_POST["Wetware_Mainframe"] * $Mainframe,
+        'Broadcast_Node' => $post['Broadcast_Node'] * $Broadcast,
+        'Integrity_Response_Drones' => $post['Integrity_Response_Drones'] * $Response_Drones,
+        'Nanofactory' => $post['Nanofactory'] * $Nanofactory,
+        'Organic_Mortar_Applicator' => $post['Organic_Mortar_Applicator'] * $Organic_Mortar,
+        'Recursive_Computing_Module' => $post['Recursive_Computing_Module'] * $Recursive_Computing,
+        'Self-Harmonizing_Power_Core' => $post['Self-Harmonizing_Power_Core'] * $Power_Core,
+        'Sterile_Conduits' => $post['Sterile_Conduits'] * $Sterile_Conduits,
+        'Wetware_Mainframe' => $post['Wetware_Mainframe'] * $Mainframe,
     );
     
     //Add the contract value up from the ore
@@ -41,44 +41,46 @@ function PiT4ContractValue($db, $update, $corporation) {
     $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
     //Calculate the taxes from the contract value
-    $allianceTax = $contractValue * $allianceTaxRate;
-    $corpTax = $contractValue * $corpTaxRate;
+    $allianceTax = $contractValue * ($allianceTaxRate / 100.0);
+    $corpTax = $contractValue * ($corpTaxRate / 100.0);
     //Adjust the contract value
     $contractValue = ($contractValue - $allianceTax) - $corpTax;
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $mineralContents = array(
-        "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
-        "QuoteTime" => $update,
-        "Broadcast_Node" => $_POST["Broadcast_Node"],
-        "Integrity_Response_Drones" => $_POST["Integrity_Response_Drones"],
-        "Nanofactory" => $_POST["Nanofactory"],
-        "Organic_Mortar_Applicator" => $_POST["Organic_Mortar_Applicator"],
-        "Recursive_Computing_Module" => $_POST["Recursive_Computing_Module"],
-        "Self-Harmonizing_Power_Core" => $_POST["Self-Harmonizing_Power_Core"],
-        "Sterile_Conduits" => $_POST["Sterile_Conduits"],
-        "Wetware_Mainframe" => $_POST["Wetware_Mainframe"],
+        'ContractNum' => $contractNum,
+        'ContractTime' =>  $now,
+        'QuoteTime' => $update,
+        'Broadcast_Node' => $post['Broadcast_Node'],
+        'Integrity_Response_Drones' => $post['Integrity_Response_Drones'],
+        'Nanofactory' => $post['Nanofactory'],
+        'Organic_Mortar_Applicator' => $post['Organic_Mortar_Applicator'],
+        'Recursive_Computing_Module' => $post['Recursive_Computing_Module'],
+        'Self-Harmonizing_Power_Core' => $post['Self-Harmonizing_Power_Core'],
+        'Sterile_Conduits' => $post['Sterile_Conduits'],
+        'Wetware_Mainframe' => $post['Wetware_Mainframe'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "ContractNum" => $contractNum,
-        "ContractType" => "Mineral",
-        "Corporation" => $corporation,
-        "QuoteTime" =>  $update,
-        "Value" => $contractValue,
-        "AllianceTax" => $allianceTax,
-        "CorpTax" => $corpTax
+        'ContractNum' => $contractNum,
+        'ContractType' => 'Mineral',
+        'Corporation' => $corporation,
+        'QuoteTime' =>  $update,
+        'Value' => $contractValue,
+        'AllianceTax' => $allianceTax,
+        'CorpTax' => $corpTax
     );
    
    $db->insert('PiT4ContractContents', $mineralContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
-       "Value" => $contractValue,
-       "Number" => $contractNum,
+       'Value' => $contractValue,
+       'Number' => $contractNum,
    );
+   
+   DBClose($db);
     
     return $contractReturn;
 }

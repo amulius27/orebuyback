@@ -1,18 +1,48 @@
 <?php  
     require_once __DIR__.'/../functions/registry.php';
     
-    $db = DBOpen();
+    
     if(isset($_POST["Quote_Time"])) {
         $contractTime = $_POST["Quote_Time"];
     } else {
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));;
+        $db = DBOpen();
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
         $corporation = $_POST["Corporation"];
     } else {
         $corporation = 'None';
     }
-    $contract= FuelContractValue($db, $contractTime, $corporation);
+    if(isset($_POST["Amarr_Fuel_Block"])) {
+        $Amarr_Fuel_Block = $_POST["Amarr_Fuel_Block"];
+    } else {
+        $Amarr_Fuel_Block = 0;
+    }
+    if(isset($_POST["Caldari_Fuel_Block"])) {
+        $Caldari_Fuel_Block = $_POST["Caldari_Fuel_Block"];
+    } else {
+        $Caldari_Fuel_Block = 0;
+    }
+    if(isset($_POST["Gallente_Fuel_Block"])) {
+        $Gallente_Fuel_Block = $_POST["Gallente_Fuel_Block"];
+    } else {
+        $Gallente_Fuel_Block = 0;
+    }
+    if(isset($_POS["Minmatar_Fuel_Block"])) {
+        $Minmatar_Fuel_Block = $_POST["Minmatar_Fuel_Block"];
+    } else {
+        $Minmatar_Fuel_Block = 0;
+    }
+    
+    $post = array(
+        'Amarr_Fuel_Block' => $Amarr_Fuel_Block,
+        'Caldari_Fuel_Block' => $Caldari_Fuel_Block,
+        'Gallente_Fuel_Block' => $Gallente_Fuel_Block,
+        'Minmatar_Fuel_Block' => $Minmatar_Fuel_Block
+    );
+    
+    $contract= FuelContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +102,7 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintFuelContractContents($contract["Number"], $db); 
-              DBClose($db);
+        <?php PrintFuelContractContents($contract["Number"]); 
         ?>
     </div>
     

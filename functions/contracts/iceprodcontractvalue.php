@@ -1,8 +1,8 @@
 <?php
 
-function IceProdContractValue($db, $update, $corporation) {
+function IceProdContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     //Ice Products
     //Helium Isotopes
     $Helium_Isotopes = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 16274, 'time' => $update));
@@ -29,13 +29,13 @@ function IceProdContractValue($db, $update, $corporation) {
     $contractValue = 0.00;
     //Create the ore value array for summing later
     $iceProdValue = array(
-        "Helium_Isotopes" => $_POST["Helium_Isotopes"] * $Helium_Isotopes,
-        "Hydrogen_Isotopes" => $_POST["Hydrogen_Isotopes"] * $Hydrogen_Isotopes,
-        "Nitrogen_Isotopes" => $_POST["Nitrogen_Isotopes"] * $Nitrogen_Isotopes,
-        "Oxygen_Isotopes" => $_POST["Oxygen_Isotopes"] * $Oxygen_Isotopes,
-        "Heavy_Water" => $_POST["Heavy_Water"] * $Heavy_Water,
-        "Liquid_Ozone" => $_POST["Liquid_Ozone"] * $Liquid_Ozone,
-        "Strontium_Clathrates" => $_POST["Strontium_Clathrates"] * $Strontium_Clathrates,
+        'Helium_Isotopes' => $post['Helium_Isotopes'] * $Helium_Isotopes,
+        'Hydrogen_Isotopes' => $post['Hydrogen_Isotopes'] * $Hydrogen_Isotopes,
+        'Nitrogen_Isotopes' => $post['Nitrogen_Isotopes'] * $Nitrogen_Isotopes,
+        'Oxygen_Isotopes' => $post['Oxygen_Isotopes'] * $Oxygen_Isotopes,
+        'Heavy_Water' => $post['Heavy_Water'] * $Heavy_Water,
+        'Liquid_Ozone' => $post['Liquid_Ozone'] * $Liquid_Ozone,
+        'Strontium_Clathrates' => $post['Strontium_Clathrates'] * $Strontium_Clathrates,
     );
     
     //Add the contract value up from the ore
@@ -47,44 +47,46 @@ function IceProdContractValue($db, $update, $corporation) {
     $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
     //Calculate the taxes from the contract value
-    $allianceTax = $contractValue * $allianceTaxRate;
-    $corpTax = $contractValue * $corpTaxRate;
+    $allianceTax = $contractValue * ($allianceTaxRate / 100.0);
+    $corpTax = $contractValue * ($corpTaxRate / 100.0);
     //Adjust the contract value
     $contractValue = ($contractValue - $allianceTax) - $corpTax;
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $iceProdContents = array(
-        "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
-        "QuoteTime" => $update,
-        "Helium_Isotopes" => $_POST["Helium_Isotopes"],
-        "Hydrogen_Isotopes" => $_POST["Hydrogen_Isotopes"],
-        "Nitrogen_Isotopes" => $_POST["Nitrogen_Isotopes"],
-        "Oxygen_Isotopes" => $_POST["Oxygen_Isotopes"],
-        "Heavy_Water" => $_POST["Heavy_Water"],
-        "Liquid_Ozone" => $_POST["Liquid_Ozone"],
-        "Strontium_Clathrates" => $_POST["Strontium_Clathrates"],
+        'ContractNum' => $contractNum,
+        'ContractTime' =>  $now,
+        'QuoteTime' => $update,
+        'Helium_Isotopes' => $post['Helium_Isotopes'],
+        'Hydrogen_Isotopes' => $post['Hydrogen_Isotopes'],
+        'Nitrogen_Isotopes' => $post['Nitrogen_Isotopes'],
+        'Oxygen_Isotopes' => $post['Oxygen_Isotopes'],
+        'Heavy_Water' => $post['Heavy_Water'],
+        'Liquid_Ozone' => $post['Liquid_Ozone'],
+        'Strontium_Clathrates' => $post['Strontium_Clathrates'],
         
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "ContractNum" => $contractNum,
-        "ContractType" => "Ore",
-        "Corporation" => $corporation,
-        "QuoteTime" =>  $update,
-        "Value" => $contractValue,
-        "AllianceTax" => $allianceTax,
-        "CorpTax" => $corpTax
+        'ContractNum' => $contractNum,
+        'ContractType' => 'Ore',
+        'Corporation' => $corporation,
+        'QuoteTime' =>  $update,
+        'Value' => $contractValue,
+        'AllianceTax' => $allianceTax,
+        'CorpTax' => $corpTax
     );
    
    $db->insert('IceProdContractContents', $iceProdContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
-       "Value" => $contractValue,
-       "Number" => $contractNum,
+       'Value' => $contractValue,
+       'Number' => $contractNum,
    );
+   
+   DBClose($db);
     
     return $contractReturn;
 }

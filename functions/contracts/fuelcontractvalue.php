@@ -1,8 +1,8 @@
 <?php
 
-function FuelContractValue($db, $update, $corporation) {
+function FuelContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
-   
+    $db = DBOpen();
     //Amarr Fuel
     $Amarr_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4247, 'time' => $update));
     //Caldari Fuel
@@ -22,10 +22,10 @@ function FuelContractValue($db, $update, $corporation) {
     $contractValue = 0.00;
     //Create the ore value array for summing later
     $fuelBlockValue = array(
-        "Amarr_Fuel_Block" => $_POST["Amarr_Fuel_Block"] * $Amarr_Fuel,
-        "Caldari_Fuel_Block" => $_POST["Caldari_Fuel_Block"] * $Caldari_Fuel,
-        "Gallente_Fuel_Block" => $_POST["Gallente_Fuel_Block"] * $Gallente_Fuel,
-        "Minmatar_Fuel_Block" => $_POST["Minmatar_Fuel_Block"] * $Minmatar_Fuel,
+        'Amarr_Fuel_Block' => $post['Amarr_Fuel_Block'] * $Amarr_Fuel,
+        'Caldari_Fuel_Block' => $post['Caldari_Fuel_Block'] * $Caldari_Fuel,
+        'Gallente_Fuel_Block' => $post['Gallente_Fuel_Block'] * $Gallente_Fuel,
+        'Minmatar_Fuel_Block' => $post['Minmatar_Fuel_Block'] * $Minmatar_Fuel,
     );
     
     //Add the contract value up from the ore
@@ -37,32 +37,32 @@ function FuelContractValue($db, $update, $corporation) {
     $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
     //Calculate the taxes from the contract value
-    $allianceTax = $contractValue * $allianceTaxRate;
-    $corpTax = $contractValue * $corpTaxRate;
+    $allianceTax = $contractValue * ($allianceTaxRate / 100.0);
+    $corpTax = $contractValue * ($corpTaxRate / 100.0);
     //Adjust the contract value
     $contractValue = ($contractValue - $allianceTax) - $corpTax;
     
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $fuelBlockContents = array(
-        "ContractNum" => $contractNum,
-        "ContractTime" =>  $now,
-        "QuoteTime" => $update,
-        "Amarr_Fuel_Block" => $_POST["Amarr_Fuel_Block"],
-        "Caldari_Fuel_Block" => $_POST["Caldari_Fuel_Block"],
-        "Gallente_Fuel_Block" => $_POST["Gallente_Fuel_Block"],
-        "Minmatar_Fuel_Block" => $_POST["Minmatar_Fuel_Block"],
+        'ContractNum' => $contractNum,
+        'ContractTime' =>  $now,
+        'QuoteTime' => $update,
+        'Amarr_Fuel_Block' => $post['Amarr_Fuel_Block'],
+        'Caldari_Fuel_Block' => $post['Caldari_Fuel_Block'],
+        'Gallente_Fuel_Block' => $post['Gallente_Fuel_Block'],
+        'Minmatar_Fuel_Block' => $post['Minmatar_Fuel_Block'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
-        "ContractNum" => $contractNum,
-        "ContractType" => "Fuel",
-        "Corporation" => $corporation,
-        "QuoteTime" =>  $update,
-        "Value" => $contractValue,
-        "AllianceTax" => $allianceTax,
-        "CorpTax" => $corpTax
+        'ContractNum' => $contractNum,
+        'ContractType' => 'Fuel',
+        'Corporation' => $corporation,
+        'QuoteTime' =>  $update,
+        'Value' => $contractValue,
+        'AllianceTax' => $allianceTax,
+        'CorpTax' => $corpTax
     );
    
    $db->insert('FuelBlockContractContents', $fuelBlockContents);
@@ -72,6 +72,8 @@ function FuelContractValue($db, $update, $corporation) {
        "Value" => $contractValue,
        "Number" => $contractNum,
    );
+   
+   DBClose($db);
     
     return $contractReturn;
 }

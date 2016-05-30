@@ -1,18 +1,65 @@
 <?php  
     require_once __DIR__.'/../functions/registry.php';
     
-    $db = DBOpen();
     if(isset($_POST["Quote_Time"])) {
         $contractTime = $_POST["Quote_Time"];
     } else {
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));;
+        $Db = DBOpen();
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
         $corporation = $_POST["Corporation"];
     } else {
         $corporation = 'None';
     }
-    $contract= IceProdContractValue($db, $contractTime, $corporation);
+    if(isset($_POST["Helium_Isotopes"])){
+        $Helium_Isotopes = $_POST["Helium_Isotopes"];
+    } else {
+        $Helium_Isotopes = 0;
+    }
+    if(isset($_POST["Hydrogen_Isotopes"])){
+        $Hydrogen_Isotopes = $_POST["Hydrogen_Isotopes"];
+    } else {
+        $Hydrogen_Isotopes = 0;
+    }
+    if(isset($_POST["Nitrogen_Isotopes"])){
+        $Nitrogen_Isotopes = $_POST["Nitrogen_Isotopes"];
+    } else {
+        $Nitrogen_Isotopes = 0;
+    }
+    if(isset($_POST["Oxygen_Isotopes"])){
+        $Oxygen_Isotopes = $_POST["Oxygen_Isotopes"];
+    } else {
+        $Oxygen_Isotopes = 0;
+    }
+    if(isset($_POST["Heavy_Water"])){
+        $Heavy_Water = $_POST["Heavy_Water"];
+    } else {
+        $Heavy_Water = 0;
+    }
+    if(isset($_POST["Liquid_Ozone"])){
+        $Liquid_Ozone = $_POST["Liquid_Ozone"];
+    } else {
+        $Liquid_Ozone = 0;
+    }
+    if(isset($_POST["Strontium_Clathrates"])){
+        $Strontium_Clathrates = $_POST["Strontium_Clathrates"];
+    } else {
+        $Strontium_Clathrates = 0;
+    }
+    
+    $post = array(
+        'Helium_Isotopes' => $Helium_Isotopes,
+        'Hydrogen_Isotopes' => $Hydrogen_Isotopes,
+        'Nitrogen_Isotopes' => $Nitrogen_Isotopes,
+        'Oxygen_Isotopes' => $Oxygen_Isotopes,
+        'Heavy_Water' => $Heavy_Water,
+        'Liquid_Ozone' => $Liquid_Ozone,
+        'Strontium_Clathrates' => $Strontium_Clathrates
+    );
+    
+    $contract= IceProdContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +119,7 @@
     </div>
     <div class="container">
         <h1>Contract Contents</h1><br>
-        <?php PrintIceProdContractContents($contract["Number"], $db); 
-              DBClose($db);
+        <?php PrintIceProdContractContents($contract["Number"]); 
         ?>
     </div>
     
