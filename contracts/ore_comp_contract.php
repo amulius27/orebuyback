@@ -344,7 +344,7 @@
 <body>
 
 <?php
-    PrintNavBar();
+    PrintNavBarContracts();
     PrintTitle();
 ?>
 

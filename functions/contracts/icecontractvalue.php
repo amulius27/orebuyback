@@ -49,8 +49,8 @@ function IceContractValue($update, $corporation, $post) {
     $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
     //Calculate the taxes from the contract value
-    $allianceTax = $contractValue * $allianceTaxRate;
-    $corpTax = $contractValue * $corpTaxRate;
+    $allianceTax = $contractValue * ($allianceTaxRate / 100.0);
+    $corpTax = $contractValue * ($corpTaxRate / 100.0);
     //Adjust the contract value
     $contractValue = ($contractValue - $allianceTax) - $corpTax;
    
