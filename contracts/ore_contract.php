@@ -289,7 +289,7 @@
         'Prismatic_Gneiss' => $Prismatic_Gneiss,
         'Dark_Ochre' => $Dark_Ochre,
         'Onyx_Ochre' => $Onyx_Ochre,
-        'Obsidian_Ochre' => $Obisidian_Ochre,
+        'Obsidian_Ochre' => $Obsidian_Ochre,
         'Spodumain' => $Spodumain,
         'Bright_Spodumain' => $Bright_Spodumain,
         'Gleaming_Spodumain' => $Gleaming_Spodumain,
