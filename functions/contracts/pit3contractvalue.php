@@ -53,7 +53,7 @@ function PiT3ContractValue($update, $corporation, $post) {
         'Supercomputers' => $post['Supercomputers'] * $Supercomputers,
         'Synthetic_Synapses' => $post['Synthetic_Synapses'] * $Synthetic_Synapses,
         'Transcranial_Microcontrollers' => $post['Transcranial_Microcontrollers'] * $Microcontrollers,
-        'Ukomi_Superconductors' => $post['Ukomi_Superonductors'] * $Ukomi,
+        'Ukomi_Superconductors' => $post['Ukomi_Superconductors'] * $Ukomi,
         'Vaccines' => $post['Vaccines'] * $Vaccines,
     );
     
