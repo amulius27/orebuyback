@@ -107,7 +107,7 @@
         'Water' => $Water
     );
     
-    $contract= PiT1ContractValue($db, $contractTime, $corporation);
+    $contract= PiT1ContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
