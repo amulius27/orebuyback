@@ -21,7 +21,7 @@ function PiT4ContractValue($update, $corporation, $post) {
     //Set the initial contract value to 0.00 before adding everything up
     $contractValue = 0.00;
     //Create the ore value array for summing later
-    $mineralValue = array(
+    $PiT4Value = array(
         'Broadcast_Node' => $post['Broadcast_Node'] * $Broadcast,
         'Integrity_Response_Drones' => $post['Integrity_Response_Drones'] * $Response_Drones,
         'Nanofactory' => $post['Nanofactory'] * $Nanofactory,
@@ -33,7 +33,7 @@ function PiT4ContractValue($update, $corporation, $post) {
     );
     
     //Add the contract value up from the ore
-    foreach($mineralValue as $value) {
+    foreach($PiT4Value as $value) {
        $contractValue = $contractValue + $value;
     }
     
@@ -64,7 +64,7 @@ function PiT4ContractValue($update, $corporation, $post) {
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
         'ContractNum' => $contractNum,
-        'ContractType' => 'Mineral',
+        'ContractType' => 'PiT4',
         'Corporation' => $corporation,
         'QuoteTime' =>  $update,
         'Value' => $contractValue,

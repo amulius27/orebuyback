@@ -110,7 +110,7 @@ function PiT2ContractValue($update, $corporation, $post) {
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
         'ContractNum' => $contractNum,
-        'ContractType' => 'Mineral',
+        'ContractType' => 'PiT2',
         'Corporation' => $corporation,
         'QuoteTime' =>  $update,
         'Value' => $contractValue,

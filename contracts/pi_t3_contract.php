@@ -117,7 +117,7 @@
     $post = array(
         'Biotech_Research_Reports' => $Biotech_Research_Reports,
         'Camera_Drones' => $Camera_Drones,
-        'Cryprotectant_Solution' => $Cryoprotectant_Solution,
+        'Cryoprotectant_Solution' => $Cryoprotectant_Solution,
         'Data_Chips' => $Data_Chips,
         'Gel-Matrix_Biopaste' => $Gel_Matrix_Biopaste,
         'Guidance_Systems' => $Guidance_Systems,

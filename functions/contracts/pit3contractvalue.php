@@ -37,7 +37,7 @@ function PiT3ContractValue($update, $corporation, $post) {
     $PiT3Value = array(
         'Biotech_Research_Reports' => $post['Biotech_Research_Reports'] * $Biotech,
         'Camera_Drones' => $post['Camera_Drones'] * $Camera_Drones,
-        'Cryprotectant_Solution' => $post['Cryoprotectant_Solution'] * $Cryoprotectant_Solution,
+        'Cryoprotectant_Solution' => $post['Cryoprotectant_Solution'] * $Cryoprotectant_Solution,
         'Data_Chips' => $post['Data_Chips'] * $Data_Chips,
         'Gel-Matrix_Biopaste' => $post['Gel-Matrix_Biopaste'] * $Gel_Matrix_Biopaste,
         'Guidance_Systems' => $post['Guidance_Systems'] * $Guidance_Systems,
@@ -58,7 +58,7 @@ function PiT3ContractValue($update, $corporation, $post) {
     );
     
     //Add the contract value up from the ore
-    foreach($mineralValue as $value) {
+    foreach($PiT3Value as $value) {
        $contractValue = $contractValue + $value;
     }
     
@@ -78,7 +78,7 @@ function PiT3ContractValue($update, $corporation, $post) {
         'QuoteTime' => $update,
         'Biotech_Research_Reports' => $post['Biotech_Research_Reports'],
         'Camera_Drones' => $post['Camera_Drones'],
-        'Cryprotectant_Solution' => $post['Cryoprotectant_Solution'],
+        'Cryoprotectant_Solution' => $post['Cryoprotectant_Solution'],
         'Data_Chips' => $post['Data_Chips'],
         'Gel-Matrix_Biopaste' => $post['Gel-Matrix_Biopaste'],
         'Guidance_Systems' => $post['Guidance_Systems'],
@@ -94,14 +94,14 @@ function PiT3ContractValue($update, $corporation, $post) {
         'Supercomputers' => $post['Supercomputers'],
         'Synthetic_Synapses' => $post['Synthetic_Synapses'],
         'Transcranial_Microcontrollers' => $post['Transcranial_Microcontrollers'],
-        'Ukomi_Superconductors' => $post['Ukomi'],
+        'Ukomi_Superconductors' => $post['Ukomi_Superconductors'],
         'Vaccines' => $post['Vaccines'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
         'ContractNum' => $contractNum,
-        'ContractType' => 'Mineral',
+        'ContractType' => 'PiT3',
         'Corporation' => $corporation,
         'QuoteTime' =>  $update,
         'Value' => $contractValue,
