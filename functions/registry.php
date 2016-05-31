@@ -46,6 +46,7 @@ require_once __DIR__.'/../functions/contracts/pit4contractvalue.php';
 require_once __DIR__.'/../functions/contracts/printcomporecontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printfuelcontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printicecontractcontents.php';
+require_once __DIR__.'/../functions/contracts/printiceprodcontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printmineralcontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printorecontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printpicontractcontents.php';
