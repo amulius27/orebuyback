@@ -22,8 +22,8 @@ function PrintNavBarContracts() {
         </div>
         <div class=\"collapse navbar-collapse pull-left\">
             <ul class=\"nav navbar-nav\">
-                <li><a href=\"/../index.php\">Home</a></li>
-                <li><a href=\"/../quote.php\">Price Quotes</a></li>
+                <li><a href=\"/./index.php\">Home</a></li>
+                <li><a href=\"/./quote.php\">Price Quotes</a></li>
                 <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
             </ul>
         </div>
