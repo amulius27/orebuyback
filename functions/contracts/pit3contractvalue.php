@@ -80,7 +80,7 @@ function PiT3ContractValue($update, $corporation, $post) {
         'Camera_Drones' => $post['Camera_Drones'],
         'Cryoprotectant_Solution' => $post['Cryoprotectant_Solution'],
         'Data_Chips' => $post['Data_Chips'],
-        'Gel-Matrix_Biopaste' => $post['Gel-Matrix_Biopaste'],
+        //'Gel-Matrix_Biopaste' => $post['Gel-Matrix_Biopaste'],
         //'Guidance_Systems' => $post['Guidance_Systems'],
         //'Hazmat_Detection_Systems' => $post['Hazmat_Detection_Systems'],
         //'Hermetic_Membranes' => $post['Hermetic_Membranes'],
