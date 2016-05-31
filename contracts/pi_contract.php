@@ -90,7 +90,7 @@
     }
     
     $post = array(
-        'Aqueous_Liquid' => $Aqueous_Liquids,
+        'Aqueous_Liquids' => $Aqueous_Liquids,
         'Ionic_Solutions' => $Ionic_Solutions,
         'Base_Metals' => $Base_Metals,
         'Heavy_Metals' => $Heavy_Metals,
