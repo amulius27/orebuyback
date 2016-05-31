@@ -65,7 +65,7 @@ function FuelContractValue($update, $corporation, $post) {
         'CorpTax' => $corpTax
     );
    
-   $db->insert('FuelBlockContractContents', $fuelBlockContents);
+   $db->insert('FuelContractContents', $fuelBlockContents);
    $db->insert('Contracts', $contract);
    
    $contractReturn = array(
