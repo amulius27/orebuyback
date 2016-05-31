@@ -86,7 +86,7 @@ function PiT3ContractValue($update, $corporation, $post) {
         'Hermetic_Membranes' => $post['Hermetic_Membranes'],
         'High-Tech_Transmitters' => $post['High-Tech_Transmitters'],
         'Industrial_Explosives' => $post['Industrial_Explosives'],
-        'Necoms' => $post['Neocoms'],
+        'Neocoms' => $post['Neocoms'],
         'Nuclear_Reactors' => $post['Nuclear_Reactors'],
         'Planetary_Vehicles' => $post['Planetary_Vehicles'],
         'Robotics' => $post['Robotics'],

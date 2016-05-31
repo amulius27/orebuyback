@@ -402,7 +402,7 @@ CREATE TABLE IF NOT EXISTS `PiT3ContractContents` (
     `QuoteTime` timestamp NOT NULL,
     `Biotech_Research_Reports` int(20) NOT NULL DEFAULT '0',
     `Camera_Drones` int(20) NOT NULL DEFAULT '0',
-    `Cryprotectant_Solution` int(20) NOT NULL DEFAULT '0',
+    `Cryoprotectant_Solution` int(20) NOT NULL DEFAULT '0',
     `Data_Chips` int(20) NOT NULL DEFAULT '0',
     `Gel-Matrix_Biopaste` int(20) NOT NULL DEFAULT '0',
     `Guidance_Systems` int(20) NOT NULL DEFAULT '0',
@@ -410,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `PiT3ContractContents` (
     `Hermetic_Membranes` int(20) NOT NULL DEFAULT '0',
     `High-Tech_Transmitters` int(20) NOT NULL DEFAULT '0',
     `Industrial_Explosives` int(20) NOT NULL DEFAULT '0',
-    `Necoms` int(20) NOT NULL DEFAULT '0',
+    `Neocoms` int(20) NOT NULL DEFAULT '0',
     `Nuclear_Reactors` int(20) NOT NULL DEFAULT '0',
     `Planetary_Vehicles` int(20) NOT NULL DEFAULT '0',
     `Robotics` int(20) NOT NULL DEFAULT '0',
@@ -423,7 +423,6 @@ CREATE TABLE IF NOT EXISTS `PiT3ContractContents` (
     PRIMARY KEY (`ContractNum`),
     UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
-
 
 --
 -- Table structure for table 'PiT4ContractContents`
