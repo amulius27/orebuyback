@@ -2,8 +2,8 @@
 
 function PrintMineralsContractContents($contractNum) {
     $db = DBOpen();
-    $columns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'MineralsContractContents'));
-    $contents = $db->fetchRow('SELECT * FROM MineralsContractContents WHERE ContractNum= :number', array('number' => $contractNum));
+    $columns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'MineralContractContents'));
+    $contents = $db->fetchRow('SELECT * FROM MineralContractContents WHERE ContractNum= :number', array('number' => $contractNum));
     
     $columnsNum = sizeof($columns);
     
