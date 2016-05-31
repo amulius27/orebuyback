@@ -200,9 +200,10 @@
                             <p id="calc-output-row">Total Autotrophs value <span class="pull-right"><span id="calc-output-autotrophs-value"></span></p>
                             <hr>
                             <p id="calc-output-reward-row">
-                                <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong>
-                            </p>
-                            <br>
+                            <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
+                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
+                        </p>
+                        <br>
                         </div>
                     </div>
                 </div>
