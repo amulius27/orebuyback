@@ -102,7 +102,7 @@
         'Noble_Gas' => $Noble_Gas,
         'Reactive_Metals' => $Reactive_Metals,
         'Felsic_Magma' => $Felsic_Magma,
-        'Non-CS_Materials' => $NonCS_Materials,
+        'Non_CS_Materials' => $NonCS_Materials,
         'Suspended_Plasma' => $Suspended_Plasma,
         'Autotrophs' => $Autotrophs
     );
