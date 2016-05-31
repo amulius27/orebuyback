@@ -125,7 +125,7 @@
         'Hermetic_Membranes' => $Hermetic_Membranes,
         'High-Tech_Transmitters' => $High_Tech_Transmitters,
         'Industrial_Explosives' => $Industrial_Explosives,
-        'Necoms' => $Neocoms,
+        'Neocoms' => $Neocoms,
         'Nuclear_Reactors' => $Nuclear_Reactors,
         'Planetary_Vehicles' => $Planetary_Vehicles,
         'Robotics' => $Robotics,

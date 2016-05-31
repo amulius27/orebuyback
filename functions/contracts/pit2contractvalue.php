@@ -1,6 +1,6 @@
 <?php
 
-function PiT2ContractValue($db, $update, $corporation) {
+function PiT2ContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
     $db = DBOpen();
     $biocells = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2329, 'time' => $update));
