@@ -321,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `PiContractContents` (
     `Noble_Gas` int(20) NOT NULL DEFAULT '0',
     `Reactive_Metals` int(20) NOT NULL DEFAULT '0',
     `Felsic_Magma` int(20) NOT NULL DEFAULT '0',
-    `Non-CS_Materials` int(20) NOT NULL DEFAULT '0',
+    `Non_CS_Materials` int(20) NOT NULL DEFAULT '0',
     `Suspended_Plasma` int(20) NOT NULL DEFAULT '0',
     `Autotrophs` int(20) NOT NULL DEFAULT '0',
     PRIMARY KEY (`ContractNum`),
@@ -386,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `PiT2ContractContents` (
     `Test_Cultures` int(20) NOT NULL DEFAULT '0',
     `Transmitter` int(20) NOT NULL DEFAULT '0',
     `Viral_Agent` int(20) NOT NULL DEFAULT '0',
-    `Water-Cooled_CPU` int(20) NOT NULL DEFAULT '0',
+    `Water_Cooled_CPU` int(20) NOT NULL DEFAULT '0',
     PRIMARY KEY (`ContractNum`),
     UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
@@ -437,7 +437,7 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
     `Nanofactory` int(20) NOT NULL DEFAULT '0',
     `Organic_Mortar_Applicator` int(20) NOT NULL DEFAULT '0',
     `Recursive_Computing_Module` int(20) NOT NULL DEFAULT '0',
-    `Self-Harmonizing_Power_Core` int(20) NOT NULL DEFAULT '0',
+    `Self_Harmonizing_Power_Core` int(20) NOT NULL DEFAULT '0',
     `Sterile_Conduits` int(20) NOT NULL DEFAULT '0',
     `Wetware_Mainframe` int(20) NOT NULL DEFAULT '0',
     PRIMARY KEY (`ContractNum`),
