@@ -59,7 +59,7 @@
         'Strontium_Clathrates' => $Strontium_Clathrates
     );
     
-    $contract= IceProdContractValue($contractTime, $corporation, $post);
+    $contract = IceProdContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>

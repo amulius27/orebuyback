@@ -35,6 +35,7 @@ require_once __DIR__.'/../functions/html/printinstructions.php';
 require_once __DIR__.'/../functions/contracts/comporecontractvalue.php';
 require_once __DIR__.'/../functions/contracts/fuelcontractvalue.php';
 require_once __DIR__.'/../functions/contracts/icecontractvalue.php';
+require_once __DIR__.'/../functions/contracts/iceprodcontractvalue.php';
 require_once __DIR__.'/../functions/contracts/mineralcontractvalue.php';
 require_once __DIR__.'/../functions/contracts/orecontractvalue.php';
 require_once __DIR__.'/../functions/contracts/picontractvalue.php';
