@@ -152,7 +152,7 @@
         'Test_Cultures' => $Test_Cultures,
         'Transmitter' => $Transmitter,
         'Viral_Agent' => $Viral_Agent,
-        'Water-Cooled_CPU' => $Water_Cooled_CPU
+        'Water_Cooled_CPU' => $Water_Cooled_CPU
     );
     
     $contract= PiT2ContractValue($contractTime, $corporation, $post);

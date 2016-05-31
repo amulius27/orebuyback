@@ -44,7 +44,7 @@ function PiT2ContractValue($update, $corporation, $post) {
         'Coolant' => $post['Coolant'] * $coolant,
         'Enriched_Uranium' => $post['Enriched_Uranium'] * $enriched_uranium,
         'Fertilizer' => $post['Fertilizer'] * $fertilizer,
-        'Genetically_Enhanced_Livestock' => $post['Gen_Enhanced_Livestock'] * $gen_enhanced_livestock,
+        'Genetically_Enhanced_Livestock' => $post['Genetically_Enhanced_Livestock'] * $gen_enhanced_livestock,
         'Livestock' => $post['Livestock'] * $livestock,
         'Mechanical_Parts' => $post['Mechanical_Parts'] * $mechanical_parts,
         'Microfiber_Shielding' => $post['Microfiber_Shielding'] * $microfiber_shielding,
@@ -60,7 +60,7 @@ function PiT2ContractValue($update, $corporation, $post) {
         'Test_Cultures' => $post['Test_Cultures'] * $testcultures,
         'Transmitter' => $post['Transmitter'] * $transmitter,
         'Viral_Agent' => $post['Viral_Agent'] * $viral_agent,
-        'Water-Cooled_CPU' => $post['Water-Cooled_CPU'] * $water_cooled_cpu,
+        'Water_Cooled_CPU' => $post['Water_Cooled_CPU'] * $water_cooled_cpu,
     );
     
     //Add the contract value up from the ore
@@ -88,7 +88,7 @@ function PiT2ContractValue($update, $corporation, $post) {
         'Coolant' => $post['Coolant'],
         'Enriched_Uranium' => $post['Enriched_Uranium'],
         'Fertilizer' => $post['Fertilizer'],
-        'Genetically_Enhanced_Livestock' => $post['Gen_Enhanced_Livestock'],
+        'Genetically_Enhanced_Livestock' => $post['Genetically_Enhanced_Livestock'],
         'Livestock' => $post['Livestock'],
         'Mechanical_Parts' => $post['Mechanical_Parts'],
         'Microfiber_Shielding' => $post['Microfiber_Shielding'],
@@ -104,7 +104,7 @@ function PiT2ContractValue($update, $corporation, $post) {
         'Test_Cultures' => $post['Test_Cultures'],
         'Transmitter' => $post['Transmitter'],
         'Viral_Agent' => $post['Viral_Agent'],
-        'Water-Cooled_CPU' => $post['Water-Cooled_CPU'],
+        'Water_Cooled_CPU' => $post['Water_Cooled_CPU'],
     );
    
     //Create the contract value array to be inserted into the Contracts database
