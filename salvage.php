@@ -74,7 +74,7 @@
 
 <div class="container">
     <div class="row">
-        <form action="contracts/salvagecontract.php" method="POST">
+        <form action="contracts/salvage_contract.php" method="POST">
             <input class="form-control" type="hidden" name="Quote_Time" value="<?php echo $update; ?>">
             <input class="form-control" type="hidden" name="Corporation" value="<?php echo $corporation; ?>">
             <div class="col-md-6">
