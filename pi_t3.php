@@ -255,6 +255,7 @@
 
 <?php
     PrintFooter();
+    PrintPopups();
 ?>
 
     

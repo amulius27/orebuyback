@@ -254,8 +254,6 @@
         $Vitreous_Mercoxit = 0;
     }
     
-    
-    
     $post = array(
         'Veldspar' => $Veldspar,
         'Concentrated_Veldspar' => $Concentrated_Veldspar,
@@ -307,7 +305,7 @@
         'Vitreous_Mercoxit' => $Vitreous_Mercoxit,
     );
     
-    $contract= OreContractValue($contractTime, $corporation, $post);
+    $contract = OreContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>

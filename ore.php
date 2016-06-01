@@ -256,6 +256,7 @@
 
 <?php
     PrintFooter();
+    PrintPopups();
 ?>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/typeahead.bundle.js"></script>

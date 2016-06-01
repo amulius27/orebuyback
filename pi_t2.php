@@ -278,6 +278,7 @@
 
 <?php
     PrintFooter();
+    PrintPopups();
 ?>
 
    

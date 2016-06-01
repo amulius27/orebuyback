@@ -138,6 +138,7 @@
 
 <?php
     PrintFooter();
+    PrintPopups();
 ?>
 
     <script src="js/jquery.cookie.js"></script>
