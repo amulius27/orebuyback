@@ -85,7 +85,7 @@ function PrintContractListAdminDashboard() {
                 //if($contents[$headers[$i]] > 0){
                     $header[$i] = str_replace('_', ' ', $headers[$i]);
                     printf("<li>");
-                    printf($header[$i]);
+                    printf($headers[$i]);
                     printf(": ");
                     printf($contents[$headers[$i]]);
                     printf("</li>"); 
