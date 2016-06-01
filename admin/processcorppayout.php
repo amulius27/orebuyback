@@ -3,7 +3,7 @@
     //Open the database connection
     $db = DBOpen();
     //Get the corp name from the previous page
-    $corpName = $_POST["CorpName"];
+    $corpName = $_POST["corporation"];
     //Get the taxes from the previous page
     $taxes = $_POST["taxes"];
     //Insert a new line into the CorporationPayouts table as the payout is paid
@@ -11,6 +11,6 @@
     //Close the database connection   
     DBClose($db);
     //Return back to the corppayouts page
-    //header("Location: corppayouts.php");
+    header("Location: corppayouts.php");
     
 ?>
