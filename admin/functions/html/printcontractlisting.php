@@ -76,14 +76,14 @@ function PrintContractListAdminDashboard() {
             printf("<h4>Contract Details</h4>");
             printf("<ul class=\"col-md-offset-1\">");
             for($i = 2; $i < $size - 1; $i++) {
-                //if($contents[$headers[$i]] > 0){
+                if($contents[$headers[$i]] > 0){
                     $header[$i] = str_replace('_', ' ', $headers[$i]);
                     printf("<li>");
                     printf($header[$i]);
                     printf(": ");
                     printf($contents[$headers[$i]]);
                     printf("</li>"); 
-                //}
+                }
             }
             printf("</ul>");
             printf("</td>");
