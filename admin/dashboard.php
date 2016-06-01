@@ -4,7 +4,7 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
 
-sec_session_start();
+session_start();
 $username = $_SESSION['username'];
 ?>
 
