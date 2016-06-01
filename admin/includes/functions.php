@@ -20,6 +20,8 @@
 include_once 'psl-config.php';
 
 function sec_session_start() {
+    
+    session_name('obb_main');
     /*
     $secure = SECURE;
 
