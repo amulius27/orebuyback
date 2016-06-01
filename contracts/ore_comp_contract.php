@@ -348,8 +348,9 @@
     PrintTitle();
 ?>
 
-    <div class="container col-md-6">
+    <div class="container col-md-6 col-md-offset-3">
         <div class="row">
+            <h1>Contract Details</h1>
             <table class="table-bordered table-striped">
                 <tr>
                     <td>Contract To</td>
@@ -366,11 +367,11 @@
             </table>
         </div>
     </div>
-    <div class="container col-md-6">
+    <div class="container col-md-6 col-md-offset-3">
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 
-                PrintCompOreContractContents($contract["Number"]);   
+                PrintCompOreContractContents($contract["Number"]);
             ?>
         </div>
     </div>
