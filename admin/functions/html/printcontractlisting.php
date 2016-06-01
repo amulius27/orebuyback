@@ -17,6 +17,7 @@ function PrintContractListAdminDashboard() {
             printf("Contract Type: ");
             printf($contractType);
             printf("<br>");
+            var_dump($contractNumber);
             if($contractType == 'Ore') {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OreContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
@@ -85,7 +86,7 @@ function PrintContractListAdminDashboard() {
                 //if($contents[$headers[$i]] > 0){
                     $header[$i] = str_replace('_', ' ', $headers[$i]);
                     printf("<li>");
-                    printf($headers[$i]);
+                    printf($header[$i]);
                     printf(": ");
                     printf($contents[$headers[$i]]);
                     printf("</li>"); 
