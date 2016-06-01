@@ -38,8 +38,8 @@ function PrintContractListAdminDashboard() {
                 $contents = $db->fetchRow('SELECT * FROM CompOreContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'Mineral') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'MineralsContractContents'));
-                $contents = $db->fetchRow('SELECT * FROM MineralsContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'MineralContractContents'));
+                $contents = $db->fetchRow('SELECT * FROM MineralContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'PiT1') {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT1ContractContents'));
