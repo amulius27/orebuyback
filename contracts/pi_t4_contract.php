@@ -60,7 +60,7 @@
         'Nanofactory' => $Nanofactory,
         'Organic_Mortar_Applicator' => $Organic_Mortar_Applicator,
         'Recursive_Computing_Module' => $Recursive_Computing_Module,
-        'Self-Harmonizing_Power_Core' => $Self_Harmonizing_Power_Core,
+        'Self_Harmonizing_Power_Core' => $Self_Harmonizing_Power_Core,
         'Sterile_Conduits' => $Sterile_Conduits,
         'Wetware_Mainframe' => $Wetware_Mainframe
     );
@@ -107,7 +107,7 @@
     PrintTitle();
 ?>
 
-    <div class="container">
+    <div class="container col-md-6 col-md-offset-3">
         <table class="table-bordered table-striped">
             <tr>
                 <td>Contract To</td>
@@ -123,11 +123,13 @@
             </tr>
         </table>
     </div>
-    <div class="container">
-        <h1>Contract Contents</h1><br>
-        <?php 
-            PrintPiT4ContractContents($contract["Number"]);
-        ?>
+    <div class="container col-md-6 col-md-offset-3">
+        <div class="row">
+            <h1>Contract Contents</h1><br>
+            <?php 
+                PrintPiT4ContractContents($contract["Number"]);
+            ?>
+        </div>
     </div>
     
 </body>

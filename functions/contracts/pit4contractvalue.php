@@ -27,7 +27,7 @@ function PiT4ContractValue($update, $corporation, $post) {
         'Nanofactory' => $post['Nanofactory'] * $Nanofactory,
         'Organic_Mortar_Applicator' => $post['Organic_Mortar_Applicator'] * $Organic_Mortar,
         'Recursive_Computing_Module' => $post['Recursive_Computing_Module'] * $Recursive_Computing,
-        'Self-Harmonizing_Power_Core' => $post['Self-Harmonizing_Power_Core'] * $Power_Core,
+        'Self_Harmonizing_Power_Core' => $post['Self_Harmonizing_Power_Core'] * $Power_Core,
         'Sterile_Conduits' => $post['Sterile_Conduits'] * $Sterile_Conduits,
         'Wetware_Mainframe' => $post['Wetware_Mainframe'] * $Mainframe,
     );
@@ -56,7 +56,7 @@ function PiT4ContractValue($update, $corporation, $post) {
         'Nanofactory' => $post['Nanofactory'],
         'Organic_Mortar_Applicator' => $post['Organic_Mortar_Applicator'],
         'Recursive_Computing_Module' => $post['Recursive_Computing_Module'],
-        'Self-Harmonizing_Power_Core' => $post['Self-Harmonizing_Power_Core'],
+        'Self_Harmonizing_Power_Core' => $post['Self_Harmonizing_Power_Core'],
         'Sterile_Conduits' => $post['Sterile_Conduits'],
         'Wetware_Mainframe' => $post['Wetware_Mainframe'],
     );
