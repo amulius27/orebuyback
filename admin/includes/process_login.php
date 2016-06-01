@@ -27,6 +27,7 @@ if (isset($_POST['username'], $_POST['p'])) {
     $password = $_POST['p']; // The hashed password.
     
     if (login($username, $password, $mysqli) == true) {
+        $_SESSION['username'] = $username;
         // Login success 
         header("Location: ../dashboard.php");
         exit();
