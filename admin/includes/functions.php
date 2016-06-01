@@ -21,7 +21,6 @@ include_once 'psl-config.php';
 
 function sec_session_start() {
     
-    session_name('obb_main');
     /*
     $secure = SECURE;
 
@@ -37,8 +36,8 @@ function sec_session_start() {
      */
 
     // Gets current cookies params.
-    $cookieParams = session_get_cookie_params();
-    session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"]);
+    //$cookieParams = session_get_cookie_params();
+    //session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"]);
 
     
 
