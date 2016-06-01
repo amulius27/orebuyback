@@ -18,10 +18,10 @@
  */
 
 include_once 'functions.php';
-sec_session_start();
+session_start();
 
 // Unset all session values 
-$_SESSION = array();
+session_unset();
 
 // get session parameters 
 $params = session_get_cookie_params();

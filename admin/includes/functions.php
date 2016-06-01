@@ -19,31 +19,6 @@
 
 include_once 'psl-config.php';
 
-function sec_session_start() {
-    
-    /*
-    $secure = SECURE;
-
-    // This stops JavaScript being able to access the session id.
-    $httponly = true;
-
-    // Forces sessions to only use cookies.
-    if (ini_set('session.use_only_cookies', 1) === FALSE) {
-        header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
-        exit();
-    }
-     * 
-     */
-
-    // Gets current cookies params.
-    //$cookieParams = session_get_cookie_params();
-    //session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"]);
-
-    
-
-    session_start();            // Start the PHP session 
-}
-
 function login($username, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT id, username, password, salt 
