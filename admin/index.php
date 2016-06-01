@@ -59,6 +59,7 @@ if (login_check($mysqli) == true) {
     <body>
         <?php
         if (isset($_GET['error'])) {
+            
             echo '<p class="error">Error Logging In!</p>';
         }
         ?>
@@ -76,6 +77,7 @@ if (login_check($mysqli) == true) {
                                     <input type="text" class="form-control text-left typeahead" name="username" id="email">
                                     <label>Password</label>
                                     <input type="password" class="form-control text-left typeahead" name="password" id="password">
+                                    <br>
                                     <input type="button" class="form-control" value="Login" onclick="formhash(this.form, this.form.password);">
                                 </p>
                                 <br>

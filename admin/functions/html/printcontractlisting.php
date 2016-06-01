@@ -16,51 +16,47 @@ function PrintContractListAdminDashboard() {
                 $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
             }
             if($contractType == 'Pi') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiContractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM PiContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'Ice') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'IceContractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'IceContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM IceContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'IceProd') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'IceProdContractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'IceProdContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM IceProdContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'CompOre') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'CompOreContractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'CompOreContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM CompOreContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
-            if($contractType == 'Minerals') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'MineralsContractcontents'));
+            if($contractType == 'Mineral') {
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'MineralsContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM MineralsContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
-            if($contractType == 'IceProduct') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'IceProductContractcontents'));
-                $contents = $db->fetchRow('SELECT * FROM IceProductContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
-            }
             if($contractType == 'PiT1') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT1Contractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT1ContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM PiT1ContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'PiT2') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT2Contractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT2ContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM PiT2ContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'PiT3') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT3Contractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT3ContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM PiT3ContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'PiT4') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT4Contractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'PiT4ContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM PiT4ContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'Fuel') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'FuelContractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'FuelContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM FuelContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             if($contractType == 'Salvage') {
-                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'SalvageContractcontents'));
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMSN WHERE TABLE_NAME= :table', array('table' => 'SalvageContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM SalvageContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             $size = sizeof($headers);

@@ -278,24 +278,9 @@
 
 <?php
     PrintFooter();
-    PrintPopups();
 ?>
 
-    <!-- Clipboard -->
-    <div class="modal" id="clipboard" tabindex="-1" role="dialog" aria-labelledby="clipboardLabel" aria-hidden="true" onkeydown="if (event.keyCode === 13) $('#clipboard').modal('hide');">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="clipboardLabel">Copy to clipboard: CTRL-C, Enter</h4>
-                </div>
-                <div class="modal-body">
-                    <input type="text" class="form-control text-right" id="clipboard-content">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Clipboard -->
+   
 
     <script src="js/jquery.cookie.js"></script>
     <script src="js/typeahead.bundle.js"></script>

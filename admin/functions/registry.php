@@ -8,6 +8,6 @@ require_once __DIR__.'/../functions/database/dbopen.php';
 //HTML Functions
 require_once __DIR__.'/../functions/html/printcontractlisting.php';
 require_once __DIR__.'/../functions/html/printcorporationpayoutlist.php';
-//require_once __DIR__.'/../functions/html/printcorpselect.php';
+require_once __DIR__.'/../functions/html/printcorpselect.php';
 
 ?>
