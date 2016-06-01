@@ -119,8 +119,7 @@ function OreContractValue($update, $corporation, $post) {
         'Concentrated_Veldspar' => $post['Concentrated_Veldspar'],
         'Dense_Veldspar' => $post['Dense_Veldspar'],
         'Scordite' => $post['Scordite'],
-       /* 
-       'Condensed_Scordite' => $post['Condensed_Scordite'],
+        'Condensed_Scordite' => $post['Condensed_Scordite'],
         'Massive_Scordite' => $post['Massive_Scordite'],
         'Pyroxeres' => $post['Pyroxeres'],
         'Solid_Pyroxeres' => $post['Solid_Pyroxeres'],
@@ -164,8 +163,6 @@ function OreContractValue($update, $corporation, $post) {
         'Mercoxit' => $post['Mercoxit'],
         'Magma_Mercoxit' => $post['Magma_Mercoxit'],
         'Vitreous_Mercoxit' => $post['Vitreous_Mercoxit']
-        * 
-        */
     );
    
     //Create the contract value array to be inserted into the Contracts database
