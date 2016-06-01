@@ -79,7 +79,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
               <h3>Please only process one payout at a time.</h3>
           </div>
           <div class="table-responsive">
-              <form action="processcorppayout.php" method="GET">
+              <form action="processcorppayout.php" method="POST">
                 <table class="table table-striped">
                   <thead>
                     <tr>

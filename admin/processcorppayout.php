@@ -3,9 +3,9 @@
     //Open the database connection
     $db = DBOpen();
     //Get the corp name from the previous page
-    $corpName = $_GET["CorpName"];
+    $corpName = $_POST["CorpName"];
     //Get the taxes from the previous page
-    $taxes = $_GET["taxes"];
+    $taxes = $_POST["taxes"];
     //Insert a new line into the CorporationPayouts table as the payout is paid
     $db->insert('CorporationPayouts', array('CorpName' => $corpName, 'Amount' => $taxes, 'Type' => 1));
     //Close the database connection   

@@ -452,7 +452,7 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
 CREATE TABLE IF NOT EXISTS `CorporationPayouts` (
     `index` int(11) NOT NULL AUTO_INCREMENT,
     `CorpName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
-    `Amount` decimal(12,2) DEFAULT '0.00',
+    `Amount` decimal(22,2) DEFAULT '0.00',
     `Type` tinyint(1) NOT NULL DEFAULT '0',
     PRIMARY KEY (`index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -9,18 +9,18 @@ function PrintCorporationPayoutListAdminDashboard() {
     
     foreach($corporations as $corp) {
         $corporationName = $corp["CorpName"];
-        $taxesInTemp = $db->fetchRowMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corporationName, 'ty' => 0));
+        $taxesInTemp = $db->fetchColumnMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corporationName, 'ty' => 0));
         $paidInTaxes = 0.00;
         if($taxesInTemp != false) {
-            foreach($taxesInTemp as $taxes) {
-                $paidInTaxes = $paidInTaxes + $taxes["Amount"];
+            foreach($taxesInTemp as $taxIn) {
+                $paidInTaxes = $paidInTaxes + $taxIn;
             }
         }
-        $taxesOutTemp = $db->fetchRowMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corporationName, 'ty' => 1));
+        $taxesOutTemp = $db->fetchColumnMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corporationName, 'ty' => 1));
         $paidOutTaxes = 0.00;
         if($taxesOutTemp != false) {
-            foreach($taxesOutTemp as $taxes) {
-                $paidOutTaxes = $paidOutTaxes + $taxes["Amount"];
+            foreach($taxesOutTemp as $taxOut) {
+                $paidOutTaxes = $paidOutTaxes + $taxOut;
             }
         }
         //Calculate the taxes
@@ -31,7 +31,7 @@ function PrintCorporationPayoutListAdminDashboard() {
             printf("<tr>");
             printf("<td>" . $corporationName . "</td>");
             printf("<td>" . $taxes . "</td>");
-            printf("<td><input type=\"number\" class=\"form-control\" name=\"taxes\"><input type=\"hidden\"  class=\"form-control\" name=\"corporation\" value=\"" . $corporationName . "\"></td>");
+            printf("<td><input type=\"number\" class=\"form-control\" name=\"taxes\"><input type=\"hidden\" class=\"form-control\" name=\"corporation\" value=\"" . $corporationName . "\"></td>");
             printf("<td><input type=\"submit\" value=\"Process Corp Payout\"</td>");
             printf("</tr>"); 
         }
