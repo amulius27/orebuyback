@@ -11,13 +11,6 @@ function PrintContractListAdminDashboard() {
             $contractType = $contract['ContractType'];
             $contractCorporation = $contract['Corporation'];
             $contractValue = $contract['Value'];
-            printf("Contract Number: ");
-            printf($contractNumber);
-            printf("<br>");
-            printf("Contract Type: ");
-            printf($contractType);
-            printf("<br>");
-            var_dump($contractNumber);
             if($contractType == 'Ore') {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OreContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM OreContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
@@ -67,6 +60,8 @@ function PrintContractListAdminDashboard() {
                 $contents = $db->fetchRow('SELECT * FROM SalvageContractContents WHERE ContractNum= :contract', array('contract' => $contractuNumber));
             }
             $size = sizeof($headers);
+            
+            var_dump($contents);
             
             printf("<tr>");
             printf("<td>" . $contractNumber . "</td>");
