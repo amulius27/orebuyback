@@ -11,6 +11,6 @@
     //Close the database connection   
     DBClose($db);
     //Return back to the corppayouts page
-    header("Location: corppayouts.php");
+    //header("Location: corppayouts.php");
     
 ?>
