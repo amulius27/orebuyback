@@ -302,7 +302,7 @@
         'Prime_Arkonor' => $Prime_Arkonor,
         'Mercoxit' => $Mercoxit,
         'Magma_Mercoxit' => $Magma_Mercoxit,
-        'Vitreous_Mercoxit' => $Vitreous_Mercoxit,
+        'Vitreous_Mercoxit' => $Vitreous_Mercoxit
     );
     
     $contract = OreContractValue($contractTime, $corporation, $post);

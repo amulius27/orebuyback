@@ -147,7 +147,7 @@
                         <hr>
                         <p id="calc-output-reward-row">
                             <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>
-                            <br><input class="form-contorl pull-left" type="submit" value="Submit Contract">
+                            <br><input class="form-control pull-left" type="submit" value="Submit Contract">
                         </p>
                         <br>
                     </div>
