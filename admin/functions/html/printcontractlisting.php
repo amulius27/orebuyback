@@ -81,7 +81,7 @@ function PrintContractListAdminDashboard() {
             printf("<td>");
             printf("<h4>Contract Details</h4>");
             printf("<ul class=\"col-md-offset-1\">");
-            for($i = 2; $i < $size - 1; $i++) {
+            for($i = 0; $i < $size - 1; $i++) {
                 if($contents[$headers[$i]] > 0){
                     $header[$i] = str_replace('_', ' ', $headers[$i]);
                     printf("<li>");
