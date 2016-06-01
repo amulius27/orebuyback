@@ -64,7 +64,7 @@
         $Microfiber_Shielding = 0;
     }
     if(isset($_POST["Miniature_Electronics"])) {
-        $Miniature_Electronics = $POST["Miniature_Electronics"];
+        $Miniature_Electronics = $_POST["Miniature_Electronics"];
     } else {
         $Miniature_Electronics = 0;
     }

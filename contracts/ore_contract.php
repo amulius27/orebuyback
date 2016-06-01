@@ -99,7 +99,7 @@
         $Luminous_Kernite = 0;
     }
     if(isset($_POST["Fiery_Kernite"])) {
-        $Fiery_Kernite = $_POSt["Fiery_Kernite"];
+        $Fiery_Kernite = $_POST["Fiery_Kernite"];
     } else {
         $Fiery_Kernite = 0;
     }
