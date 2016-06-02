@@ -12,6 +12,9 @@
     //Get the corporation from the session
     if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
+        if($corporation == 'None') {
+            $corpTax = 10.00;
+        }
         $corporation = str_replace('"', "", $corporation);
         $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
     } else {

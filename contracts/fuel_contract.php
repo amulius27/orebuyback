@@ -42,7 +42,7 @@
         'Minmatar_Fuel_Block' => $Minmatar_Fuel_Block
     );
     
-    $contract= FuelContractValue($contractTime, $corporation, $post);
+    $contract = FuelContractValue($contractTime, $corporation, $post);
 ?>
 
 <!DOCTYPE html>
