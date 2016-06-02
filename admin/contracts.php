@@ -48,7 +48,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
             <br>
           <h2 class="sub-header">Contract Listing</h2>
           <div class="table-responsive">
-              <form action="processpayout.php" method="GET">
+              <form action="processpayout.php" method="POST">
                 <table class="table table-striped table-expandable">
                   <thead>
                     <tr>
