@@ -41,31 +41,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
 </head>
 <body>
     <?php if ((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) : ?>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="height: 60px;" role="navigation">
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse pull-left">
-            <ul class="nav navbar-nav">
-                <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="contracts.php">Contracts</a></li>
-                <li><a href="corppayouts.php">Corp Payouts</a></li>
-                <li><a href="corpsettings.php">Corp Settings</a></li>
-            </ul>
-        </div>
-        <div class="collapse navbar-collapse pull-right">
-            <ul class="nav navbar-nav">
-                <li><?php echo $username ?></li>
-                <li><a href="includes/logout.php">Log Out</a></li>
-            </ul>
-        </div>
-    </div>
+    <?php PrintNavBar($username); ?>
     <div class="container">
       <div class="row">          
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">

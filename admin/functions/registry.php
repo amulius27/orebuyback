@@ -9,5 +9,7 @@ require_once __DIR__.'/../functions/database/dbopen.php';
 require_once __DIR__.'/../functions/html/printcontractlisting.php';
 require_once __DIR__.'/../functions/html/printcorporationpayoutlist.php';
 require_once __DIR__.'/../functions/html/printcorpselect.php';
+//System Functions
+require_once __DIR__.'/../functions/system/printnavbar.php';
 
 ?>
