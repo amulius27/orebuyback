@@ -6,6 +6,8 @@ require_once __DIR__.'/functions/registry.php';
 
 session_start();
 $username = $_SESSION['username'];
+$db = DBOpen();
+$role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
 ?>
 
 <!DOCTYPE html>
@@ -42,15 +44,25 @@ $username = $_SESSION['username'];
     </style>
 </head>
 <body>
-    <?php if (login_check($mysqli) == true) : ?>
+    <?php if((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) : ?>
     <?php PrintNavBar($username); ?>
     <br>
+       
     <div class="container">
-        <h2>Welcome to the Warped Intentions Buy Back Program Dashboard, <?php echo $username; ?></h2>
-        <h3>
-            <p>Select an option from the navigation bar at the top of the screen.  This screen</p>
-            <p>will be used to add new corps to the buy back program in a future release.</p>      
-        </h3>
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Add New Corporation Form</strong></span><br></h3>
+            </div>
+            <div class="panel-body" align="center">
+                <form action="/functions/process/processnewcorp.php" method="POST">
+                    <label>Corporation Name:</label>
+                    <input type="text" class="form-control" name="Corporation" />
+                    <label>Tax Rate:</label>
+                    <input type="text" class="form-control" name="Tax" />
+                    <input type="submit" class="form-control" value="Add New Corp" />
+                </form>
+            </div>
+        </div>
     </div>
     
 
@@ -66,7 +78,9 @@ $username = $_SESSION['username'];
                     Please <a href="index.php">login</a> or speak to your site administrator.
                 </div>
             </div>
-    <?php endif; ?>
+    <?php endif; 
+        DBClose($db);
+    ?>
     
   </body>
 </html>

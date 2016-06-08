@@ -52,6 +52,16 @@ $username = $_SESSION['username'];
             <p>will be used for statistics in a future release.</p>      
         </h3>
     </div>
+    <?php
+        if(isset($_GET["msg"])) {
+            if($_GET["msg"] == 'newcorpsuccess') {
+                
+            }
+            if($_GET["msg"] == 'newcorpfailure') {
+                
+            }
+        }
+    ?>
     
 
 
