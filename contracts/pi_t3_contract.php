@@ -33,8 +33,8 @@
     } else {
         $Data_Chips = 0;
     }
-    if(isset($_POST["Gel-Matrix_Biopaste"])) {
-        $Gel_Matrix_Biopaste = $_POST["Gel-Matrix_Biopaste"];
+    if(isset($_POST["Gel_Matrix_Biopaste"])) {
+        $Gel_Matrix_Biopaste = $_POST["Gel_Matrix_Biopaste"];
     } else {
         $Gel_Matrix_Biopaste = 0;
     }
@@ -53,8 +53,8 @@
     } else {
         $Hermetic_Membranes = 0;
     }
-    if(isset($_POST["High-Tech_Transmitters"])) {
-        $High_Tech_Transmitters = $_POST["High-Tech_Transmitters"];
+    if(isset($_POST["High_Tech_Transmitters"])) {
+        $High_Tech_Transmitters = $_POST["High_Tech_Transmitters"];
     } else {
         $High_Tech_Transmitters = 0;
     }

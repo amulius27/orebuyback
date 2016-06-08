@@ -116,7 +116,7 @@
                         <p>
                             <label>Gel-Matrix Biopaste <?php echo number_format($Biopaste, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Gel-Matrix Biopaste" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Gel-Matrix_Biopaste" placeholder="Gel-Matrix Biopaste" id="calc-input-Gel_Matrix_Biopaste_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Gel_Matrix_Biopaste" placeholder="Gel-Matrix Biopaste" id="calc-input-Gel_Matrix_Biopaste_units-value">
                             </div>
                         </p>
                         <p>
@@ -140,7 +140,7 @@
                         <p>
                             <label>High-Tech Transmitters <?php echo number_format($Hightech_Transmitters, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="High-Tech Transmitters" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="High-Tech_Transmitters" placeholder="High-Tech Transmitters" id="calc-input-High_Tech_Transmitters_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="High_Tech_Transmitters" placeholder="High-Tech Transmitters" id="calc-input-High_Tech_Transmitters_units-value">
                             </div>
                         </p>
                         <p>
