@@ -13,102 +13,102 @@
     } else {
         $corporation = 'None';
     }
-    if(isset($POST["Biotech_Research_Reports"])) {
+    if(isset($_POST["Biotech_Research_Reports"])) {
         $Biotech_Research_Reports = $_POST["Biotech_Research_Reports"];
     } else {
         $Biotech_Research_Reports = 0;
     }
-    if(isset($POST["Camera_Drones"])) {
+    if(isset($_POST["Camera_Drones"])) {
         $Camera_Drones = $_POST["Camera_Drones"];
     } else {
         $Camera_Drones = 0;
     }
-    if(isset($POST["Cryoprotectant_Solution"])) {
+    if(isset($_POST["Cryoprotectant_Solution"])) {
         $Cryoprotectant_Solution = $_POST["Cryoprotectant_Solution"];
     } else {
         $Cryoprotectant_Solution = 0;
     }
-    if(isset($POST["Data_Chips"])) {
+    if(isset($_POST["Data_Chips"])) {
         $Data_Chips = $_POST["Data_Chips"];
     } else {
         $Data_Chips = 0;
     }
-    if(isset($POST["Gel-Matrix_Biopaste"])) {
+    if(isset($_POST["Gel-Matrix_Biopaste"])) {
         $Gel_Matrix_Biopaste = $_POST["Gel-Matrix_Biopaste"];
     } else {
         $Gel_Matrix_Biopaste = 0;
     }
-    if(isset($POST["Guidance_Systems"])) {
+    if(isset($_POST["Guidance_Systems"])) {
         $Guidance_Systems = $_POST["Guidance_Systems"];
     } else {
         $Guidance_Systems = 0;
     }
-    if(isset($POST["Hazmat_Detection_System"])) {
+    if(isset($_POST["Hazmat_Detection_System"])) {
         $Hazmat_Detection_Systems = $_POST["Hazmat_Detection_Systems"];
     } else {
         $Hazmat_Detection_Systems = 0;
     }
-    if(isset($POST["Hermetic_Membranes"])) {
+    if(isset($_POST["Hermetic_Membranes"])) {
         $Hermetic_Membranes = $_POST["Hermetic_Membranes"];
     } else {
         $Hermetic_Membranes = 0;
     }
-    if(isset($POST["High-Tech_Transmitters"])) {
+    if(isset($_POST["High-Tech_Transmitters"])) {
         $High_Tech_Transmitters = $_POST["High-Tech_Transmitters"];
     } else {
         $High_Tech_Transmitters = 0;
     }
-    if(isset($POST["Industrial_Explosives"])) {
+    if(isset($_POST["Industrial_Explosives"])) {
         $Industrial_Explosives = $_POST["Industrial_Explosives"];
     } else {
         $Industrial_Explosives = 0;
     }
-    if(isset($POST["Neocoms"])) {
+    if(isset($_POST["Neocoms"])) {
         $Neocoms = $_POST["Neocoms"];
     } else {
         $Neocoms = 0;
     }
-    if(isset($POST["Nuclear_Reactors"])) {
+    if(isset($_POST["Nuclear_Reactors"])) {
         $Nuclear_Reactors = $_POST["Nuclear_Reactors"];
     } else {
         $Nuclear_Reactors = 0;
     }
-    if(isset($POST["Planetary_Vehicles"])) {
+    if(isset($_POST["Planetary_Vehicles"])) {
         $Planetary_Vehicles = $_POST["Planetary_Vehicles"];
     } else {
         $Planetary_Vehicles = 0;
     }
-    if(isset($POST["Robotics"])) {
+    if(isset($_POST["Robotics"])) {
         $Robotics = $_POST["Robotics"];
     } else {
         $Robotics = 0 ;
     }
-    if(isset($POST["Smartfab_Units"])) {
+    if(isset($_POST["Smartfab_Units"])) {
         $Smartfab_Units = $_POST["Smartfab_Units"];
     } else {
         $Smartfab_Units = 0;
     }
-    if(isset($POST["Supercomputers"])) {
+    if(isset($_POST["Supercomputers"])) {
         $Supercomputers = $_POST["Supercomputers"];
     } else {
         $Supercomputers = 0;
     }
-    if(isset($POST["Synthetic_Synapses"])) {
+    if(isset($_POST["Synthetic_Synapses"])) {
         $Synthetic_Synapses = $_POST["Synthetic_Synapses"];
     } else {
         $Synthetic_Synapses = 0;
     }
-    if(isset($POST["Transcranial_Microcontrollers"])) {
+    if(isset($_POST["Transcranial_Microcontrollers"])) {
         $Transcranial_Microcontrollers = $_POST["Transcranial_Microcontrollers"];
     } else {
         $Transcranial_Microcontrollers = 0;
     }
-    if(isset($POST["Ukomi"])) {
+    if(isset($_POST["Ukomi"])) {
         $Ukomi_Superconductors = $_POST["Ukomi"];
     } else {
         $Ukomi_Superconductors = 0;
     }
-    if(isset($POST["Vaccines"])) {
+    if(isset($_POST["Vaccines"])) {
         $Vaccines = $_POST["Vaccines"];
     } else {
         $Vaccines = 0;
