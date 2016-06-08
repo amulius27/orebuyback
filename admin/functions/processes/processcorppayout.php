@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__.'/functions/registry.php';
+    require_once __DIR__.'/../functions/registry.php';
     //Open the database connection
     $db = DBOpen();
     //Get the corp name from the previous page
@@ -31,6 +31,6 @@
     //Close the database connection   
     DBClose($db);
     //Return back to the corppayouts page
-    header("Location: corppayouts.php");
+    header("Location: /../../corppayouts.php");
     
 ?>
