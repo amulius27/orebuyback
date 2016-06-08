@@ -23,6 +23,11 @@
     } else {
         $Camera_Drones = 0;
     }
+    if(isset($_POST["Condensates"])) {
+        $Condensates = $_POST["Condensates"];
+    } else {
+        $Condensates = 0;
+    }
     if(isset($_POST["Cryoprotectant_Solution"])) {
         $Cryoprotectant_Solution = $_POST["Cryoprotectant_Solution"];
     } else {
@@ -117,6 +122,7 @@
     $post = array(
         'Biotech_Research_Reports' => $Biotech_Research_Reports,
         'Camera_Drones' => $Camera_Drones,
+        'Condensates' => $Condensates,
         'Cryoprotectant_Solution' => $Cryoprotectant_Solution,
         'Data_Chips' => $Data_Chips,
         'Gel_Matrix_Biopaste' => $Gel_Matrix_Biopaste,

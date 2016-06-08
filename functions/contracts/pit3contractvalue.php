@@ -37,6 +37,7 @@ function PiT3ContractValue($update, $corporation, $post) {
     $PiT3Value = array(
         'Biotech_Research_Reports' => $post['Biotech_Research_Reports'] * $Biotech,
         'Camera_Drones' => $post['Camera_Drones'] * $Camera_Drones,
+        'Condensates' => $post['Condensates'] * $Condensates,
         'Cryoprotectant_Solution' => $post['Cryoprotectant_Solution'] * $Cryoprotectant_Solution,
         'Data_Chips' => $post['Data_Chips'] * $Data_Chips,
         'Gel_Matrix_Biopaste' => $post['Gel_Matrix_Biopaste'] * $Gel_Matrix_Biopaste,
@@ -78,6 +79,7 @@ function PiT3ContractValue($update, $corporation, $post) {
         'QuoteTime' => $update,
         'Biotech_Research_Reports' => $post['Biotech_Research_Reports'],
         'Camera_Drones' => $post['Camera_Drones'],
+        'Condensates' => $post['Condensates'],
         'Cryoprotectant_Solution' => $post['Cryoprotectant_Solution'],
         'Data_Chips' => $post['Data_Chips'],
         'Gel_Matrix_Biopaste' => $post['Gel_Matrix_Biopaste'],
