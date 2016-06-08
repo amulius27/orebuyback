@@ -402,6 +402,7 @@ CREATE TABLE IF NOT EXISTS `PiT3ContractContents` (
     `QuoteTime` timestamp NOT NULL,
     `Biotech_Research_Reports` int(20) NOT NULL DEFAULT '0',
     `Camera_Drones` int(20) NOT NULL DEFAULT '0',
+    `Condensates` int(20) NOT NULL DEFAULT '0',
     `Cryoprotectant_Solution` int(20) NOT NULL DEFAULT '0',
     `Data_Chips` int(20) NOT NULL DEFAULT '0',
     `Gel_Matrix_Biopaste` int(20) NOT NULL DEFAULT '0',

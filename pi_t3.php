@@ -128,7 +128,7 @@
                         <p>
                             <label>Hazmat Detection Systems <?php echo number_format($Hazmat_Detection_Systems, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Hazmat Detection Systems" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Hazmat_Detection_System" placeholder="Hazmat Detection Systems" id="calc-input-Hazmat_Detection_Systems_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Hazmat_Detection_Systems" placeholder="Hazmat Detection Systems" id="calc-input-Hazmat_Detection_Systems_units-value">
                             </div>
                         </p>
                         <p>

@@ -48,7 +48,7 @@
     } else {
         $Guidance_Systems = 0;
     }
-    if(isset($_POST["Hazmat_Detection_System"])) {
+    if(isset($_POST["Hazmat_Detection_Systems"])) {
         $Hazmat_Detection_Systems = $_POST["Hazmat_Detection_Systems"];
     } else {
         $Hazmat_Detection_Systems = 0;
