@@ -10,9 +10,9 @@
         $db = DBOpen();
         $db->insert('Corps', array('CorpName' => $corporation, 'TaxRate' => $tax));
         DBClose($db);
-        header('Location: /../../dashboard.php?msg=newcorpsuccess');
+        header('Location: /../dashboard.php?msg=newcorpsuccess');
     } else {
-        header('Location: /../../dashboard.php?msg=newcorpfailure');
+        header('Location: /../dashboard.php?msg=newcorpfailure');
     }
 
 ?>
