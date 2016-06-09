@@ -3,8 +3,10 @@
     require_once __DIR__.'/../../functions/registry.php';
     
     $url = $_SERVER['HTTP_HOST'];
-    $directory = __DIR__.'/../../dashboard.php';
+    $directory = dirname(".", 2);
     $location = 'http://' . $url . $directory;
+    $directory = dirname(".");
+    $location = $location . $directory;
     $corporation = filter_var(INPUT_POST, $_POST["Corporation"], FILTER_SANITIZE_STRING);
     $tax = filter_var(INPUT_POST, $_POST["Tax"], FILTER_SANITIZE_STRING);
     $tax = $tax * 1.00;
