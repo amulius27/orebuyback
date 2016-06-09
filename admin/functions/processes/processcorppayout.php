@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__.'/../functions/registry.php';
+    require_once __DIR__.'/../../functions/registry.php';
     //Open the database connection
     $db = DBOpen();
     //Get the corp name from the previous page
