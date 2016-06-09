@@ -54,7 +54,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
                 <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Add New Corporation Form</strong></span><br></h3>
             </div>
             <div class="panel-body" align="center">
-                <form action="functions/process/processnewcorp.php" method="POST">
+                <form action="functions/processes/processnewcorp.php" method="POST">
                     <label>Corporation Name:</label>
                     <input type="text" class="form-control" name="Corporation" />
                     <label>Tax Rate:</label>
