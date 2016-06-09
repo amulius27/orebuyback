@@ -2,11 +2,7 @@
 
     require_once __DIR__.'/../../functions/registry.php';
     
-    $url = $_SERVER['HTTP_HOST'];
-    $directory = dirname(".", 2);
-    $location = 'http://' . $url . $directory;
-    $directory = dirname(".");
-    $location = $location . $directory;
+    $location = 'http://' . $_SERVER['HTTP_POST'] . dirname($_SERVER['PHP_SELF']) . 'admin/dashboard.php';
     $corporation = filter_var(INPUT_POST, $_POST["Corporation"], FILTER_SANITIZE_STRING);
     $tax = filter_var(INPUT_POST, $_POST["Tax"], FILTER_SANITIZE_STRING);
     $tax = $tax * 1.00;
@@ -20,8 +16,10 @@
         $db = DBOpen();
         $db->insert('Corps', array('CorpName' => $corporation, 'TaxRate' => $tax));
         DBClose($db);
+        $location = $location . '?msg=newcorpsuccess';
         header("Location: $location");
     } else {
+        $location = $location . '?msg=newcorpfailure';
         header("Location: $location");
     }
 

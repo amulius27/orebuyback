@@ -55,10 +55,10 @@ $username = $_SESSION['username'];
     <?php
         if(isset($_GET["msg"])) {
             if($_GET["msg"] == 'newcorpsuccess') {
-                
+                printf("Added new corp.");
             }
             if($_GET["msg"] == 'newcorpfailure') {
-                
+                printf("Failed to add new corp.");
             }
         }
     ?>
