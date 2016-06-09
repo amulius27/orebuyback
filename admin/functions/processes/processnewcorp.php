@@ -2,7 +2,8 @@
 
     require_once __DIR__.'/../../functions/registry.php';
     
-    $location = 'http://' . $_SERVER['HTTP_POST'] . dirname($_SERVER['PHP_SELF']) . '/../../admin/dashboard.php';
+    $location = 'http://' . $_SERVER['HTTP_HOST'];
+    $location = $location . dirname($_SERVER['PHP_SELF']) . '/../../dashboard.php';
     var_dump($location);
     $corporation = filter_var(INPUT_POST, $_POST["Corporation"], FILTER_SANITIZE_STRING);
     $tax = filter_var(INPUT_POST, $_POST["Tax"], FILTER_SANITIZE_STRING);
