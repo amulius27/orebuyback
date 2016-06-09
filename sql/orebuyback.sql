@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `member_roles` (
 CREATE TABLE IF NOT EXISTS `Contracts` (
   `ContractNum` int(11) NOT NULL AUTO_INCREMENT,
   `ContractType` varchar(50) NOT NULL,
-  `Corporation` varchar(50) DEFAULT 'None',
+  `Corporation` varchar(50) NOT NULL DEFAULT 'None',
   `QuoteTime` timestamp NOT NULL,
   `Value` decimal(20,2) DEFAULT NULL,
   `AllianceTax` decimal(20,2) NOT NULL DEFAULT '0.00',
