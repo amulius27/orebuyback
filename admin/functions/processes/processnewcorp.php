@@ -18,9 +18,16 @@
         
         $db = DBOpen();
         $db->insert('Corps', array('CorpName' => $corporation, 'TaxRate' => $tax));
-        DBClose($db);
-        $location = $location . '?msg=newcorpsuccess';
-        header("Location: $location");
+        if($db->getRowCount() > 0) {
+            DBClose($db);
+            $location = $location . '?msg=newcorpsuccess';
+            header("Location: $location");
+        } else {
+            DBClose($db);
+            $location = $location . '?msg=newcorpfailure';
+            header("Location: $location");
+        }
+        
     } else {
         $location = $location . '?msg=newcorpfailure';
         header("Location: $location");

@@ -21,5 +21,8 @@
     $db->update('Contracts', array("ContractNum" => $contract), array("Paid" => 1));
     
     DBClose($db);
-    header("Location: /../../dashboard.php");
+    //Return to the Contracts page
+    $location = 'http://' . $_SERVER['HTTP_HOST'];
+    $location = $location . dirname($_SERVER['PHP_SELF']) . '/../../contracts.php';
+    header("Location: $location");
 ?>
