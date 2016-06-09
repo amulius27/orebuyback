@@ -2,6 +2,7 @@
 
     require_once __DIR__.'/../../functions/registry.php';
     
+    $url = $_SERVER['HTTP_HOST'];
     $corporation = filter_var(INPUT_POST, $_POST["Corporation"], FILTER_SANITIZE_STRING);
     $tax = filter_var(INPUT_POST, $_POST["Tax"], FILTER_SANITIZE_STRING);
     $tax = $tax * 1.00;
@@ -15,9 +16,9 @@
         $db = DBOpen();
         $db->insert('Corps', array('CorpName' => $corporation, 'TaxRate' => $tax));
         DBClose($db);
-        header('Location: ./admin/dashboard.php?msg=newcorpsuccess');
+        header("Location: http://$url/admin/dashboard.php?msg=newcorpsuccess");
     } else {
-        header('Location: ./admin/dashboard.php?msg=newcorpfailure');
+        header("Location: http://$url/admin/dashboard.php?msg=newcorpfailure");
     }
 
 ?>
