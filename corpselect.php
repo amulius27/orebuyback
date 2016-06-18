@@ -1,8 +1,7 @@
 <?php
 
-
+//Start the session if needed
 session_start();
-
 
 $corpTemp = $_REQUEST["corp"];
 $_SESSION["corporation"] = $corpTemp;

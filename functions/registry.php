@@ -29,9 +29,6 @@ require_once __DIR__.'/../functions/html/printcloseindexpage.php';
 require_once __DIR__.'/../functions/html/printindexpage.php';
 require_once __DIR__.'/../functions/html/printinstructions.php';
 
-//Miscellaneous functionality
-//require_once __DIR__.'/../functions/misc/corpselect.php';
-
 //Contract Functionality
 require_once __DIR__.'/../functions/contracts/comporecontractvalue.php';
 require_once __DIR__.'/../functions/contracts/fuelcontractvalue.php';

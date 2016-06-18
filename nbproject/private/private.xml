@@ -4,9 +4,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/orebuyback/admin/dashboard.php</file>
-            <file>file:/var/www/orebuyback/admin/addnewcorp.php</file>
-            <file>file:/var/www/orebuyback/admin/functions/processes/processnewcorp.php</file>
+            <file>file:/var/www/orebuyback/cron/salvagepriceupdate.php</file>
+            <file>file:/var/www/orebuyback/cron/pipriceupdate.php</file>
+            <file>file:/var/www/orebuyback/cron/mineralpriceupdate.php</file>
+            <file>file:/var/www/orebuyback/cron/fuelpriceupdate.php</file>
         </group>
     </open-files>
 </project-private>

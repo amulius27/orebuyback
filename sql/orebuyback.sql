@@ -24,14 +24,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `Configuration` (
   `refineRate` decimal(5,2) NOT NULL,
-  `allianceTaxRate` decimal (5,2) NOT NULL
+  `allianceTaxRate` decimal (5,2) NOT NULL,
+  `marketRegion` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Configuration`
 --
 
-INSERT INTO `Configuration` (`refineRate`, `allianceTaxRate`) VALUES (80.00, 4.00);
+INSERT INTO `Configuration` (`refineRate`, `allianceTaxRate`, `marketRegion`) VALUES (80.00, 4.00, 10000002);
 
 --
 -- Table structure for table `Corps`
@@ -97,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `Contracts` (
   `AllianceTax` decimal(20,2) NOT NULL DEFAULT '0.00',
   `CorpTax` decimal (20,2) NOT NULL DEFAULT '0.00',
   `Paid` tinyint(1) NOT NULL DEFAULT '0',
+  `Deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ContractNum`),
   UNIQUE KEY `ContractNum` (`ContractNum`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;

@@ -2,9 +2,6 @@
 //Get the required files in order to run sql calls
 require_once __DIR__.'/cronfunctions/cronregistry.php';
 
-//Set our region for EVE-Central
-$regionlimit = 10000043;
-
 $ItemIDs = array(
     25595,
     25605,
@@ -45,13 +42,15 @@ $ItemIDs = array(
     25598,
     25606,
 );
-
-
 //Get the current time
 $time = date("Y-m-d H:i:s");
 //Open the database
 $db = DBOpen();
+//Get the region limit
+$regionlimit = $db->fetchColumn('SELECT marketRegion FROM Configuration');
 //Get the price for each of the ice products, and then insert into the database
+
+/* We are commenting this out to test the cURL method rather than just xml_load_file
 foreach($ItemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
     $xml = simplexml_load_file($url);
@@ -60,6 +59,31 @@ foreach($ItemIDs as $id) {
     $price = $price * 1.00;
     $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
 }
+ * 
+ */
+
+foreach($ItemIDs as $id) {
+    $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
+    
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $data = curl_exec($ch);
+    
+    if($data === false) {
+        echo 'Curl error: ' . curl_error($ch);
+    } else {
+        //Close the curl connection
+        curl_close($ch);
+        //Insert the new data into the database
+        $xml = new SimpleXMLElement($data);
+        $price = (float)$xml->marketstat->type->buy->median[0];
+        $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+    }
+    
+    
+}
+
 //Close the database connection
 DBClose($db);
 

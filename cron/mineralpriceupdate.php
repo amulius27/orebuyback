@@ -19,13 +19,13 @@ $itemIDs = array(
     "heavyWater" => 16272,
     "strontiumClathrates" => 16275,  
 );
-//Get the region
-$regionlimit = 10000043;
 //Open the database
 $db = DBOpen();
+//Get the region from the database
+$regionlimit = $db->fetchColumn('SELECT marketRegion FROM Configuration');
 //Get the current time
 $time = date("Y-m-d H:i:s");
-
+/* We are commenting out this section to test the cURL method of getting price data
 foreach($itemIDs as $id) {
     $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
     $xml = simplexml_load_file($url);
@@ -34,6 +34,30 @@ foreach($itemIDs as $id) {
     //database is expecting a decimal and not a character
     $price = $price * 1.00;
     $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+}
+ * 
+ */
+
+foreach($ItemIDs as $id) {
+    $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
+    
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $data = curl_exec($ch);
+    
+    if($data === false) {
+        echo 'Curl error: ' . curl_error($ch);
+    } else {
+        //Close the curl connection
+        curl_close($ch);
+        //Insert the new data into the database
+        $xml = new SimpleXMLElement($data);
+        $price = (float)$xml->marketstat->type->buy->median[0];
+        $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+    }
+    
+    
 }
 
 DBClose($db);
