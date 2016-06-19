@@ -29,14 +29,5 @@ function PrintHeader() {
                 .affix-bottom {
                     position: absolute;
                 }
-            </style>
-            <script>
-                $(function() {
-                    var $affix = $(\"#invoice-panel\"),
-                        $parent = $affix.parent(),
-                        resize = function() { $affix.width($parent.width()); };
-                    $(window).resize(resize);
-                    resize();
-                });
-            </script>");
+            </style>");
 }
