@@ -3,8 +3,8 @@
     require_once __DIR__.'/corpselect.php';
     //Start the session
     session_start();    
-    if(isset($_SESSION["corporation"])) {
-        $previousCorp = $_SESSION["corporation"];
+    if(isset($_REQUEST["corporation"])) {
+        $previousCorp = $_REQUEST["corporation"];
     } else {
         $previousCorp = 'None';
     }

@@ -1,8 +1,6 @@
 <?php
 
-function PrintCorpSelect($previousCorp) {    
-    //Open the session to be able to read from it
-    //session_start();
+function PrintCorpSelect($previousCorp) {
     //Open the database
     $db = DBOpen();
     //Get the list of all corps from the database
