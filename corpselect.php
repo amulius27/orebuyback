@@ -11,5 +11,7 @@ if(isset($_SESSION["corporation"])) {
     $_SESSION["corporation"] = 'None';
     echo "Corp Not Set";
 }
+//Close the write session
+session_write_close();
 
 ?>
