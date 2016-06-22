@@ -2,7 +2,7 @@
 
 function PrintCorpSelect() {    
     //Open the session to be able to read from it
-    session_start();
+    //session_start();
     if(isset($_SESSION["corporation"])) {
         $previousCorp = $_SESSION["corporation"];
     } else {
