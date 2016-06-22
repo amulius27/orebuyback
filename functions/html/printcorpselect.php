@@ -1,13 +1,8 @@
 <?php
 
-function PrintCorpSelect() {    
+function PrintCorpSelect($previousCorp) {    
     //Open the session to be able to read from it
-    session_start();
-    if(isset($_SESSION["corporation"])) {
-        $previousCorp = $_SESSION["corporation"];
-    } else {
-        $previousCorp = 'None';
-    }
+    //session_start();
     //Open the database
     $db = DBOpen();
     //Get the list of all corps from the database
@@ -16,16 +11,13 @@ function PrintCorpSelect() {
     DBClose($db);
     //Start the section to print the container and form
     printf("<div class=\"container\">");
-    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"setCorp($previousCorp)\" onchange=\"setCorp(this.value)\">");
+    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"setCorp(this.$previousCorp)\" onchange=\"setCorp(this.value)\">");
     //Check to see if the Session is already going and if so, we want to repopulate the page
-    if(isset($_SESSION["corporation"])) {
-        $previousCorp = $_SESSION["corporation"];
-        printf("<option value=\"$previousCorp\">$previousCorp</option>");
-    } else {
-        printf("<option></option>");
-    }
+    printf("<option value=\"$previousCorp\">$previousCorp</option>");
     foreach($corps as $corp) {
-        printf("<option value=\"$corp\">$corp</option>");
+        if($previousCorp != $corp) {
+            printf("<option value=\"$corp\">$corp</option>");
+        }
     }
     printf("</select>");
     printf("<p><span id=\"text\">Corp not selected</span></p>");
