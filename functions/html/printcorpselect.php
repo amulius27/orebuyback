@@ -9,7 +9,7 @@ function PrintCorpSelect($previousCorp) {
     DBClose($db);
     //Start the section to print the container and form
     printf("<div class=\"container\">");
-    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"setCorp(this.$previousCorp)\" onchange=\"setCorp(this.value)\">");
+    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"setCorp($previousCorp)\" onchange=\"setCorp(this.value)\">");
     //Check to see if the Session is already going and if so, we want to repopulate the page
     printf("<option value=\"$previousCorp\">$previousCorp</option>");
     foreach($corps as $corp) {
