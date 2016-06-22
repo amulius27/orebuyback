@@ -11,6 +11,7 @@
     
     session_start();
     //Get the corporation from the session
+    
     if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
         if($corporation == 'None') {
