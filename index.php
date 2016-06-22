@@ -14,7 +14,7 @@
     PrintNavBar();
     PrintTitle();
     PrintCorpSelect($previousCorp);
-    PrintIndexPage();
+    PrintIndexPage($previousCorp);
     PrintFooter();
     PrintPopups();    
     PrintCloseIndexPage();
