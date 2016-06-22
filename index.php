@@ -5,6 +5,8 @@
     session_start();    
     if(isset($_SESSION["corporation"])) {
         echo $_SESSION["corporation"];
+    } else {
+        echo 'Corp Not Set Yet';
     }
     PrintHeader();
     PrintHeaderCloseTag();
