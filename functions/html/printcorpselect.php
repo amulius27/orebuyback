@@ -16,7 +16,7 @@ function PrintCorpSelect() {
     DBClose($db);
     //Start the section to print the container and form
     printf("<div class=\"container\">");
-    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"setCorp()\" onchange=\"setCorp(this.value)\">");
+    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"setCorp($previousCorp)\" onchange=\"setCorp(this.value)\">");
     //Check to see if the Session is already going and if so, we want to repopulate the page
     if(isset($_SESSION["corporation"])) {
         $previousCorp = $_SESSION["corporation"];
@@ -41,6 +41,6 @@ function PrintCorpSelect() {
                 xmlhttp.send();
             }
             </script>");
-    printf("</div>");  
+    printf("</div>");
 }
 
