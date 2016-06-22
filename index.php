@@ -14,6 +14,7 @@
     //session_start();
     if(isset($_SESSION["corporation"])) {
         $previousCorp = $_SESSION["corporation"];
+        $_SESSION["corporation"] = $previousCorp;
     } else {
         $previousCorp = 'None';
     }
@@ -29,6 +30,7 @@
     //Check to see if the Session is already going and if so, we want to repopulate the page
     if(isset($_SESSION["corporation"])) {
         $previousCorp = $_SESSION["corporation"];
+        $_SESSION["corporation"] = $previousCorp;
         printf("<option value=\"$previousCorp\">$previousCorp</option>");
     } else {
         printf("<option></option>");
