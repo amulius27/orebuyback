@@ -97,7 +97,7 @@
 <body>
 
 <?php
-    PrintNavBarContracts();
+    PrintNavBarContracts($corporation);
     PrintTitle();
 ?>
 

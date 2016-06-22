@@ -6,11 +6,10 @@
  * and open the template in the editor.
  */
 
-function PrintNavBarContracts() {
+function PrintNavBarContracts($corporation) {
     //Start the session
     session_start();
-    if(isset($_SESSION["corporation"])) {
-        $corp = $_SESSION["corporation"];
+    if(isset($corporation)) {
         printf("<div class=\"navbar navbar-inverse navbar-fixed-top\" style=\"height: 72px;\" role=\"navigation\">
             <div class=\"navbar-header\">
                 <button class=\"navbar-toggle\" data-target=\".navbar-collapse\" data-toggle=\"collapse\" type=\"button\">
@@ -26,7 +25,7 @@ function PrintNavBarContracts() {
             </div>
             <div class=\"collapse navbar-collapse pull-left\">
                 <ul class=\"nav navbar-nav\">
-                    <li><a href=\"../index.php?corporation=$corp\">Home</a></li>
+                    <li><a href=\"../index.php?corporation=$corporation\">Home</a></li>
                     <li><a href=\"../quote.php\">Price Quotes</a></li>
                     <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
                 </ul>

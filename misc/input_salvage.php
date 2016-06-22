@@ -6,11 +6,16 @@
     }
     //Open the database
     $db = DBOpen();
-    //Start the session to retrieve session data
-    
+    //Open the session
     session_start();
-    //Get the corporation from the session
-    if(isset($_SESSION["corporation"])) {
+    if(isset($_REQUEST["corporation"])) {
+        $corporation = $_REQUEST["corporation"];
+        if($corporation == 'None') {
+            $corpTax = 10.00;
+        }
+        $corporation = str_replace('"', "", $corporation);
+        $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+    } else if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
         if($corporation == 'None') {
             $corpTax = 10.00;
@@ -18,6 +23,7 @@
         $corporation = str_replace('"', "", $corporation);
         $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
     } else {
+        $corporation = 'None';
         $corpTax = 10.00;
     }
     

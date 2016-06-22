@@ -12,6 +12,7 @@
     if(isset($_REQUEST["corporation"])) {
         $corporation = $_REQUEST["corporation"];
         if($corporation == 'None') {
+            $corporation = 'None';
             $corpTax = 10.00;
         }
         $corporation = str_replace('"', "", $corporation);
@@ -19,6 +20,7 @@
     } else if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
         if($corporation == 'None') {
+            $corporation = 'None';
             $corpTax = 10.00;
         }
         $corporation = str_replace('"', "", $corporation);
