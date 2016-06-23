@@ -16,7 +16,7 @@ function PrintModifyContractListAdminDashboard() {
             printf("<td>" . $contractNumber . "<input type=\"hidden\" class=\"form-control\" name=\"ContractNumber\" value=\"" . $contractNumber . "\"</td>");
             printf("<td>" . $contractType . "</td>");
             printf("<td><input type=\"text\" class=\"form-control\" name=\"Corporation\" value=\"" . $contractCorporation . "\"</td>");
-            printf("<td><input type=\"text\" class=\"form-control\" name=\"ContractValue\" value=\"" . $contractValue . "</td>");
+            printf("<td><input type=\"text\" class=\"form-control\" name=\"ContractValue\" value=\"" . $contractValue . "\"</td>");
             printf("<td><input type=\"submit\" value=\"Update Contract\"></td>");
             printf("</tr>");            
         }    

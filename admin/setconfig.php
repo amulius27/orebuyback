@@ -80,7 +80,7 @@ $marketRegion = $configuration['marketRegion'];
                 <div class="input-group form-control" id="MarketRegion" style="padding: 0; border: none;">
                     <input type="number" class="form-control text-left typeahead" name="MarketRegion" placeholder="<?php echo $marketRegion; ?>">
                     <input type="hidden" class="form-control" name="UpdatedBy" value="<?php echo $username; ?>">
-                </div>
+                </div><br>
                 <div class="input-group form-control" id="SubmitSettings" style="padding: 0; border: none;">
                     <input class="form-control pull-left" type="submit" value="Update Settings">
                 </div>
