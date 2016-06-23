@@ -10,7 +10,7 @@ require_once __DIR__.'/../functions/html/printcontractlisting.php';
 require_once __DIR__.'/../functions/html/printcorporationpayoutlist.php';
 require_once __DIR__.'/../functions/html/printcorpselect.php';
 require_once __DIR__.'/../functions/html/printmodifycontractlisting.php';
-require_once __DIR__.'/../functions/html/deletecontractlisting.php';
+require_once __DIR__.'/../functions/html/printdeletecontractlisting.php';
 //System Functions
 require_once __DIR__.'/../functions/system/printnavbar.php';
 
