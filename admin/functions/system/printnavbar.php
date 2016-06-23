@@ -9,6 +9,7 @@ function PrintNavBar($username) {
                         <span class=\"icon-bar\"></span>
                         <span class=\"icon-bar\"></span>
                         <span class=\"icon-bar\"></span>
+                        <span class=\"icon-bar\"></span>
                     </button>
                 </div>
                 <div class=\"collapse navbar-collapse pull-left\">
@@ -24,6 +25,7 @@ function PrintNavBar($username) {
                         <li><a href=\"corppayouts.php\">Corp Payouts</a></li>
                         <li><a href=\"corpsettings.php\">Corp Settings</a></li>
                         <li><a href=\"addnewcorp.php\">Add New Corp</a></li>
+                        <li><a href=\"setconfig.php\">Update Settings</a></li>
                     </ul>
                 </div>
                 <div class=\"collapse navbar-collapse pull-right\">

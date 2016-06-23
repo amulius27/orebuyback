@@ -25,14 +25,15 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `Configuration` (
   `refineRate` decimal(5,2) NOT NULL,
   `allianceTaxRate` decimal (5,2) NOT NULL,
-  `marketRegion` int(12) NOT NULL
+  `marketRegion` int(12) NOT NULL,
+  `updatedBy` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Configuration`
 --
 
-INSERT INTO `Configuration` (`refineRate`, `allianceTaxRate`, `marketRegion`) VALUES (80.00, 4.00, 10000002);
+INSERT INTO `Configuration` (`refineRate`, `allianceTaxRate`, `marketRegion`, `updatedBy`) VALUES (80.00, 4.00, 10000002, 'Initial Setup');
 
 --
 -- Table structure for table `Corps`

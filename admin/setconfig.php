@@ -8,6 +8,11 @@ session_start();
 $username = $_SESSION['username'];
 $db = DBOpen();
 $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
+//Lets get the current configuration of the site.  This should only return 1 row
+$configuration = $db->fetchRow('SELECT * FROM Configuration');
+$refineRate = $configuration['refineRate'];
+$allianceTax = $configuration['allianceTaxRate'];
+$marketRegion = $configuration['marketRegion'];
 ?>
 
 <!DOCTYPE html>
@@ -44,15 +49,43 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
     </style>
 </head>
 <body>
-    <?php if ((login_check($mysqli) == true) AND ($role !=('SiteAdmin'))) : ?>
+    <?php if ((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) : ?>
     <?php PrintNavBar($username); ?>
     <br>
     <div class="container">
-        <h2>Welcome to the Warped Intentions Buy Back Program Dashboard, <?php echo $username; ?></h2>
-        <h3>
-            <p>Select an option from the navigation bar at the top of the screen.  This screen</p>
-            <p>will be used for statistics in a future release.</p>      
-        </h3>
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Modify Site Settings</strong></span><br></h3>
+            </div>
+            <div class="panel-body" align="center">
+                - Modify the site settings below.<br>
+                - Refine Rate is the average Refine Rate to use for Ore, Compressed Ore, and Ice.  This number should be a whole number greater than 0.<br>
+                - Alliance Tax Rate is the tax set by the alliance.<br>
+                - Market Region is the region prices will be pulled from Eve-Central during nightly updates.<br>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <form action="system/updateconfiguration.php" method="POST">
+                <label>Refine Rate</label>
+                <div class="input-group form-control" id="RefineRate" style="padding: 0; border: none;">
+                    <input type="number" class="form-control text-left typeahead" name="RefineRate" placeholder="<?php echo $refineRate; ?>">
+                </div>
+                <label>Alliance Tax Rate</label>
+                <div class="input-group form-control" id="AllianceTaxRate" style="padding: 0; border: none;">
+                    <input type="number" class="form-control text-left typeahead" name="AllianceTaxRate" placeholder="<?php echo $allianceTax; ?>">
+                </div>
+                <label>Market Region</label>
+                <div class="input-group form-control" id="MarketRegion" style="padding: 0; border: none;">
+                    <input type="number" class="form-control text-left typeahead" name="MarketRegion" placeholder="<?php echo $marketRegion; ?>">
+                    <input type="hidden" class="form-control" name="UpdatedBy" value="<?php echo $username; ?>">
+                </div>
+                <div class="input-group form-control" id="SubmitSettings" style="padding: 0; border: none;">
+                    <input class="form-control pull-left" type="submit" value="Update Settings">
+                </div>
+            </form>
+        </div>
     </div>
     
 
