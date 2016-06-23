@@ -10,8 +10,6 @@ $db = DBOpen();
 $refineRate = $db->fetchColumn('SELECT refineRate FROM Configuration');
 $refineRate = $refineRate / 100.0;
 
-//Set our region for EVE-Central
-$regionlimit = 10000043;
 //Get the time
 $time = date("Y-m-d H:i:s");
 

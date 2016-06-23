@@ -54,7 +54,10 @@ foreach($ItemIDs as $id) {
         //Insert the new data into the database
         $xml = new SimpleXMLElement($data);
         $price = (float)$xml->marketstat->type->buy->median[0];
-        $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+        if($price > 0.00) {
+            $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+        }
+        
     }
     
     
