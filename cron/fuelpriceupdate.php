@@ -65,6 +65,9 @@ foreach($ItemIDs as $id) {
         $price = (float)$xml->marketstat->type->buy->median[0];
         if($price > 0.00) {
             $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+        } else {
+            $update = $db->fetchRow('SELECT MAX(time) FROM IceProductPrices WHERE ItemId= :item', array('item' => $id));
+            $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
         }
         
     }

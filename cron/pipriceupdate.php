@@ -129,6 +129,9 @@ foreach($ItemIDs as $id) {
         $price = (float)$xml->marketstat->type->buy->median[0];
         if($price > 0.00) {
             $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+        } else {
+            $update = $db->fetchRow('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
+            $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
         }
         
     }
