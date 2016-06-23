@@ -177,8 +177,7 @@ function CompOreContractValue($update, $corporation, $post) {
         'QuoteTime' =>  $update,
         'Value' => $contractValue,
         'AllianceTax' => $allianceTax,
-        'CorpTax' => $corpTax
-        
+        'CorpTax' => $corpTax        
     );
    
    $db->insert('CompOreContractContents', $compOreContents);
