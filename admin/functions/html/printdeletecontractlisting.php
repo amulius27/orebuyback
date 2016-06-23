@@ -1,6 +1,6 @@
 <?php
     
-function PrintContractListAdminDashboard() {
+function PrintDeleteContractListAdminDashboard() {
     $db = DBOpen();
     //Get the list of contracts from the database
     $contracts = $db->fetchRowMany('SELECT * FROM Contracts WHERE Paid= :paid AND Deleted= :deleted', array('paid' => 0, 'deleted' => 0));
@@ -67,7 +67,7 @@ function PrintContractListAdminDashboard() {
             printf("<td>" . $contractCorporation . "</td>");
             printf("<td>" . $contractValue . "</td>");
             printf("<td><input type=\"radio\" class=\"form-control\" name=\"ContractNumber\" value=\"" . $contractNumber . "\"</td>");
-            printf("<td><input type=\"submit\" value=\"Process\"></td>");
+            printf("<td><input type=\"submit\" value=\"Delete\"></td>");
             printf("</tr>");
             
             //Print the expandable contents for each row
