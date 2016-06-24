@@ -6,28 +6,35 @@
     $corpName = $_POST["corporation"];
     //Get the taxes from the previous page
     $taxes = $_POST["taxes"];
-    
-    $taxesInTemp = $db->fetchColumnMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corpName, 'ty' => 0));
-    $paidInTaxes = 0.00;
-    if($taxesInTemp != false) {
-        foreach($taxesInTemp as $taxIn) {
-            $paidInTaxes = $paidInTaxes + $taxIn;
+    //Combine our two post arrays to make it easier to work with in the foreach statement below
+    $array = array_combine($corpName, $taxes);
+    //Run through the possibilites and insert all calls into the database
+    foreach($array as $corpName => $taxes) {
+        if($taxes > 0.00) {
+            $taxesInTemp = $db->fetchColumnMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corpName, 'ty' => 0));
+            $paidInTaxes = 0.00;
+            if($taxesInTemp != false) {
+                foreach($taxesInTemp as $taxIn) {
+                    $paidInTaxes = $paidInTaxes + $taxIn;
+                }
+            }
+            $taxesOutTemp = $db->fetchColumnMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corpName, 'ty' => 1));
+            $paidOutTaxes = 0.00;
+            if($taxesOutTemp != false) {
+                foreach($taxesOutTemp as $taxOut) {
+                    $paidOutTaxes = $paidOutTaxes + $taxOut;
+                }
+            }
+            //Calculate the taxes
+            $tempTaxes = $paidInTaxes - $paidOutTaxes;
+            if($taxes <= $tempTaxes) {
+                //Insert a new line into the CorporationPayouts table as the payout is paid
+                $db->insert('CorporationPayouts', array('CorpName' => $corp, 'Amount' => $taxes, 'Type' => 1));    
+            }   
         }
+         
     }
-    $taxesOutTemp = $db->fetchColumnMany('SELECT Amount FROM CorporationPayouts WHERE CorpName= :corp AND Type= :ty', array('corp' => $corpName, 'ty' => 1));
-    $paidOutTaxes = 0.00;
-    if($taxesOutTemp != false) {
-        foreach($taxesOutTemp as $taxOut) {
-            $paidOutTaxes = $paidOutTaxes + $taxOut;
-        }
-    }
-    //Calculate the taxes
-    $tempTaxes = $paidInTaxes - $paidOutTaxes;
-    if($taxes <= $tempTaxes) {
-        //Insert a new line into the CorporationPayouts table as the payout is paid
-        $db->insert('CorporationPayouts', array('CorpName' => $corpName, 'Amount' => $taxes, 'Type' => 1));    
-    }
-    
+       
     //Close the database connection   
     DBClose($db);
     //Return back to the corppayouts page

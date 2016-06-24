@@ -1,13 +1,26 @@
 <?php
     require_once __DIR__.'/../../functions/registry.php';
 
-    $db = DBOpen();
-    $contract = $_POST["ContractNumber"];
-    $corporation = $_POST["Corporation"];
-    $amount = $_POST["ContractValue"];
-    //Modify the contract's data
-    $db->update('Contracts', array('ContractNum' => $contract), array('Corporation' => $corporation, 'Value' => $amount));
     
+    $contracts = $_POST["ContractNumber"];
+    $corporations = $_POST["Corporation"];
+    $amounts = $_POST["ContractValue"];
+    //Open the database connection
+    $db = DBOpen();
+    //Set a variable to keep all of the post arrays in sync
+    $i = 0;
+    //Modify each contract's data as necessary
+    foreach($contracts as $contract) {
+        $current = $db->fetchRow('SELECT * FROM Contracts WHERE ContractNum= :number', array('number' => $contract));
+        //If the values in the current entry in the database are different than the POST values, then change the contracts
+        if(($current['Corporation'] != $corporations[$i]) AND ($current['Value'] != $amounts[$i])) {
+           $db->update('Contracts', array('ContractNum' => $contract), array('Corporation' => $corporations[$i], 'Value' => $amounts[$i])); 
+        }
+        
+        //Increment our value to keep the contracts in sync
+        $i++;
+    }
+    //Close the database connection
     DBClose($db);
     //Return to the Modify Contracts page
     $location = 'http://' . $_SERVER['HTTP_HOST'];

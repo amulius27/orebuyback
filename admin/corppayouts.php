@@ -62,11 +62,15 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
                       <th>Corporation</th>
                       <th>Account Amount</th>
                       <th>Requested Amount</th>
-                      <th>Process Payout</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php PrintCorporationPayoutListAdminDashboard(); ?>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Process Corp Payouts"></td>
+                        <td></td>
+                    </tr>
                   </tbody>
                 </table>
               </form>
