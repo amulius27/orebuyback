@@ -67,7 +67,7 @@ $marketRegion = $configuration['marketRegion'];
     </div>
     <div class="container">
         <div class="row">
-            <form action="system/updateconfiguration.php" method="POST">
+            <form action="functions/system/updateconfiguration.php" method="POST">
                 <label>Refine Rate</label>
                 <div class="input-group form-control" id="RefineRate" style="padding: 0; border: none;">
                     <input type="number" class="form-control text-left typeahead" name="RefineRate" placeholder="<?php echo $refineRate; ?>">

@@ -100,7 +100,18 @@
     PrintNavBarContracts($corporation);
     PrintTitle();
 ?>
-
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Contract Instruction Sheet</strong></span><br></h3>
+            </div>
+            <div class="panel-body" align="center">
+                - The area below displays the details of the contract to make out to Spatial Forcese.<br>
+                - The Contract To is whom you make out the contract to.<br>
+                - Contract Type should <strong>always</strong> be Item Exchange and Private.<br>
+            </div>
+        </div>
+    </div>
     <div class="container col-md-6 col-md-offset-3">
         <div class="row">
             <h1>Contract Details</h1>
