@@ -54,8 +54,6 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
                       <th>Contract Number</th>
                       <th>Corporation</th>
                       <th>Contract Value</th>
-                      <th>Select Contract</th>
-                      <th>Modify Contract</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -63,7 +61,6 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
                     <tr>
                         <td></td>
                         <td><input type="submit" value="Modify Contracts"></td>
-                        <td></td>
                         <td></td>
                     </tr>  
                   </tbody>

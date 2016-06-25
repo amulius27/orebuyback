@@ -13,7 +13,8 @@
     foreach($contracts as $contract) {
         $current = $db->fetchRow('SELECT * FROM Contracts WHERE ContractNum= :number', array('number' => $contract));
         //If the values in the current entry in the database are different than the POST values, then change the contracts
-        if(($current['Corporation'] != $corporations[$i]) AND ($current['Value'] != $amounts[$i])) {
+        if(($current['Corporation'] != $corporations[$i]) OR ($current['Value'] != $amounts[$i])) {
+           $corporations[$i] = str_replace('+', ' ', $corporations[$i]);
            $db->update('Contracts', array('ContractNum' => $contract), array('Corporation' => $corporations[$i], 'Value' => $amounts[$i])); 
         }
         

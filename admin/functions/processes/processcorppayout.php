@@ -29,7 +29,7 @@
             $tempTaxes = $paidInTaxes - $paidOutTaxes;
             if($taxes <= $tempTaxes) {
                 //Insert a new line into the CorporationPayouts table as the payout is paid
-                $db->insert('CorporationPayouts', array('CorpName' => $corp, 'Amount' => $taxes, 'Type' => 1));    
+                $db->insert('CorporationPayouts', array('CorpName' => $corpName, 'Amount' => $taxes, 'Type' => 1));    
             }   
         }
          
