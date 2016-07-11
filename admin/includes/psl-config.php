@@ -29,7 +29,7 @@
  * These are the database login details
  */
 
-$config = parse_ini_file(__DIR__.'/../functions/database/config.ini');
+$config = parse_ini_file(__DIR__.'/../../functions/database/config.ini');
 define("HOST", $config['server']); 			// The host you want to connect to. 
 define("USER", $config['username']); 			// The database username. 
 define("PASSWORD", $config['password']);                // The database password. 
