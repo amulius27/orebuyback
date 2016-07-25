@@ -8,6 +8,9 @@ session_start();
 $username = $_SESSION['username'];
 $db = DBOpen();
 $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
+
+$corporation = $db->fetchColumn('SELECT corporation FROM member_roles WHERE username= :user', array('user' => $username));
+$taxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +51,20 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
     <?php PrintNavBar($username); ?>
     <br>
     <div class="container">
-        <h2>Page saved for corporation settings.</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Add New Corporation Form</strong></span><br></h3>
+            </div>
+            <div class="panel-body" align="center">
+                <form action="functions/processes/modifycorp.php" method="POST">
+                    <label>Tax Rate:</label>
+                    <input type="text" class="form-control" name="Tax" value="<?php echo $taxRate; ?>" />
+                    <br>
+                    <input type="hidden" class="form-control" name="CorpName" value="<?php echo $corporation; ?>">
+                    <input type="submit" class="form-control" value="Modify Corp" />
+                </form>
+            </div>
+        </div>
     </div>
     
 
