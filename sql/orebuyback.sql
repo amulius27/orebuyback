@@ -439,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
     `Broadcast_Node` int(20) NOT NULL DEFAULT '0',
     `Integrity_Response_Drones` int(20) NOT NULL DEFAULT '0',
     `Nanofactory` int(20) NOT NULL DEFAULT '0',
-    `Organic_Mortar_Applicator` int(20) NOT NULL DEFAULT '0',
+    `Organic_Mortar_Applicators` int(20) NOT NULL DEFAULT '0',
     `Recursive_Computing_Module` int(20) NOT NULL DEFAULT '0',
     `Self_Harmonizing_Power_Core` int(20) NOT NULL DEFAULT '0',
     `Sterile_Conduits` int(20) NOT NULL DEFAULT '0',

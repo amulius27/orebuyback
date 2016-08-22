@@ -19,9 +19,6 @@ function PrintPiT4ContractContents($contractNum) {
         if($contents[$columns[$i]] > 0) {
             printf($contents[$columns[$i]]);
         }
-        else {
-            printf("0");
-        }
         printf("</td>");
         printf("</tr>");
         //if($contents[$columns[$i]] > 0) {

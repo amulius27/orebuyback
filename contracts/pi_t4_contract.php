@@ -28,10 +28,10 @@
     } else {
         $Nanofactory = 0;
     }
-    if(isset($_POST["Organic_Mortar_Applicator"])) {
-        $Organic_Mortar_Applicator = $_POST["Organic_Mortar_Applicator"];
+    if(isset($_POST["Organic_Mortar_Applicators"])) {
+        $Organic_Mortar_Applicators = $_POST["Organic_Mortar_Applicators"];
     } else {
-        $Organic_Mortar_Applicator = 0;
+        $Organic_Mortar_Applicators = 0;
     }
     if(isset($_POST["Recursive_Computing_Module"])) {
         $Recursive_Computing_Module = $_POST["Recursive_Computing_Module"];
@@ -58,7 +58,7 @@
         'Broadcast_Node' => $Broadcast_Node,
         'Integrity_Response_Drones' => $Integrity_Response_Drones,
         'Nanofactory' => $Nanofactory,
-        'Organic_Mortar_Applicator' => $Organic_Mortar_Applicator,
+        'Organic_Mortar_Applicators' => $Organic_Mortar_Applicators,
         'Recursive_Computing_Module' => $Recursive_Computing_Module,
         'Self_Harmonizing_Power_Core' => $Self_Harmonizing_Power_Core,
         'Sterile_Conduits' => $Sterile_Conduits,

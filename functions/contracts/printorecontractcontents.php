@@ -9,7 +9,7 @@ function PrintOreContractContents($contractNum) {
     $columnsNum = sizeof($columns);
     
     printf("<table class=\"table-striped\">");
-    for($i = 0; $i < $columnsNum - 1; $i++) {
+    for($i = 0; $i < $columnsNum; $i++) {
         $header = str_replace('_', ' ', $columns[$i]);
         if($contents[$columns[$i]] > 0) {
             printf("<tr>");
