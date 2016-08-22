@@ -5,7 +5,7 @@
         $contractTime = $_POST["Quote_Time"];
     } else {
         $db = DBOpen();
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemID= :id', array('id' => 2867));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
