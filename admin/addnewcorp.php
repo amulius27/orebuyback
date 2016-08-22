@@ -59,7 +59,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
                     <input type="text" class="form-control" name="Corporation" />
                     <label>Tax Rate:</label>
                     <input type="text" class="form-control" name="Tax" />
-                    <br>
+                    <br><br>
                     <input type="submit" class="form-control" value="Add New Corp" />
                 </form>
             </div>
