@@ -10,16 +10,16 @@ function PrintIceProdContractContents($contractNum) {
     printf("<table class=\"table-striped\">");
     for($i = 0; $i < $columnsNum; $i++) {
         $header = str_replace('_', ' ', $columns[$i]);
+        printf("<tr>");
+        printf("<td>");
+        printf($header);
+        printf("</td>");
+        printf("<td>");
         if($contents[$columns[$i]] > 0) {
-            printf("<tr>");
-            printf("<td>");
-            printf($header);
-            printf("</td>");
-            printf("<td>");
             printf($contents[$columns[$i]]);
-            printf("</td>");
-            printf("</tr>");
         }
+        printf("</td>");
+        printf("</tr>");
     }
     printf("</table>");
     

@@ -101,7 +101,7 @@
                         <p>
                             <label>Nano-Factory <?php echo number_format($Nanofactory, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Nano-Factory" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="NanoFactory" placeholder="NanoFactory" id="calc-input-NanoFactory_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="NanoFactory" placeholder="Nano-Factory" id="calc-input-NanoFactory_units-value">
                             </div>
                         </p>
                         <p>
