@@ -12,7 +12,7 @@ function PiT4ContractValue($update, $corporation, $post) {
     $Sterile_ConduitsPrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2875, 'time' => $update));
     $MainframePrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2876, 'time' => $update));
     
-//Get the last contract number
+    //Get the last contract number
     $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');
     //Set the current contract number
     $contractNum = $lastContractNum + 1;
@@ -25,7 +25,7 @@ function PiT4ContractValue($update, $corporation, $post) {
         //Make the array with the number gotten from the page then multiply by the price.
         'Broadcast_Node' => $post['Broadcast_Node'] * $BroadcastPrice,
         'Integrity_Response_Drones' => $post['Integrity_Response_Drones'] * $Response_DronesPrice,
-        'NanoFactory' => $post['Nanofactory'] * $NanoFactoryPrice,
+        'NanoFactory' => $post['NanoFactory'] * $NanoFactoryPrice,
         'Organic_Mortar_Applicators' => $post['Organic_Mortar_Applicators'] * $Organic_Mortar_ApplicatorsPrice,
         'Recursive_Computing_Module' => $post['Recursive_Computing_Module'] * $Recursive_ComputingPrice,
         'Self_Harmonizing_Power_Core' => $post['Self_Harmonizing_Power_Core'] * $Power_CorePrice,
