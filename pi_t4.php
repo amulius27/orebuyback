@@ -105,7 +105,7 @@
                             </div>
                         </p>
                         <p>
-                            <label>Organic Mortar Applicators <?php echo number_format($Organic_Mortar, 2, '.', ',');?> ISK/Unit</label>
+                            <label>Organic Mortar Applicators <?php echo number_format($Organic_Mortar_Applicators, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Organic Mortar Applicators" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Organic_Mortar_Applicators" placeholder="Organic Mortar Applicators" id="calc-input-Organic_Mortar_Applicators_units-value">
                             </div>

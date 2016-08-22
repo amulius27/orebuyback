@@ -40,7 +40,7 @@
     $Broadcast = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2867, 'time' => $update));
     $Response_Drones = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2868, 'time' => $update));
     $Nanofactory = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2869, 'time' => $update));
-    $Organic_Mortar = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2870, 'time' => $update));
+    $Organic_Mortar_Applicators = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2870, 'time' => $update));
     $Recursive_Computing = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2871, 'time' => $update));
     $Power_Core = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2872, 'time' => $update));
     $Sterile_Conduits = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2875, 'time' => $update));
@@ -55,7 +55,7 @@
     var broadcast = <?= $Broadcast ?>;
     var responseDrones = <?= $Response_Drones ?>;
     var nanoFactory = <?= $Nanofactory ?>;
-    var organicMortar = <?= $Organic_Mortar ?>;
+    var organicMortar = <?= $Organic_Mortar_Applicators ?>;
     var recursiveComputing = <?= $Recursive_Computing ?>;
     var powerCore = <?= $Power_Core ?>;
     var sterileConduits = <?= $Sterile_Conduits ?>;
