@@ -112,7 +112,7 @@
                 <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Contract Instruction Sheet</strong></span><br></h3>
             </div>
             <div class="panel-body" align="center">
-                - The area below displays the details of the contract to make out to Spatial Forcese.<br>
+                - The area below displays the details of the contract to make out to Spatial Forces.<br>
                 - The Contract To is whom you make out the contract to.<br>
                 - Contract Type should <strong>always</strong> be Item Exchange and Private.<br>
             </div>
@@ -146,6 +146,24 @@
             ?>
         </div>
     </div>
+    <div class="container col-md-6 col-md-offset-3">
+        <div class="row">
+            <h1>Contract Information</h1>
+            <table class="table-bordered tabe-striped">
+                <tr>
+                    <td>Alliance Tax</td>
+                    <td>Corp Tax</td>
+                    <td>Contract Value</td>
+                </tr>
+                <tr>
+                    <td><?php echo $contract["CorpTax"]; ?></td>
+                    <td><?php echo $contract["AllianceTax"]; ?></td>
+                    <td><?php echo $contract["Value"]; ?></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
     
 </body>
 </html>
