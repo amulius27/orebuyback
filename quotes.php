@@ -4,18 +4,25 @@
     
     $MineralUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices');
     $MineralPrices = $db->fetchColumnMany('SELECT * FROM MineralPrices WHERE time= :update', array('update' => $MineralUpdateTime));
+    $MineralColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'MineralPrices'));
     
     $PiUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices');
     $PiPrices = $db->fetchColumnMany('SELECT * FROM PiPrices WHERE time= :update', array('update' => $PiUpdateTime));
+    $PiColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'PiPrices'));
     
     $SalvageUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM SalvagePrices');
     $SalvagePrices = $db->fetchColumnMany('SELECT * FROM SalvagePrices WHERE time= :update', array('update' => $SalvageUpdateTime));
+    $SalvageColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'SalvagePrices'));
     
     $FuelUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM IceProductPrices');
-    $FuelPrices = $db->fetchColumnMany('SELECT * FROM IceProductPrices WHERE time= :update', array('update' => 'IceProductPrices'));
+    $FuelPrices = $db->fetchColumnMany('SELECT * FROM IceProductPrices WHERE time= :update', array('update' => $IceProductPrices));
+    $FuelColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'IceProductPrices'));
     
     $OreUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices');
     $OrePrices = $db-> fetchColumnMany('SELECT * FROM OrePrices WHERE time= :update', array('update' => $OreUpdateTime));
+    $OreColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OrePrices'));
+    
+    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +80,26 @@
 
 <div class="container">
     <div class="row">
-        
+        <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Mineral Quotes</strong></span></h3>
+        <?php 
+            printf("<table class=\"table-striped\">");
+            for($i = 0; $i < $columnsNum - 1; $i++) {
+                $header = str_replace('_', ' ', $MineralColumns[$i]);
+                printf("<tr>");
+                printf("<td>");
+                printf($header);
+                printf("</td>");
+                printf("<td>");
+                printf($MineralPrices[$MineralColumns[$i]]);
+                printf("</td>");
+                printf("</tr>");
+            }
+            printf("</table>");
+        ?>
     </div>
 </div>
+
+<div class="clearfix"></div>
 
 <?php
     PrintFooter();
