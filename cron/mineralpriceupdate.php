@@ -2,7 +2,7 @@
 //Load the required functions for the sql calls
 require_once __DIR__.'/cronfunctions/cronregistry.php';
 
-$itemIDs = array(
+$ItemIDs = array(
     "tritanium" => 34,
     "pyerite" => 35,
     "mexallon" => 36,

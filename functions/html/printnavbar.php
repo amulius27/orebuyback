@@ -26,7 +26,7 @@ function PrintNavBar() {
         <div class=\"collapse navbar-collapse pull-left\">
             <ul class=\"nav navbar-nav\">
                 <li><a href=\"index.php?corporation=$corp\">Home</a></li>
-                <li><a href=\"quote.php\">Price Quotes</a></li>
+                <li><a href=\"quotes.php\">Price Quotes</a></li>
                 <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
             </ul>
         </div>
@@ -48,7 +48,7 @@ function PrintNavBar() {
             <div class=\"collapse navbar-collapse pull-left\">
                 <ul class=\"nav navbar-nav\">
                     <li><a href=\"index.php\">Home</a></li>
-                    <li><a href=\"quote.php\">Price Quotes</a></li>
+                    <li><a href=\"quotes.php\">Price Quotes</a></li>
                     <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
                 </ul>
             </div>
