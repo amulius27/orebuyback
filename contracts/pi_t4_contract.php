@@ -23,10 +23,10 @@
     } else {
         $Integrity_Response_Drones = 0;
     }
-    if(isset($_POST["Nanofactory"])) {
-        $Nanofactory = $_POST["Nanofactory"];
+    if(isset($_POST["NanoFactory"])) {
+        $NanoFactory = $_POST["NanoFactory"];
     } else {
-        $Nanofactory = 0;
+        $NanoFactory = 0;
     }
     if(isset($_POST["Organic_Mortar_Applicators"])) {
         $Organic_Mortar_Applicators = $_POST["Organic_Mortar_Applicators"];
@@ -57,7 +57,7 @@
     $post = array(
         'Broadcast_Node' => $Broadcast_Node,
         'Integrity_Response_Drones' => $Integrity_Response_Drones,
-        'Nanofactory' => $Nanofactory,
+        'NanoFactory' => $NanoFactory,
         'Organic_Mortar_Applicators' => $Organic_Mortar_Applicators,
         'Recursive_Computing_Module' => $Recursive_Computing_Module,
         'Self_Harmonizing_Power_Core' => $Self_Harmonizing_Power_Core,

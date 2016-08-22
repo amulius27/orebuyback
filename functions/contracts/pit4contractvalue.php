@@ -5,7 +5,7 @@ function PiT4ContractValue($update, $corporation, $post) {
     $db = DBOpen();
     $Broadcast = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2867, 'time' => $update));
     $Response_Drones = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2868, 'time' => $update));
-    $Nanofactory = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2869, 'time' => $update));
+    $NanoFactory = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2869, 'time' => $update));
     $Organic_Mortar_Applicators = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2870, 'time' => $update));
     $Recursive_Computing = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2871, 'time' => $update));
     $Power_Core = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2872, 'time' => $update));
@@ -24,7 +24,7 @@ function PiT4ContractValue($update, $corporation, $post) {
     $PiT4Value = array(
         'Broadcast_Node' => $post['Broadcast_Node'] * $Broadcast,
         'Integrity_Response_Drones' => $post['Integrity_Response_Drones'] * $Response_Drones,
-        'Nanofactory' => $post['Nanofactory'] * $Nanofactory,
+        'NanoFactory' => $post['Nanofactory'] * $NanoFactory,
         'Organic_Mortar_Applicators' => $post['Organic_Mortar_Applicators'] * $Organic_Mortar_Applicators,
         'Recursive_Computing_Module' => $post['Recursive_Computing_Module'] * $Recursive_Computing,
         'Self_Harmonizing_Power_Core' => $post['Self_Harmonizing_Power_Core'] * $Power_Core,
@@ -53,7 +53,7 @@ function PiT4ContractValue($update, $corporation, $post) {
         'QuoteTime' => $update,
         'Broadcast_Node' => $post['Broadcast_Node'],
         'Integrity_Response_Drones' => $post['Integrity_Response_Drones'],
-        'Nanofactory' => $post['Nanofactory'],
+        'NanoFactory' => $post['NanoFactory'],
         'Organic_Mortar_Applicators' => $post['Organic_Mortar_Applicators'],
         'Recursive_Computing_Module' => $post['Recursive_Computing_Module'],
         'Self_Harmonizing_Power_Core' => $post['Self_Harmonizing_Power_Core'],
