@@ -31,8 +31,6 @@
     $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
-    
-    $db = DBOpen();
 
     //Update timestamp
     $update = $db->fetchColumn('SELECT MAX(Time) FROM PiPrices WHERE ItemId= :id', array('id' => 2867));

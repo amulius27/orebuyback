@@ -82,14 +82,14 @@ function calcNow() {
     var sterileConduitsUnits = calcInputGetValue('Sterile_Conduits_units');
     var mainframeUnits = calcInputGetValue('Wetware_Mainframe_units');
 
-    var broadcastReward = broadcastUnits * broadcast * value;
-    var responseReward = responseUnits * responseDrones * value;
-    var nanoFactoryReward = nanoFactoryUnits * nanoFactory * value;
-    var applicatorReward = applicatorUnits * organicMortar * value;
-    var computingModuleReward = computingModuleUnits * recursiveComputing * value;
-    var powerCoreReward = powerCoreUnits * powerCore * value;
-    var sterileConduitsReward = sterileConduitsUnits * sterileConduits * value;
-    var mainframeReward = mainframeUnits * Mainframe * value;
+    var broadcastReward = broadcastUnits * broadcast;
+    var responseReward = responseUnits * responseDrones;
+    var nanoFactoryReward = nanoFactoryUnits * nanoFactory;
+    var applicatorReward = applicatorUnits * organicMortar;
+    var computingModuleReward = computingModuleUnits * recursiveComputing;
+    var powerCoreReward = powerCoreUnits * powerCore;
+    var sterileConduitsReward = sterileConduitsUnits * sterileConduits;
+    var mainframeReward = mainframeUnits * Mainframe;
 
     var totalReward = (broadcastReward+responseReward+nanoFactoryReward+applicatorReward+
             computingModuleReward+powerCoreReward+sterileConduitsReward+mainframeReward) * value;
