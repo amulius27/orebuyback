@@ -6,9 +6,10 @@ function PrintPiT4ContractContents($contractNum) {
     $contents = $db->fetchRow('SELECT * FROM PiT4ContractContents WHERE ContractNum= :number', array('number' => $contractNum));
     var_dump($columns);
     $columnsNum = sizeof($columns);
+    var_dump($columnsNum);
     
     printf("<table class=\"table-striped\">");
-    for($i = 0; $i < $columnsNum - 1; $i++) {
+    for($i = 0; $i < $columnsNum; $i++) {
         $header = str_replace('_', ' ', $columns[$i]);
         printf("<tr>");
         printf("<td>");
