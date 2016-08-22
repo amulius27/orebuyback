@@ -146,23 +146,6 @@
             ?>
         </div>
     </div>
-    <div class="container col-md-6 col-md-offset-3">
-        <div class="row">
-            <h1>Contract Information</h1>
-            <table class="table-bordered tabe-striped">
-                <tr>
-                    <td>Alliance Tax</td>
-                    <td>Corp Tax</td>
-                    <td>Contract Value</td>
-                </tr>
-                <tr>
-                    <td><?php echo $contract["CorpTax"]; ?></td>
-                    <td><?php echo $contract["AllianceTax"]; ?></td>
-                    <td><?php echo $contract["Value"]; ?></td>
-                </tr>
-            </table>
-        </div>
-    </div>
     
     
 </body>

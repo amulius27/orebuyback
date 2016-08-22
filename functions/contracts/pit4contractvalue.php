@@ -40,13 +40,12 @@ function PiT4ContractValue($update, $corporation, $post) {
     
      //Get the tax rates
     $allianceTaxRate = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
-    $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE Corpname= :name', array('name' => $corporation));
+    $corpTaxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :name', array('name' => $corporation));
     //Calculate the taxes from the contract value
     $allianceTax = $contractValue * ($allianceTaxRate / 100.0);
     $corpTax = $contractValue * ($corpTaxRate / 100.0);
-    $taxes = $allianceTax + $corpTax;
     //Adjust the contract value
-    $adjustedContractValue = ($contractValue - $taxes);
+    $contractValue = ($contractValue - $allianceTax) - $corpTax;
    
    //Set the ore contents array up to be insert into the OreContractContents database
    $piT4Contents = array(
@@ -69,7 +68,7 @@ function PiT4ContractValue($update, $corporation, $post) {
         'ContractType' => 'PiT4',
         'Corporation' => $corporation,
         'QuoteTime' =>  $update,
-        'Value' => $adjustedContractValue,
+        'Value' => $contractValue,
         'AllianceTax' => $allianceTax,
         'CorpTax' => $corpTax
     );

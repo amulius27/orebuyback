@@ -9,6 +9,7 @@
 function PrintFooter() {
     printf("<div class=\"footer\">
         <div class=\"container\">
+        <div class=\"row\">
             <p>2016 Design by <a href=\"#\">Chris Mancuso</a>. All rights reserved.</p>
 			<p>EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. 
 			All other trademarks are the property of their respective owners. 
@@ -22,5 +23,6 @@ function PrintFooter() {
 			CCP is in no way responsible for the content on or functioning of this website, 
 			nor can it be liable for any damage arising from the use of this website.</p>
 			</div>
+        </div>
     </div>");
 }
