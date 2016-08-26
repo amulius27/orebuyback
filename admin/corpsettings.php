@@ -60,10 +60,10 @@ $stats = GetCorpStats($corporation, $db);
             <div class="panel-body" align="center">
                 <form action="functions/processes/modifycorp.php" method="POST">
                     <label>Tax Rate:</label>
-                    <input type="text" class="form-control" name="Tax" value="<?php echo $taxRate; ?>" />
+                    <input type="text" class="form-control" name="Tax" id="Tax" placeholder="<?php echo $taxRate; ?>" />
                     <br>
-                    <input type="hidden" class="form-control" name="CorpName" value="<?php echo $corporation; ?>">
-                    <br><br>
+                    <input type="hidden" class="form-control" name="CorpName" id="CorpName" value="<?php echo $corporation; ?>">
+                    <br>
                     <input type="submit" class="form-control" value="Modify Corp" />
                 </form>
             </div>

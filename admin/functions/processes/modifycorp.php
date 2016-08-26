@@ -1,24 +1,26 @@
 <?php
-
-require_once __DIR__.'/../../functions/registry.php';
-
-$corporation = $_POST["CorpName"];
-$taxRate = filter_input(INPUT_POST, $_POST["Tax"], FILTER_SANITIZE_NUMBER_FLOAT);
-//$taxRate = $_POST["Tax"];
-$db = DBOpen();
-//Get the unique index from the table for the corporation being modified.
-$index = $db->fetchColumn('SELECT index FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
-var_dump($index);
-printf("<br>");
-$made = $db->update('Corps', array('index' => $index), array('TaxRate' => $taxRate));
-var_dump($made);
-printf("<br>");
-//Close the database connection
-DBClose($db);
-
-//Return to the Modify Contracts page
-$location = 'http://' . $_SERVER['HTTP_HOST'];
-$location = $location . dirname($_SERVER['PHP_SELF']) . '/../../corpsettings.php';
-var_dump($location);
-printf("<br>");
-header("Location: $location");        
+    require_once __DIR__.'/../../functions/registry.php';
+    if(isset($_POST["Tax"])) {
+        //Get the corporation name
+        $corporation = $_POST["CorpName"];
+        //Sanitize the input filter
+        $taxRate = filter_input(INPUT_POST, 'Tax', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        if($taxRate < 0.00) {
+            $taxRate = 0.00;
+        }
+        if($taxRate > 100.0) {
+            $taxRate = 100.00;
+        }
+        //Open a database connection
+        $dbh = DBOpen();
+        //Update the corporation settings
+        $dbh->update('Corps', array('CorpName' => $corporation), array('TaxRate' => $taxRate));
+        //Close the database connection
+        DBClose($dbh);
+    }
+    
+    //Return to the Corp Settings page
+    $location = 'http://' . $_SERVER['HTTP_HOST'];
+    $location = $location . dirname($_SERVER['PHP_SELF']) . '/../../corpsettings.php';
+    header("Location: $location");
+?>
