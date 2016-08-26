@@ -3,7 +3,8 @@
 require_once __DIR__.'/../../functions/registry.php';
 
 $corporation = $_POST["CorpName"];
-$taxRate = $_POST["Tax"];
+$taxRate = filter_input(INPUT_POST, $_POST["Tax"], FILTER_SANITIZE_NUMBER_FLOAT);
+//$taxRate = $_POST["Tax"];
 $db = DBOpen();
 //Get the unique index from the table for the corporation being modified.
 $index = $db->fetchColumn('SELECT index FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
