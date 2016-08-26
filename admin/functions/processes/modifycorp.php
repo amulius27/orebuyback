@@ -5,8 +5,9 @@ require_once __DIR__.'/../../functions/registry.php';
 $corporation = $_POST["CorpName"];
 $taxRate = $_POST["Tax"];
 $db = DBOpen();
-
-$db->update('Corps', array('CorpName' => $corporation), array('TaxRate' => $taxRate));
+//Get the unique index from the table for the corporation being modified.
+$index = $db->fetchColumn('SELECT index FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+$db->update('Corps', array('index' => $index), array('TaxRate' => $taxRate));
 //Close the database connection
 DBClose($db);
 

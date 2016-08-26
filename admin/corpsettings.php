@@ -61,6 +61,7 @@ $taxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :corp', a
                     <input type="text" class="form-control" name="Tax" value="<?php echo $taxRate; ?>" />
                     <br>
                     <input type="hidden" class="form-control" name="CorpName" value="<?php echo $corporation; ?>">
+                    <br><br>
                     <input type="submit" class="form-control" value="Modify Corp" />
                 </form>
             </div>
