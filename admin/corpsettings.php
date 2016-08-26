@@ -77,8 +77,8 @@ $stats = GetCorpStats($corporation, $db);
             <br>
             <div class="panel-body" align="left">
                 <span style="font-family: Arial; color: #FFF;">
-                   Total ISK Submitted: <?php echo $stats["isk"]; ?><br>
-                   Total Taxes: <?php echo $stats["taxes"]; ?><br>
+                   Total ISK Submitted: <?php echo $stats["isk"]; ?> ISK<br>
+                   Total Taxes: <?php echo $stats["taxes"]; ?> ISK<br>
                    Total Contracts Submitted: <?php echo $stats["contracts"]; ?><br>
                    Total Paid Contracts: <?php echo $stats["paid"]; ?><br>
                    Total Deleted Contracts: <?php echo $stats["deleted"]; ?><br>
