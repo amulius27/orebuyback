@@ -13,5 +13,7 @@ require_once __DIR__.'/../functions/html/printmodifycontractlisting.php';
 require_once __DIR__.'/../functions/html/printdeletecontractlisting.php';
 //System Functions
 require_once __DIR__.'/../functions/system/printnavbar.php';
+//Statistic Functions
+require_once __DIR__.'/../functions/statistics/corpstatistics.php';
 
 ?>

@@ -11,6 +11,8 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
 
 $corporation = $db->fetchColumn('SELECT corporation FROM member_roles WHERE username= :user', array('user' => $username));
 $taxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+
+$stats = GetCorpStats($corporation, $db);
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +66,22 @@ $taxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :corp', a
                     <br><br>
                     <input type="submit" class="form-control" value="Modify Corp" />
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"><strong>Corporation Stasticis</strong></span></h3>
+            </div>
+            <div class="panel-body" align="left">
+                <span style="font-family: Arial; color: #FFF;">
+                   Total ISK Submitted: <?php echo stats["isk"]; ?><br>
+                   Total Taxes: <?php echo stats["taxes"]; ?><br>
+                   Total Contracts Submitted: <?php echo stats["contracts"]; ?><br>
+                   Total Paid Contracts: <?php echo stats["paid"]; ?><br>
+                   Total Deleted Contracts: <?php echo stats["deleted"]; ?><br>
+                </span>
             </div>
         </div>
     </div>
