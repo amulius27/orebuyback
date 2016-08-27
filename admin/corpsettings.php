@@ -50,7 +50,7 @@ $stats = GetCorpStats($corporation, $db);
 </head>
 <body>
     <?php if ((login_check($mysqli) == true) AND $role == ('Director' or 'CEO' or 'SiteAdmin')) : ?>
-    <?php PrintNavBar($username); ?>
+    <?php PrintNavBar($username, $role); ?>
     <br>
     <div class="container">
         <div class="panel panel-default">

@@ -6,6 +6,9 @@ require_once __DIR__.'/functions/registry.php';
 
 session_start();
 $username = $_SESSION['username'];
+$db = DBOpen();
+$role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
+DBClose($db);
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +46,7 @@ $username = $_SESSION['username'];
 </head>
 <body>
     <?php if (login_check($mysqli) == true) : ?>
-    <?php PrintNavBar($username); ?>
+    <?php PrintNavBar($username, $role); ?>
     <br>
     <div class="container">
         <h2>Welcome to the Warped Intentions Buy Back Program Dashboard, <?php echo $username; ?></h2>
@@ -76,7 +79,9 @@ $username = $_SESSION['username'];
                     Please <a href="index.php">login</a> or speak to your site administrator.
                 </div>
             </div>
-    <?php endif; ?>
+    <?php endif; 
+        DBClose($db);
+    ?>
     
   </body>
 </html>

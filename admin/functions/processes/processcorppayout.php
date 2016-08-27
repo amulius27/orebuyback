@@ -38,8 +38,8 @@
     //Close the database connection   
     DBClose($db);
     //Return back to the corppayouts page
-    //$location = 'http://' . $_SERVER['HTTP_HOST'];
-    //$location = $location . dirname($_SERVER['PHP_SELF']) . '/../../corppayouts.php';
-    //header("Location: $location");
+    $location = 'http://' . $_SERVER['HTTP_HOST'];
+    $location = $location . dirname($_SERVER['PHP_SELF']) . '/../../corppayouts.php';
+    header("Location: $location");
     
 ?>

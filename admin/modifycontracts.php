@@ -40,7 +40,7 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
 </head>
 <body>
     <?php if ((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) : ?>
-    <?php PrintNavBar($username); ?>
+    <?php PrintNavBar($username, $role); ?>
     <div class="container">
       <div class="row">          
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
@@ -85,7 +85,9 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
                     </h2>
                 </div>
             </div>
-    <?php endif; ?>
+    <?php endif; 
+        DBClose($db);
+    ?>
     
   </body>
 </html>
