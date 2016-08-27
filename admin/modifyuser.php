@@ -51,10 +51,12 @@ $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', 
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading" align="center">
-                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Add New Corporation Form</strong></span><br></h3>
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Modify User Form</strong></span><br></h3>
             </div>
             <div class="panel-body" align="center">
-                <?php PrintUserDropDownMen($db); ?>
+                <span style="font-family: Arial; color: #000;">
+                    <?php PrintUserDropDownMenu($db); ?>
+                </span>
             </div>
         </div>
     </div>
