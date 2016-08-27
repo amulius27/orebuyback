@@ -70,15 +70,15 @@ $marketRegion = $configuration['marketRegion'];
             <form action="functions/system/updateconfiguration.php" method="POST">
                 <label>Refine Rate</label>
                 <div class="input-group form-control" id="RefineRate" style="padding: 0; border: none;">
-                    <input type="number" class="form-control text-left typeahead" name="RefineRate" placeholder="<?php echo $refineRate; ?>">
+                    <input type="text" class="form-control text-left typeahead" name="RefineRate" placeholder="<?php echo $refineRate; ?>">
                 </div>
                 <label>Alliance Tax Rate</label>
                 <div class="input-group form-control" id="AllianceTaxRate" style="padding: 0; border: none;">
-                    <input type="number" class="form-control text-left typeahead" name="AllianceTaxRate" placeholder="<?php echo $allianceTax; ?>">
+                    <input type="text" class="form-control text-left typeahead" name="AllianceTaxRate" placeholder="<?php echo $allianceTax; ?>">
                 </div>
                 <label>Market Region</label>
                 <div class="input-group form-control" id="MarketRegion" style="padding: 0; border: none;">
-                    <input type="number" class="form-control text-left typeahead" name="MarketRegion" placeholder="<?php echo $marketRegion; ?>">
+                    <input type="text" class="form-control text-left typeahead" name="MarketRegion" placeholder="<?php echo $marketRegion; ?>">
                     <input type="hidden" class="form-control" name="UpdatedBy" value="<?php echo $username; ?>">
                 </div><br>
                 <div class="input-group form-control" id="SubmitSettings" style="padding: 0; border: none;">
