@@ -9,12 +9,12 @@
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
-        $corporation = $_POST["Corporation"];
+        $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $corporation = 'None';
     }
     if(isset($_POST["Broadcast_Node"])) {
-        $Broadcast_Node = $_POST["Broadcast_Node"];
+        $Broadcast_Node = filter_input(INPUT_POST, "Broadcast_Node", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Broadcast_Node = 0;
     }

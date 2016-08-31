@@ -2,119 +2,119 @@
     require_once __DIR__.'/../functions/registry.php';
     
     if(isset($_POST["Quote_Time"])) {
-        $contractTime = $_POST["Quote_Time"];
+        $contractTime = filter_input(INPUT_POST, "Quote_Time", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $db = DBOpen();
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemID= :id', array('id' => 2867));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
-        $corporation = $_POST["Corporation"];
+        $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $corporation = 'None';
     }
     if(isset($_POST["Biotech_Research_Reports"])) {
-        $Biotech_Research_Reports = $_POST["Biotech_Research_Reports"];
+        $Biotech_Research_Reports = filter_input(INPUT_POST, "Biotech_Research_Reports", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Biotech_Research_Reports = 0;
     }
     if(isset($_POST["Camera_Drones"])) {
-        $Camera_Drones = $_POST["Camera_Drones"];
+        $Camera_Drones = filter_input(INPUT_POST, "Camera_Drones", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Camera_Drones = 0;
     }
     if(isset($_POST["Condensates"])) {
-        $Condensates = $_POST["Condensates"];
+        $Condensates = filter_input(INPUT_POST, "Condensates", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Condensates = 0;
     }
     if(isset($_POST["Cryoprotectant_Solution"])) {
-        $Cryoprotectant_Solution = $_POST["Cryoprotectant_Solution"];
+        $Cryoprotectant_Solution = filter_input(INPUT_POST, "Cryoprotectant_Solution", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Cryoprotectant_Solution = 0;
     }
     if(isset($_POST["Data_Chips"])) {
-        $Data_Chips = $_POST["Data_Chips"];
+        $Data_Chips = filter_input(INPUT_POST, "Data_Chips", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Data_Chips = 0;
     }
     if(isset($_POST["Gel_Matrix_Biopaste"])) {
-        $Gel_Matrix_Biopaste = $_POST["Gel_Matrix_Biopaste"];
+        $Gel_Matrix_Biopaste = filter_input(INPUT_POST, "Gel_Matrix_Biopaste", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Gel_Matrix_Biopaste = 0;
     }
     if(isset($_POST["Guidance_Systems"])) {
-        $Guidance_Systems = $_POST["Guidance_Systems"];
+        $Guidance_Systems = filter_input(INPUT_POST, "Guidance_Systems", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Guidance_Systems = 0;
     }
     if(isset($_POST["Hazmat_Detection_Systems"])) {
-        $Hazmat_Detection_Systems = $_POST["Hazmat_Detection_Systems"];
+        $Hazmat_Detection_Systems = filter_input(INPUT_POST, "Hazmat_Detection_Systems", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Hazmat_Detection_Systems = 0;
     }
     if(isset($_POST["Hermetic_Membranes"])) {
-        $Hermetic_Membranes = $_POST["Hermetic_Membranes"];
+        $Hermetic_Membranes = filter_input(INPUT_POST, "Hermetic_Membranes", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Hermetic_Membranes = 0;
     }
     if(isset($_POST["High_Tech_Transmitters"])) {
-        $High_Tech_Transmitters = $_POST["High_Tech_Transmitters"];
+        $High_Tech_Transmitters = filter_input(INPUT_POST, "High_Tech_Transmitters", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $High_Tech_Transmitters = 0;
     }
     if(isset($_POST["Industrial_Explosives"])) {
-        $Industrial_Explosives = $_POST["Industrial_Explosives"];
+        $Industrial_Explosives = filter_input(INPUT_POST, "Industrial_Explosives", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Industrial_Explosives = 0;
     }
     if(isset($_POST["Neocoms"])) {
-        $Neocoms = $_POST["Neocoms"];
+        $Neocoms = filter_input(INPUT_POST, "Neocoms", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Neocoms = 0;
     }
     if(isset($_POST["Nuclear_Reactors"])) {
-        $Nuclear_Reactors = $_POST["Nuclear_Reactors"];
+        $Nuclear_Reactors = filter_input(INPUT_POST, "Nuclear_Reactors", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Nuclear_Reactors = 0;
     }
     if(isset($_POST["Planetary_Vehicles"])) {
-        $Planetary_Vehicles = $_POST["Planetary_Vehicles"];
+        $Planetary_Vehicles = filter_input(INPUT_POST, "Planetary_Vehicles", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Planetary_Vehicles = 0;
     }
     if(isset($_POST["Robotics"])) {
-        $Robotics = $_POST["Robotics"];
+        $Robotics = filter_input(INPUT_POST, "Robotics", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Robotics = 0 ;
     }
     if(isset($_POST["Smartfab_Units"])) {
-        $Smartfab_Units = $_POST["Smartfab_Units"];
+        $Smartfab_Units = filter_input(INPUT_POST, "Smartfab_Units", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Smartfab_Units = 0;
     }
     if(isset($_POST["Supercomputers"])) {
-        $Supercomputers = $_POST["Supercomputers"];
+        $Supercomputers = filter_input(INPUT_POST, "Supercomputers", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Supercomputers = 0;
     }
     if(isset($_POST["Synthetic_Synapses"])) {
-        $Synthetic_Synapses = $_POST["Synthetic_Synapses"];
+        $Synthetic_Synapses = filter_input(INPUT_POST, "Synthetic_Synapses", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Synthetic_Synapses = 0;
     }
     if(isset($_POST["Transcranial_Microcontrollers"])) {
-        $Transcranial_Microcontrollers = $_POST["Transcranial_Microcontrollers"];
+        $Transcranial_Microcontrollers = filter_input(INPUT_POST, "Transcranial_Microcontrollers", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Transcranial_Microcontrollers = 0;
     }
     if(isset($_POST["Ukomi"])) {
-        $Ukomi_Superconductors = $_POST["Ukomi"];
+        $Ukomi_Superconductors = filter_input(INPUT_POST, "Ukomi", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Ukomi_Superconductors = 0;
     }
     if(isset($_POST["Vaccines"])) {
-        $Vaccines = $_POST["Vaccines"];
+        $Vaccines = filter_input(INPUT_POST, "Vaccines", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Vaccines = 0;
     }

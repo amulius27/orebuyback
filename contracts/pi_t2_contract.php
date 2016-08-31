@@ -2,129 +2,129 @@
     require_once __DIR__.'/../functions/registry.php';
     
     if(isset($_POST["Quote_Time"])) {
-        $contractTime = $_POST["Quote_Time"];
+        $contractTime = filter_input(INPUT_POST, "Quote_Time", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $db = DBOpen();
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemID= :id', array('id' => 2867));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
-        $corporation = $_POST["Corporation"];
+        $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $corporation = 'None';
     }
     if(isset($_POST["Biocells"])) {
-        $Biocells = $_POST["Biocells"];
+        $Biocells = filter_input(INPUT_POST, "Biocells", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Biocells = 0;
     }
     if(isset($_POST["Construction_Blocks"])) {
-        $Construction_Blocks = $_POST["Construction_Blocks"];
+        $Construction_Blocks = filter_input(INPUT_POST, "Construction_Blocks", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Construction_Blocks = 0;
     }
     if(isset($_POST["Consumer_Electronics"])) {
-        $Consumer_Electronics = $_POST["Consumer_Electronics"];
+        $Consumer_Electronics = filter_input(INPUT_POST, "Consumer_Electronics", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Consumer_Electronics = 0;
     }
     if(isset($_POST["Coolant"])) {
-        $Coolant = $_POST["Coolant"];
+        $Coolant = filter_input(INPUT_POST, "Coolant", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Coolant = 0;
     }
     if(isset($_POST["Enriched_Uranium"])) {
-        $Enriched_Uranium = $_POST["Enriched_Uranium"];
+        $Enriched_Uranium = filter_input(INPUT_POST, "Enriched_Uranium", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Enriched_Uranium = 0;
     }
     if(isset($_POST["Fertilizer"])) {
-        $Fertilizer = $_POST["Fertilizer"];
+        $Fertilizer = filter_input(INPUT_POST, "Fertilizer", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Fertilizer = 0;
     }
     if(isset($_POST["Gen_Enhanced_Livestock"])) {
-        $Genetically_Enchanced_Livestock = $_POST["Gen_Enhanced_Livestock"];
+        $Genetically_Enchanced_Livestock = filter_input(INPUT_POST, "Gen_Enhanced_Livestock", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Genetically_Enchanced_Livestock = 0;
     }
     if(isset($_POST["Livestock"])) {
-        $Livestock = $_POST["Livestock"];
+        $Livestock = filter_input(INPUT_POST, "Livestock", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Livestock = 0;
     }
     if(isset($_POST["Mechanical_Parts"])) {
-        $Mechanical_Parts = $_POST["Mechanical_Parts"];
+        $Mechanical_Parts = filter_input(INPUT_POST, "Mechanical_Parts", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Mechanical_Parts = 0;
     }
     if(isset($_POST["Microfiber_Shielding"])) {
-        $Microfiber_Shielding = $_POST["Microfiber_Shielding"];
+        $Microfiber_Shielding = filter_input(INPUT_POST, "Microfiber_Shielding", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Microfiber_Shielding = 0;
     }
     if(isset($_POST["Miniature_Electronics"])) {
-        $Miniature_Electronics = $_POST["Miniature_Electronics"];
+        $Miniature_Electronics = filter_input(INPUT_POST, "Miniature_Electronics", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Miniature_Electronics = 0;
     }
     if(isset($_POST["Nanites"])) {
-        $Nanites = $_POST["Nanites"];
+        $Nanites = filter_input(INPUT_POST, "Nanites", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Nanites = 0;
     }
     if(isset($_POST["Oxides"])) {
-        $Oxides = $_POST["Oxides"];
+        $Oxides = filter_input(INPUT_POST, "Oxides", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Oxides = 0;
     }
     if(isset($_POST["Polyaramids"])) {
-        $Polyaramids = $_POST["Polyaramids"];
+        $Polyaramids = filter_input(INPUT_POST, "Polyaramids", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Polyaramids = 0;
     }
     if(isset($_POST["Polytextiles"])) {
-        $Polytextiles = $_POST["Polytextiles"];
+        $Polytextiles = filter_input(INPUT_POST, "Polytextiles", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Polytextiles = 0;
     }
     if(isset($_POST["Rocket_Fuel"])) {
-        $Rocket_Fuel = $_POST["Rocket_Fuel"];
+        $Rocket_Fuel = filter_input(INPUT_POST, "Rocket_Fuel", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Rocket_Fuel = 0;
     }
     if(isset($_POST["Silicate_Glass"])) {
-        $Silicate_Glass = $_POST["Silicate_Glass"];
+        $Silicate_Glass = filter_input(INPUT_POST, "Silicate_Glass", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Silicate_Glass = 0;
     }
     if(isset($_POST["Superconductors"])) {
-        $Superconductors = $_POST["Superconductors"];
+        $Superconductors = filter_input(INPUT_POST, "Superconductors", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Superconductors = 0;
     }
     if(isset($_POST["Synthetic_Oil"])) {
-        $Synthetic_Oil = $_POST["Synthetic_Oil"];
+        $Synthetic_Oil = filter_input(INPUT_POST, "Synthetic_Oil", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Synthetic_Oil = 0;
     }
     if(isset($_POST["Test_Cultures"])) {
-        $Test_Cultures = $_POST["Test_Cultures"];
+        $Test_Cultures = filter_input(INPUT_POST, "Test_Cultures", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Test_Cultures = 0;
     }
     if(isset($_POST["Transmitter"])) {
-        $Transmitter = $_POST["Transmitter"]; 
+        $Transmitter = filter_input(INPUT_POST, "Transmitter", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Transmitter = 0;
     }
     if(isset($_POST["Viral_Agent"])) {
-        $Viral_Agent = $_POST["Viral_Agent"];
+        $Viral_Agent = filter_input(INPUT_POST, "Viral_Agent", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Viral_Agent = 0;
     }
     if(isset($_POST["Water-Cooled_CPU"])) {
-        $Water_Cooled_CPU = $_POST["Water-Cooled_CPU"];
+        $Water_Cooled_CPU = filter_input(INPUT_POST, "Water-Cooled_CPU", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Water_Cooled_CPU = 0;
     }

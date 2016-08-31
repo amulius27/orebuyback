@@ -37,7 +37,7 @@ require_once __DIR__.'/functions/registry.php';
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <style type="text/css">
             body{
-                background-image:url(images/bgs/EVE_asteroid_ice.jpg);
+                background-image:url(/../images/bgs/EVE_asteroid_ice.jpg);
                 background-repeat:no-repeat;
                 background-attachment: fixed;
             }

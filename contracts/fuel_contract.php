@@ -3,34 +3,34 @@
     
     
     if(isset($_POST["Quote_Time"])) {
-        $contractTime = $_POST["Quote_Time"];
+        $contractTime = filter_input(INPUT_POST, "Quote_Time", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $db = DBOpen();
         $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
-        $corporation = $_POST["Corporation"];
+        $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $corporation = 'None';
     }
     if(isset($_POST["Amarr_Fuel_Block"])) {
-        $Amarr_Fuel_Block = $_POST["Amarr_Fuel_Block"];
+        $Amarr_Fuel_Block = filter_input(INPUT_POST, "Amarr_Fuel_Block", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Amarr_Fuel_Block = 0;
     }
     if(isset($_POST["Caldari_Fuel_Block"])) {
-        $Caldari_Fuel_Block = $_POST["Caldari_Fuel_Block"];
+        $Caldari_Fuel_Block = filter_input(INPUT_POST, "Caldari_Fuel_Block", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Caldari_Fuel_Block = 0;
     }
     if(isset($_POST["Gallente_Fuel_Block"])) {
-        $Gallente_Fuel_Block = $_POST["Gallente_Fuel_Block"];
+        $Gallente_Fuel_Block = filter_input(INPUT_POST, "Gallente_Fuel_Block", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Gallente_Fuel_Block = 0;
     }
     if(isset($_POS["Minmatar_Fuel_Block"])) {
-        $Minmatar_Fuel_Block = $_POST["Minmatar_Fuel_Block"];
+        $Minmatar_Fuel_Block = filter_input(INPUT_POST, "Minmatar_Fuel_Block", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Minmatar_Fuel_Block = 0;
     }

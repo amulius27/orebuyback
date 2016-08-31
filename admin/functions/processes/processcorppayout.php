@@ -3,9 +3,9 @@
     //Open the database connection
     $db = DBOpen();
     //Get the corp name from the previous page
-    $corpName = $_POST["corporation"];
+    $corpName = filter_var(INPUT_POST, "corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     //Get the taxes from the previous page
-    $taxes = $_POST["taxes"];
+    $taxes = filter_input(INPUT_POST, "taxes", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     //Combine our two post arrays to make it easier to work with in the foreach statement below
     $array = array_combine($corpName, $taxes);
     //Run through the possibilites and insert all calls into the database

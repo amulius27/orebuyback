@@ -2,7 +2,7 @@
     require_once __DIR__.'/../../functions/registry.php';
     //Open the database
     $db = DBOpen();
-    $contract = $_POST["ContractNumber"];
+    $contract = filter_input(INPUT_POST, "ContractNumber", FILTER_SANITIZE_NUMBER_INT);
     //Mark the contract as deleted
     $db->update('Contracts', array('ContractNum' => $contract), array('Deleted' => 1));
     

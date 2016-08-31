@@ -8,8 +8,8 @@
     
     //Add the new corporation to the database
     if(isset($_POST["Corporation"]) AND isset($_POST["tax"])) {
-        $corporation = filter_var(INPUT_POST, $_POST["Corporation"], FILTER_SANITIZE_STRING);
-        $tax = filter_var(INPUT_POST, $_POST["Tax"], FILTER_SANITIZE_STRING);
+        $corporation = filter_var(INPUT_POST, "Corporation", FILTER_SANITIZE_STRING);
+        $tax = filter_var(INPUT_POST, "Tax", FILTER_SANITIZE_STRING);
         $tax = $tax * 1.00;
         if($tax > 100.00)
             $tax = 100.0;

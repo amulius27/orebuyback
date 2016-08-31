@@ -86,7 +86,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
         if(isset($_POST['Corporation'])) {
             $db = DBOpen();
             $id = $db->fetchColumn('SELECT id FROM members WHERE username= :user', array('user' => $username));
-            $corporation = $_POST['Corporation'];
+            $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
             $db->insert('member_roles', array('id' => $id, 'username' => $username, 'corporation' => $corporation));
             DBClose($db);
         }

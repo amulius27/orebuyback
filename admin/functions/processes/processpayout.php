@@ -2,7 +2,7 @@
     require_once __DIR__.'/../../functions/registry.php';
 
     $db = DBOpen();
-    $contract = $_POST["ContractNumber"];
+    $contract = filter_input(INPUT_POST, "ContractNumber", FILTER_SANITIZE_NUMBER_INT);
     //Add the Corporation Payout to the table for withdrawal later
     $contractData = $db->fetchRow('SELECT * FROM Contracts WHERE ContractNum= :number', array('number' => $contract));
     $contractValue = $contractData["Value"];

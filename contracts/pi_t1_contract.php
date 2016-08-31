@@ -2,89 +2,89 @@
     require_once __DIR__.'/../functions/registry.php';
     
     if(isset($_POST["Quote_Time"])) {
-        $contractTime = $_POST["Quote_Time"];
+        $contractTime = filter_input(INPUT_POST, "Quote_Time", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $db = DBOpen();
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemID= :id', array('id' => 2867));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
-        $corporation = $_POST["Corporation"];
+        $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $corporation = 'None';
     }
     if(isset($_POST["Bacteria"])) {
-        $Bacteria = $_POST["Bacteria"];
+        $Bacteria = filter_input(INPUT_POST, "Bacteria", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Bacteria = 0;
     }
     if(isset($_POST["Biofuels"])) {
-        $Biofuels = $_POST["Biofuels"];
+        $Biofuels = filter_input(INPUT_POST, "Biofuels", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Biofuels = 0;
     }
     if(isset($_POST["Biomass"])) {
-        $Biomass = $_POST["Biomass"];
+        $Biomass = filter_input(INPUT_POST, "Biomass", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Biomass = 0;
     }
     if(isset($_POST["Chiral_Structures"])) {
-        $Chiral_Structures = $_POST["Chiral_Structures"];
+        $Chiral_Structures = filter_input(INPUT_POST, "Chiral_Structures", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Chiral_Structures = 0;
     }
     if(isset($_POST["Electrolytes"])) {
-        $Electrolytes = $_POST["Electrolytes"];
+        $Electrolytes = filter_input(INPUT_POST, "Electrolytes", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Electrolytes = 0;
     }
     if(isset($_POST["Industrial_Fibers"])) {
-        $Industrial_Fibers = $_POST["Industrial_Fibers"];
+        $Industrial_Fibers = filter_input(INPUT_POST, "Industrial_Fibers", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Industrial_Fibers = 0;
     }
     if(isset($_POST["Oxidizing_Compound"])) {
-        $Oxidizing_Compound = $_POST["Oxidizing_Compound"];
+        $Oxidizing_Compound = filter_input(INPUT_POST, "Oxidizing_Compound", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Oxidizing_Compound = 0;
     }
     if(isset($_POST["Oxygen"])) {
-        $Oxygen = $_POST["Oxygen"];
+        $Oxygen = filter_input(INPUT_POST, "Oxygen", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Oxygen = 0;
     }
     if(isset($_POST["Plasmoids"])) {
-        $Plasmoids = $_POST["Plasmoids"];
+        $Plasmoids = filter_input(INPUT_POST, "Plasmoids", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Plasmoids = 0;
     }
     if(isset($_POST["Precious_Metals"])) {
-        $Precious_Metals = $_POST["Precious_Metals"];
+        $Precious_Metals = filter_input(INPUT_POST, "Precious_Metals", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Precious_Metals = 0;
     }
     if(isset($_POST["Proteins"])) {
-        $Proteins = $_POST["Proteins"];
+        $Proteins = filter_input(INPUT_POST, "Proteins", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Proteins = 0;
     }
     if(isset($_POST["Reactive_Metals"])) {
-        $Reactive_Metals = $_POST["Reactive_Metals"];
+        $Reactive_Metals = filter_input(INPUT_POST, "Reactive_Metals", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Reactive_Metals = 0;
     }
     if(isset($_POST["Silicon"])) {
-        $Silicon = $_POST["Silicon"];
+        $Silicon = filter_input(INPUT_POST, "Silicon", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Silicon = 0;
     }
     if(isset($_POST["Toxic_Metals"])) {
-        $Toxic_Metals = $_POST["Toxic_Metals"];
+        $Toxic_Metals = filter_input(INPUT_POST, "Toxic_Metals", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Toxic_Metals = 0;
     }
     if(isset($_POST["Water"])) {
-        $Water = $_POST["Water"];
+        $Water = filter_input(INPUT_POST, "Water", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Water = 0;
     }

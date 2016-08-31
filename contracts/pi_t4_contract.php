@@ -2,54 +2,54 @@
     require_once __DIR__.'/../functions/registry.php';
     
     if(isset($_POST["Quote_Time"])) {
-        $contractTime = $_POST["Quote_Time"];
+        $contractTime = filter_input(INPUT_POST, "Quote_Time", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $db = DBOpen();
         $contractTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemID= :id', array('id' => 2867));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
-        $corporation = $_POST["Corporation"];
+        $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $corporation = 'None';
     }
     if(isset($_POST["Broadcast_Node"])) {
-        $Broadcast_Node = $_POST["Broadcast_Node"];
+        $Broadcast_Node = filter_input(INPUT_POST, "Broadcast_Node", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Broadcast_Node = 0;
     }
     if(isset($_POST["Integrity_Response_Drones"])) {
-        $Integrity_Response_Drones = $_POST["Integrity_Response_Drones"];
+        $Integrity_Response_Drones = filter_input(INPUT_POST, "Integrity_Response_Drones", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Integrity_Response_Drones = 0;
     }
     if(isset($_POST["NanoFactory"])) {
-        $NanoFactory = $_POST["NanoFactory"];
+        $NanoFactory = filter_input(INPUT_POST, "NanoFactory", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $NanoFactory = 0;
     }
     if(isset($_POST["Organic_Mortar_Applicators"])) {
-        $Organic_Mortar_Applicators = $_POST["Organic_Mortar_Applicators"];
+        $Organic_Mortar_Applicators = filter_input(INPUT_POST, "Organic_Mortar_Applicators", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Organic_Mortar_Applicators = 0;
     }
     if(isset($_POST["Recursive_Computing_Module"])) {
-        $Recursive_Computing_Module = $_POST["Recursive_Computing_Module"];
+        $Recursive_Computing_Module = filter_input(INPUT_POST, "Recursive_Computing_Module", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Recursive_Computing_Module = 0;
     }
     if(isset($_POST["Self-Harmonizing_Power_Core"])) {
-        $Self_Harmonizing_Power_Core = $_POST["Self-Harmonizing_Power_Core"];
+        $Self_Harmonizing_Power_Core = filter_input(INPUT_POST, "Self-Harmonizing_Power_Core", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Self_Harmonizing_Power_Core = 0;
     }
     if(isset($_POST["Sterile_Conduits"])) {
-        $Sterile_Conduits = $_POST["Sterile_Conduits"];
+        $Sterile_Conduits = filter_input(INPUT_POST, "Sterile_Conduits", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Sterile_Conduits = 0;
     }
     if(isset($_POST["Wetware_Mainframe"])) {
-        $Wetware_Mainframe = $_POST["Wetware_Mainframe"];
+        $Wetware_Mainframe = filter_input(INPUT_POST, "Wetware_Mainframe", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Wetware_Mainframe = 0;
     }

@@ -2,54 +2,54 @@
     require_once __DIR__.'/../functions/registry.php';
     
     if(isset($_POST["Quote_Time"])) {
-        $contractTime = $_POST["Quote_Time"];
+        $contractTime = filter_input(INPUT_POST, "Quote_Time", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $db = DBOpen();
         $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {
-        $corporation = $_POST["Corporation"];
+        $corporation = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $corporation = 'None';
     }
     if(isset($_POST["Tritanium"])) {
-        $Tritanium = $_POST["Tritanium"]; 
+        $Tritanium = filter_input(INPUT_POST, "Tritanium", FILTER_SANITIZE_NUMBER_INT); 
     } else {
         $Tritanium = 0;
     }
     if(isset($_POST["Pyerite"])) {
-        $Pyerite = $_POST["Pyerite"];
+        $Pyerite = filter_input(INPUT_POST, "Pyerite", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Pyerite = 0;
     }
     if(isset($_POST["Mexallon"])) {
-        $Mexallon = $_POST["Mexallon"];
+        $Mexallon = filter_input(INPUT_POST, "Mexallon", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Mexallon = 0;
     }
     if(isset($_POST["Nocxium"])) {
-        $Nocxium = $_POST["Nocxium"];
+        $Nocxium = filter_input(INPUT_POST, "Nocxium", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Nocxium = 0;
     }
     if(isset($_POST["Isogen"])) {
-        $Isogen = $_POST["Isogen"];
+        $Isogen = filter_input(INPUT_POST, "Isogen", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Isogen = 0;
     }
     if(isset($_POST["Megacyte"])) {
-        $Megacyte = $_POST["Megacyte"];
+        $Megacyte = filter_input(INPUT_POST, "Megacyte", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Megacyte = 0;
     }
     if(isset($_POST["Zydrine"])) {
-        $Zydrine = $_POST["Zydrine"];
+        $Zydrine = filter_input(INPUT_POST, "Zydrine", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Zydrine = 0;
     }
     if(isset($_POST["Morphite"])) {
-        $Morphite = $_POST["Morphite"];
+        $Morphite = filter_input(INPUT_POST, "Morphite", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Morphite = 0;
     }
