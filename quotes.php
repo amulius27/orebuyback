@@ -3,7 +3,7 @@
     $db = DBOpen();
     
     $MineralUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices');
-    $MineralPrices = $db->fetchColumnMany('SELECT * FROM MineralPrices WHERE time= :update', array('update' => $MineralUpdateTime));
+    $MineralPrices = $db->fetchColumnMany('SELECT time, Price FROM MineralPrices WHERE time= :update', array('update' => $MineralUpdateTime));
     $MineralColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'MineralPrices'));
     
     $PiUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices');

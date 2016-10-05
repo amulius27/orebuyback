@@ -1,9 +1,10 @@
 <?php
     require_once __DIR__.'/../../functions/registry.php';
 
-    $contracts = filter_input(INPUT_POST, "ContractNumber", FILTER_SANITIZE_NUMBER_INT);
-    $corporations = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS);
-    $amounts = filter_input(INPUT_POST, "ContractValue", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    //Get the input arrays
+    $contracts = filter_input(INPUT_POST, "ContractNumber", FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY);
+    $corporations = filter_input(INPUT_POST, "Corporation", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
+    $amounts = filter_input(INPUT_POST, "ContractValue", FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
     //Open the database connection
     $db = DBOpen();
     //Set a variable to keep all of the post arrays in sync

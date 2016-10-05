@@ -480,24 +480,24 @@ CREATE TABLE IF NOT EXISTS `AlliancePayouts` (
 --
 
 CREATE TABLE IF NOT EXISTS `itemComposition` (
-  `Name` varchar(31) DEFAULT NULL,
-  `ItemId` int(10) NOT NULL,
-  `BatchSize` int(12) NOT NULL DEFAULT '100',
-  `TritaniumNum` int(12) DEFAULT '0',
-  `PyeriteNum` int(12) DEFAULT '0',
-  `MexallonNum` int(12) DEFAULT '0',
-  `IsogenNum` int(12) DEFAULT '0',
-  `NocxiumNum` int(12) DEFAULT '0',
-  `ZydrineNum` int(12) DEFAULT '0',
-  `MegacyteNum` int(12) DEFAULT '0',
-  `MorphiteNum` int(12) DEFAULT '0',
-  `HeavyWaterNum` int(11) NOT NULL DEFAULT '0',
-  `LiquidOzoneNum` int(11) NOT NULL DEFAULT '0',
-  `NitrogenIsotopesNum` int(11) NOT NULL DEFAULT '0',
-  `HeliumIsotopesNum` int(11) NOT NULL DEFAULT '0',
-  `HydrogenIsotopesNum` int(11) NOT NULL DEFAULT '0',
-  `OxygenIsotopesNum` int(11) NOT NULL DEFAULT '0',
-  `StrontiumClathratesNum` int(11) NOT NULL DEFAULT '0',
+    `Name` varchar(31) DEFAULT NULL,
+    `ItemId` int(10) NOT NULL,
+    `BatchSize` int(12) NOT NULL DEFAULT '100',
+    `TritaniumNum` int(12) DEFAULT '0',
+    `PyeriteNum` int(12) DEFAULT '0',
+    `MexallonNum` int(12) DEFAULT '0',
+    `IsogenNum` int(12) DEFAULT '0',
+    `NocxiumNum` int(12) DEFAULT '0',
+    `ZydrineNum` int(12) DEFAULT '0',
+    `MegacyteNum` int(12) DEFAULT '0',
+    `MorphiteNum` int(12) DEFAULT '0',
+    `HeavyWaterNum` int(11) NOT NULL DEFAULT '0',
+    `LiquidOzoneNum` int(11) NOT NULL DEFAULT '0',
+    `NitrogenIsotopesNum` int(11) NOT NULL DEFAULT '0',
+    `HeliumIsotopesNum` int(11) NOT NULL DEFAULT '0',
+    `HydrogenIsotopesNum` int(11) NOT NULL DEFAULT '0',
+    `OxygenIsotopesNum` int(11) NOT NULL DEFAULT '0',
+    `StrontiumClathratesNum` int(11) NOT NULL DEFAULT '0',
   UNIQUE KEY `oreName` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -566,6 +566,84 @@ INSERT INTO `itemComposition` (`Name`, `ItemId`, `BatchSize`, `TritaniumNum`, `P
 ('Dark Glitter', 16267, 1, 0, 0, 0, 0, 0, 0, 0, 0, 691, 1381, 0, 0, 0, 0, 69),
 ('Gelidus', 16268, 1, 0, 0, 0, 0, 0, 0, 0, 0, 345, 691, 0, 0, 0, 0, 104),
 ('Krystallos', 16269, 1, 0, 0, 0, 0, 0, 0, 0, 0, 173, 691, 0, 0, 0, 0, 173);
+
+--
+-- Table structure for Item Names and ItemId
+--
+
+CREATE TABLE IF NOT EXISTS `ItemIds` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `ItemId` int(11) DEFAULT NOT NULL,
+    `Name` varchar(31) DEFAULT NOT NULL,
+    `Grouping` varchar(16) DEFAULT NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table Insert for Item Names and ItemId
+--
+
+INSERT INTO `ItemIds` (`Name`, `ItemId`, `Grouping`) VALUES
+('Veldspar', 1230, 'Ore'),
+('Concentrated Veldpsar', 17470, 'Ore'),
+('Dense Veldspar', 17471, 'Ore'),
+('Scordite', 1228, 'Ore'),
+('Condensed Scordite', 17463, 'Ore'),
+('Massive Scordite', 17464, 'Ore'),
+('Pyroxeres', 1224, 'Ore'),
+('Solid Pyroxeres', 17459, 'Ore'),
+('Viscous Pyroxeres', 17460, 'Ore'),
+('Plagioclase', 18, 'Ore'),
+('Azure Plagioclase', 17455, 'Ore'),
+('Rich Plagioclase', 17456, 'Ore'),
+('Omber', 1227, 'Ore'),
+('Silvery Omber', 17867, 'Ore'),
+('Golden Omber', 17868, 'Ore'),
+('Kernite', 20, 'Ore'),
+('Luminous Kernite', 17452, 'Ore'),
+('Fiery Kernite', 17453, 'Ore'),
+('Jaspet', 1226, 'Ore'),
+('Pure Jaspet', 17448, 'Ore'),
+('Pristine Jaspet', 17449, 'Ore'),
+('Hemorphite', 1231, 100, 'Ore'),
+('Vivid Hemorphite', 17444, 'Ore'),
+('Radiant Hemorphite', 17445, 'Ore'),
+('Hedbergite', 21, 'Ore'),
+('Vitric Hedbergite', 17440, 'Ore'),
+('Glazed Hedbergite', 17441, 'Ore'),
+('Gneiss', 1229, 'Ore'),
+('Iridescent Gneiss', 17865, 'Ore'),
+('Prismatic Gneiss', 17866, 'Ore'),
+('Dark Ochre', 1232, 'Ore'),
+('Onyx Ochre', 17436, 'Ore'),
+('Obsidian Ochre', 17437, 'Ore'),
+('Spodumain', 19, 'Ore'),
+('Bright Spodumain', 17466, 'Ore'),
+('Gleaming Spodumain', 17467, 'Ore'),
+('Crokite', 1225, 'Ore'),
+('Sharp Crokite', 17432, 'Ore'),
+('Crystalline Crokite', 17433, 'Ore'),
+('Bistot', 1223, 'Ore'),
+('Triclinic Bistot', 17428, 'Ore'),
+('Monoclinic Bistot', 17429, 'Ore'),
+('Arkonor', 22, 'Ore'),
+('Crimson Arkonor', 17425, 'Ore'),
+('Prime Arkonor', 17426, 'Ore'),
+('Mercoxit', 11396, 'Ore'),
+('Magma Mercoxit', 17869, 'Ore'),
+('Vitreous Mercoxit', 17870, 'Ore'),
+('Blue Ice', 16264, 'Ice'),
+('Thick Blue Ice', 17975, 'Ice'),
+('Glacial Mass', 16263, 'Ice'),
+('Smooth Glacial Mass', 17977, 'Ice'),
+('White Glaze', 16265, 'Ice'),
+('Pristine White Glaze', 17976, 'Ice'),
+('Clear Icicle', 16262, 'Ice'),
+('Enriched Clear Icicle', 17978, 'Ice'),
+('Glare Crust', 16266, 'Ice'),
+('Dark Glitter', 16267, 'Ice'),
+('Gelidus', 16268, 'Ice'),
+('Krystallos', 16269, 'Ice'),
 
 --
 -- Table structure for table `IceProductPrices`
