@@ -1,4 +1,3 @@
-<!-- Connect to DB -->
 <?php
     require_once __DIR__.'/../functions/registry.php';
     
@@ -54,7 +53,6 @@ $C32 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id A
 $C320 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30377, 'time' => $update));
 //C540
 $C540 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30378, 'time' => $update));
-
 
 DBClose($db);
 

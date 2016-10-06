@@ -54,7 +54,7 @@ require_once __DIR__.'/../functions/contracts/printpit1contractcontents.php';
 require_once __DIR__.'/../functions/contracts/printpit2contractcontents.php';
 require_once __DIR__.'/../functions/contracts/printpit3contractcontents.php';
 require_once __DIR__.'/../functions/contracts/printpit4contractcontents.php';
-require_once __DIR__.'/../functions/contracts/wgascontractcontents.php';
+require_once __DIR__.'/../functions/contracts/printwgascontractcontents.php';
 
 $contractLimit = '500m ISK';
 
