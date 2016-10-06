@@ -29,7 +29,7 @@
     } else {
         $C70_Gas = 0;
     }
-    if(isset($_POS["C72"])) {
+    if(isset($_POST["C72"])) {
         $C72_Gas = filter_input(INPUT_POST, "C72", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $C72_Gas = 0;
@@ -49,12 +49,12 @@
     } else {
         $C32_Gas = 0;
     }
-    if(isset($_POS["C320"])) {
+    if(isset($_POST["C320"])) {
         $C320_Gas = filter_input(INPUT_POST, "C320", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $C320_Gas = 0;
     }
-    if(isset($_POS["C540"])) {
+    if(isset($_POST["C540"])) {
         $C540_Gas = filter_input(INPUT_POST, "C540", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $C540_Gas = 0;
