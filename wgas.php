@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <!--metas-->
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="Warped Intentions Buy Back Program" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -67,7 +67,7 @@
             <span style="font-family: Arial; color: white;"><strong>Corporation: </strong> <?php echo $corporation ?></span><br>
             <span style="font-family: Arial; color: white;"><strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax ?> %</span><br>
             <span style="font-family: Arial; color: white;"><strong>Corp Tax Rate: </strong>  <?php echo $corpTax ?> %</span><br>
-            <span style="font-family: Arial; color: white;"><strong>TotalTax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"><strong>Total Tax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
         </div>
     </div>
 </div>
@@ -88,56 +88,56 @@
                     <div class="panel-body">
                         <p>
                             <label>C50 Gas <?php echo number_format($C50, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C50_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C50_Gas" placeholder="C50 Gas" id="calc-input-C50-value">
+                            <div class="input-group form-control" id="C50" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C50" placeholder="C50 Gas" id="calc-input-C50-value">
                             </div>
                         </p>
                         <p>
                             <label>C60 Gas <?php echo number_format($C60, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C60_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C60_Gas" placeholder="C60 Gas" id="calc-input-C60-value">
+                            <div class="input-group form-control" id="C60" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C60" placeholder="C60 Gas" id="calc-input-C60-value">
                             </div>
                         </p>
                         <p>
                             <label>C70 Gas <?php echo number_format($C70, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C70_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C70_Gas" placeholder="C70 Gas" id="calc-input-C70-value">
+                            <div class="input-group form-control" id="C70" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C70" placeholder="C70 Gas" id="calc-input-C70-value">
                             </div>
                         </p>
                         <p>
                             <label>C72 Gas <?php echo number_format($C72, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C72_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C72_Gas" placeholder="C72 Gas" id="calc-input-C72-value">
+                            <div class="input-group form-control" id="C72" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C72" placeholder="C72 Gas" id="calc-input-C72-value">
                             </div>
                         </p>
                         <p>
                             <label>C84 Gas <?php echo number_format($C84, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C84_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C84_Gas" placeholder="C84 Gas" id="calc-input-C84-value">
+                            <div class="input-group form-control" id="C84" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C84" placeholder="C84 Gas" id="calc-input-C84-value">
                             </div>
                         </p>
                         <p>
                             <label>C28 Gas <?php echo number_format($C28, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C28_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C28_Gas" placeholder="C28 Gas" id="calc-input-C28-value">
+                            <div class="input-group form-control" id="C28" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C28" placeholder="C28 Gas" id="calc-input-C28-value">
                             </div>
                         </p>
                         <p>
                             <label>C32 Gas <?php echo number_format($C32, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C32_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C32_Gas" placeholder="C32 Gas" id="calc-input-C32-value">
+                            <div class="input-group form-control" id="C32" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C32" placeholder="C32 Gas" id="calc-input-C32-value">
                             </div>
                         </p>
                         <p>
                             <label>C320 Gas <?php echo number_format($C320, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C320_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C320_Gas" placeholder="C320 Gas" id="calc-input-C320-value">
+                            <div class="input-group form-control" id="C320" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C320" placeholder="C320 Gas" id="calc-input-C320-value">
                             </div>
                         </p>
                         <p>
                             <label>C540 Gas <?php echo number_format($C540, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="C540_Gas" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="C540_Gas" placeholder="C540 Gas" id="calc-input-C540-value">
+                            <div class="input-group form-control" id="C540" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C540" placeholder="C540 Gas" id="calc-input-C540-value">
                             </div>
                         </p>
                     </div>

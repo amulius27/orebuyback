@@ -79,15 +79,15 @@ function calcInputGetValue(name) {
 
 function calcNow() {
 
-    var C50Units = CalCInputGetValue('C50');
-    var C60Units = CalCInputGetValue('C60');
-    var C70Units = CalCInputGetValue('C70');
-    var C72Units = CalCInputGetValue('C72');
-    var C84Units = CalCInputGetValue('C84');
-    var C28Units = CalCInputGetValue('C28');
-    var C32Units = CalCInputGetValue('C32');
-    var C320Units = CalCInputGetValue('C320');
-    var C540Units = CalCInputGetValue('C540');
+    var C50Units = calcInputGetValue('C50');
+    var C60Units = calcInputGetValue('C60');
+    var C70Units = calcInputGetValue('C70');
+    var C72Units = calcInputGetValue('C72');
+    var C84Units = calcInputGetValue('C84');
+    var C28Units = calcInputGetValue('C28');
+    var C32Units = calcInputGetValue('C32');
+    var C320Units = calcInputGetValue('C320');
+    var C540Units = calcInputGetValue('C540');
     
     var C50Reward = C50Units * c50;
     var C60Reward = C60Units * c60;
@@ -101,15 +101,15 @@ function calcNow() {
 
     var totalReward = (C50Reward + C60Reward + C70Reward + C72Reward + C84Reward + C28Reward + C32Reward + C320Reward + C540Reward) * value;
 
-    $('#CalC-output-C50-value').html(number_format(C50Reward) + ' ISK');
-    $('#CalC-output-C60-value').html(number_format(C60Reward) + ' ISK');
-    $('#CalC-output-C70-value').html(number_format(C70Reward) + ' ISK');
-    $('#CalC-output-C72-value').html(number_format(C72Reward) + ' ISK');
-    $('#CalC-output-C84-value').html(number_format(C84Reward) + ' ISK');
-    $('#CalC-output-C28-value').html(number_format(C28Reward) + ' ISK');
-    $('#CalC-output-C32-value').html(number_format(C32Reward) + ' ISK');
-    $('#CalC-output-C320-value').html(number_format(C320Reward) + ' ISK');
-    $('#CalC-output-C540-value').html(number_format(C540Reward) + ' ISK');
+    $('#calc-output-C50-value').html(number_format(C50Reward) + ' ISK');
+    $('#calc-output-C60-value').html(number_format(C60Reward) + ' ISK');
+    $('#calc-output-C70-value').html(number_format(C70Reward) + ' ISK');
+    $('#calc-output-C72-value').html(number_format(C72Reward) + ' ISK');
+    $('#calc-output-C84-value').html(number_format(C84Reward) + ' ISK');
+    $('#calc-output-C28-value').html(number_format(C28Reward) + ' ISK');
+    $('#calc-output-C32-value').html(number_format(C32Reward) + ' ISK');
+    $('#calc-output-C320-value').html(number_format(C320Reward) + ' ISK');
+    $('#calc-output-C540-value').html(number_format(C540Reward) + ' ISK');
 
     $('#calc-output-reward-value').html(number_format(totalReward) + ' ISK');
 

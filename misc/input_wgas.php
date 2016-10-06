@@ -32,7 +32,7 @@
     $value = 1.00 - ( $total_tax / 100.00 );
 
 //Update timestamp
-$update = $db->fetchColumn('SELECT MAX(time) FROM WGasPrices WHERE ItemId= :item', array('item' => 4247));
+$update = $db->fetchColumn('SELECT MAX(time) FROM WGasPrices WHERE ItemId= :item', array('item' => 30370));
 
 //Wormhole Gas
 //C50
