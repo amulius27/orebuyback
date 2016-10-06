@@ -733,14 +733,18 @@ CREATE TABLE IF NOT EXISTS `SalvagePrices` (
   UNIQUE KEY `index` (`index`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
+--
+-- Table structure for tabe `WGasPrices`
+--
+
 CREATE TABLE IF NOT EXISTS `WGasPrices` (
-    `index` int(11) NOT NULL AUTO_INCREMENT,
-    `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `ItemId` int(5) DEFAULT NULL,
-    `Price` decimal(10,2) DEFAULT NULL,
-    PRIMARY KEY (`index`),
-    UNIQUE KEY `index` (`index`)
-)ENGINE=InnoDB DEFAULT CHARTSET=latin1;
+  `index` int(11) NOT NULL AUTO_INCREMENT,
+  `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ItemId` int(11) DEFAULT NULL,
+  `Price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`index`),
+  UNIQUE KEY `index` (`index`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
