@@ -181,6 +181,6 @@
     <script src="js/custom.js"></script>
     <script src="js/typeahead.bundle.js"></script>
     <script src="js/handlebars-v1.3.0.js"></script>
-    <script src="js/fuel_cal.js"></script>
+    <script src="js/wgas_cal.js"></script>
 </body>
 </html>
