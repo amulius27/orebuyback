@@ -23,7 +23,7 @@ function PrintIndexPage($previousCorp) {
               <div class=\"clearfix\"></div>
               <h3 class=\"page-header\"> Gas Cloud Materials <strong>(Coming Soon)</strong></h3>
               <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/25268_64.png\" /></div>
-              <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/30375_64.png\" /></div>
+              <div class=\"view view-first\"> <a href=\"wgas.php?corporation=$previousCorp\"><img src=\"https://image.eveonline.com/Type/30375_64.png\" /></div>
               <div class=\"clearfix\"></div>
               <h3 class=\"page-header\"> Salvage Materials <strong>(Work In Progress)</strong></h3>
               <div class=\"view view-first\"><img src=\"https://image.eveonline.com/Type/25605_64.png\" /></a> </div>
@@ -57,7 +57,7 @@ function PrintIndexPage($previousCorp) {
               <div class=\"clearfix\"></div>
               <h3 class=\"page-header\"> Gas Cloud Materials <strong>(Coming Soon)</strong></h3>
               <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/25268_64.png\" /></div>
-              <div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/30375_64.png\" /></div>
+              <div class=\"view view-first\"> <a href=\"wgas.php\"><img src=\"https://image.eveonline.com/Type/30375_64.png\" /></div>
               <div class=\"clearfix\"></div>
               <h3 class=\"page-header\"> Salvage Materials <strong>(Work In Progress)</strong></h3>
               <div class=\"view view-first\"><img src=\"https://image.eveonline.com/Type/25605_64.png\" /></a> </div>
