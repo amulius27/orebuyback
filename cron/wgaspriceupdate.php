@@ -50,10 +50,10 @@ foreach($ItemIDs as $id) {
         $xml = new SimpleXMLElement($data);
         $price = (float)$xml->marketstat->type->buy->median[0];
         if($price > 0.00) {
-            $db->insert('WGasProductPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+            $db->insert('WGasPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
         } else {
-            $update = $db->fetchRow('SELECT MAX(time) FROM WGasProductPrices WHERE ItemId= :item', array('item' => $id));
-            $db->insert('WGasProductPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
+            $update = $db->fetchRow('SELECT MAX(time) FROM WGasPrices WHERE ItemId= :item', array('item' => $id));
+            $db->insert('WGasPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
         }
         
     }

@@ -36,23 +36,23 @@ $update = $db->fetchColumn('SELECT MAX(time) FROM WGasProductPrices WHERE ItemId
 
 //Wormhole Gas
 //C50
-$C50 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30370, 'time' => $update));
+$C50 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30370, 'time' => $update));
 //C60
-$C60 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30371, 'time' => $update));
+$C60 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30371, 'time' => $update));
 //C70
-$C70 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30372, 'time' => $update));
+$C70 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30372, 'time' => $update));
 //C72
-$C72 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30373, 'time' => $update));
+$C72 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30373, 'time' => $update));
 //C84
-$C84 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30374, 'time' => $update));
+$C84 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30374, 'time' => $update));
 //C28
-$C28 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30375, 'time' => $update));
+$C28 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30375, 'time' => $update));
 //C32
-$C32 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30376, 'time' => $update));
+$C32 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30376, 'time' => $update));
 //C320
-$C320 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30377, 'time' => $update));
+$C320 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30377, 'time' => $update));
 //C540
-$C540 = $db->fetchColumn('SELECT Price From WGasProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 30378, 'time' => $update));
+$C540 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30378, 'time' => $update));
 
 DBClose($db);
 
