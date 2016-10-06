@@ -41,6 +41,8 @@ require_once __DIR__.'/../functions/contracts/pit1contractvalue.php';
 require_once __DIR__.'/../functions/contracts/pit2contractvalue.php';
 require_once __DIR__.'/../functions/contracts/pit3contractvalue.php';
 require_once __DIR__.'/../functions/contracts/pit4contractvalue.php';
+require_once __DIR__.'/../functions/contracts/wgascontractvalue.php';
+require_once __DIR__.'/../functions/contracts/printcontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printcomporecontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printfuelcontractcontents.php';
 require_once __DIR__.'/../functions/contracts/printicecontractcontents.php';
@@ -52,5 +54,8 @@ require_once __DIR__.'/../functions/contracts/printpit1contractcontents.php';
 require_once __DIR__.'/../functions/contracts/printpit2contractcontents.php';
 require_once __DIR__.'/../functions/contracts/printpit3contractcontents.php';
 require_once __DIR__.'/../functions/contracts/printpit4contractcontents.php';
+require_once __DIR__.'/../functions/contracts/wgascontractcontents.php';
+
+$contractLimit = '500m ISK';
 
 ?>

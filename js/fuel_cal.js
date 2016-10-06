@@ -8,25 +8,25 @@ $('#calc-input-Amarr-value').on('propertychange change keyup paste input', funct
     calcNow();
 });
 $('#calc-input-Amarr-value').on('focusout', function(){
-    calcInputGetValue('Amarr_units');
+    calcInputGetValue('Amarr');
 });
 $('#calc-input-Caldari-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
 $('#calc-input-Caldari-value').on('focusout', function(){
-    calcInputGetValue('Caldari_units');
+    calcInputGetValue('Caldari');
 });
 $('#calc-input-Gallente-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
 $('#calc-input-Gallente-value').on('focusout', function(){
-    calcInputGetValue('Gallente_units');
+    calcInputGetValue('Gallente');
 });
 $('#calc-input-Minmatar-value').on('propertychange change keyup paste input', function() {
     calcNow();
 });
 $('#calc-input-Minmatar-value').on('focusout', function(){
-    calcInputGetValue('Minmatar_units');
+    calcInputGetValue('Minmatar');
 });
 
 function calcInputClear(objname) {

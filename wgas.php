@@ -1,7 +1,7 @@
 <?php  
     define('indexes', TRUE);
     require_once __DIR__.'/functions/registry.php';
-    include 'misc/input_fuel.php';
+    include 'misc/input_wgas.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +67,7 @@
             <span style="font-family: Arial; color: white;"><strong>Corporation: </strong> <?php echo $corporation ?></span><br>
             <span style="font-family: Arial; color: white;"><strong>Alliance Tax Rate: </strong>  <?php echo $alliance_tax ?> %</span><br>
             <span style="font-family: Arial; color: white;"><strong>Corp Tax Rate: </strong>  <?php echo $corpTax ?> %</span><br>
-            <span style="font-family: Arial; color: white;"><strong>Total Tax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
+            <span style="font-family: Arial; color: white;"><strong>TotalTax Rate: </strong>  <?php echo $total_tax ?> %</span><br>
         </div>
     </div>
 </div>
@@ -77,7 +77,7 @@
 
 <div class="container">
     <div class="row">
-        <form action="contracts/fuel_contract.php" method="post">
+        <form action="contracts/wgas_contract.php" method="post">
             <input class="form-control" type="hidden" name="Quote_Time" value="<?php echo $update; ?>">
             <input class="form-control" type="hidden" name="Corporation" value="<?php echo $corporation; ?>">
             <div class="col-md-6">
@@ -87,27 +87,57 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            <label>Amarr Fuel Block <?php echo number_format($Amarr_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Amarr" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Amarr_Fuel_Block" placeholder="Amarr Fuel Block" id="calc-input-Amarr-value">
+                            <label>C50 Gas <?php echo number_format($C50, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C50_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C50_Gas" placeholder="C50 Gas" id="calc-input-C50-value">
                             </div>
                         </p>
                         <p>
-                            <label>Caldari Fuel Block <?php echo number_format($Caldari_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Caldari" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Caldari_Fuel_Block" placeholder="Caldari Fuel Block" id="calc-input-Caldari-value">
+                            <label>C60 Gas <?php echo number_format($C60, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C60_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C60_Gas" placeholder="C60 Gas" id="calc-input-C60-value">
                             </div>
                         </p>
                         <p>
-                            <label>Gallente Fuel Block <?php echo number_format($Gallente_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Gallente" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Gallente_Fuel_Block" placeholder="Gallente Fuel Block" id="calc-input-Gallente-value">
+                            <label>C70 Gas <?php echo number_format($C70, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C70_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C70_Gas" placeholder="C70 Gas" id="calc-input-C70-value">
                             </div>
                         </p>
                         <p>
-                            <label>Minmatar Fuel Block <?php echo number_format($Minmatar_Fuel, 2, '.', ','); ?> ISK/Unit</label>
-                            <div class="input-group form-control" id="Minmatar" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Minmatar_Fuel_Block" placeholder="Minmatar Fuel Block" id="calc-input-Minmatar-value">
+                            <label>C72 Gas <?php echo number_format($C72, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C72_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C72_Gas" placeholder="C72 Gas" id="calc-input-C72-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>C84 Gas <?php echo number_format($C84, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C84_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C84_Gas" placeholder="C84 Gas" id="calc-input-C84-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>C28 Gas <?php echo number_format($C28, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C28_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C28_Gas" placeholder="C28 Gas" id="calc-input-C28-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>C32 Gas <?php echo number_format($C32, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C32_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C32_Gas" placeholder="C32 Gas" id="calc-input-C32-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>C320 Gas <?php echo number_format($C320, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C320_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C320_Gas" placeholder="C320 Gas" id="calc-input-C320-value">
+                            </div>
+                        </p>
+                        <p>
+                            <label>C540 Gas <?php echo number_format($C540, 2, '.', ','); ?> ISK/Unit</label>
+                            <div class="input-group form-control" id="C540_Gas" style="padding: 0; border: none;">
+                                <input type="number" class="form-control text-right typeahead" name="C540_Gas" placeholder="C540 Gas" id="calc-input-C540-value">
                             </div>
                         </p>
                     </div>
@@ -119,10 +149,15 @@
                         <h3 class="panel-title"> <strong>Invoice</strong></h3>
                     </div>
                     <div class="panel-body">
-                        <p id="calc-output-row">Total Amarr Fuel Block value <span class="pull-right"><span id="calc-output-Amarr-value"></span></span></p>
-                        <p id="calc-output-row">Total Caldari Fuel Block value <span class="pull-right"><span id="calc-output-Caldari-value"></span></span></p>
-                        <p id="calc-output-row">Total Gallente Fuel Block value<span class="pull-right"><span id="calc-output-Gallente-value"></span></span></p>
-                        <p id="calc-output-row">Total Minmatar Fuel Block value <span class="pull-right"><span id="calc-output-Minmatar-value"></span></span></p>
+                        <p id="calc-output-row">Total C50 Gas Value <span class="pull-right"><span id="calc-output-C50-value"></span></span></p>
+                        <p id="calc-output-row">Total C60 Gas Value <span class="pull-right"><span id="calc-output-C60-value"></span></span></p>
+                        <p id="calc-output-row">Total C70 Gas Value<span class="pull-right"><span id="calc-output-C70-value"></span></span></p>
+                        <p id="calc-output-row">Total C72 Gas Value <span class="pull-right"><span id="calc-output-C72-value"></span></span></p>
+                        <p id="calc-output-row">Total C84 Gas Value <span class="pull-right"><span id="calc-output-C84-value"></span></span></p>
+                        <p id="calc-output-row">Total C28 Gas Value <span class="pull-right"><span id="calc-output-C28-value"></span></span></p>
+                        <p id="calc-output-row">Total C32 Gas Value<span class="pull-right"><span id="calc-output-C32-value"></span></span></p>
+                        <p id="calc-output-row">Total C320 Gas Value <span class="pull-right"><span id="calc-output-C320-value"></span></span></p>
+                        <p id="calc-output-row">Total C540 Gas Value <span class="pull-right"><span id="calc-output-C540-value"></span></span></p>
                         <hr>
                         <p id="calc-output-reward-row">
                                 <b>Contract Value    </b><strong class="pull-right" id="calc-output-reward-value"></strong><br>

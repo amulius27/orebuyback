@@ -449,6 +449,27 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
+-- Table structure for table `WGasContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `WGasContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `C50` int(20) NOT NULL DEFAULT '0',
+    `C60` int(20) NOT NULL DEFAULT '0',
+    `C70` int(20) NOT NULL DEFAULT '0',
+    `C72` int(20) NOT NULL DEFAULT '0',
+    `C84` int(20) NOT NULL DEFAULT '0',
+    `C28` int(20) NOT NULL DEFAULT '0',
+    `C32` int(20) NOT NULL DEFAULT '0',
+    `C320` int(20) NOT NULL DEFAULT '0',
+    `C540` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `CorporationPayouts`
 -- Type = 0 for adding, and Type = 1 for subtracting
 --
@@ -711,6 +732,15 @@ CREATE TABLE IF NOT EXISTS `SalvagePrices` (
   PRIMARY KEY (`index`),
   UNIQUE KEY `index` (`index`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `WGasPrices` (
+    `index` int(11) NOT NULL AUTO_INCREMENT,
+    `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `ItemId` int(5) DEFAULT NULL,
+    `Price` decimal(10,2) DEFAULT NULL,
+    PRIMARY KEY (`index`),
+    UNIQUE KEY `index` (`index`)
+)ENGINE=InnoDB DEFAULT CHARTSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
