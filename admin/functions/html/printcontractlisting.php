@@ -82,10 +82,11 @@ function PrintContractListAdminDashboard() {
             for($i = 2; $i < $size; $i++) {
                 if($contents[$headers[$i]] > 0){
                     $header[$i] = str_replace('_', ' ', $headers[$i]);
+                    $number = number_format($contents[$headers[$i]], 0, '.', ',');
                     printf("<li>");
                     printf($header[$i]);
                     printf(": ");
-                    printf(number_format($contents[$headers[$i]], 2, '.', ','));
+                    printf($number);
                     printf("</li>"); 
                 }
             }

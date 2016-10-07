@@ -60,7 +60,7 @@
             - Once done click on the <strong>Submit Contract</strong> button to submit the contract.<br>
             - The contract will be submitted to the database, and contract details will be printed on the next page.<br>
             - After submitting the contract, make the contract out in Eve to Spatial Forces with the information displayed on the page.<br>
-            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract max is 500m ISK at a time, will allow for faster processing of the contracts.</strong></span>
+            <span style="font-family: Arial; color: #FF2A2A;"><strong>- Contract max is <?php echo $contractLimit; ?> at a time, will allow for faster processing of the contracts.</strong></span>
             <hr>
             <span style="font-family: Arial; color: #8FEF2F;"><strong>Database was last updated on: <?php echo $update ?></strong></span><br>
             <span style="font-family: Arial; color: #8FEF2F;"><strong>Ore prices are mineral based</strong></span><br>

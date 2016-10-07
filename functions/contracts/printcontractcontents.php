@@ -12,13 +12,16 @@ function PrintContractContents($contractNum, $type) {
     printf("<table class=\"table-striped\">");
     for($i = 0; $i < $columnsNum; $i++) {
         $header = str_replace('_', ' ', $columns[$i]);
+        $number = number_format($contents[$columns[$i]], 0, '.', ',');
         printf("<tr>");
         printf("<td>");
         printf($header);
         printf("</td>");
         printf("<td>");
         if($contents[$columns[$i]] > 0) {
-            printf($contents[$columns[$i]]);
+            printf($number);
+        } else {
+            printf("0");
         }
         printf("</td>");
         printf("</tr>");
