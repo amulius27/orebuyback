@@ -147,7 +147,7 @@
     <div class="container col-md-6 col-md-offset-3">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Contract Details</strong></span><br></h3>
+                <h3 class="panel-title"><strong>Contract Details</strong><br></h3>
             </div>
             <div class="panel-body">
                 <table class="table-bordered table-striped">
@@ -170,15 +170,16 @@
     <br>
     <div class="container col-md-6 col-md-offset-3">
         <div class="panel panel-default">
-            <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Contract Contents</strong></span><br></h3>
-            <div class="panel-body">
-                <?php 
-                    PrintContractContents($contract["Number"], 'IceContractContents');
-                ?>
+            <div class="panel-heading">
+                <h1 class="panel-title"><strong>Contract Contents</strong><br></h1>
             </div>
         </div>
-    </div>
-    
+        <div class="panel-body">
+            <?php 
+                PrintContractContents($contract["Number"], 'IceContractContents');
+            ?>
+        </div>
+    </div>    
 </body>
 </html>
     
