@@ -78,7 +78,7 @@ function WGasContractValue($update, $corporation, $post) {
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
         'ContractNum' => $contractNum,
-        'ContractType' => 'Fuel',
+        'ContractType' => 'WGas',
         'Corporation' => $corporation,
         'QuoteTime' =>  $update,
         'Value' => $contractValue,
