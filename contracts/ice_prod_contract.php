@@ -135,7 +135,7 @@
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 
-                PrintIceProdContractContents($contract["Number"]);
+                PrintContractContents($contract["Number"], 'IceProdContractContents');
             ?>
         </div>
     </div>

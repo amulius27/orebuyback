@@ -183,7 +183,7 @@
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 
-                PrintPiContractContents($contract["Number"]);
+                PrintContractContents($contract["Number"], 'PiContractContents');
             ?>
         </div>
     </div>

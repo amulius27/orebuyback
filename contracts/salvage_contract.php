@@ -139,7 +139,7 @@
     <div class="container">
         <h1>Contract Contents</h1><br>
         <?php 
-            PrintPiT4ContractContents($contract["Number"]);
+            PrintContractContents($contract["Number"], 'SalvageContractContents');
         ?>
     </div>
     

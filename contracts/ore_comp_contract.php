@@ -382,7 +382,7 @@
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 
-                PrintCompOreContractContents($contract["Number"]);
+                PrintContractContents($contract["Number"], 'CompOreContractContents');
             ?>
         </div>
     </div>

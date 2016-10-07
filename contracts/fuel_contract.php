@@ -29,7 +29,7 @@
     } else {
         $Gallente_Fuel_Block = 0;
     }
-    if(isset($_POS["Minmatar_Fuel_Block"])) {
+    if(isset($_POST["Minmatar_Fuel_Block"])) {
         $Minmatar_Fuel_Block = filter_input(INPUT_POST, "Minmatar_Fuel_Block", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Minmatar_Fuel_Block = 0;
@@ -117,8 +117,8 @@
     <div class="container col-md-6 col-md-offset-3">
         <div class="row">
             <h1>Contract Contents</h1><br>
-            <?php 
-                PrintFuelContractContents($contract["Number"]);
+            <?php
+                PrintContractContents($contract["Number"], 'FuelContractContents');
             ?>
         </div>
     </div>

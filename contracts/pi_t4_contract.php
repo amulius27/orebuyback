@@ -142,7 +142,7 @@
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 
-                PrintPiT4ContractContents($contract["Number"]);
+                PrintContractContents($contract["Number"], 'PiT4ContractContents');
             ?>
         </div>
     </div>

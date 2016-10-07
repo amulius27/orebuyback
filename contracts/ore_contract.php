@@ -381,7 +381,7 @@
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 
-                PrintOreContractContents($contract["Number"]);
+                PrintContractContents($contract["Number"], 'OreContractContents');
             ?>
         </div>
     </div>

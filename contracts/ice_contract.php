@@ -166,7 +166,7 @@
         <div class="row">
             <h1>Contract Contents</h1><br>
             <?php 
-                PrintIceContractContents($contract["Number"]);
+                PrintContractContents($contract["Number"], 'IceContractContents');
             ?>
         </div>
     </div>

@@ -59,6 +59,10 @@ function PrintDeleteContractListAdminDashboard() {
                 $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'SalvageContractContents'));
                 $contents = $db->fetchRow('SELECT * FROM SalvageContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
             }
+            if($contractType == 'WGas') {
+                $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'WGasContractContents'));
+                $contents = $db->fetchRow('SELECT * FROM WGasContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
+            }
             $size = sizeof($headers);
             
             printf("<tr>");
@@ -81,7 +85,7 @@ function PrintDeleteContractListAdminDashboard() {
                     printf("<li>");
                     printf($header[$i]);
                     printf(": ");
-                    printf($contents[$headers[$i]]);
+                    printf(number_format($contents[$headers[$i]], 2, '.', ','));
                     printf("</li>"); 
                 }
             }
