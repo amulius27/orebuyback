@@ -143,31 +143,39 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="container col-md-6 col-md-offset-3">
-        <div class="row">
-            <h1>Contract Details</h1>
-            <table class="table-bordered table-striped">
-                <tr>
-                    <td>Contract To</td>
-                    <td>Contract Type</td>
-                    <td>Contract Length</td>
-                    <td>Contract Value</td>
-                </tr>
-                <tr>
-                    <td>Spatial Forces</td>
-                    <td>Private</td>
-                    <td>2 weeks</td>
-                    <td><?php echo $contract["Value"]; ?></td>
-                </tr>
-            </table>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Contract Details</strong></span><br></h3>
+            </div>
+            <div class="panel-body">
+                <table class="table-bordered table-striped">
+                    <tr>
+                        <td>Contract To</td>
+                        <td>Contract Type</td>
+                        <td>Contract Length</td>
+                        <td>Contract Value</td>
+                    </tr>
+                    <tr>
+                        <td>Spatial Forces</td>
+                        <td>Private</td>
+                        <td>2 weeks</td>
+                        <td><?php echo number_format($contract["Value"], 2, '.', ','); ?></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
+    <br>
     <div class="container col-md-6 col-md-offset-3">
-        <div class="row">
-            <h1>Contract Contents</h1><br>
-            <?php 
-                PrintContractContents($contract["Number"], 'IceContractContents');
-            ?>
+        <div class="panel panel-default">
+            <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Contract Contents</strong></span><br></h3>
+            <div class="panel-body">
+                <?php 
+                    PrintContractContents($contract["Number"], 'IceContractContents');
+                ?>
+            </div>
         </div>
     </div>
     

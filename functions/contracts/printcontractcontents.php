@@ -10,14 +10,38 @@ function PrintContractContents($contractNum, $type) {
     $columnsNum = sizeof($columns);
     
     printf("<table class=\"table-striped\">");
-    for($i = 0; $i < $columnsNum; $i++) {
+    //Print the first row which is the Contract Number
+    printf("<tr>");
+    printf("<td>");
+    printf($columns[0]);
+    printf("</td>");
+    printf("<td>");
+    printf($contents[$columns[0]]);
+    printf("</td>");
+    printf("</tr>");
+    //Print the second row which is Contract Time
+    printf("<tr>");
+    printf("<td>");
+    printf($columns[1]);
+    printf("</td>");
+    printf("<td>");
+    printf($contents[$columns[1]]);
+    printf("</td>");
+    printf("</tr>");
+    //Print the third row which is Quote Time
+    printf("<tr>");
+    printf("<td>");
+    printf($columns[2]);
+    printf("</td>");
+    printf("<td>");
+    printf($contents[$columns[2]]);
+    printf("</td>");
+    printf("</tr>");
+    //Run through the rest of the items and print the table
+    for($i = 3; $i < $columnsNum; $i++) {
         $header = str_replace('_', ' ', $columns[$i]);
-        if($header === ("QuoteTime" OR "ContractTime")) {
-            $number = $contents[$columns[$i]];
-        } else {
-            $number = number_format($contents[$columns[$i]], 0, '.', ',');
-        }
-        
+        $number = number_format($contents[$columns[$i]], 0, '.', ',');
+                
         printf("<tr>");
         printf("<td>");
         printf($header);

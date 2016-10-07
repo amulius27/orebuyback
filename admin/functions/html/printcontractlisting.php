@@ -82,15 +82,15 @@ function PrintContractListAdminDashboard() {
             printf("<h4>Contract Details</h4>");
             printf("<ul class=\"col-md-offset-1\">");
             for($i = 2; $i < $size; $i++) {
+                $header = str_replace('_', ' ', $headers[$i]);
                 if($contents[$headers[$i]] > 0){
-                    $header[$i] = str_replace('_', ' ', $headers[$i]);
-                    if($header === ("QuoteTime" OR "ContractTime")) {
+                    if($header === "QuoteTime") {
                         $number = $contents[$headers[$i]];
                     } else {
                         $number = number_format($contents[$headers[$i]], 0, '.', ',');
                     }
                     printf("<li>");
-                    printf($header[$i]);
+                    printf($header);
                     printf(": ");
                     printf($number);
                     printf("</li>"); 
