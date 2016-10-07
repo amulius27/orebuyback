@@ -65,11 +65,13 @@ function PrintContractListAdminDashboard() {
             }
             $size = sizeof($headers);
             
+            $contractV = number_format($contractValue, 2, '.', ',');
+            
             printf("<tr>");
             printf("<td>" . $contractNumber . "</td>");
             printf("<td>" . $contractType . "</td>");
             printf("<td>" . $contractCorporation . "</td>");
-            printf("<td>" . $contractValue . "</td>");
+            printf("<td>" . $contractV . "</td>");
             printf("<td><input type=\"radio\" class=\"form-control\" name=\"ContractNumber\" value=\"" . $contractNumber . "\"</td>");
             printf("<td><input type=\"submit\" value=\"Process\"></td>");
             printf("</tr>");
@@ -82,7 +84,11 @@ function PrintContractListAdminDashboard() {
             for($i = 2; $i < $size; $i++) {
                 if($contents[$headers[$i]] > 0){
                     $header[$i] = str_replace('_', ' ', $headers[$i]);
-                    $number = number_format($contents[$headers[$i]], 0, '.', ',');
+                    if($header === ("QuoteTime" OR "ContractTime")) {
+                        $number = $contents[$headers[$i]];
+                    } else {
+                        $number = number_format($contents[$headers[$i]], 0, '.', ',');
+                    }
                     printf("<li>");
                     printf($header[$i]);
                     printf(": ");

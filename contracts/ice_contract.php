@@ -35,7 +35,7 @@
         $Smooth_Glacial_Mass = 0;
     }
     if(isset($_POST["White_Glaze"])) {
-        $White_Glaze = filter_input(INPUT_POST, "Clear_Icicle", FILTER_SANITIZE_NUMBER_INT);
+        $White_Glaze = filter_input(INPUT_POST, "White_Glaze", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $White_Glaze = 0;
     }

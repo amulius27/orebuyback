@@ -12,7 +12,12 @@ function PrintContractContents($contractNum, $type) {
     printf("<table class=\"table-striped\">");
     for($i = 0; $i < $columnsNum; $i++) {
         $header = str_replace('_', ' ', $columns[$i]);
-        $number = number_format($contents[$columns[$i]], 0, '.', ',');
+        if($header === ("QuoteTime" OR "ContractTime")) {
+            $number = $contents[$columns[$i]];
+        } else {
+            $number = number_format($contents[$columns[$i]], 0, '.', ',');
+        }
+        
         printf("<tr>");
         printf("<td>");
         printf($header);
@@ -21,7 +26,7 @@ function PrintContractContents($contractNum, $type) {
         if($contents[$columns[$i]] > 0) {
             printf($number);
         } else {
-            printf("0");
+            printf("--");
         }
         printf("</td>");
         printf("</tr>");
