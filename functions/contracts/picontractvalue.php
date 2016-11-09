@@ -54,9 +54,9 @@ function PiContractValue($update, $corporation, $post) {
         'Complex_Organisms' => $post['Complex_Organisms'] * $Complex,
         'Planktic_Colonies' => $post['Planktic_Colonies'] * $Planktic,
         'Noble_Gas' => $post['Noble_Gas'] * $Noble,
-        'Reactive_Metals' => $post['Reactive_Metals'] * $Reactive,
+        'Reactive_Gas' => $post['Reactive_Gas'] * $Reactive,
         'Felsic_Magma' => $post['Felsic_Magma'] * $Felsic,
-        'Non_CS_Materials' => $post['Non_CS_Materials'] * $Non,
+        'Non_CS_Crystals' => $post['Non_CS_Crystals'] * $Non,
         'Suspended_Plasma' => $post['Suspended_Plasma'] * $Suspended,
         'Autotrophs' => $post['Autotrophs'] * $Autotrophs,
     );
@@ -92,7 +92,7 @@ function PiContractValue($update, $corporation, $post) {
         'Noble_Gas' => $post['Noble_Gas'],
         'Reactive_Metals' => $post['Reactive_Metals'],
         'Felsic_Magma' => $post['Felsic_Magma'],
-        'Non_CS_Materials' => $post['Non_CS_Materials'],
+        'Non_CS_Crystals' => $post['Non_CS_Crystals'],
         'Suspended_Plasma' => $post['Suspended_Plasma'],
         'Autotrophs' => $post['Autotrophs'],
     );

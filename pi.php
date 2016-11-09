@@ -7,8 +7,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta content="Lone Star Buyback Calculator" name="description">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="Warped Intentions Buyback Calculator" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Warped Intentions Buy Back Program</title>
@@ -94,7 +94,7 @@
                         <p>
                             <label>Ionic Solutions <?php echo $Ionic; ?> ISK/Unit</label>
                             <div class="input-group form-control" id="ionic" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Ionics_Solutions" placeholder="Ionic Solutions" id="calc-input-ionic_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Ionic_Solutions" placeholder="Ionic Solutions" id="calc-input-ionic_units-value">
                             </div>
                         </p>
                         <p>
@@ -160,7 +160,7 @@
                         <p>
                             <label>Non-CS Crystals <?php echo $Non; ?> ISK/Unit</label>
                             <div class="input-group form-control" id="non_cs" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" placeholder="Non-CS_Crystals" id="calc-input-non_cs_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Non-CS_Crystals" placeholder="Non-CS_Crystals" id="calc-input-non_cs_units-value">
                             </div>
                         </p>
                         <p>

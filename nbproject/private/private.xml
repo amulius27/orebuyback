@@ -4,19 +4,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/orebuyback/contracts/ice_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/ice_prod_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/wgas_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/minerals_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/ore_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/ore_comp_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/salvage_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/pi_t4_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/pi_t3_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/fuel_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/pi_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/pi_t2_contract.php</file>
-            <file>file:/var/www/orebuyback/contracts/pi_t1_contract.php</file>
+            <file>file:/var/www/orebuyback/cron/fuelpriceupdate.php</file>
         </group>
     </open-files>
 </project-private>

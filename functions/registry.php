@@ -47,4 +47,18 @@ require_once __DIR__.'/../functions/contracts/printcontractcontents.php';
 
 $contractLimit = '500m ISK';
 
+$fuelEnable = true;
+$iProdEnable = true;
+$iceEnable = true;
+$minsEnable = true;
+$oreEnable = true;
+$oreCompEnable = true;
+$piEnable = true;
+$piT1Enable = true;
+$piT2Enable = true;
+$piT3Enable = true;
+$piT4Enable = true;
+$salvageEnable = true;
+$wgasEnable = true;
+
 ?>

@@ -13,6 +13,7 @@ function PrintNavBar($username, $role) {
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
                         </button>
                     </div>
                     <div class=\"collapse navbar-collapse pull-left\">
@@ -29,7 +30,16 @@ function PrintNavBar($username, $role) {
                             <li><a href=\"corpsettings.php\">Corp Settings</a></li>
                             <li><a href=\"addnewcorp.php\">Add New Corp</a></li>
                             <li><a href=\"modifyuser.php\">Modify User</a></li>
-                            <li><a href=\"setconfig.php\">Update Settings</a></li>
+                            <li class=\"dropdown\"><a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Update Settings<b class=\"caret\"></b></a>
+                                <ul class=\"dropdown-menu\">
+                                    <li><a href=\"setconfig.php\">Update Settings</a></li>
+                                    <li><a href=\"/enable/minerals.php\">Enable Minerals</a></li>
+                                    <li><a href=\"/enable/ore.php\">Enable Ore</a></li>
+                                    <li><a href=\"/enable/ice.php\">Enable Fuel</a></li>
+                                    <li><a href=\"/enable/pi.php\">Enable PI Materials</a></li>
+                                    <li><a href=\"/enable/wgas.php\">Enable W-Gas</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class=\"collapse navbar-collapse pull-right\">

@@ -3,9 +3,15 @@
     //Open the database connection
     $db = DBOpen();
     //Get the corp name from the previous page
-    $corpName = filter_var(INPUT_POST, "corporation", FILTER_SANITIZE_SPECIAL_CHARS);
+    $corpName = filter_input(INPUT_POST, "corporation", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FORCE_ARRAY);
     //Get the taxes from the previous page
-    $taxes = filter_input(INPUT_POST, "taxes", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $taxes = filter_input(INPUT_POST, "taxes", FILTER_SANITIZE_SPECIAL_CHARS, FILTER_FORCE_ARRAY);
+	//Get rid of anything not a number in $taxes
+	foreach($taxes as $tax) {
+		if($tax != NULL) {
+			$tax = $tax * 1.00;
+		}
+	}
     //Combine our two post arrays to make it easier to work with in the foreach statement below
     $array = array_combine($corpName, $taxes);
     //Run through the possibilites and insert all calls into the database

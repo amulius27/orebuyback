@@ -35,15 +35,24 @@ $strontiumClathratesPrice = $db->fetchColumn('SELECT Price FROM MineralPrices WH
 $items = $db->fetchRowMany('SELECT * FROM itemComposition');
 
 foreach($items as $item){
-    $composition = $db->fetchRow('SELECT * FROM itemComposition WHERE ItemId= :id', array('id' => $item['ItemId']));
-    $price = ( ($composition['TritaniumNum'] * $tritaniumPrice) + ($composition['PyeriteNum'] * $pyeritePrice) + ($composition['MexallonNum'] * $mexallonPrice) + ($composition['IsogenNum'] * $isogenPrice) +
-               ($composition['NocxiumNum'] * $nocxiumPrice) + ($composition['ZydrineNum'] * $zydrinePrice) + ($composition['MegacyteNum'] * $megacytePrice) + ($composition['MorphiteNum'] * $morphitePrice) +
-               ($composition['HeliumIsotopesNum'] * $heliumIsotopesPrice) + ($composition['NitrogenIsotopesNum'] * $nitrogenIsotopesPrice) + ($composition['OxygenIsotopesNum'] * $oxygenIsotopesPrice) +
-               ($composition['HydrogenIsotopesNum'] * $hydrogenIsotopesPrice) + ($composition['LiquidOzoneNum'] * $liquidOzonePrice) + ($composition['HeavyWaterNum'] * $heavyWaterPrice) + 
-               ($composition['StrontiumClathratesNum'] * $strontiumClathratesPrice));
-    $price = $price / $composition['BatchSize'];
-    $price = $price * $refineRate;
-    $db->insert('OrePrices', array('Price' => $price, 'ItemId' => $item['ItemId'], 'Time' => $time));
+    
+    $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => $id));
+    $enabled = $db->fetchColumn('SELECT Enabled FROM OrePrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
+    //If its enabled update the price, otherwise set it to 0.00
+    if($enabled === 1) {
+    
+        $composition = $db->fetchRow('SELECT * FROM itemComposition WHERE ItemId= :id', array('id' => $item['ItemId']));
+        $price = ( ($composition['TritaniumNum'] * $tritaniumPrice) + ($composition['PyeriteNum'] * $pyeritePrice) + ($composition['MexallonNum'] * $mexallonPrice) + ($composition['IsogenNum'] * $isogenPrice) +
+                   ($composition['NocxiumNum'] * $nocxiumPrice) + ($composition['ZydrineNum'] * $zydrinePrice) + ($composition['MegacyteNum'] * $megacytePrice) + ($composition['MorphiteNum'] * $morphitePrice) +
+                   ($composition['HeliumIsotopesNum'] * $heliumIsotopesPrice) + ($composition['NitrogenIsotopesNum'] * $nitrogenIsotopesPrice) + ($composition['OxygenIsotopesNum'] * $oxygenIsotopesPrice) +
+                   ($composition['HydrogenIsotopesNum'] * $hydrogenIsotopesPrice) + ($composition['LiquidOzoneNum'] * $liquidOzonePrice) + ($composition['HeavyWaterNum'] * $heavyWaterPrice) + 
+                   ($composition['StrontiumClathratesNum'] * $strontiumClathratesPrice));
+        $price = $price / $composition['BatchSize'];
+        $price = $price * $refineRate;
+        $db->insert('OrePrices', array('Price' => $price, 'ItemId' => $item['ItemId'], 'Time' => $time));
+    } else {
+        $db->insert('OrePrices', array('ItemId' => $id, 'Price' => 0.00, 'Time' => $time, 'Enabled' => 0));
+    }
 }
 
 

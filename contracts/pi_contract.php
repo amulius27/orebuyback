@@ -63,20 +63,20 @@
     } else {
         $Noble_Gas = 0;
     }
-    if(isset($_POST["Reactive_Metals"])) {
-        $Reactive_Metals = filter_input(INPUT_POST, "Reactive_Metals", FILTER_SANITIZE_NUMBER_INT);
+    if(isset($_POST["Reactive_Gas"])) {
+        $Reactive_Gas = filter_input(INPUT_POST, "Reactive_Gas", FILTER_SANITIZE_NUMBER_INT);
     } else {
-        $Reactive_Metals = 0;
+        $Reactive_Gas = 0;
     }
     if(isset($_POST["Felsic_Magma"])) {
         $Felsic_Magma = filter_input(INPUT_POST, "Felsic_Magma", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $Felsic_Magma = 0;
     }
-    if(isset($_POST["Non-CS_Materials"])) {
-        $NonCS_Materials = filter_input(INPUT_POST, "Non-CS_Materials", FILTER_SANITIZE_NUMBER_INT);
+    if(isset($_POST["Non-CS_Crystals"])) {
+        $NonCS_Crystals = filter_input(INPUT_POST, "Non-CS_Crystals", FILTER_SANITIZE_NUMBER_INT);
     } else {
-        $NonCS_Materials = 0;
+        $NonCS_Crystals = 0;
     }
     if(isset($_POST["Suspended_Plasma"])) {
         $Suspended_Plasma = filter_input(INPUT_POST, "Suspended_Plasma", FILTER_SANITIZE_NUMBER_INT);
@@ -100,9 +100,9 @@
         'Complex_Organisms' => $Complex_Organisms,
         'Planktic_Colonies' => $Planktic_Colonies,
         'Noble_Gas' => $Noble_Gas,
-        'Reactive_Metals' => $Reactive_Metals,
+        'Reactive_Gas' => $Reactive_Gas,
         'Felsic_Magma' => $Felsic_Magma,
-        'Non_CS_Materials' => $NonCS_Materials,
+        'Non_CS_Crystals' => $NonCS_Crystals,
         'Suspended_Plasma' => $Suspended_Plasma,
         'Autotrophs' => $Autotrophs
     );
@@ -114,7 +114,7 @@
 <html lang="en">
 <head>
     <!--metas-->
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="Warped Intentions Buy Back Program" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">
