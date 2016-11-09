@@ -53,7 +53,7 @@ function PrintIndexPage($previousCorp) {
               printf("<div class=\"view view-first\"> <a href=\"pi_t1.php\"><img src=\"https://image.eveonline.com/Type/2396_64.png\" /></a> </div>");
               printf("<div class=\"view view-first\"> <a href=\"pi_t2.php\"><img src=\"https://image.eveonline.com/Type/44_64.png\" /></a> </div>");
               printf("<div class=\"view view-first\"> <a href=\"pi_t3.php\"><img src=\"https://image.eveonline.com/Type/2869_64.png\" /></a> </div>");
-              printf("div class=\"view view-first\"> <a href=\"pi_t4.php\"><img src=\"https://image.eveonline.com/Type/2345_64.png\" /></a> </div>");
+              printf("<div class=\"view view-first\"> <a href=\"pi_t4.php\"><img src=\"https://image.eveonline.com/Type/2345_64.png\" /></a> </div>");
               printf("<div class=\"clearfix\"></div>");
               printf("<h3 class=\"page-header\"> Gas Cloud Materials <strong>(2nd Icon Works)</strong></h3>");
               printf("<div class=\"view view-first\"> <img src=\"https://image.eveonline.com/Type/25268_64.png\" /></div>");

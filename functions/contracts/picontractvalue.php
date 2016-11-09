@@ -90,7 +90,7 @@ function PiContractValue($update, $corporation, $post) {
         'Complex_Organisms' => $post['Complex_Organisms'],
         'Planktic_Colonies' => $post['Planktic_Colonies'],
         'Noble_Gas' => $post['Noble_Gas'],
-        'Reactive_Metals' => $post['Reactive_Metals'],
+        'Reactive_Gas' => $post['Reactive_Gas'],
         'Felsic_Magma' => $post['Felsic_Magma'],
         'Non_CS_Crystals' => $post['Non_CS_Crystals'],
         'Suspended_Plasma' => $post['Suspended_Plasma'],
