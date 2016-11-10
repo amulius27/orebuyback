@@ -1,7 +1,7 @@
 <?php
 
-include_once '/../includes/db_connect.php';
-include_once '/../includes/functions.php';
+include_once __DIR__.'/../includes/db_connect.php';
+include_once __DIR__.'/../includes/functions.php';
 require_once __DIR__.'/../functions/registry.php';
 
 session_start();
@@ -31,7 +31,7 @@ foreach($ItemsCompOre as $item) {
     <html lang="en">
     <head>
     <!--metas-->
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="Warped Intentions Buy Back Program" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -66,39 +66,28 @@ foreach($ItemsCompOre as $item) {
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading" align="center">
-                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Add New Corporation Form</strong></span><br></h3>
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Enable Ore Pricing Form</strong></span><br></h3>
             </div>
-            <div class="panel-body" align="center">
-                <form action="/../processes/setenablefuel.php" method="POST">
-                    <?php
-                        foreach($ItemsOre as $item) {
-                            $name = str_replace(" ", "_", $item['Name']);
-                            if($itemEnabled[$item['ItemId']] == 1) {
+            <div class="panel-body" align="left">
+                <?php
+                    printf("<form class=\"form-horizontal\" action=\"/../processes/setenableminerals.php\" method=\"POST\">");
+                    $numOfItems = sizeof($Items);
+                    foreach($Items as $item) {
+                            $name = str_replace(" ", "_", $item["Name"]);
+                            if($itemEnabled[$item["ItemId"]] == 1) {
                                 $enabled = "checked";
                             }
                             else {
                                 $enabled = "notchecked";
                             }
-                            printf("<label>$name: </label>");
-                            printf("<input type=\"checkbox\" class=\"form-control\" name=\"$name\" value=\"Enabled\" $enabled/>");
+                            printf("<label>" . $name . ": </label>");
+                            printf("<input type=\"checkbox\" class=\"form-control\" name=\"" . $name . "\" value=\"Enabled\"" . $enabled . "/>");
                         }
-                        
-                        foreach($ItemsCompOre as $item) {
-                            $name = str_replace(" ", "_", $item['Name']);
-                            $value = $name . "_Enabled";
-                            if($itemEnabled[$item['ItemId']] == 1) {
-                                $enabled = "checked";
-                            }
-                            else {
-                                $enabled = "notchecked";
-                            }
-                            printf("<label>$name: </label>");
-                            printf("<input type=\"checkbox\" class=\"form-control\" name=\"$name\" value=\"Enabled\" $enabled/>");
-                        }
-                    ?>
-                    <br><br>
-                    <input type="submit" class="form-control" value="Submit" />
-                </form>
+                    printf("<br>");
+                    printf("<input type=\"submit\" class=\"form-control\" value=\"Submit\" />");
+                    printf("</form>");
+                    
+                ?>
             </div>
         </div>
     </div>
