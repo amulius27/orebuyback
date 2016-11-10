@@ -3,23 +3,20 @@
 include_once __DIR__.'/../includes/db_connect.php';
 include_once __DIR__.'/../includes/functions.php';
 require_once __DIR__.'/../functions/registry.php';
+require_once __DIR__.'/enablenavbar.php';
+
+$itemEnabled = array();
 
 session_start();
 $username = $_SESSION['username'];
 $db = DBOpen();
 $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
 
-$ItemsOre = $db->fetchRowMany('SELECT Name,ItemId FROM ItemIds WHERE Grouping= :group', array('group' => 'Ore'));
-$ItemsCompOre = $db->fetchRowMany('SELECT Name,ItemId FROM ItemIds WHERE Groupings= :group', array('group' => 'CompOre'));
+$Items = $db->fetchRowMany('SELECT * FROM ItemIds WHERE Grouping= :group', array('group' => 'Ore'));
+$lastUpdate = $db->fetchColumn('SELECT MAX(Time) FROM OrePrices');
 
-$lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => $id));
-
-foreach($ItemsOre as $item) {
-    $itemOreEnabled[$item['ItemId']] = $db->fetchColumn('SELECT Enabled FROM OrePrices WHERE ItemId= :item', array('item' => $$item['ItemId']));
-}
-
-foreach($ItemsCompOre as $item) {
-    $itemCompOreEnabled[$item['ItemId']] = $db->fetchColumn('SELECT Enabled FROM OrePrices WHERE ItemId= :item', array('item' => $item['ItemId']));
+foreach($Items as $item) {
+    $itemEnabled[$item["ItemId"]] = $db->fetchColumn('SELECT Enabled FROM OrePrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
 }
 
 ?>
@@ -59,14 +56,14 @@ foreach($ItemsCompOre as $item) {
 </head>
 <body>
     <?php if((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) : ?>
-    <?php PrintNavBar($username, $role); ?>
+    <?php PrintEnableNavBar($username, $role); ?>
 
     <br>
        
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading" align="center">
-                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Enable Ore Pricing Form</strong></span><br></h3>
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Enable Mineral Pricing Form</strong></span><br></h3>
             </div>
             <div class="panel-body" align="left">
                 <?php

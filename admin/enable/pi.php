@@ -3,18 +3,20 @@
 include_once __DIR__.'/../includes/db_connect.php';
 include_once __DIR__.'/../includes/functions.php';
 require_once __DIR__.'/../functions/registry.php';
+require_once __DIR__.'/enablenavbar.php';
+
+$itemEnabled = array();
 
 session_start();
 $username = $_SESSION['username'];
 $db = DBOpen();
 $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
 
-$Items = $db->fetchRowMany('SELECT Name,ItemId FROM ItemIds WHERE Grouping= :group', array('group' => 'Pi'));
-
-$lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
+$Items = $db->fetchRowMany('SELECT * FROM ItemIds WHERE Grouping= :group', array('group' => 'Pi'));
+$lastUpdate = $db->fetchColumn('SELECT MAX(Time) FROM PiPrices');
 
 foreach($Items as $item) {
-    $itemEnabled[$item['ItemId']] = $db->fetchColumn('SELECT Enabled FROM PiPrices WHERE ItemId= :item', array('item' => $$item));
+    $itemEnabled[$item["ItemId"]] = $db->fetchColumn('SELECT Enabled FROM PiPrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
 }
 
 ?>
@@ -54,14 +56,14 @@ foreach($Items as $item) {
 </head>
 <body>
     <?php if((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) : ?>
-    <?php PrintNavBar($username, $role); ?>
+    <?php PrintEnableNavBar($username, $role); ?>
 
     <br>
        
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading" align="center">
-                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Enable Pi Pricing Form</strong></span><br></h3>
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FFF;"<strong>Enable Mineral Pricing Form</strong></span><br></h3>
             </div>
             <div class="panel-body" align="left">
                 <?php
