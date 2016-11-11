@@ -67,18 +67,19 @@ foreach($Items as $item) {
             </div>
             <div class="panel-body" align="left">
                 <?php
-                    printf("<form class=\"form-horizontal\" action=\"/../processes/setenableminerals.php\" method=\"POST\">");
+                    printf("<form class=\"form-horizontal\" action=\"/../admin/functions/processes/setenableminerals.php\" method=\"POST\">");
                     $numOfItems = sizeof($Items);
                     foreach($Items as $item) {
-                            $name = str_replace(" ", "_", $item["Name"]);
+                            $name = $item["ItemId"];
+                            $listName = $item["Name"];
                             if($itemEnabled[$item["ItemId"]] == 1) {
                                 $enabled = "checked";
                             }
                             else {
                                 $enabled = "notchecked";
                             }
-                            printf("<label>" . $name . ": </label>");
-                            printf("<input type=\"checkbox\" class=\"form-control\" name=\"" . $name . "\" value=\"Enabled\"" . $enabled . "/>");
+                            printf("<label>" . $listName . ": </label>");
+                            printf("<input type=\"checkbox\" class=\"form-control\" name=\"" . $name . "\" value=\"1\"" . $enabled . "/>");
                         }
                     printf("<br>");
                     printf("<input type=\"submit\" class=\"form-control\" value=\"Submit\" />");
