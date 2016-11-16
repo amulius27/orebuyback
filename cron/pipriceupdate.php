@@ -117,7 +117,7 @@ foreach($ItemIDs as $id) {
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
     $enabled = $db->fetchColumn('SELECT Enabled FROM PiPrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
-    if($enabled === 1) {
+    if($enabled == 1) {
     
         $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
     
@@ -131,13 +131,13 @@ foreach($ItemIDs as $id) {
         } else {
             //Close the curl connection
             curl_close($ch);
-            //Insert the new data into the database
+            //Insert the new data into the database, 
             $xml = new SimpleXMLElement($data);
             $price = (float)$xml->marketstat->type->buy->median[0];
             if($price > 0.00) {
                 $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
             } else {
-                $update = $db->fetchRow('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
+                $update = $db->fetchRow('SELECT * FROM PiPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
                 $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
             }
 

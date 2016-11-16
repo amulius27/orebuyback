@@ -94,13 +94,13 @@
                         <p>
                             <label>Construction Blocks <?php echo number_format($construction_blocks, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Construction Blocks" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Construction_Block" placeholder="Construction Blocks" id="calc-input-Construction_Blocks_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Construction_Blocks" placeholder="Construction Blocks" id="calc-input-Construction_Blocks_units-value">
                             </div>
                         </p>
                         <p>
                             <label>Consumer Electronics <?php echo number_format($consumer_electronics, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Consumer Electronics" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Consumer_Eletronics" placeholder="Consumer Electronics" id="calc-input-Consumer_Electronics_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Consumer_Electronics" placeholder="Consumer Electronics" id="calc-input-Consumer_Electronics_units-value">
                             </div>
                         </p>
                         <p>

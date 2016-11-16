@@ -39,7 +39,7 @@ foreach($items as $item){
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => $id));
     $enabled = $db->fetchColumn('SELECT Enabled FROM OrePrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
-    if($enabled === 1) {
+    if($enabled == 1) {
     
         $composition = $db->fetchRow('SELECT * FROM itemComposition WHERE ItemId= :id', array('id' => $item['ItemId']));
         $price = ( ($composition['TritaniumNum'] * $tritaniumPrice) + ($composition['PyeriteNum'] * $pyeritePrice) + ($composition['MexallonNum'] * $mexallonPrice) + ($composition['IsogenNum'] * $isogenPrice) +

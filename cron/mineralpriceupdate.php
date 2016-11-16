@@ -25,23 +25,11 @@ $db = DBOpen();
 $regionlimit = $db->fetchColumn('SELECT marketRegion FROM Configuration');
 //Get the current time
 $time = date("Y-m-d H:i:s");
-/* We are commenting out this section to test the cURL method of getting price data
-foreach($itemIDs as $id) {
-    $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
-    $xml = simplexml_load_file($url);
-    $price = $xml->marketstat->type->buy->median[0];
-    //Multiply the price by 1.00 to put it in a float format for the database.  The
-    //database is expecting a decimal and not a character
-    $price = $price * 1.00;
-    $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
-}
- * 
- */
 
 foreach($ItemIDs as $id) {
     
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices WHERE ItemId= :item', array('item' => $id));
-    $enabled = $db->fetchColumn('SELECT Enabled FROM MineralPrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
+    $enabled = $db->fetchColumn('SELECT Enabled FROM MineralPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
     if($enabled === 1) {
     
@@ -61,10 +49,10 @@ foreach($ItemIDs as $id) {
             $xml = new SimpleXMLElement($data);
             $price = (float)$xml->marketstat->type->buy->median[0];
             if($price > 0.00) {
-                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time, 'Enabled' => 1));
             } else {
-                $update = $db->fetchRow('SELECT MAX(time) FROM MineralPrices WHERE ItemId= :item', array('item' => $id));
-                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
+                $update = $db->fetchRow('SELECT * FROM MineralPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
+                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time, 'Enabled' => 1));
             }
 
         }

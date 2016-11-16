@@ -51,7 +51,7 @@ foreach($ItemIDs as $id) {
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM IceProductPrices WHERE ItemId= :item', array('item' => $id));
     $enabled = $db->fetchColumn('SELECT Enabled FROM IceProductPrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
-    if($enabled === 1) {
+    if($enabled == 1) {
     
        $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
     
@@ -71,7 +71,7 @@ foreach($ItemIDs as $id) {
             if($price > 0.00) {
                 $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time, 'Enabled' => 1));
             } else {
-                $update = $db->fetchRow('SELECT MAX(time) FROM IceProductPrices WHERE ItemId= :item', array('item' => $id));
+                $update = $db->fetchRow('SELECT * FROM IceProductPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
                 $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time, 'Enabled' => 1));
             }
 
