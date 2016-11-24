@@ -108,6 +108,7 @@
     );
     
     $contract= PiContractValue($contractTime, $corporation, $post);
+	var_dump($contract);
 ?>
 
 <!DOCTYPE html>

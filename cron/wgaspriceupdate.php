@@ -36,7 +36,7 @@ foreach($ItemIDs as $id) {
 foreach($ItemIDs as $id) {
     
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM WGasPrices WHERE ItemId= :item', array('item' => $id));
-    $enabled = $db->fetchColumn('SELECT Enabled FROM WGasPrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
+    $enabled = $db->fetchColumn('SELECT Enabled FROM WGasPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
     if($enabled == 1) {
     
@@ -58,7 +58,7 @@ foreach($ItemIDs as $id) {
             if($price > 0.00) {
                 $db->insert('WGasPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
             } else {
-                $update = $db->fetchRow('SELECT * FROM WGasPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
+                $update = $db->fetchRow('SELECT * FROM WGasPrices WHERE ItemId= :item', array('item' => $id));
                 $db->insert('WGasPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
             }
 

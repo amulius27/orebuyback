@@ -31,8 +31,7 @@ foreach($ItemIDs as $id) {
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices WHERE ItemId= :item', array('item' => $id));
     $enabled = $db->fetchColumn('SELECT Enabled FROM MineralPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
-    if($enabled === 1) {
-    
+    if($enabled == 1) {
         $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
 
         $ch = curl_init($url);
@@ -49,10 +48,10 @@ foreach($ItemIDs as $id) {
             $xml = new SimpleXMLElement($data);
             $price = (float)$xml->marketstat->type->buy->median[0];
             if($price > 0.00) {
-                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time, 'Enabled' => 1));
+                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
             } else {
-                $update = $db->fetchRow('SELECT * FROM MineralPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
-                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time, 'Enabled' => 1));
+                $update = $db->fetchRow('SELECT * FROM MineralPrices WHERE ItemId= :item', array('item' => $id));
+                $db->insert('MineralPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
             }
 
         }

@@ -100,22 +100,10 @@ $db = DBOpen();
 //Get the region limit
 $regionlimit = $db->fetchColumn('SELECT marketRegion FROM Configuration');
 //Get the price for each of the ice products, and then insert into the database
-/* We are commenting this section out to test the cURL method to get new prices
-foreach($ItemIDs as $id) {
-    $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
-    $xml = simplexml_load_file($url);
-    $price = $xml->marketstat->type->buy->median[0];
-    //Multiply the price by 1.00 to put it in decimal format for the sql database
-    $price = $price * 1.00;
-    $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
-}
- * 
- */
-
 foreach($ItemIDs as $id) {
     
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
-    $enabled = $db->fetchColumn('SELECT Enabled FROM PiPrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
+    $enabled = $db->fetchColumn('SELECT Enabled FROM PiPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
     if($enabled == 1) {
     
@@ -131,13 +119,13 @@ foreach($ItemIDs as $id) {
         } else {
             //Close the curl connection
             curl_close($ch);
-            //Insert the new data into the database, 
+            //Insert the new data into the database
             $xml = new SimpleXMLElement($data);
             $price = (float)$xml->marketstat->type->buy->median[0];
             if($price > 0.00) {
                 $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
             } else {
-                $update = $db->fetchRow('SELECT * FROM PiPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
+                $update = $db->fetchRow('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
                 $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
             }
 

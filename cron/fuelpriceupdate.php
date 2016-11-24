@@ -35,21 +35,9 @@ $ItemIDs = array(
 //Get the current time for the update
 $time = date("Y-m-d H:i:s");
 //Get the price for each of the ice products, and then insert into the database
-/* We are commenting out this section to try the cURL method of getting pricing data
-foreach($ItemIDs as $id) {
-    $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
-    $xml = simplexml_load_file($url);
-    $price = $xml->marketstat->type->buy->median[0];
-    //Multiply the price by 1.00 to put it in decimal format for the sql database
-    $price = $price * 1.00;
-    $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
-}
- * 
- */
-
 foreach($ItemIDs as $id) {
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM IceProductPrices WHERE ItemId= :item', array('item' => $id));
-    $enabled = $db->fetchColumn('SELECT Enabled FROM IceProductPrices WHERE ItemItd= :item AND Time= :update', array('item' => $id, 'Time' => $lastUpdate));
+    $enabled = $db->fetchColumn('SELECT Enabled FROM IceProductPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
     //If its enabled update the price, otherwise set it to 0.00
     if($enabled == 1) {
     
@@ -69,10 +57,10 @@ foreach($ItemIDs as $id) {
             $xml = new SimpleXMLElement($data);
             $price = (float)$xml->marketstat->type->buy->median[0];
             if($price > 0.00) {
-                $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time, 'Enabled' => 1));
+                $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
             } else {
-                $update = $db->fetchRow('SELECT * FROM IceProductPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
-                $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time, 'Enabled' => 1));
+                $update = $db->fetchRow('SELECT * FROM IceProductPrices WHERE ItemId= :item AND Time=: update', array('item' => $id, 'update' => $lastUpdate));
+                $db->insert('IceProductPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
             }
 
         } 

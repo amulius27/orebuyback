@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="Warped Intentions Buy Back Program" name="description">
     <meta content="index,follow" name="robots">
     <meta content="width=device-width, initial-scale=1" name="viewport">

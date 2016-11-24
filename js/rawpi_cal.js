@@ -141,7 +141,7 @@ function calcNow() {
     var microReward = microUnits * micro;
     var complexReward = complexUnits * complex;
     var plankticReward = plankticUnits * planktic;
-    var nobleReward = noble_gasUnits * noble_gas;
+    var noble_gasReward = noble_gasUnits * noble_gas;
     var reactiveReward = reactiveUnits * reactive;
     var felsicReward = felsicUnits * felsic;
     var non_csReward = non_csUnits * non_cs;
@@ -157,12 +157,13 @@ function calcNow() {
     var microPrice = microReward;
     var complexPrice = complexReward;
     var plankticPrice = plankticReward;
-    var noble_gasPrice = nobleReward;
+    var noble_gasPrice = noble_gasReward;
     var reactivePrice = reactiveReward;
     var felsicPrice = felsicReward;
     var non_csPrice = non_csReward;
     var suspendedPrice = suspendedReward;
     var autotrophsPrice = autotrophsReward;
+
     var basePrice = baseReward;
     var heavyPrice = heavyReward;
     var noblePrice = nobleReward;
@@ -170,7 +171,7 @@ function calcNow() {
     var microPrice = microReward;
     var complexPrice = complexReward;
     var plankticPrice = plankticReward;
-    var noble_gasPrice = nobleReward;
+    var noble_gasPrice = noble_gasReward;
     var reactivePrice = reactiveReward;
     var felsicPrice = felsicReward;
     var non_csPrice = non_csReward;
@@ -191,7 +192,7 @@ function calcNow() {
 	$('#calc-output-micro-value').html(number_format(microReward) + ' ISK');
     $('#calc-output-complex-value').html(number_format(complexReward) + ' ISK');
 	$('#calc-output-planktic-value').html(number_format(plankticReward) + ' ISK');
-    $('#calc-output-noble_gas-value').html(number_format(nobleReward) + ' ISK');
+    $('#calc-output-noble_gas-value').html(number_format(noble_gasReward) + ' ISK');
 	$('#calc-output-reactive-value').html(number_format(reactiveReward) + ' ISK');
     $('#calc-output-felsic-value').html(number_format(felsicReward) + ' ISK');
 	$('#calc-output-non_cs-value').html(number_format(non_csReward) + ' ISK');
