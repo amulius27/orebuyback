@@ -8,6 +8,7 @@ session_start();
 $username = $_SESSION['username'];
 $db = DBOpen();
 $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
+
 DBClose($db);
 ?>
 
@@ -30,6 +31,7 @@ DBClose($db);
     <link rel="shortcut icon" href="/../images/favicon.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/canvasjs.min.js"></script>
     <style type="text/css">
         body{
             background-image:url(/../images/bgs/ore_bg_blur.jpg);
@@ -65,6 +67,17 @@ DBClose($db);
             }
         }
     ?>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Buyback Utilization of Corps</strong></span><br></h3>
+            </div>
+            <div class="panel-body" align="center">
+                <?php PrintDonutChart(); ?>
+                <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
     
 
 
