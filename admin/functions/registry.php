@@ -17,6 +17,5 @@ require_once __DIR__.'/../functions/system/printnavbar.php';
 //Statistic Functions
 require_once __DIR__.'/../functions/statistics/corpstatistics.php';
 //Chart Functions
-require_once __DIR__.'/../functions/charts/printdonutchart.php';
-
+require_once __DIR__.'/../functions/charts/donutchart.php';
 ?>
