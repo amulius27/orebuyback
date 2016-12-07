@@ -19,7 +19,10 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
 
-session_start();
+$session = new Custom\AdminSession\sessions();
+if(!$session) {
+    session_start();
+}
 
 
 if (login_check($mysqli) == true) {

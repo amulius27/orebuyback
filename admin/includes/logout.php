@@ -18,7 +18,11 @@
  */
 
 include_once 'functions.php';
-session_start();
+$session = new Custom\AdminSession\sessions();
+if(!$session) {
+    session_start();
+}
+
 
 // Unset all session values 
 session_unset();

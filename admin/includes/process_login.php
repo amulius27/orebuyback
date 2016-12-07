@@ -20,7 +20,11 @@
 include_once 'db_connect.php';
 include_once 'functions.php';
 
-session_start(); // Our custom secure way of starting a PHP session.
+$session = new Custom\AdminSession\sessions();
+if(!$session) {
+    session_start();
+}
+
 
 if (isset($_POST['username'], $_POST['p'])) {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_EMAIL);

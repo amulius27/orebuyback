@@ -4,7 +4,11 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 require_once __DIR__.'/functions/registry.php';
 
-session_start();
+$session = new Custom\AdminSession\sessions();
+if(!$session) {
+    session_start();
+}
+
 $username = $_SESSION['username'];
 $db = DBOpen();
 $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
