@@ -5,7 +5,7 @@
         $contractTime = filter_input(INPUT_POST, "Quote_Time", FILTER_SANITIZE_SPECIAL_CHARS);
     } else {
         $db = DBOpen();
-        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
+        $contractTime = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices WHERE ItemId= :item', array('item' => 16274));
         DBClose($db);
     }
     if(isset($_POST["Corporation"])) {

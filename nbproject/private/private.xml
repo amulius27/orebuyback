@@ -3,13 +3,6 @@
     <coverage xmlns="http://www.netbeans.org/ns/code-coverage/1" enabled="false"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/orebuyback/sql/orebuyback.sql</file>
-            <file>file:/var/www/orebuyback/admin/functions/registry.php</file>
-            <file>file:/var/www/orebuyback/admin/dashboard.php</file>
-            <file>file:/var/www/orebuyback/admin/functions/database/dbopen.php</file>
-            <file>file:/var/www/orebuyback/css/bootstrap.min.css</file>
-            <file>file:/var/www/orebuyback/admin/functions/charts/donutchart.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
