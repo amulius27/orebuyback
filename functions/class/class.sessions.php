@@ -7,7 +7,7 @@ class sessions {
     private $db;
     
     public function __construct(){
-        $config = parse_ini_file('/../database/config.ini');
+        $config = parse_ini_file('/../../functions/database/config.ini');
         
         //Setup our db object
         $this->db = new \Simplon\Mysql\Mysql(
