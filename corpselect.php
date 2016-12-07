@@ -1,7 +1,11 @@
 <?php
 
 //Start the session if needed
-session_start();
+$session = new Custom\Sessions\sessions();
+//If the database session isn't available then use the old way
+if(!$session) {
+    session_start();
+}
 
 $corpTemp = $_REQUEST["corp"];
 $_SESSION["corporation"] = $corpTemp;

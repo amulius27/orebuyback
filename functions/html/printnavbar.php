@@ -7,7 +7,13 @@
  */
 
 function PrintNavBar() {
-    session_start();
+    $session = new Custom\Sessions\sessions();
+    
+    //If the database session isn't available then start a regular session
+    if(!$session) {
+        session_start();
+    }
+    
     if(isset($_SESSION["corporation"])) {
         $corp = $_SESSION["corporation"];
         printf("<div class=\"navbar navbar-inverse navbar-fixed-top\" style=\"height: 72px;\" role=\"navigation\">
