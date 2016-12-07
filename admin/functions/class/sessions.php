@@ -1,5 +1,6 @@
 <?php
 
+namespace Custom\AdminSession;
 
 class sessions {
     //The database object in order to store the session data in a mysql database
