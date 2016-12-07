@@ -120,9 +120,9 @@ $chart->DonutChart('Buyback', $data, [
     <?php endif; 
         DBClose($db);
     ?>
-    <?=
-            $chart->render('DonutChart', 'Buyback', 'chart-div');
-    ?>
+	<?=
+		$chart->render('DonutChart', 'Buyback', 'chart-div');
+	?>
     
   </body>
 </html>

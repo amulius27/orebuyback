@@ -1,13 +1,12 @@
 <?php
 
-namespace Custom\Sessions;
 
 class sessions {
     //The database object in order to store the session data in a mysql database
     private $db;
     
     public function __construct(){
-        $config = parse_ini_file('/../database/config.ini');
+        $config = parse_ini_file(__DIR__.'/../../../functions/database/config.ini');
         
         //Setup our db object
         $this->db = new \Simplon\Mysql\Mysql(

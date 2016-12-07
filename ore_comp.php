@@ -132,7 +132,7 @@
                         <div class="input-group form-control" id="kernite" style="padding: 0; border: none;">
                             <input type="number" class="form-control text-right typeahead" name="Compressed_Kernite" placeholder="Compressed Kernite" id="calc-input-Kernite_units-value">
                             <input type="number" class="form-control text-right typeahead" name="Compressed_Luminous_Kernite" placeholder="Compressed Luminous Kernite" id="calc-input-Kernite_units_5-value">
-                            <input type="number" class="form-control text-right typeahead" name="Compressed_Fiery_Kernite" placeholder="Compressed Fiery Kernite" id="calc-input-Kernite_units_10-value">
+                            <input type="number" class="form-control text-right typeahead" nmae="Compressed_Fiery_Kernite" placeholder="Compressed Fiery Kernite" id="calc-input-Kernite_units_10-value">
                         </div>
                         </p>
                         <p>

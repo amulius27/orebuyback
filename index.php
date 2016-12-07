@@ -5,10 +5,8 @@
     session_start();    
     if(isset($_REQUEST["corporation"])) {
         $previousCorp = $_REQUEST["corporation"];
-        $_SESSION["corporation"] = $previousCorp;
     } else {
         $previousCorp = 'None';
-        $_SESSION["corporation"] = 'None';
     }
     PrintHeader();
     PrintHeaderCloseTag();
