@@ -17,6 +17,8 @@ $corporation = $db->fetchColumn('SELECT corporation FROM member_roles WHERE user
 $taxRate = $db->fetchColumn('SELECT TaxRate FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
 
 $stats = GetCorpStats($corporation, $db);
+
+//Get contents for chart below here
 ?>
 
 <!DOCTYPE html>
