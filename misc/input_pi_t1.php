@@ -6,8 +6,12 @@
     }
     //Open the database
     $db = DBOpen();
-    //Open the session
-    session_start();
+    //Start the session
+    $session = new Custom\Sessions\sessions();
+    //If the database session isn't available then start a regular session
+    if(!$session) {
+        session_start();
+    }
     if(isset($_REQUEST["corporation"])) {
         $corporation = $_REQUEST["corporation"];
         if($corporation == 'None') {
