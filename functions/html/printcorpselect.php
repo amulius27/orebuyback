@@ -5,11 +5,12 @@ function PrintCorpSelect($previousCorp) {
     $db = DBOpen();
     //Get the list of all corps from the database
     $corps = $db->fetchColumnMany('SELECT CorpName FROM Corps WHERE Deleted= :quit', array('quit' => 0));
-    //Close the database
-    DBClose($db);
+    
+	
     //Start the section to print the container and form
     printf("<div class=\"container\">");
-    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"setCorp($previousCorp)\" onchange=\"setCorp(this.value)\">");
+	printf("<form class=\"form-control col-md-5\" method=\"POST\" action=\"corpselect.php\" name=\"getcorp\">");
+    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"$previousCorp\" onchange=\"document.getcorp.submit()\">");
     //Check to see if the Session is already going and if so, we want to repopulate the page
     printf("<option value=\"$previousCorp\">$previousCorp</option>");
     foreach($corps as $corp) {
@@ -17,20 +18,19 @@ function PrintCorpSelect($previousCorp) {
             printf("<option value=\"$corp\">$corp</option>");
         }
     }
+	
+	if(isset($_SESSION["corporation"])) {
+		$former = $_SESSION["corporation"];
+	} else {
+		$former = 'None';
+	}
+	
     printf("</select>");
-    printf("<p><span id=\"text\">Corp not selected</span></p>");
-    printf("<script>
-            function setCorp(str) {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById(\"text\").innerHTML = xmlhttp.responseText;
-                    }
-                };
-                xmlhttp.open(\"GET\", \"corpselect.php?corp=\"+str, true);
-                xmlhttp.send();
-            }
-            </script>");
+	printf("</form>");
+    printf("<p><span id=\"text\">" . $_SESSION["corporation"] . "</span></p>");
     printf("</div>");
+	
+	//Close the database
+    DBClose($db);
 }
 

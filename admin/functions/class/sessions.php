@@ -6,15 +6,13 @@ class sessions {
     //The database object in order to store the session data in a mysql database
     private $db;
     
-    public function __construct(){
-        $config = parse_ini_file(__DIR__.'/../../../functions/database/config.ini');
-        
+    public function __construct(){        
         //Setup our db object
         $this->db = new \Simplon\Mysql\Mysql(
-            $config['server'],
-            $config['username'],
-            $config['password'],
-            $config['database']
+            'localhost',
+            'orebuyback',
+            'P@55w0rd!',
+            'cmancuso_orebuyback'
         );
         
         // Set handler to overide SESSION
@@ -81,7 +79,7 @@ class sessions {
     }    
     
     public function _gc($max) {
-        $old = time() - $max;
+        $old = time() - 3600;
         
         // custom conditions query
         $condsQuery = 'access < :old';

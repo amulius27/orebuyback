@@ -7,14 +7,12 @@ class sessions {
     private $db;
     
     public function __construct(){
-        $config = parse_ini_file('/../../functions/database/config.ini');
-        
         //Setup our db object
         $this->db = new \Simplon\Mysql\Mysql(
-            $config['server'],
-            $config['username'],
-            $config['password'],
-            $config['database']
+            'localhost',
+            'orebuyback',
+            'P@55w0rd!',
+            'cmancuso_orebuyback'
         );
         
         // Set handler to overide SESSION

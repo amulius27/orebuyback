@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__.'/functions/registry.php';
 
 //Start the session if needed
@@ -7,16 +8,10 @@ $session = new Custom\Sessions\sessions();
 if(!$session) {
     session_start();
 }
-
-$corpTemp = $_REQUEST["corp"];
-$_SESSION["corporation"] = $corpTemp;
-if(isset($_SESSION["corporation"])) {
-    echo "Corp Set to " . $_SESSION["corporation"];
-} else {
-    $_SESSION["corporation"] = 'None';
-    echo "Corp Not Set";
-}
-//Close the write session
-session_write();
+ 
+$_SESSION["corporation"] = $_POST['GetCorpTax'];
+$headerString = 'Location: index.php?corp=' . $_SESSION["corporation"];
+header($headerString);
+exit;
 
 ?>
