@@ -8,9 +8,10 @@ function PrintCorpSelect($previousCorp) {
     
 	
     //Start the section to print the container and form
-    printf("<div class=\"container\">");
-	printf("<form class=\"form-control col-md-5\" method=\"POST\" action=\"corpselect.php\" name=\"getcorp\">");
-    printf("<select class=\"form-control col-md-5\" name=\"GetCorpTax\" onload=\"$previousCorp\" onchange=\"document.getcorp.submit()\">");
+    printf("<div class=\"container\" align=\"center\">");
+	printf("<div class=\"row\">");
+	printf("<form method=\"POST\" action=\"corpselect.php\" name=\"getcorp\" align=\"center\">");
+    printf("<select class=\"form-control\" name=\"GetCorpTax\" onload=\"$previousCorp\" onchange=\"document.getcorp.submit()\">");
     //Check to see if the Session is already going and if so, we want to repopulate the page
     printf("<option value=\"$previousCorp\">$previousCorp</option>");
     foreach($corps as $corp) {
@@ -28,7 +29,7 @@ function PrintCorpSelect($previousCorp) {
     printf("</select>");
 	printf("</form>");
     printf("<p><span id=\"text\">" . $_SESSION["corporation"] . "</span></p>");
-    printf("</div>");
+    printf("</div></div>");
 	
 	//Close the database
     DBClose($db);
