@@ -67,7 +67,7 @@ foreach($Items as $item) {
             </div>
             <div class="panel-body" align="left">
                 <?php
-                    printf("<form class=\"form-horizontal\" action=\"/../processes/setenableminerals.php\" method=\"POST\">");
+                    printf("<form class=\"form-horizontal\" action=\"/../processes/setenableice.php\" method=\"POST\">");
                     $numOfItems = sizeof($Items);
                     foreach($Items as $item) {
                             $name = $item["ItemId"];

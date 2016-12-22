@@ -4,20 +4,20 @@
     $db = DBOpen();
 
     $Items = $db->fetchRowMany('SELECT * FROM ItemIds WHERE Grouping= :group', array('group' => 'Ice'));
-    $lastUpdate = $db->fetchColumn('SELECT MAX(Time) FROM IcePrices');
+    $lastUpdate = $db->fetchColumn('SELECT MAX(Time) FROM OrePrices');
 
     foreach($Items as $item) {
         if(isset($_POST[$item["ItemId"]])) {
             $enabled = 1;
-            $lastEnable = $db->fetchColumn('SELECT Enabled FROM IcePrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
+            $lastEnable = $db->fetchColumn('SELECT Enabled FROM OrePrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
             if($enabled != $lastEnable) {
                 $db->update('IcePrices', array('ItemId' => $item["ItemId"], 'Time' => $lastUpdate), array('Enabled' => $enabled));
             }
         } else {
 			$enabled = 0;
-			$lastEnable = $db->fetchColumn('SELECT Enabled FROM IcePrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
+			$lastEnable = $db->fetchColumn('SELECT Enabled FROM OrePrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
             if($enabled != $lastEnable) {
-                $db->update('IcePrices', array('ItemId' => $item["ItemId"], 'Time' => $lastUpdate), array('Enabled' => $enabled));
+                $db->update('OrePrices', array('ItemId' => $item["ItemId"], 'Time' => $lastUpdate), array('Enabled' => $enabled));
             }
 		}
 
