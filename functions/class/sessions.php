@@ -6,15 +6,8 @@ class sessions {
     //The database object in order to store the session data in a mysql database
     private $db;
     
-    public function __construct(){
-        //Setup our db object
-        $this->db = new \Simplon\Mysql\Mysql(
-            'localhost',
-            'orebuyback',
-            'P@55w0rd!',
-            'cmancuso_orebuyback'
-        );
-        
+    public function __construct(){   
+              
         // Set handler to overide SESSION
         session_set_save_handler(
             array($this, "_open"),
@@ -29,6 +22,14 @@ class sessions {
     }
     
     public function _open() {
+        //Setup our db object
+        $this->db = new \Simplon\Mysql\Mysql(
+            'localhost',
+            'root',
+            'P@55w0rd!',
+            'sessiontest'
+        );
+        
         if($this->db) {
             return true;
         } else {
@@ -49,7 +50,7 @@ class sessions {
         $row = $this->db->fetchRow('SELECT data FROM sessions WHERE id= :id', array('id' => $id));
         
         if($row) {
-            return $row;
+            return $row['data'];
         } else {
             return '';
         }
