@@ -15,6 +15,7 @@ function PrintHTMLHeader($bgimage) {
     <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">
     <title>W4RP Buy Back Program</title>
     <link href=\"/../css/bootstrap.min.css\" rel=\"stylesheet\">
+    <link href=\"/../css/bootstrap-table-expandable.css\" rel=\"stylesheet\">
     <link href=\"/../css/style.css\" rel=\"stylesheet\" type=\"text/css\">
     <link href=\"/../css/custom.css\" rel=\"stylesheet\">
     <link href=\"/../css/eve-link.css\" rel=\"stylesheet\">
