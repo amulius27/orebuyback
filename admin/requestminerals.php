@@ -8,8 +8,7 @@
     if(!$session) {
         session_start();
     }
-    
-    define('RequestMinerals', true);
+   
 
     $username = $_SESSION['username'];
     $db = DBOpen();

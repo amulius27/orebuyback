@@ -9,10 +9,6 @@
         session_start();
     }
     
-    if(!defined('RequestMinerals')) {
-        die('Direct access not permitted');
-    }
-    
     $db = DBOpen();
     
     $username = $_SESSION['username'];
