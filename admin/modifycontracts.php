@@ -32,9 +32,9 @@
                                     <th>Contract Value</th>
                                   </tr>
                                 </thead>
-                                <tbody>
-                                  <?php PrintModifyContractListAdminDashboard(); ?>
-                                  <tr>
+                                <tbody>");
+                                  PrintModifyContractListAdminDashboard();
+                            printf("  <tr>
                                       <td></td>
                                       <td><input type=\"submit\" value=\"Modify Contracts\"></td>
                                       <td></td>
