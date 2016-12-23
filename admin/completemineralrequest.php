@@ -54,52 +54,10 @@
                     </div>
                 </div>");
     }
-
+    
+    printf("<script src=\"/../js/jquery.cookie.js\"></script> 
+            <script src=\"/../js/eve-link.js\"></script>");
+    printf("</body></html>");
+    
+    DBClose($db);
 ?>
-
-<body>
-    <?php if ((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) : ?>
-    <?php PrintNavBar($username, $role); ?>
-    <div class="container">
-      <div class="row">          
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main">
-            <br>
-          <h2 class="sub-header">Contract Listing</h2>
-          <div class="table-responsive">
-              <form action="functions/processes/completecorpmineralrequest.php" method="POST">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>Contract Number</th>
-                      <th>Corporation</th>
-                      <th>Mineral Request Value</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php PrintCompleteMineralRequestForm(); ?>
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" value="Complete Mineral Request"></td>
-                        <td></td>
-                    </tr>  
-                  </tbody>
-                </table>
-              </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <script src="/../js/jquery.cookie.js"></script> 
-    <script src="/../js/eve-link.js"></script>
-            
-    
-    <?php else : ?>
-            
-    <?php endif; 
-        DBClose($db);
-    ?>
-    
-  </body>
-</html>

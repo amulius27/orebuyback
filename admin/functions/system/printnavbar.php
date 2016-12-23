@@ -31,7 +31,7 @@ function PrintNavBar($username, $role) {
                             <li class=\"dropdown\"><a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Corp Contracts<b class=\"caret\"></b></a>
                                 <ul class=\"dropdown-menu\">
                                     <li><a href=\"requestminerals.php\">Request Minerals</a></li>
-                                    <li><a href=\"completemineralrequests.php\">Complete Request</a></li>
+                                    <li><a href=\"completemineralrequest.php\">Complete Request</a></li>
                                     <li><a href=\"deletecorpcontract.php\">Delete Corp Contract Request</a></li>
                                 </ul>
                             </li>

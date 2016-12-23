@@ -32,11 +32,10 @@ function PrintCorpContractListAdminDashboard() {
             printf("<h4>Contract Details</h4>");
             printf("<ul class=\"col-md-offset-1\">");
             for($i = 2; $i < $size; $i++) {
-                $header = str_replace('_', ' ', $headers[$i]);
                 $number = number_format($contents[$headers[$i]], 0, '.', ',');
                 if($contents[$headers[$i]] > 0){
                     printf("<li>");
-                    printf($header);
+                    printf($headers[$i]);
                     printf(": ");
                     printf($number);
                     printf("</li>"); 

@@ -23,7 +23,7 @@
                           <br>
                         <h2 class=\"sub-header\">Contract Listing</h2>
                         <div class=\"table-responsive\">
-                            <form action=\"functions/processes/deletecontract.php\" method=\"POST\">
+                            <form action=\"functions/processes/deletecorpcontract.php\" method=\"POST\">
                               <table class=\"table table-striped table-expandable\">
                                 <thead>
                                   <tr>
