@@ -22,6 +22,7 @@ function PrintHTMLHeader($bgimage) {
     <link rel=\"shortcut icon\" href=\"/../images/favicon.ico\" type=\"image/x-icon\">
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>
     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"></script>
+    <script src=\"/../js/bootstrap-table-expandable.js\"></script>
     <style type=\"text/css\">
         body{
             background-image:url(" . $bgimage . ");

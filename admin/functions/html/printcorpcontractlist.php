@@ -3,7 +3,7 @@
 function PrintCorpContractListAdminDashboard() {
     $db = DBOpen();
     //Get the list of contracts from the database
-    $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'CorpContractContents'));
+    
     $contracts = $db->fetchRowMany('SELECT * FROM CorpContracts WHERE Paid= :paid AND Deleted= :deleted', array('paid' => 0, 'deleted' => 0));
     
     if( $db->getRowCount() > 0 ) {
@@ -15,8 +15,9 @@ function PrintCorpContractListAdminDashboard() {
             $contractLocation = $contract['Location'];
             $contractV = number_format($contractValue, 2, '.', ',');
             //Get the contents of the contract
+            $headers = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'CorpContractContents'));
             $contents = $db->fetchRow('SELECT * FROM CorpContractContents WHERE ContractNum= :contract', array('contract' => $contractNumber));
-            
+            $size = sizeof($headers);
             printf("<tr>");
             printf("<td>" . $contractNumber . "</td>");
             printf("<td>" . $contractCorporation . "</td>");
