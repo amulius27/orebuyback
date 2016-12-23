@@ -105,6 +105,51 @@ CREATE TABLE IF NOT EXISTS `Contracts` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
+-- Table structure for table `CorpContracts`
+--
+
+CREATE TABLE IF NOT EXISTS `CorpContracts` (
+    `ContractNum` int(11) NOT NULL,
+    `Corporation` varchar(50) NOT NULL,
+    `Location` varchar(50) NOT NULL,
+    `Value` decimal (20,2) NOT NULL,
+    `Paid` tinyint(1) NOT NULL DEFAULT '0',
+    `Deleted` tinyint(1) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `CorpContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `CorpContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `Tritanium` int(20) NOT NULL DEFAULT '0',
+    `Pyerite` int(20) NOT NULL DEFAULT '0',
+    `Isogen` int(20) NOT NULL DEFAULT '0',
+    `Mexallon` int(20) NOT NULL DEFAULT '0',
+    `Nocxium` int(20) NOT NULL DEFAULT '0',
+    `Zydrine` int(20) NOT NULL DEFAULT '0',
+    `Megacyte` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `CorpContractPayouts`
+--
+
+CREATE TABLE IF NOT EXISTS `CorpContractPayouts` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `ContractNum` int(12) NOT NULL,
+    `CorpName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+    `Amount` decimal(12,2) DEFAULT '0.00',
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table 'OreContractContents`
 --
 

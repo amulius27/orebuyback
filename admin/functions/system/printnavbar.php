@@ -15,6 +15,7 @@ function PrintNavBar($username, $role) {
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
                         </button>
                     </div>
                     <div class=\"collapse navbar-collapse pull-left\">
@@ -25,6 +26,13 @@ function PrintNavBar($username, $role) {
                                     <li><a href=\"contracts.php\">Payout Contracts</a></li>
                                     <li><a href=\"modifycontracts.php\">Modify Contracts</a></li>
                                     <li><a href=\"deletecontracts.php\">Delete Contracts</a></li>
+                                </ul>
+                            </li>
+                            <li class=\"dropdown\"><a data-toggle=\"dropdown\" class=\"dropdown-toggle\">Corp Contracts<b class=\"caret\"></b></a>
+                                <ul class=\"dropdown-menu\">
+                                    <li><a href=\"requestminerals.php\">Request Minerals</a></li>
+                                    <li><a href=\"completemineralrequests.php\">Complete Request</a></li>
+                                    <li><a href=\"deletecorpcontract.php\">Delete Corp Contract Request</a></li>
                                 </ul>
                             </li>
                             <li><a href=\"corppayouts.php\">Corp Payouts</a></li>
@@ -57,11 +65,13 @@ function PrintNavBar($username, $role) {
                             <span class=\"sr-only\">Toggle navigation</span>
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
                         </button>
                     </div>
                     <div class=\"collapse navbar-collapse pull-left\">
                         <ul class=\"nav navbar-nav\">
                             <li><a href=\"dashboard.php\">Dashboard</a></li>
+                            <li><a href=\"requestminerals.php\">Request Minerals</a></li>
                             <li><a href=\"corpsettings.php\">Corp Settings</a></li>
                         </ul>
                     </div>
@@ -79,11 +89,13 @@ function PrintNavBar($username, $role) {
                             <span class=\"sr-only\">Toggle navigation</span>
                             <span class=\"icon-bar\"></span>
                             <span class=\"icon-bar\"></span>
+                            <span class=\"icon-bar\"></span>
                         </button>
                     </div>
                     <div class=\"collapse navbar-collapse pull-left\">
                         <ul class=\"nav navbar-nav\">
                             <li><a href=\"dashboard.php\">Dashboard</a></li>
+                            <li><a href=\"requestminerals.php\">Request Minerals</a></li>
                             <li><a href=\"corpsettings.php\">Corp Settings</a></li>
                         </ul>
                     </div>
