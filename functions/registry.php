@@ -50,6 +50,7 @@ require_once __DIR__.'/../functions/contracts/printcontractcontents.php';
 
 
 $contractLimit = '600m ISK';
+$defaultTax = 10.00;
 
 $fuelEnable = true;
 $iProdEnable = true;
