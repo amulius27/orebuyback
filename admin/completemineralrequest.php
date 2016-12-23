@@ -17,6 +17,7 @@
     printf("<body>");
 
     if((login_check($mysqli) == true) AND ($role == 'SiteAdmin')) {
+        PrintNavBar($username, $role);
         printf("<div class=\"container\">
                     <div class=\"row\">          
                       <div class=\"col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-1 main\">
