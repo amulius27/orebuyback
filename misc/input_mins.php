@@ -12,23 +12,21 @@
     if(!$session) {
         session_start();
     }
-    if(isset($_REQUEST["corporation"])) {
-        $corporation = $_REQUEST["corporation"];
-        if($corporation == 'None') {
-            $corpTax = 10.00;
-        }
-        $corporation = str_replace('"', "", $corporation);
-        $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
-    } else if(isset($_SESSION["corporation"])) {
+    
+    if(isset($_SESSION["corporation"])) {
         $corporation = $_SESSION["corporation"];
-        if($corporation == 'None') {
-            $corpTax = 10.00;
-        }
-        $corporation = str_replace('"', "", $corporation);
         $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+    } else if (isset($_REQUEST["corporation"])) {
+        $corporation = $_REQUEST["corporation"];
+        if($corporation != 'None') {
+            $corpTax = $db->fetchColumn('SELECT `TaxRate` FROM Corps WHERE CorpName= :corp', array('corp' => $corporation));
+        } else {
+            $corporation = 'None';
+            $corpTax = $defaultTax;
+        }
     } else {
         $corporation = 'None';
-        $corpTax = 10.00;
+        $corpTax = $defaultTax;
     }
     
     $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
