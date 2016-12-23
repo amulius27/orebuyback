@@ -11,7 +11,11 @@
 	
     $previousCorp = $_SESSION["corporation"];
     if($previousCorp == NULL) {
-        $previousCorp = $_GET["corp"];
+        if(isset($_GET["corp"])) {
+                $previousCorp = $_GET["corp"];
+        } else {
+                $previousCorp = 'None';
+        }
     }  else {
         $previousCorp = 'None';
     }
