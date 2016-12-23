@@ -1,8 +1,8 @@
 <?php
     
-    include_once 'includes/db_connect.php';
-    include_once 'includes/functions.php';
-    require_once __DIR__.'/functions/registry.php';
+    include_once '/../../includes/db_connect.php';
+    include_once '/../../includes/functions.php';
+    require_once __DIR__.'/../../functions/registry.php';
 
     $session = new Custom\AdminSession\sessions();
     if(!$session) {
