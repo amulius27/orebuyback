@@ -21,6 +21,7 @@ require_once __DIR__.'/../functions/html/printdeletecorpcontract.php';
 require_once __DIR__.'/../functions/html/printhtmlheader.php';
 require_once __DIR__.'/../functions/html/printmineralrequestform.php';
 require_once __DIR__.'/../functions/html/printmodifycontractlisting.php';
+require_once __DIR__.'/../functions/html/printnotloggedinmessage.php';
 require_once __DIR__.'/../functions/html/printuserdropdown.php';
 
 //System Functions

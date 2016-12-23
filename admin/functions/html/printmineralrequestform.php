@@ -23,14 +23,14 @@ function PrintMineralRequestForm($corporation) {
     $Morphite = $db->fetchColumn('SELECT Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 11399, 'time' => $update));
     
     //Calculate the updated price to reflect markup
-    $Tritanium = $Tritanium * 1.01;
-    $Pyerite = $Pyerite * 1.01;
-    $Mexallon = $Mexallon * 1.01;
-    $Isogen = $Isogen * 1.01;
-    $Nocxium = $Nocxium * 1.01;
-    $Megacyte = $Megacyte * 1.01;
-    $Zydrine = $Zydrine * 1.01;
-    $Morphite = $Morphite * 1.01;
+    $Tritanium = number_format(($Tritanium * 1.01), 2, '.', ',');
+    $Pyerite = number_format(($Pyerite * 1.01), 2, '.', ',');
+    $Mexallon = number_format(($Mexallon * 1.01), 2, '.', ',');
+    $Isogen = number_format(($Isogen * 1.01), 2, '.', ',');
+    $Nocxium = number_format(($Nocxium * 1.01), 2, '.', ',');
+    $Megacyte = number_format(($Megacyte * 1.01), 2, '.', ',');
+    $Zydrine = number_format(($Zydrine * 1.01), 2, '.', ',');
+    $Morphite = number_format(($Morphite * 1.01), 2, '.', ',');
     
     //Mineral request form for admin dashboard
     printf("<form action=\"functions/processes/corpmineralrequest.php\" method=\"POST\">
