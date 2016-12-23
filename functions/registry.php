@@ -31,6 +31,7 @@ require_once __DIR__.'/../functions/html/printheadercorpselectscript.php';
 require_once __DIR__.'/../functions/html/printcloseindexpage.php';
 require_once __DIR__.'/../functions/html/printindexpage.php';
 require_once __DIR__.'/../functions/html/printinstructions.php';
+require_once __DIR__.'/../functions/html/printmainpageheader.php';
 
 //Contract Functionality
 require_once __DIR__.'/../functions/contracts/comporecontractvalue.php';
@@ -48,7 +49,7 @@ require_once __DIR__.'/../functions/contracts/wgascontractvalue.php';
 require_once __DIR__.'/../functions/contracts/printcontractcontents.php';
 
 
-$contractLimit = '500m ISK';
+$contractLimit = '600m ISK';
 
 $fuelEnable = true;
 $iProdEnable = true;
