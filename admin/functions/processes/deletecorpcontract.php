@@ -10,7 +10,7 @@
     DBClose($db);
     //Return to the Delete Contracts page
     $location = 'http://' . $_SERVER['HTTP_HOST'];
-    $location = $location . dirname($_SERVER['PHP_SELF']) . '/../../deletecontracts.php';
+    $location = $location . dirname($_SERVER['PHP_SELF']) . '/../../deletecorpcontract.php';
     header("Location: $location");
 
 ?>
