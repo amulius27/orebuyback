@@ -494,6 +494,56 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
+-- Table structure for table `SalvageContractContents`
+--
+
+CREATE TABLE IF NOT EXISTS `SalvageContractContents` (
+    `ContractNum` int(11) NOT NULL,
+    `ContractTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `QuoteTime` timestamp NOT NULL,
+    `Alloyed_Tritanium_Bar` int(20) NOT NULL DEFAULT '0',
+    `Armor_Plates` int(20) NOT NULL DEFAULT '0',
+    `Artificial_Neural_Network` int(20) NOT NULL DEFAULT '0',
+    `Broken_Drone_Transceiver` int(20) NOT NULL DEFAULT '0',
+    `Burned_Logic_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Capacitor_Circuit_Console` int(20) NOT NULL DEFAULT '0',
+    `Charred_MIcro_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Conductive_Polymer` int(20) NOT NULL DEFAULT '0',
+    `Conductive_Thermoplastic` int(20) NOT NULL DEFAULT '0',
+    `Contaminated_Lorrentz_Fluid` int(20) NOT NULL DEFAULT '0',
+    `Contaminated_Nanite_Compound` int(20) NOT NULL DEFAULT '0',
+    `Current_Pump` int(20) NOT NULL DEFAULT '0',
+    `Damaged_Artificial_Neural_Network` int(20) NOT NULL DEFAULT '0',
+    `Defective_Current_Pump` int(20) NOT NULL DEFAULT '0',
+    `Drone_Transceiver` int(20) NOT NULL DEFAULT '0',
+    `Enhanced_Ward_Console` int(20) NOT NULL DEFAULT '0',
+    `Fried_Interface_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Impetus_Console` int(20) NOT NULL DEFAULT '0',
+    `Intact_Armor_Plates` int(20) NOT NULL DEFAULT '0',
+    `Intact_Shield_Emitter` int(20) NOT NULL DEFAULT '0',
+    `Interface_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Logic_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Lorrentz_Fluid` int(20) NOT NULL DEFAULT '0',
+    `Malfunctioning_Shield_Emitter` int(20) NOT NULL DEFAULT '0',
+    `Melted_Capacitor_Console` int(20) NOT NULL DEFAULT '0',
+    `Micro_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Nanite_Compound` int(20) NOT NULL DEFAULT '0',
+    `Power_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Power_Conduit` int(20) NOT NULL DEFAULT '0',
+    `Scorched_Telemetry_Processor` int(20) NOT NULL DEFAULT '0',
+    `Single-Crystal_Superalloy_I-Beam` int(20) NOT NULL DEFAULT '0',
+    `Smashed_Trigger_Unit` int(20) NOT NULL DEFAULT '0',
+    `Tangled_Power_Conduit` int(20) NOT NULL DEFAULT '0',
+    `Telemetry_Processor` int(20) NOT NULL DEFAULT '0',
+    `Thruster_Console` int(20) NOT NULL DEFAULT '0',
+    `Trigger_Unit` int(20) NOT NULL DEFAULT '0',
+    `Tripped_Power_Circuit` int(20) NOT NULL DEFAULT '0',
+    `Ward_Console` int(20) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`ContractNum`),
+    UNIQUE KEY `ContractNum` (`ContractNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Table structure for table `WGasContractContents`
 --
 

@@ -159,7 +159,7 @@
                         <p>
                             <label>Damaged Artificial Neural Network <?php echo number_format($DamagedArtificialNeuralNetwork, 2, '.', ',');?> ISK/Unit</label>
                         <div class="input-group form-control" id="Damaged Artificial Neural Network" style="padding: 0; border: none;">
-                            <input type="number" class="form-control text-right typeahead" name="Artificial_Neural_Network" placeholder="Damaged Artificial Neural Network" id="calc-input-Damaged_Artificial_Neural_Network_units-value">
+                            <input type="number" class="form-control text-right typeahead" name="Damaged_Artificial_Neural_Network" placeholder="Damaged Artificial Neural Network" id="calc-input-Damaged_Artificial_Neural_Network_units-value">
                         </div>
                         </p>
                         <p>
