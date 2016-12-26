@@ -6,9 +6,6 @@
     use Khill\Lavacharts;
 
     $session = new Custom\AdminSession\sessions();
-    if(!$session) {
-        session_start();
-    }
 
     $username = $_SESSION['username'];
     $db = DBOpen();
