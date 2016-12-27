@@ -53,7 +53,7 @@ function PrintMineralRequestForm($corporation) {
             <div class=\"input-group form-control\" id=\"Mexallon\" style=\"padding: 0; border: none;\">
                 <input type=\"number\" class=\"form-control text-right typeahead\" name=\"Mexallon\" placeholder=\"Units of Mexallon\">
                 <input type=\"hidden\" class=\"form-control text-right typeahead\" name=\"TritaniumPrice\" value=\"" . $Mexallon . "\">
-            </div>'ContractNum' => $contractNum
+            </div>
             <label>Nocxium: " . $Nocxium . " ISK/Unit</label>
             <div class=\"input-group form-control\" id=\"Nocxium\" style=\"padding: 0; border: none;\">
                 <input type=\"number\" class=\"form-control text-right typeahead\" name=\"Nocxium\" placeholder=\"Units of Nocxium\">
