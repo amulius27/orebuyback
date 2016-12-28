@@ -1,5 +1,4 @@
 <?php
-    use Khill\Lavacharts\Lavacharts;
 
     include_once 'includes/db_connect.php';
     include_once 'includes/functions.php';
@@ -13,33 +12,7 @@
     $username = $_SESSION['username'];
     $db = DBOpen();
     $role = $db->fetchColumn('SELECT role FROM member_roles WHERE username= :user', array('user' => $username));
-
-    //Get a list of corps
-    $corps = $db->fetchColumnMany('SELECT CorpName FROM Corps WHERE Deleted= :del', array('del' => 0));
-    //Initialize the lavachart
-    $chart = new LavaCharts;
-    //Setup the data table to insert data into
-    $data = $chart->DataTable();
-    //Add the two columns for the donut chart
-    $data->addStringColumn('Corp Name');
-    $data->addNumberColumn('ISK');
-    foreach($corps as $corp) {
-            $isk = $db->fetchColumn('SELECT SUM(Value) FROM Contracts WHERE Corporation= :corp AND Paid= :paid AND Deleted= :del', array('corp' => $corp, 'paid' => 1, 'del' => 0));
-            //If there is a value of ISK received from the query, add it to the data table for the chart
-            if($isk != "") {
-                    //Typecast the value into a floating point number
-                    $isk = $isk * 1.00;
-                    //Add the corp name (string) and the isk (float) to the data table
-                    $data->addRow([$corp, $isk]);
-            }
-    }
-    //Set the name and attributes of the chart
-    $chart->DonutChart('Buyback', $data, [
-            'title' => 'Buyback Utilization',
-            'backgroundColor' => '#FFCD00',
-            'height' => 600,
-    ]);
-
+    
     PrintHTMLHeader('/../images/bgs/ore_bg_blur.jpg');
     printf("<body>");
     
@@ -65,19 +38,32 @@
         
         //Print the rest of the html for the logged in Dashboard
         printf("<br><hr><br>
-                <div class=\"container md-col-6\">
+                <div class=\"container\">
                     <div class=\"panel panel-default\">
                         <div class=\"panel-heading\" align=\"center\">
                             <h3 class=\"panel-title\"><span style=\"font-family: Arial; color: #FF2A2A;\"><strong>Buyback Utilization of Corps</strong></span><br></h3>
                         </div>
                         <div class=\"panel-body\" align=\"center\">
-                            <div id=\"chart-div\"></div>
+                            <canvas id=\"UtilizationChart\" height=\"600\" width=\"600\"></canvas>
                         </div>
                     </div>
-                </div>	
+                </div>
+                <div class=\"container\">
+                    <div class-\"panel panel-default\">
+                        <div class=\"panel-heading\" align=\"center\">
+                            <h3 class=\"panel-title\"><span style=\"font-family: Arial; color: #FF2A2A;\"><strong>Buyback Utilization of Corps</strong></span><br></h3>
+                        </div>
+                        <div class=\"panel-body\" align=\"center\">
+                            <canvas id=\"ContractsChart\" height=\"400\" width=\"400\"></canvas>
+                        </div>
+                    </div>
+                </div>
 
                 <script src=\"/../js/jquery.cookie.js\"></script> 
-                <script src=\"/../js/eve-link.js\"></script>");
+                <script src=\"/../js/eve-link.js\"></script>
+                <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js\"></script>
+                <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js\"></script>
+                <script src=\"js/admindashboardcharts.js\"></script>");
         
     } else {
         //Print the not logged in text
@@ -88,14 +74,9 @@
                     </div>
                 </div>");
     }
+    
+    printf("</body></html>");
+    
     DBClose($db);
-?>
-
-<?=
-    $chart->render('DonutChart', 'Buyback', 'chart-div');
-?>
-
-<?php
-    printf("</body>
-        </html>");
+    
 ?>
