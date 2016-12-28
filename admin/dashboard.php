@@ -49,9 +49,9 @@
                     </div>
                 </div>
                 <div class=\"container\">
-                    <div class-\"panel panel-default\">
+                    <div class=\"panel panel-default\">
                         <div class=\"panel-heading\" align=\"center\">
-                            <h3 class=\"panel-title\"><span style=\"font-family: Arial; color: #FF2A2A;\"><strong>Buyback Utilization of Corps</strong></span><br></h3>
+                            <h3 class=\"panel-title\"><span style=\"font-family: Arial; color: #FF2A2A;\"><strong>Types of Contracts Submitted</strong></span><br></h3>
                         </div>
                         <div class=\"panel-body\" align=\"center\">
                             <canvas id=\"ContractsChart\" height=\"400\" width=\"400\"></canvas>

@@ -7,6 +7,12 @@ function getRandomColor() {
     return color;
 }
 
+function getRandomRGBA() {
+	var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+	
+	return hue;
+}
+
 $(document).ready(function(){
     //Call for Utilization Chart
     $.ajax({
@@ -58,23 +64,29 @@ $(document).ready(function(){
             var ContractType = [];
             var NumOfContracts = [];
             var chart;
+			var Color = [];
+			var hue = getRandomRGBA();
 
             for(var i in data) {
                 ContractType.push(data[i].Type);
                 NumOfContracts.push(data[i].Number);
+				Color.push(hue);
             }
 
             var chartData = {
                 labels: ContractType,
-                datasets: [{						
+                datasets: [{
+						label: "Contracts",
+						backgroundColor: Color,
                         data: NumOfContracts
+						
                 }]
             };
 
             var ctx = $("#ContractsChart");
             //Set chart global option
             Chart.defaults.global.maintainAspectRatio = false;
-            //Chart.defaults.global.defaultFontColor  = "#FFFFFF";
+            Chart.defaults.global.defaultFontColor  = "#FFFFFF";
             
             var barChart = new Chart(ctx, {
                 type: 'horizontalBar',
