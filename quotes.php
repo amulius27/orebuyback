@@ -75,40 +75,33 @@
         </div>
     </div>
 </div>
+<br>
 
-<div class="clearfix"></div>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#Minerals">Minerals</a></li>
+    <li><a data-toggle="tab" href="#Ore">Ore</a></li>
+</ul>
 
-<div class="container">
-    <div class="row">
-        <h3 class="panel-title"><span style="font-family: Arial; color: #FF2A2A;"><strong>Mineral Quotes</strong></span></h3>
-        <?php 
-            printf("<table class=\"table-striped\">");
-            for($i = 0; $i < $columnsNum - 1; $i++) {
-                $header = str_replace('_', ' ', $MineralColumns[$i]);
-                printf("<tr>");
-                printf("<td>");
-                printf($header);
-                printf("</td>");
-                printf("<td>");
-                printf($MineralPrices[$MineralColumns[$i]]);
-                printf("</td>");
-                printf("</tr>");
-            }
-            printf("</table>");
-        ?>
-    </div>
+<div class="tab-content">
+  <div id="Minerals" class="tab-pane fade in active">
+      <canvas id="MineralPriceLineChart"></canvas>
+  </div>
+  <div id="Ore" class="tab-pane fade">
+      <canvas id="OrePriceLineChart"></canvas>
+  </div>
 </div>
 
-<div class="clearfix"></div>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/typeahead.bundle.js"></script>
+<script src="js/handlebars-v1.3.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+<script src="js/admindashboardcharts.js"></script>
 
 <?php
     PrintFooter();
     DBClose($db);
 ?>
-<script src="js/jquery.cookie.js"></script>
-<script src="js/typeahead.bundle.js"></script>
-<script src="js/handlebars-v1.3.0.js"></script>
-<script src="js/ore_cal.js"></script>
 
 </body>
 </html>
