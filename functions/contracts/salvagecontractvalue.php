@@ -13,7 +13,7 @@ function SalvageContractValue($update, $corporation, $post) {
     $CharredMicroCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25599, 'time' => $update));
     $ConductivePolymer = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25604, 'time' => $update));
     $ConductiveThermoplastic = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25623, 'time' => $update));
-    $ContaminatedLorentzFluid = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25591, 'time' => $update));
+    $ContaminatedLorrentzFluid = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25591, 'time' => $update));
     $ContaminatedNaniteCompound = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25590, 'time' => $update));
     $CurrentPump = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25611, 'time' => $update));
     $DamagedArtificialNeuralNetwork = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25597, 'time' => $update));
@@ -26,7 +26,7 @@ function SalvageContractValue($update, $corporation, $post) {
     $IntactShieldEmitter = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25608, 'time' => $update));
     $InterfaceCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25620, 'time' => $update));
     $LogicCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25619, 'time' => $update));
-    $LorentzFluid = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25610, 'time' => $update));
+    $LorrentzFluid = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25610, 'time' => $update));
     $MalfunctioningShieldEmitter = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25589, 'time' => $update));
     $MeltedCapacitorConsole = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25603, 'time' => $update));
     $MicroCircuit = $db->fetchColumn('SELECT Price FROM SalvagePrices WHERE ItemId= :id AND Time= :time', array('id' => 25618, 'time' => $update));
@@ -62,8 +62,8 @@ function SalvageContractValue($update, $corporation, $post) {
         'Charred_Micro_Circuit' => $post['Charred_Micro_Circuit'] * $CharredMicroCircuit,
         'Conductive_Polymer' => $post['Conductive_Polymer'] * $ConductivePolymer,
         'Conductive_Thermoplastic' => $post['Conductive_Thermoplastic'] * $ConductiveThermoplastic,
-        'Contaminated_Lorrentz_Fluid' => $post['Contaminated_Lorrentz_Fluid'] * $ContaminatedLorentzFluid,
-        'Contaiminated_Nanite_Compound' => $post['Contaminated_Nanite_Compound'] * $ContaminatedNaniteCompound,
+        'Contaminated_Lorrentz_Fluid' => $post['Contaminated_Lorrentz_Fluid'] * $ContaminatedLorrentzFluid,
+        'Contaminated_Nanite_Compound' => $post['Contaminated_Nanite_Compound'] * $ContaminatedNaniteCompound,
         'Current_Pump' => $post['Current_Pump'] * $CurrentPump,
         'Damaged_Artificial_Neural_Network' => $post['Damaged_Artifical_Neural_Network'] * $DamagedArtificialNeuralNetwork,
         'Defective_Current_Pump' => $post['Defective_Current_Pump'] * $DefectiveCurrentPump,
@@ -75,7 +75,7 @@ function SalvageContractValue($update, $corporation, $post) {
         'Intact_Shield_Emitter' => $post['Intact_Shield_Emitter'] * $IntactShieldEmitter,
         'Interface_Circuit' => $post['Interface_Circuit'] * $InterfaceCircuit,
         'Logic_Circuit' => $post['Logic_Circuit'] * $LogicCircuit,
-        'Lorrentz_Fluid' => $post['Lorrentz_Fluid'] * $LorentzFluid,
+        'Lorrentz_Fluid' => $post['Lorrentz_Fluid'] * $LorrentzFluid,
         'Malfunctioning_Shield_Emitter' => $post['Malfunctioning_Shield_Emitter'] * $MalfunctioningShieldEmitter,
         'Melted_Capacitor_Console' => $post['Melted_Capacitor_Console'] * $MeltedCapacitorConsole,
         'Micro_Circuit' => $post['Micro_Circuit'] * $MicroCircuit,
@@ -83,7 +83,7 @@ function SalvageContractValue($update, $corporation, $post) {
         'Power_Circuit' => $post['Power_Circuit'] * $PowerCircuit,
         'Power_Conduit' => $post['Power_Conduit'] * $PowerConduit,
         'Scorched_Telemetry_Processor' => $post['Scorched_Telemetry_Processor'] * $ScorchedTelemetryProcessor,
-        'Single-Crystal_Superalloy_I-Beam' => $post['Single-Cyrstal_Superalloy_I-Beam'] * $SingleCrystalSuperalloyIBeam,
+        'SCS_IBeam' => $post['SCS_IBeam'] * $SingleCrystalSuperalloyIBeam,
         'Smashed_Trigger_Unit' => $post['Smashed_Trigger_Unit'] * $SmashedTriggerUnit,
         'Tangled_Power_Conduit' => $post['Tangled_Power_Conduit'] * $TangledPowerConduit,
         'Telemetry_Processor' => $post['Telemetry_Processor'] * $TelemetryProcessor,
@@ -121,8 +121,8 @@ function SalvageContractValue($update, $corporation, $post) {
         'Charred_Micro_Circuit' => $post['Charred_Micro_Circuit'],
         'Conductive_Polymer' => $post['Conductive_Polymer'],
         'Conductive_Thermoplastic' => $post['Conductive_Thermoplastic'],
-        'Contaminated_Lorrentz_Fluid' => $post['Contaminated_Lorentz_Fluid'],
-        'Contaiminated_Nanite_Compound' => $post['Contaminated_Nanite_Compound'],
+        'Contaminated_Lorrentz_Fluid' => $post['Contaminated_Lorrentz_Fluid'],
+        'Contaminated_Nanite_Compound' => $post['Contaminated_Nanite_Compound'],
         'Current_Pump' => $post['Current_Pump'],
         'Damaged_Artificial_Neural_Network' => $post['Damaged_Artificial_Neural_Network'],
         'Defective_Current_Pump' => $post['Defective_Current_Pump'],
@@ -134,7 +134,7 @@ function SalvageContractValue($update, $corporation, $post) {
         'Intact_Shield_Emitter' => $post['Intact_Shield_Emitter'],
         'Interface_Circuit' => $post['Interface_Circuit'],
         'Logic_Circuit' => $post['Logic_Circuit'],
-        'Lorrentz_Fluid' => $post['Lorentz_Fluid'],
+        'Lorrentz_Fluid' => $post['Lorrentz_Fluid'],
         'Malfunctioning_Shield_Emitter' => $post['Malfunctioning_Shield_Emitter'],
         'Melted_Capacitor_Console' => $post['Melted_Capacitor_Console'],
         'Micro_Circuit' => $post['Micro_Circuit'],
@@ -142,7 +142,7 @@ function SalvageContractValue($update, $corporation, $post) {
         'Power_Circuit' => $post['Power_Circuit'],
         'Power_Conduit' => $post['Power_Conduit'],
         'Scorched_Telemetry_Processor' => $post['Scorched_Telemetry_Processor'],
-        'Single-Crystal_Superalloy_I-Beam' => $post['Single-Crystal_Superalloy_I-Beam'],
+        'SCS_IBeam' => $post['SCS_IBeam'],
         'Smashed_Trigger_Unit' => $post['Smashed_Trigger_Unit'],
         'Tangled_Power_Conduit' => $post['Tangled_Power_Conduit'],
         'Telemetry_Processor' => $post['Telemetry_Processor'],

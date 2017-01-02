@@ -45,6 +45,7 @@ require_once __DIR__.'/../functions/contracts/pit1contractvalue.php';
 require_once __DIR__.'/../functions/contracts/pit2contractvalue.php';
 require_once __DIR__.'/../functions/contracts/pit3contractvalue.php';
 require_once __DIR__.'/../functions/contracts/pit4contractvalue.php';
+require_once __DIR__.'/../functions/contracts/salvagecontractvalue.php';
 require_once __DIR__.'/../functions/contracts/wgascontractvalue.php';
 require_once __DIR__.'/../functions/contracts/printcontractcontents.php';
 

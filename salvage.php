@@ -139,9 +139,9 @@
                             </div>
                         </p>
                         <p>
-                            <label>Contaminated Lorentz Fluid <?php echo number_format($ContaminatedLorentzFluid, 2, '.', ',');?> ISK/Unit</label>
+                            <label>Contaminated Lorrentz Fluid <?php echo number_format($ContaminatedLorentzFluid, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Contaminated Lorentz Fluid" style="padding: 0; border: none;">
-                                <input type="number" class="form-control text-right typeahead" name="Contaminated_Lorentz_Fluid" placeholder="Contaminated Lorentz Fluid" id="calc-input-Contaminated_Lorentz_Fluid_units-value">
+                                <input type="number" class="form-control text-right typeahead" name="Contaminated_Lorrentz_Fluid" placeholder="Contaminated Lorrentz Fluid" id="calc-input-Contaminated_Lorentz_Fluid_units-value">
                             </div>
                         </p>
                         <p>
@@ -217,7 +217,7 @@
                             </div>
                         </p>
                         <p>
-                            <label>Lorentz Fluid  <?php echo number_format($LorentzFluid, 2, '.', ',');?> ISK/Unit</label>
+                            <label>Lorrentz Fluid  <?php echo number_format($LorentzFluid, 2, '.', ',');?> ISK/Unit</label>
                             <div class="input-group form-control" id="Lorentz Fluid" style="padding: 0; border: none;">
                                 <input type="number" class="form-control text-right typeahead" name="Lorrentz_Fluid" placeholder="Lorentz Fluid" id="calc-input-Lorentz_Fluid_units-value">
                             </div>
