@@ -495,7 +495,7 @@ CREATE TABLE IF NOT EXISTS `PiT4ContractContents` (
 
 --
 -- Table structure for table `SalvageContractContents`
---
+-- 
 
 CREATE TABLE IF NOT EXISTS `SalvageContractContents` (
     `ContractNum` int(11) NOT NULL,
