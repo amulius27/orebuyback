@@ -23,8 +23,8 @@
     } else {
         $ArmorPlates = 0;
     }
-    if(isset($_POST["Artificial_Neural_Network"])) {
-        $ArtificialNeuralNetwork = filter_input(INPUT_POST, "Artificial_Neural_Network", FILTER_SANITIZE_NUMBER_INT);
+    if(isset($_POST["Artifical_Neural_Network"])) {
+        $ArtificialNeuralNetwork = filter_input(INPUT_POST, "Artifical_Neural_Network", FILTER_SANITIZE_NUMBER_INT);
     } else {
         $ArtificialNeuralNetwork = 0;
     }
