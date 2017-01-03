@@ -1,28 +1,5 @@
 <?php  
     require_once __DIR__.'/functions/registry.php';
-    $db = DBOpen();
-    
-    $MineralUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM MineralPrices');
-    $MineralPrices = $db->fetchColumnMany('SELECT time, Price FROM MineralPrices WHERE time= :update', array('update' => $MineralUpdateTime));
-    $MineralColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'MineralPrices'));
-    
-    $PiUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM PiPrices');
-    $PiPrices = $db->fetchColumnMany('SELECT * FROM PiPrices WHERE time= :update', array('update' => $PiUpdateTime));
-    $PiColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'PiPrices'));
-    
-    $SalvageUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM SalvagePrices');
-    $SalvagePrices = $db->fetchColumnMany('SELECT * FROM SalvagePrices WHERE time= :update', array('update' => $SalvageUpdateTime));
-    $SalvageColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'SalvagePrices'));
-    
-    $FuelUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM IceProductPrices');
-    $FuelPrices = $db->fetchColumnMany('SELECT * FROM IceProductPrices WHERE time= :update', array('update' => $IceProductPrices));
-    $FuelColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'IceProductPrices'));
-    
-    $OreUpdateTime = $db->fetchColumn('SELECT MAX(time) FROM OrePrices');
-    $OrePrices = $db-> fetchColumnMany('SELECT * FROM OrePrices WHERE time= :update', array('update' => $OreUpdateTime));
-    $OreColumns = $db->fetchColumnMany('SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME= :table', array('table' => 'OrePrices'));
-    
-    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
 ?>
 
 <!DOCTYPE html>
@@ -96,11 +73,10 @@
 <script src="js/handlebars-v1.3.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
-<script src="js/admindashboardcharts.js"></script>
+<script src="js/quotescharts.js"></script>
 
 <?php
     PrintFooter();
-    DBClose($db);
 ?>
 
 </body>
