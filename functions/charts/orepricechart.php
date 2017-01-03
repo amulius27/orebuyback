@@ -4,7 +4,7 @@
     
     $db = DBOpen();
 
-    $ores = $db->fetchRowMany('SELECT * FROM ItemIds WHERE Grouping=Ore');
+    $ores = $db->fetchRowMany('SELECT * FROM ItemIds WHERE Grouping= :group', array('group' => 'Ore'));
     
     $data = array();
     

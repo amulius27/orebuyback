@@ -22,7 +22,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style type="text/css">
         body{
-            background-image:url(images/bgs/scifi-mmogames-entropy-asteroid-belt-screenshot.jpg);
+            
             background-repeat:no-repeat;
             background-attachment: fixed;
         }
@@ -61,10 +61,10 @@
 
 <div class="tab-content">
   <div id="Minerals" class="tab-pane fade in active">
-      <canvas id="MineralPriceLineChart"></canvas>
+      <canvas id="MineralPriceLineChart" height="800" width="400"></canvas>
   </div>
   <div id="Ore" class="tab-pane fade">
-      <canvas id="OrePriceLineChart"></canvas>
+      <canvas id="OrePriceLineChart" height="800" width="400"></canvas>
   </div>
 </div>
 
@@ -73,7 +73,7 @@
 <script src="js/handlebars-v1.3.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
-<script src="js/quotescharts.js"></script>
+<script src="js/pricequotes/minerchart.js"></script>
 
 <?php
     PrintFooter();
