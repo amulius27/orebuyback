@@ -47,7 +47,7 @@ function PrintNavBar() {
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
                 </button> 
-                <a class=\"navbar-brand\" href=\"index.html\">
+                <a class=\"navbar-brand\" href=\"index.php\">
                     <img src=\"http://image.eveonline.com/Alliance/99004116_64.png\" style=\"margin-top: -10px;\">
                 </a>
             </div>
