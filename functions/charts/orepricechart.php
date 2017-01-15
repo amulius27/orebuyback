@@ -5,7 +5,7 @@
     $db = DBOpen();
 
     $ores = $db->fetchRowMany('SELECT * FROM ItemIds WHERE Grouping= :group', array('group' => 'Ore'));
-    
+    var_dump($ores);
     $data = array();
     
     foreach($ores as $ore) {

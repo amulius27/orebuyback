@@ -73,7 +73,7 @@
 <script src="js/handlebars-v1.3.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
-<script src="js/pricequotes/minerchart.js"></script>
+<script src="js/pricequotes/mineralchart.js"></script>
 
 <?php
     PrintFooter();
