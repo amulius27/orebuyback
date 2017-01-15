@@ -198,7 +198,7 @@ function calcNow() {
     var totalReward = (biotechReward+cameraDronesReward+condensatesReward+cryoprotectantReward+dataChipsReward+gelMatrixReward+
             guidanceSystemsReward+hazmatReward+hermeticMembranesReward+hightechTransmittersReward+industrialExplosivesReward+
             neocomsReward+nuclearReactorsReward+planetaryVehiclesReward+roboticsReward+smartfabReward+supercomputersReward+syntheticSynapsesReward+
-            transcranialReward+ukomiReward+vaccinesReward) * value;
+            transcranialReward+ukomiReward+vaccinesReward);
 
     var reward = totalReward.toFixed(2);
 

@@ -125,7 +125,7 @@ function calcNow() {
     var gelidusReward = gelidusUnits * gelidus;
     var krystallosReward = krystallosUnits * krystallos;
 
-    var totalReward = (icicleReward+enrichedReward+glacialReward+smoothReward+glazeReward+pristineReward+blueReward+thickReward+glareReward+glitterReward+gelidusReward+krystallosReward) * value;
+    var totalReward = (icicleReward+enrichedReward+glacialReward+smoothReward+glazeReward+pristineReward+blueReward+thickReward+glareReward+glitterReward+gelidusReward+krystallosReward);
 
     $('#calc-output-Icicle-value').html(number_format(icicleReward) + ' ISK');
     $('#calc-output-Enriched-value').html(number_format(enrichedReward) + ' ISK');

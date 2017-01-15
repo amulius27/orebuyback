@@ -92,7 +92,7 @@ function calcNow() {
     var mainframeReward = mainframeUnits * Mainframe;
 
     var totalReward = (broadcastReward+responseReward+nanoFactoryReward+applicatorReward+
-            computingModuleReward+powerCoreReward+sterileConduitsReward+mainframeReward) * value;
+            computingModuleReward+powerCoreReward+sterileConduitsReward+mainframeReward);
 
     var reward = totalReward.toFixed(2);
 

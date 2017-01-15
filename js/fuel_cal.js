@@ -61,7 +61,7 @@ function calcNow() {
     var gallanteReward = gallenteUnits * gallente;
     var minmatarReward = minmatarUnits * minmatar;
 
-    var totalReward = (amarrReward+caldariReward+gallanteReward+minmatarReward) * value;
+    var totalReward = (amarrReward+caldariReward+gallanteReward+minmatarReward);
 
     $('#calc-output-Amarr-value').html(number_format(amarrReward) + ' ISK');
     $('#calc-output-Caldari-value').html(number_format(caldariReward) + ' ISK');

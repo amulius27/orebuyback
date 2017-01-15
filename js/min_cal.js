@@ -93,7 +93,7 @@ $(document).ready(function() {
         var megacyteReward = megacyteUnits * megacyte;
         var morphiteReward = morphiteUnits * morphite;
 
-        var totalReward = (tritaniumReward+pyeriteReward+mexallonReward+isogenReward+nocxiumReward+zydrineReward+megacyteReward+morphiteReward) * value;
+        var totalReward = (tritaniumReward+pyeriteReward+mexallonReward+isogenReward+nocxiumReward+zydrineReward+megacyteReward+morphiteReward);
 
         $('#calc-output-tritanium-value').html(number_format(tritaniumReward) + ' ISK');
         $('#calc-output-pyerite-value').html(number_format(pyeriteReward) + ' ISK');

@@ -151,7 +151,7 @@ function calcNow() {
 
     var totalReward = (bacteriaReward+biofuelReward+biomassReward+chiralReward+electrolyteReward+industrialReward+
         oxidizingReward+oxygenReward+plasmoidsReward+preciousReward+proteinsReward+reactiveReward+siliconReward+
-        toxicReward+waterReward) * value;
+        toxicReward+waterReward);
 	
     var reward = totalReward.toFixed(2);
 

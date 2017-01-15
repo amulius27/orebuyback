@@ -336,7 +336,7 @@ function calcNow() {
         +conductivePolymerReward+conductiveThermoplasticReward+contaminatedLorentzFluidReward+contaminatedNaniteCompoundReward+currentPumpReward+damagedArtificialNeuralNetworkReward+defectiveCurrentPumpReward
         +droneTransceiverReward+enhancedWardConsoleReward+friedInterfaceCircuitReward+impetusConsoleReward+intactArmorPlatesReward+intactShieldEmitterReward+interfaceCircuitReward+logicCircuitReward
         +lorentzFluidReward+malfunctioningShieldEmitterReward+meltedCapacitorConsoleReward+microCircuitReward+naniteCompoundReward+powerCircuitReward+powerConduitReward+scorchedTelemetryProcessorReward
-        +singleCrystalSuperalloyIBeamReward+smashedTriggerUnitReward+tangledPowerConduitReward+telemetryProcessorReward+thrusterConsoleReward+triggerUnitReward+trippedPowerCircuitReward+wardConsoleReward) * value;
+        +singleCrystalSuperalloyIBeamReward+smashedTriggerUnitReward+tangledPowerConduitReward+telemetryProcessorReward+thrusterConsoleReward+triggerUnitReward+trippedPowerCircuitReward+wardConsoleReward);
 
     var reward = totalReward.toFixed(2);
 

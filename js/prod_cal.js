@@ -83,7 +83,7 @@ function calcNow() {
     var ozoneReward = ozoneUnits * ozone;
     var strontiumReward = strontiumUnits * strontium;
 
-    var totalReward = (heliumReward+hydrogenReward+nitrogenReward+oxygenReward+heavyReward+ozoneReward+strontiumReward) * value;
+    var totalReward = (heliumReward+hydrogenReward+nitrogenReward+oxygenReward+heavyReward+ozoneReward+strontiumReward);
 
     $('#calc-output-Helium-value').html(number_format(heliumReward) + ' ISK');
     $('#calc-output-Hydrogen-value').html(number_format(hydrogenReward) + ' ISK');

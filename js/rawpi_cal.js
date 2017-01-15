@@ -179,7 +179,7 @@ function calcNow() {
     var autotrophsPrice = autotrophsReward;
 
     var totalReward = (aqueousPrice+ionicPrice+basePrice+heavyPrice+noblePrice+carbonPrice+microPrice+complexPrice+plankticPrice+
-	noble_gasPrice+reactivePrice+felsicPrice+non_csPrice+suspendedPrice+autotrophsPrice) * value;
+	noble_gasPrice+reactivePrice+felsicPrice+non_csPrice+suspendedPrice+autotrophsPrice);
 
     var reward = totalReward.toFixed(2);
 

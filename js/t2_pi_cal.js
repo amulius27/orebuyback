@@ -223,7 +223,7 @@ function calcNow() {
 
     var totalReward = (biocellsReward+constructionBlocksReward+consumerElectronicsReward+coolantReward+enrichedUraniumReward+fertilizerReward+genEnhancedLivestockReward+livestockReward+mechanicalPartsReward+
             microfiberShieldingReward+miniatureElectronicsReward+nanitesReward+oxidesReward+polyaramidsReward+polytextilesReward+rocketFuelReward+silicateGlassReward+
-            superconductorsReward+supertensilePlasticsReward+syntheticOilReward+testCulturesReward+transmitterReward+viralAgentReward+waterCooledCpuReward) * value;
+            superconductorsReward+supertensilePlasticsReward+syntheticOilReward+testCulturesReward+transmitterReward+viralAgentReward+waterCooledCpuReward);
 
     var reward = totalReward.toFixed(2);
 
