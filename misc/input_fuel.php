@@ -34,20 +34,22 @@
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
 
-//Update timestamp
-$update = $db->fetchColumn('SELECT MAX(time) FROM IceProductPrices WHERE ItemId= :item', array('item' => 4247));
+    //Update timestamp
+    $update = $db->fetchColumn('SELECT MAX(time) FROM IceProductPrices WHERE ItemId= :item', array('item' => 4247));
 
-//Ice
-//Amarr Fuel
-$Amarr_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4247, 'time' => $update));
-//Caldari Fuel
-$Caldari_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4051, 'time' => $update));
-//Gallente Fuel
-$Gallente_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4312, 'time' => $update));
-//Minmatar Fuel
-$Minmatar_Fuel = $db->fetchColumn('SELECT Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4246, 'time' => $update));
+    $Amarr_FuelTemp = $db->fetchRow('SELECT Enabled, Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4247, 'time' => $update));
+    $Amarr_Fuel = InputItemPrice($Amarr_FuelTemp['Enabled'], $Amarr_FuelTemp['Price']);
+    
+    $Caldari_FuelTemp = $db->fetchRow('SELECT Enabled, Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4051, 'time' => $update));
+    $Caldari_Fuel = InputItemPrice($Caldari_FuelTemp['Enabled'], $Caldari_FuelTemp['Price']);
+    
+    $Gallente_FuelTemp = $db->fetchRow('SELECT Enabled, Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4312, 'time' => $update));
+    $Gallente_Fuel = InputItemPrice($Gallente_FuelTemp['Enabled'], $Gallente_FuelTemp['Price']);
+    
+    $Minmatar_FuelTemp = $db->fetchRow('SELECT Enabled, Price FROM IceProductPrices WHERE ItemId= :id AND Time= :time', array('id' => 4246, 'time' => $update));
+    $Minmatar_Fuel = InputItemPrice($Minmatar_FuelTemp['Enabled'], $Minmatar_FuelTemp['Price']);
 
-DBClose($db);
+    DBClose($db);
 
 ?>
 

@@ -26,7 +26,6 @@ function PrintNavBarContracts($corporation) {
             <div class=\"collapse navbar-collapse pull-left\">
                 <ul class=\"nav navbar-nav\">
                     <li><a href=\"../index.php?corporation=$corporation\">Home</a></li>
-                    <li><a href=\"../quotes.php\">Price Quotes</a></li>
                     <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
                 </ul>
             </div>
@@ -48,7 +47,6 @@ function PrintNavBarContracts($corporation) {
             <div class=\"collapse navbar-collapse pull-left\">
                 <ul class=\"nav navbar-nav\">
                     <li><a href=\"../index.php\">Home</a></li>
-                    <li><a href=\"../quotes.php\">Price Quotes</a></li>
                     <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
                 </ul>
             </div>

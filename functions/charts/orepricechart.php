@@ -3,20 +3,27 @@
     require_once __DIR__.'/../../functions/registry.php';
     
     $db = DBOpen();
-
-    $ores = $db->fetchRowMany('SELECT * FROM ItemIds WHERE Grouping= :group', array('group' => 'Ore'));
-    var_dump($ores);
     $data = array();
-    
-    foreach($ores as $ore) {
-        $things = $db->fetchRowMany('SELCT time, Price FROM OrePrices WHERE time BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() AND ItemId= :item',
-                                    array('item' => $ore['ItemId']));
-        $size = $sizeof($things);
+
+    $ItemIDs = array(
+            'Veldspar' => 1230,
+            'Scordite' => 1228,
+    );
+		
+    foreach($ItemIDs as $key => $item) {
+        var_dump($key);
+        var_dump($item);
+        $things = $db->fetchRowMany('SELECT Time, Price FROM OrePrices WHERE Time BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() AND ItemId= :item',
+                                  array('item' => $item));
+	
+        $size = sizeof($things);
         for($i = 0; $i < $size; $i++) {
-            $data[$ore['Name']][$i] = array('Time' => $things[$i]['time'], 'Price' => $things[$i]['Price']);
+            $data[$key][$i] = array('Time' => $things[$i]['Time'], 'Price' => $things[$i]['Price']);
         }
-    }
+    } 
     
     DBClose($db);
+    
+    print json_encode($data);
     
 ?>

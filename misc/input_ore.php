@@ -37,40 +37,56 @@
     
     //Update timestamp
     $update = $db->fetchColumn('SELECT MAX(time) FROM OrePrices WHERE ItemId= :item', array('item' => 1230));
-	
-    //Ores
-    //Veldspar
-    $Veldspar = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1230, 'time' => $update));
-    //Scordite
-    $Scordite = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1228, 'time' => $update));
-    //Pyroxeres
-    $Pyroxeres = $db->fetchColumn('SELECT Price from OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1224, 'time' => $update));
-    //Plagioclase
-    $Plagioclase = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 18, 'time' => $update));
-    //Omber
-    $Omber = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1227, 'time' => $update));
-    //Kernite
-    $Kernite = $db->fetchColumn('SELECT Price FROM  OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 20, 'time' => $update));
-    //Jaspet
-    $Jaspet = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1226, 'time' => $update));
-    //Hemorphite
-    $Hemorphite = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1231, 'time' => $update));
-    //Hedbergite
-    $Hedbergite = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 21, 'time' => $update));
-    //Gneiss
-    $Gneiss = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1229, 'time' => $update));
-    //Dark Ochre
-    $Dark_Ochre = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1232, 'time' => $update));
-    //Spodumain
-    $Spodumain = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 19, 'time' => $update));
-    //Crokite
-    $Crokite = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1225, 'time' => $update));
-    //Bistot
-    $Bistot = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1223, 'time' => $update));
-    //Arkonor
-    $Arkonor = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 22, 'time' => $update)); 
-    //Mercoxit
-    $Mercoxit = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 11396, 'time' => $update));
+
+    $VeldsparTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1230, 'time' => $update));
+    $Veldspar = InputItemPrice($VeldsparTemp['Enabled'], $VeldsparTemp['Price']);
+    
+    $ScorditeTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1228, 'time' => $update));
+    $Scordite = InputItemPrice($ScorditeTemp['Enabled'], $ScorditeTemp['Price']);
+    
+    $PyroxeresTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1224, 'time' => $update));
+    $Pyroxeres = InputItemPrice($PyroxeresTemp['Enabled'], $PyroxeresTemp['Price']);
+    
+    $PlagioclaseTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 18, 'time' => $update));
+    $Plagioclase = InputItemPrice($PlagioclaseTemp['Enabled'], $PlagioclaseTemp['Price']);
+    
+    $OmberTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1227, 'time' => $update));
+    $Omber = InputItemPrice($OmberTemp['Enabled'], $OmberTemp['Price']);
+    
+    $KerniteTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 20, 'time' => $update));
+    $Kernite = InputItemPrice($KerniteTemp['Enabled'], $KerniteTemp['Price']);
+    
+    $JaspetTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1226, 'time' => $update));
+    $Jaspet = InputItemPrice($JaspetTemp['Enabled'], $JaspetTemp['Price']);
+    
+    $HemorphiteTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1231, 'time' => $update));
+    $Hemorphite = InputItemPrice($HemorphiteTemp['Enabled'], $HemorphiteTemp['Price']);
+    
+    $HedbergiteTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 21, 'time' => $update));
+    $Hedbergite = InputItemPrice($HedbergiteTemp['Enabled'], $HedbergiteTemp['Price']);
+    
+    $GneissTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1229, 'time' => $update));
+    $Gneiss = InputItemPrice($GneissTemp['Enabled'], $GneissTemp['Price']);
+    
+    $Dark_OchreTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1232, 'time' => $update));
+    $Dark_Ochre = InputItemPrice($Dark_OchreTemp['Enabled'], $Dark_OchreTemp['Price']);
+    
+    $SpodumainTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 19, 'time' => $update));
+    $Spodumain = InputItemPrice($SpodumainTemp['Enabled'], $SpodumainTemp['Price']);
+    
+    $CrokiteTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1225, 'time' => $update));
+    $Crokite = InputItemPrice($CrokiteTemp['Enabled'], $CrokiteTemp['Price']);
+    
+    $BistotTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 1223, 'time' => $update));
+    $Bistot = InputItemPrice($BistotTemp['Enabled'], $BistotTemp['Price']);
+    
+    $ArkonorTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 22, 'time' => $update));
+    $Arkonor = InputItemPrice($ArkonorTemp['Enabled'], $ArkonorTemp['Price']);
+    
+    $MercoxitTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 11396, 'time' => $update));
+    $Mercoxit = InputItemPrice($MercoxitTemp['Enabled'], $MercoxitTemp['Price']);
+    
+    
     
     DBClose($db);
     

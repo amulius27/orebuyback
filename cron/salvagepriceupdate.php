@@ -65,37 +65,41 @@ foreach($ItemIDs as $id) {
 foreach($ItemIDs as $id) {
     
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM SalvagePrices WHERE ItemId= :item', array('item' => $id));
-    $enabled = $db->fetchColumn('SELECT Enabled FROM SalvagePrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
-    //If its enabled update the price, otherwise set it to 0.00
-    if($enabled == 1) {
+    $enabled = $db->fetchColumn('SELECT Enabled FROM SalvagePrices WHERE ItemId= :item AND Time= :update', 
+                                array('item' => $id, 'update' => $lastUpdate));
     
-        $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
+    $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
 
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        $data = curl_exec($ch);
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $data = curl_exec($ch);
 
-        if($data === false) {
-            echo 'Curl error: ' . curl_error($ch);
-        } else {
-            //Close the curl connection
-            curl_close($ch);
-            //Insert the new data into the database
-            $xml = new SimpleXMLElement($data);
-            $price = (float)$xml->marketstat->type->buy->median[0];
-            if($price > 0.00) {
-                $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
-            } else {
-                $update = $db->fetchRow('SELECT * FROM SalvagePrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
-                $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
-            }
-
-        }
+    if($data === false) {
+        echo 'Curl error: ' . curl_error($ch);
     } else {
-        $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => 0.00, 'Time' => $time, 'Enabled' => 0));
+        //Close the curl connection
+        curl_close($ch);
+        //Insert the new data into the database
+        $xml = new SimpleXMLElement($data);
+        $price = (float)$xml->marketstat->type->buy->median[0];
     }
     
+    if($enabled == 1) {
+        if($price > 0.00) {
+            $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
+        } else {
+            $update = $db->fetchRow('SELECT * FROM SalvagePrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
+            $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
+        }
+    } else {
+        if($price > 0.00) {
+            $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time, 'Enabled' => 0));
+        } else {
+            $update = $db->fetchRow('SELECT * FROM SalvagePrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
+            $db->insert('SalvagePrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time, 'Enabled' => 0));
+        }
+    }
     
 }
 

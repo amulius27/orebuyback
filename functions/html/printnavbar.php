@@ -7,12 +7,8 @@
  */
 
 function PrintNavBar() {
+    //Start the session so we can figure out the corporation of the user
     $session = new Custom\Sessions\sessions();
-    
-    //If the database session isn't available then start a regular session
-    if(!$session) {
-        session_start();
-    }
     
     if(isset($_SESSION["corporation"])) {
         $corp = $_SESSION["corporation"];
@@ -25,14 +21,13 @@ function PrintNavBar() {
                 <span class=\"icon-bar\"></span>
                 <span class=\"icon-bar\"></span>
             </button> 
-            <a class=\"navbar-brand\" href=\"index.html\">
+            <a class=\"navbar-brand\" href=\"index.php\">
                 <img src=\"http://image.eveonline.com/Alliance/99004116_64.png\" style=\"margin-top: -10px;\">
             </a>
         </div>
         <div class=\"collapse navbar-collapse pull-left\">
             <ul class=\"nav navbar-nav\">
                 <li><a href=\"index.php?corporation=$corp\">Home</a></li>
-                <li><a href=\"quotes.php\">Price Quotes</a></li>
                 <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
             </ul>
         </div>
@@ -47,14 +42,13 @@ function PrintNavBar() {
                     <span class=\"icon-bar\"></span>
                     <span class=\"icon-bar\"></span>
                 </button> 
-                <a class=\"navbar-brand\" href=\"index.html\">
+                <a class=\"navbar-brand\" href=\"index.php\">
                     <img src=\"http://image.eveonline.com/Alliance/99004116_64.png\" style=\"margin-top: -10px;\">
                 </a>
             </div>
             <div class=\"collapse navbar-collapse pull-left\">
                 <ul class=\"nav navbar-nav\">
                     <li><a href=\"index.php\">Home</a></li>
-                    <li><a href=\"quotes.php\">Price Quotes</a></li>
                     <li><a href=\"http://forums.warpedintentions.com\">Forum</a></li>
                 </ul>
             </div>

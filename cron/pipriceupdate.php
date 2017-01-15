@@ -103,35 +103,36 @@ $regionlimit = $db->fetchColumn('SELECT marketRegion FROM Configuration');
 foreach($ItemIDs as $id) {
     
     $lastUpdate = $db->fetchColumn('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
-    $enabled = $db->fetchColumn('SELECT Enabled FROM PiPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));
-    //If its enabled update the price, otherwise set it to 0.00
+    $enabled = $db->fetchColumn('SELECT Enabled FROM PiPrices WHERE ItemId= :item AND Time= :update', array('item' => $id, 'update' => $lastUpdate));  
+    
+    $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $data = curl_exec($ch);
+
+    if($data === false) {
+        echo 'Curl error: ' . curl_error($ch);
+    } else {
+        //Close the curl connection
+        curl_close($ch);
+        //Insert the new data into the database
+        $xml = new SimpleXMLElement($data);
+        $price = (float)$xml->marketstat->type->buy->median[0];
+
+
+    }
+    
     if($enabled == 1) {
-    
-        $url = "http://api.eve-central.com/api/marketstat?typeid=" . $id . "&regionlimit=" . $regionlimit;
-    
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        $data = curl_exec($ch);
-
-        if($data === false) {
-            echo 'Curl error: ' . curl_error($ch);
+        if($price > 0.00) {
+            $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
         } else {
-            //Close the curl connection
-            curl_close($ch);
-            //Insert the new data into the database
-            $xml = new SimpleXMLElement($data);
-            $price = (float)$xml->marketstat->type->buy->median[0];
-            if($price > 0.00) {
-                $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time));
-            } else {
-                $update = $db->fetchRow('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
-                $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
-            }
-
+            $update = $db->fetchRow('SELECT MAX(time) FROM PiPrices WHERE ItemId= :item', array('item' => $id));
+            $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $update['Price'], 'Time' => $time));
         }
     } else {
-        $db->insert('PiPrices', array('ItemId' => $id, 'Price' => 0.00, 'Time' => $time, 'Enabled' => 0));
+        $db->insert('PiPrices', array('ItemId' => $id, 'Price' => $price, 'Time' => $time, 'Enabled' => 0));
     }
     
     

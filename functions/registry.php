@@ -49,6 +49,9 @@ require_once __DIR__.'/../functions/contracts/salvagecontractvalue.php';
 require_once __DIR__.'/../functions/contracts/wgascontractvalue.php';
 require_once __DIR__.'/../functions/contracts/printcontractcontents.php';
 
+//Misc Functionality
+require_once __DIR__.'/../functions/misc/inputPrice.php';
+
 
 $contractLimit = '600m ISK';
 $defaultTax = 10.00;
