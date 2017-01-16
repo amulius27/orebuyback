@@ -3,14 +3,30 @@
 function PiT4ContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
     $db = DBOpen();
-    $BroadcastPrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2867, 'time' => $update));
-    $Response_DronesPrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2868, 'time' => $update));
-    $NanoFactoryPrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2869, 'time' => $update));
-    $Organic_Mortar_ApplicatorsPrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2870, 'time' => $update));
-    $Recursive_ComputingPrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2871, 'time' => $update));
-    $Power_CorePrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2872, 'time' => $update));
-    $Sterile_ConduitsPrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2875, 'time' => $update));
-    $MainframePrice = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2876, 'time' => $update));
+    
+    $BroadcastTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2867, 'time' => $update));
+    $Broadcast = InputItemPrice($BroadcastTemp['Enabled'], $BroadcastTemp['Price']);
+    
+    $Response_DronesTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2868, 'time' => $update));
+    $Response_Drones = InputItemPrice($Response_DronesTemp['Enabled'], $Response_DronesTemp['Price']);
+    
+    $NanoFactoryTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2869, 'time' => $update));
+    $NanoFactory = InputItemPrice($NanoFactoryTemp['Enabled'], $NanoFactoryTemp['Price']);
+    
+    $Organic_Mortar_ApplicatorsTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2870, 'time' => $update));
+    $Organic_Mortar_Applicators = InputItemPrice($Organic_Mortar_ApplicatorsTemp['Enabled'], $Organic_Mortar_ApplicatorsTemp['Price']);
+    
+    $Recursive_ComputingTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2871, 'time' => $update));
+    $Recursive_Computing = InputItemPrice($Recursive_ComputingTemp['Enabled'], $Recursive_ComputingTemp['Price']);
+    
+    $Power_CoreTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2872, 'time' => $update));
+    $Power_Core = InputItemPrice($Power_CoreTemp['Enabled'], $Power_CoreTemp['Price']);
+    
+    $Sterile_ConduitsTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2875, 'time' => $update));
+    $Sterile_Conduits = InputItemPrice($Sterile_ConduitsTemp['Enabled'], $Sterile_ConduitsTemp['Price']);
+    
+    $MainframeTemp = $db->fetchRow('SELECT Enabled, Price FROM MineralPrices WHERE ItemId= :id AND Time= :time', array('id' => 2876, 'time' => $update));
+    $Mainframe = InputItemPrice($MainframeTemp['Enabled'], $MainframeTemp['Price']);
     
     //Get the last contract number
     $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');

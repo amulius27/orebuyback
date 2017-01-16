@@ -3,25 +3,33 @@
 function WGasContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
     $db = DBOpen();
-    //Wormhole Gas
-    //C50
-    $C50 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30370, 'time' => $update));
-    //C60
-    $C60 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30371, 'time' => $update));
-    //C70
-    $C70 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30372, 'time' => $update));
-    //C72
-    $C72 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30373, 'time' => $update));
-    //C84
-    $C84 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30374, 'time' => $update));
-    //C28
-    $C28 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30375, 'time' => $update));
-    //C32
-    $C32 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30376, 'time' => $update));
-    //C320
-    $C320 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30377, 'time' => $update));
-    //C540
-    $C540 = $db->fetchColumn('SELECT Price From WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30378, 'time' => $update));
+    
+    $C50Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30370, 'time' => $update));
+    $C50 = InputItemPrice($C50Temp['Enabled'], $C50Temp['Price']);
+    
+    $C60Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30371, 'time' => $update));
+    $C60 = InputItemPrice($C60Temp['Enabled'], $C60Temp['Price']);
+    
+    $C70Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30372, 'time' => $update));
+    $C70 = InputItemPrice($C70Temp['Enabled'], $C70Temp['Price']);
+    
+    $C72Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30373, 'time' => $update));
+    $C72 = InputItemPrice($C72Temp['Enabled'], $C72Temp['Price']);
+    
+    $C84Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30374, 'time' => $update));
+    $C84 = InputItemPrice($C84Temp['Enabled'], $C84Temp['Price']);
+    
+    $C28Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30375, 'time' => $update));
+    $C28 = InputItemPrice($C28Temp['Enabled'], $C28Temp['Price']);
+    
+    $C32Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30376, 'time' => $update));
+    $C32 = InputItemPrice($C32Temp['Enabled'], $C32Temp['Price']);
+    
+    $C320Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30377, 'time' => $update));
+    $C320 = InputItemPrice($C320Temp['Enabled'], $C320Temp['Price']);
+    
+    $C540Temp = $db->fetchRow('SELECT Enabled, Price FROM WGasPrices WHERE ItemId= :id AND Time= :time', array('id' => 30378, 'time' => $update));
+    $C540 = InputItemPrice($C540Temp['Enabled'], $C540Temp['Price']);
     
 //Get the last contract number
     $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');
@@ -32,7 +40,7 @@ function WGasContractValue($update, $corporation, $post) {
     //Set the initial contract value to 0.00 before adding everything up
     $contractValue = 0.00;
     //Create the ore value array for summing later
-    $fuelBlockValue = array(
+    $WGasValue = array(
         'C50_Value' => $post['C50_Gas'] * $C50,
         'C60_Value' => $post['C60_Gas'] * $C60,
         'C70_Value' => $post['C70_Gas'] * $C70,
@@ -45,7 +53,7 @@ function WGasContractValue($update, $corporation, $post) {
     );
     
     //Add the contract value up from the ore
-    foreach($fuelBlockValue as $value) {
+    foreach($WGasValue as $value) {
        $contractValue = $contractValue + $value;
     }
     

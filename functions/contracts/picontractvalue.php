@@ -3,36 +3,51 @@
 function PiContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
     $db = DBOpen();
-    //Aqueous Liquids
-    $Aqueous = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2268, 'time' => $update));
-    //Ionic Solutions
-    $Ionic = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2309, 'time' => $update));
-    //Base Metals
-    $Base = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2267, 'time' => $update));
-    //Heavy Metals
-    $Heavy = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2272, 'time' => $update));
-    //Noble Metals
-    $Noble = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2270, 'time' => $update));
-    //Carbon Compounds
-    $Carbon = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2288, 'time' => $update));
-    //Microorganisms
-    $Micro = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2073, 'time' => $update));
-    //Complex Organisms
-    $Complex = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2287, 'time' => $update));
-    //Planktic Colonies
-    $Planktic = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2286, 'time' => $update));
-    //Noble Gas
-    $Noble_Gas = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2310, 'time' => $update));
-    //Reactive Metals
-    $Reactive = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2398, 'time' => $update));
-    //Felsic Magma
-    $Felsic = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2307, 'time' => $update));
-    //Non-CS Crystals
-    $Non = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2306, 'time' => $update));
-    //Suspended Plasma
-    $Suspended = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2308, 'time' => $update));
-    //Autotrophs
-    $Autotrophs = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2305, 'time' => $update));
+    
+    $AqueousTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2268, 'time' => $update));
+    $Aqueous = InputItemPrice($AqueousTemp['Enabled'], $AqueousTemp['Price']);
+    
+    $IonicTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2309, 'time' => $update));
+    $Ionic = InputItemPrice($IonicTemp['Enabled'], $IonicTemp['Price']);
+    
+    $BaseTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2267, 'time' => $update));
+    $Base = InputItemPrice($BaseTemp['Enabled'], $BaseTemp['Price']);
+    
+    $HeavyTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2272, 'time' => $update));
+    $Heavy = InputItemPrice($HeavyTemp['Enabled'], $HeavyTemp['Price']);
+    
+    $NobleTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2270, 'time' => $update));
+    $Noble = InputItemPrice($NobleTemp['Enabled'], $NobleTemp['Price']);
+    
+    $CarbonTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2288, 'time' => $update));
+    $Carbon = InputItemPrice($CarbonTemp['Enabled'], $CarbonTemp['Price']);
+    
+    $MicroTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2073, 'time' => $update));
+    $Micro = InputItemPrice($MicroTemp['Enabled'], $MicroTemp['Price']);
+    
+    $ComplexTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2287, 'time' => $update));
+    $Complex = InputItemPrice($ComplexTemp['Enabled'], $ComplexTemp['Price']);
+    
+    $PlankticTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2286, 'time' => $update));
+    $Planktic = InputItemPrice($PlankticTemp['Enabled'], $PlankticTemp['Price']);
+    
+    $Noble_GasTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2310, 'time' => $update));
+    $Noble_Gas = InputItemPrice($Noble_GasTemp['Enabled'], $Noble_GasTemp['Price']);
+   
+    $ReactiveTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2311, 'time' => $update));
+    $Reactive = InputItemPrice($ReactiveTemp['Enabled'], $ReactiveTemp['Price']);
+    
+    $FelsicTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2307, 'time' => $update));
+    $Felsic = InputItemPrice($FelsicTemp['Enabled'], $FelsicTemp['Price']);
+    
+    $NonTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2306, 'time' => $update));
+    $Non = InputItemPrice($NonTemp['Enabled'], $NonTemp['Price']);
+    
+    $SuspendedTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2308, 'time' => $update));
+    $Suspended = InputItemPrice($SuspendedTemp['Enabled'], $SuspendedTemp['Price']);
+    
+    $AutotrophsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2305, 'time' => $update));
+    $Autotrophs = InputItemPrice($AutotrophsTemp['Enabled'], $AutotrophsTemp['Price']);
     
 //Get the last contract number
     $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');

@@ -3,30 +3,78 @@
 function PiT2ContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
     $db = DBOpen();
-    $biocells = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2329, 'time' => $update));
-    $construction_blocks = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3828, 'time' => $update));
-    $consumer_electronics = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9836, 'time' => $update));
-    $coolant = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9832, 'time' => $update));
-    $enriched_uranium = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 44, 'time' => $update));
-    $fertilizer = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3693, 'time' => $update));
-    $gen_enhanced_livestock = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 15317, 'time' => $update));
-    $livestock = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3725, 'time' => $update));
-    $mechanical_parts = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3689, 'time' => $update));
-    $microfiber_shielding = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2327, 'time' => $update));
-    $miniature_electronics = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9842, 'time' => $update));
-    $nanites = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2463, 'time' => $update));
-    $oxides = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2317, 'time' => $update));
-    $polyaramids = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2321, 'time' => $update));
-    $polytextiles = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 3695, 'time' => $update));
-    $rocket_fuel = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 9830, 'time' => $update));
-    $silicate_glass = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 3697, 'time' => $update));
-    $superconductors = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 9838, 'time' => $update));
-    $supertensile_plastics = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2312, 'time' => $update));
-    $synthetic_oil = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 3691, 'time' => $update));
-    $testcultures = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2319, 'time' => $update));
-    $transmitter = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 9840, 'time' => $update));
-    $viral_agent = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 3775, 'time' => $update));
-    $water_cooled_cpu = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id and Time= :time', array('id' => 2328, 'time' => $update));
+    
+    $biocellsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2329, 'time' => $update));
+    $biocells = InputItemPrice($biocellsTemp['Enabled'], $biocellsTemp['Price']);
+    
+    $construction_blocksTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3828, 'time' => $update));
+    $construction_blocks = InputItemPrice($construction_blocksTemp['Enabled'], $construction_blocksTemp['Price']);
+    
+    $consumer_electronicsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9836, 'time' => $update));
+    $consumer_electronics = InputItemPrice($consumer_electronicsTemp['Enabled'], $consumer_electronicsTemp['Price']);
+    
+    $coolantTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9832, 'time' => $update));
+    $coolant = InputItemPrice($coolantTemp['Enabled'], $coolantTemp['Price']);
+    
+    $enriched_uraniumTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 44, 'time' => $update));
+    $enriched_uranium = InputItemPrice($enriched_uraniumTemp['Enabled'], $enriched_uraniumTemp['Price']);
+    
+    $fertilizerTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3693, 'time' => $update));
+    $fertilizer = InputItemPrice($fertilizerTemp['Enabled'], $fertilizerTemp['Price']);
+    
+    $gen_enhanced_livestockTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 15317, 'time' => $update));
+    $gen_enhanced_livestock = InputItemPrice($gen_enhanced_livestockTemp['Enabled'], $gen_enhanced_livestockTemp['Price']);
+    
+    $livestockTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3725, 'time' => $update));
+    $livestock = InputItemPrice($livestockTemp['Enabled'], $livestockTemp['Price']);
+    
+    $mechanical_partsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3689, 'time' => $update));
+    $mechanical_parts = InputItemPrice($mechanical_partsTemp['Enabled'], $mechanical_partsTemp['Price']);
+    
+    $microfiber_shieldingTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2327, 'time' => $update));
+    $microfiber_shielding = InputItemPrice($microfiber_shieldingTemp['Enabled'], $microfiber_shieldingTemp['Price']);
+    
+    $miniature_electronicsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9842, 'time' => $update));
+    $miniature_electronics = InputItemPrice($miniature_electronicsTemp['Enabled'], $miniature_electronicsTemp['Price']);
+    
+    $nanitesTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2463, 'time' => $update));
+    $nanites = InputItemPrice($nanitesTemp['Enabled'], $nanitesTemp['Price']);
+    
+    $oxidesTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2317, 'time' => $update));
+    $oxides = InputItemPrice($oxidesTemp['Enabled'], $oxidesTemp['Price']);
+    
+    $polyaramidsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2321, 'time' => $update));
+    $polyaramids = InputItemPrice($polyaramidsTemp['Enabled'], $polyaramidsTemp['Price']);
+    
+    $polytextilesTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3695, 'time' => $update));
+    $polytextiles = InputItemPrice($polytextilesTemp['Enabled'], $polytextilesTemp['Price']);
+    
+    $rocket_fuelTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9830, 'time' => $update));
+    $rocket_fuel = InputItemPrice($rocket_fuelTemp['Enabled'], $rocket_fuelTemp['Price']);
+    
+    $silicate_glassTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3697, 'time' => $update));
+    $silicate_glass = InputItemPrice($silicate_glassTemp['Enabled'], $silicate_glassTemp['Price']);
+    
+    $superconductorsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9838, 'time' => $update));
+    $superconductors = InputItemPrice($superconductorsTemp['Enabled'], $superconductorsTemp['Price']);
+    
+    $supertensile_plasticsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2312, 'time' => $update));
+    $supertensile_plastics = InputItemPrice($supertensile_plasticsTemp['Enabled'], $supertensile_plasticsTemp['Price']);
+    
+    $synthetic_oilTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3691, 'time' => $update));
+    $synthetic_oil = InputItemPrice($synthetic_oilTemp['Enabled'], $synthetic_oilTemp['Price']);
+    
+    $testculturesTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2319, 'time' => $update));
+    $testcultures = InputItemPrice($testculturesTemp['Enabled'], $testculturesTemp['Price']);
+    
+    $transmitterTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9840, 'time' => $update));
+    $transmitter = InputItemPrice($transmitterTemp['Enabled'], $transmitterTemp['Price']);
+    
+    $viral_agentTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3775, 'time' => $update));
+    $viral_agent = InputItemPrice($viral_agentTemp['Enabled'], $viral_agentTemp['Price']);
+    
+    $water_cooled_cpuTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2328, 'time' => $update));
+    $water_cooled_cpu = InputItemPrice($water_cooled_cpuTemp['Enabled'], $water_cooled_cpuTemp['Price']);
     
 //Get the last contract number
     $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');

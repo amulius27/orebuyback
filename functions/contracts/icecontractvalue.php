@@ -3,18 +3,42 @@
 function IceContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
     $db = DBOpen();
-    $Clear_Icicle = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16262, 'time' => $update));
-    $Enriched_Clear_Icicle = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17978, 'time' => $update));
-    $Glacial_Mass = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16263, 'time' => $update));
-    $Smooth_Glacial_Mass = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17977, 'time' => $update));
-    $White_Glaze = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16265, 'time' => $update));
-    $Pristine_White_Glaze = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17976, 'time' => $update));
-    $Blue_Ice = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16264, 'time' => $update));
-    $Thick_Blue_Ice = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17975, 'time' => $update));
-    $Glare_Crust = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16266, 'time' => $update));
-    $Dark_Glitter = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16267, 'time' => $update));
-    $Gelidus = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16268, 'time' => $update));
-    $Krystallos = $db->fetchColumn('SELECT Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16269, 'time' => $update));
+    
+    $Clear_IcicleTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16262, 'time' => $update));
+    $Clear_Icicle = InputItemPrice($Clear_IcicleTemp['Enabled'], $Clear_IcicleTemp['Price']);
+    
+    $Enriched_Clear_IcicleTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17978, 'time' => $update));
+    $Enriched_Clear_Icicle = InputItemPrice($Enriched_Clear_IcicleTemp['Enabled'], $Enriched_Clear_IcicleTemp['Price']);
+    
+    $Glacial_MassTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16263, 'time' => $update));
+    $Glacial_Mass = InputItemPrice($Glacial_MassTemp['Enabled'], $Glacial_MassTemp['Price']);
+    
+    $Smooth_Glacial_MassTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17977, 'time' => $update));
+    $Smooth_Glacial_Mass = InputItemPrice($Smooth_Glacial_MassTemp['Enabled'], $Smooth_Glacial_MassTemp['Price']);
+    
+    $White_GlazeTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16265, 'time' => $update));
+    $White_Glaze = InputItemPrice($White_GlazeTemp['Enabled'], $White_GlazeTemp['Price']);
+    
+    $Pristine_White_GlazeTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17976, 'time' => $update));
+    $Pristine_White_Glaze = InputItemPrice($Pristine_White_GlazeTemp['Enabled'], $Pristine_White_GlazeTemp['Price']);
+    
+    $Blue_IceTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16264, 'time' => $update));
+    $Blue_Ice = InputItemPrice($Blue_IceTemp['Enabled'], $Blue_IceTemp['Price']);
+    
+    $Thick_Blue_IceTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 17975, 'time' => $update));
+    $Thick_Blue_Ice = InputItemPrice($Thick_Blue_IceTemp['Enabled'], $Thick_Blue_IceTemp['Price']);
+    
+    $Glare_CrustTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' =>16266, 'time' => $update));
+    $Glare_Crust = InputItemPrice($Glare_CrustTemp['Enabled'], $Glare_CrustTemp['Price']);
+    
+    $Dark_GlitterTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16267, 'time' => $update));
+    $Dark_Glitter = InputItemPrice($Dark_GlitterTemp['Enabled'], $Dark_GlitterTemp['Price']);
+    
+    $GelidusTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16268, 'time' => $update));
+    $Gelidus = InputItemPrice($GelidusTemp['Enabled'], $GelidusTemp['Price']);
+    
+    $KrystallosTemp = $db->fetchRow('SELECT Enabled, Price FROM OrePrices WHERE ItemId= :id AND Time= :time', array('id' => 16269, 'time' => $update));
+    $Krystallos = InputItemPrice($KrystallosTemp['Enabled'], $KrystallosTemp['Price']);
     
 //Get the last contract number
     $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');

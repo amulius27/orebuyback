@@ -3,21 +3,51 @@
 function PiT1ContractValue($update, $corporation, $post) {
     //Get all of the values from the contract update time
     $db = DBOpen();
-    $bacteria = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2393, 'time' => $update));
-    $biofuels = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2396, 'time' => $update));
-    $biomass = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3779, 'time' => $update));
-    $chiral_structures = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2401, 'time' => $update));
-    $electrolytes = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2390, 'time' => $update));
-    $industrial_fibers = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2397, 'time' => $update));
-    $oxidizing_compound = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2392, 'time' => $update));
-    $oxygen = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3683, 'time' => $update));
-    $plasmoids = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2389, 'time' => $update));
-    $precious_metals = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2399, 'time' => $update));
-    $proteins = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2395, 'time' => $update));
-    $reactive_metals = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2398, 'time' => $update));
-    $silicon = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9828, 'time' => $update));
-    $toxic_metals = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2400, 'time' => $update));
-    $water = $db->fetchColumn('SELECT Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3645, 'time' => $update));
+    
+    $bacteriaTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2393, 'time' => $update));
+    $bacteria = InputItemPrice($bacteriaTemp['Enabled'], $bacteriaTemp['Price']);
+    
+    $biofuelsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2396, 'time' => $update));
+    $biofuels = InputItemPrice($biofuelsTemp['Enabled'], $biofuelsTemp['Price']);
+    
+    $biomassTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3779, 'time' => $update));
+    $biomass = InputItemPrice($biomassTemp['Enabled'], $biomassTemp['Price']);
+
+    $chiral_structuresTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2401, 'time' => $update));
+    $chiral_structures = InputItemPrice($chrial_structuresTemp['Enabled'], $chrial_structuresTemp['Price']);
+    
+    $electrolytesTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2390, 'time' => $update));
+    $electrolytes = InputItemPrice($electrolytesTemp['Enabled'], $electrolytesTemp['Price']);
+    
+    $industrial_fibersTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2397, 'time' => $update));
+    $industrial_fibers = InputItemPrice($industrial_fibersTemp['Enabled'], $industrial_fibersTemp['Price']);
+    
+    $oxidizing_compoundTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2392, 'time' => $update));
+    $oxidizing_compound = InputItemPrice($oxidizing_compoundTemp['Enabled'], $oxidizing_compoundTemp['Price']);
+    
+    $oxygenTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3683, 'time' => $update));
+    $oxygen = InputItemPrice($oxygenTemp['Enabled'], $oxygenTemp['Price']);
+    
+    $plasmoidsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2389, 'time' => $update));
+    $plasmoids = InputItemPrice($plasmoidsTemp['Enabled'], $plasmoidsTemp['Price']);
+    
+    $precious_metalsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2399, 'time' => $update));
+    $precious_metals = InputItemPrice($precious_metalsTemp['Enabled'], $precious_metalsTemp['Price']);
+    
+    $proteinsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2395, 'time' => $update));
+    $proteins = InputItemPrice($proteinsTemp['Enabled'], $proteinsTemp['Price']);
+    
+    $reactive_metalsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2398, 'time' => $update));
+    $reactive_metals = InputItemPrice($reactive_metalsTemp['Enabled'], $reactive_metalsTemp['Price']);
+    
+    $siliconTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 9828, 'time' => $update));
+    $silicon = InputItemPrice($siliconTemp['Enabled'], $siliconTemp['Price']);
+    
+    $toxic_metalsTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 2400, 'time' => $update));
+    $toxic_metals = InputItemPrice($toxic_metalsTemp['Enabled'], $toxic_metalsTemp['Price']);
+    
+    $waterTemp = $db->fetchRow('SELECT Enabled, Price FROM PiPrices WHERE ItemId= :id AND Time= :time', array('id' => 3645, 'time' => $update));
+    $water = InputItemPrice($waterTemp['Enabled'], $waterTemp['Price']);
     
 //Get the last contract number
     $lastContractNum = $db->fetchColumn('SELECT MAX(ContractNum) FROM Contracts');
