@@ -20,11 +20,16 @@ class ComposerStaticInit105ec6ebbddeceaf0ab037bf3a451de3
         ),
     );
 
+    public static $classMap = array (
+        'PHP_Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit105ec6ebbddeceaf0ab037bf3a451de3::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit105ec6ebbddeceaf0ab037bf3a451de3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit105ec6ebbddeceaf0ab037bf3a451de3::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__.'/functions/registry.php';
+    require_once __DIR__.'/functions/registry.php';    
     //Start the session
     $session = new Custom\Sessions\sessions();
     //If the database session isn't available then start a regular session
