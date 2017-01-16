@@ -32,6 +32,7 @@ require_once __DIR__.'/../functions/html/printcloseindexpage.php';
 require_once __DIR__.'/../functions/html/printindexpage.php';
 require_once __DIR__.'/../functions/html/printinstructions.php';
 require_once __DIR__.'/../functions/html/printmainpageheader.php';
+require_once __DIR__.'/../functions/html/printcontracthtmlheader.php';
 
 //Contract Functionality
 require_once __DIR__.'/../functions/contracts/comporecontractvalue.php';
