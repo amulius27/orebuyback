@@ -16,6 +16,17 @@ SET time_zone = "+00:00";
 -- Database: `orebuyback`
 --
 
+--
+-- Table structure for `sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `sessions` (
+    `id` varchar(32) NOT NULL,
+    `access` int(10) unsigned DEFAULT NULL,
+    `data` text,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --
@@ -25,6 +36,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `Configuration` (
   `refineRate` decimal(5,2) NOT NULL,
   `allianceTaxRate` decimal (5,2) NOT NULL,
+  `allianceMineralTaxRate` decimal(5,2) NOT NULL,
   `marketRegion` int(12) NOT NULL,
   `updatedBy` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

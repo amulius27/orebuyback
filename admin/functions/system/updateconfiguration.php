@@ -4,6 +4,7 @@
     $refineRate = filter_input(INPUT_POST, 'RefineRate', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $allianceTax = filter_input(INPUT_POST, 'AllianceTaxRate', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $marketRegion = filter_input(INPUT_POST, 'MarketRegion', FILTER_SANITIZE_NUMBER_INT);
+    $mineralTax = filter_input(INPUT_POST, 'MineralTaxRate', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     //Get from the previous page whom is updating the settings
     $updatedBy = filter_input(INPUT_POST, 'UpdatedBy', FILTER_SANITIZE_SPECIAL_CHARS);
     $updateOccurred = FALSE;
@@ -26,6 +27,11 @@
     //Update the market region if applicable
     if($marketRegion != NULL) {
         $db->update('Configuration', array('updatedBy' => $lastUpdate), array('marketRegion' => $marketRegion));
+        $updateOccurred = TRUE;
+    }
+    //Update the mineral tax rate if application
+    if($mineralTax != NULL) {
+        $db->update('Configuration', array('updatedBy' => $lastUpdate), array('mineralTaxRate' => $mineralTax));
         $updateOccurred = TRUE;
     }
     //If an update occurred then update the UpdateBy resource in the table

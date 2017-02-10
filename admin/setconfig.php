@@ -17,6 +17,7 @@
     $refineRate = $configuration['refineRate'];
     $allianceTax = $configuration['allianceTaxRate'];
     $marketRegion = $configuration['marketRegion'];
+    $mineralTax = $configureation['mineralTaxRate'];
     
     PrintHTMLHeader('/../images/bgs/ore_bg_blur.jpg');
     printf("<body>");
@@ -46,6 +47,10 @@
                             <label>Alliance Tax Rate</label>
                             <div class=\"input-group form-control\" id=\"AllianceTaxRate\" style=\"padding: 0; border: none;\">
                                 <input type=\"text\" class=\"form-control text-left typeahead\" name=\"AllianceTaxRate\" placeholder=\"" . $allianceTax . "\">
+                            </div>
+                            <label>Mineral Tax Rate</label>
+                            <div class=\"input-group form-control\" id=\"MineralTaxRate\" style=\"padding: 0; border: none;\">
+                                <input type=\"text\" class=\"form-control text-left typeahead\" name=\"MineralTaxRate\" placeholder=\"" . $mineralTax . "\">
                             </div>
                             <label>Market Region</label>
                             <div class=\"input-group form-control\" id=\"MarketRegion\" style=\"padding: 0; border: none;\">

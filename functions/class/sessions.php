@@ -25,9 +25,9 @@ class sessions {
         //Setup our db object
         $this->db = new \Simplon\Mysql\Mysql(
             'localhost',
-            'orebuyback',
+            'root',
             'P@55w0rd!',
-            'cmancuso_orebuyback'
+            'eveotsv2'
         );
         
         if($this->db) {
