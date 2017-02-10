@@ -4,11 +4,14 @@
 require_once __DIR__.'/../../vendor/autoload.php';
 
 //Session Class
-require_once __DIR__.'/../functions/class/sessions.php';
+//require_once __DIR__.'/../functions/class/sessions.php';
+require_once __DIR__.'/../../functions/class/sessions.php';
 
 //Database Functions
-require_once __DIR__.'/../functions/database/dbclose.php';
-require_once __DIR__.'/../functions/database/dbopen.php';
+//require_once __DIR__.'/../functions/database/dbclose.php';
+//require_once __DIR__.'/../functions/database/dbopen.php';
+require_once __DIR__.'/../../functions/database/dbopen.php';
+require_once __DIR__.'/../../functions/database/dbclose.php';
 
 //HTML Functions
 require_once __DIR__.'/../functions/html/printmineralrequestform.php';
