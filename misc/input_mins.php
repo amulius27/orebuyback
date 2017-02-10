@@ -25,7 +25,7 @@
         $corpTax = $defaultTax;
     }
     
-    $alliance_tax = $db->fetchColumn('SELECT allianceTaxRate FROM Configuration');
+    $alliance_tax = $db->fetchColumn('SELECT mineralTaxRate FROM Configuration');
     $total_tax = $alliance_tax + $corpTax;
     $value = 1.00 - ( $total_tax / 100.00 );
     //Update timestamp
