@@ -22,12 +22,14 @@ class sessions {
     }
     
     public function _open() {
+        $config = parse_ini_file('sessions.ini');
+        
         //Setup our db object
         $this->db = new \Simplon\Mysql\Mysql(
-            'localhost',
-            'orebuyback',
-            'P@55w0rd!',
-            'cmancuso_orebuyback'
+            $config['server'],
+            $config['user'],
+            $config['pass'].
+            $config['db']
         );
         
         if($this->db) {
