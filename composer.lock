@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7d97a63fa11b4b7a16fcceaf787baf75",
     "content-hash": "4e88acb5d0777b23d71cf872a67393cd",
     "packages": [
         {
@@ -49,7 +48,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-05-12 18:03:57"
+            "time": "2016-05-12T18:03:57+00:00"
         },
         {
             "name": "simplon/mysql",
@@ -94,7 +93,7 @@
                 "mysql",
                 "pdo"
             ],
-            "time": "2016-05-13 14:06:48"
+            "time": "2016-05-13T14:06:48+00:00"
         }
     ],
     "packages-dev": [],

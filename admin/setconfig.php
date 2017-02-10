@@ -17,7 +17,7 @@
     $refineRate = $configuration['refineRate'];
     $allianceTax = $configuration['allianceTaxRate'];
     $marketRegion = $configuration['marketRegion'];
-    $mineralTax = $configureation['mineralTaxRate'];
+    $mineralTax = $configuration['mineralTaxRate'];
     
     PrintHTMLHeader('/../images/bgs/ore_bg_blur.jpg');
     printf("<body>");
