@@ -230,7 +230,7 @@ function SalvageContractValue($update, $corporation, $post) {
     //Create the contract value array to be inserted into the Contracts database
     $contract = array(
         'ContractNum' => $contractNum,
-        'ContractType' => 'PiT4',
+        'ContractType' => 'Salvage',
         'Corporation' => $corporation,
         'QuoteTime' =>  $update,
         'Value' => $contractValue,
