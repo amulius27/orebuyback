@@ -14,8 +14,8 @@
                 $db->update('MineralPrices', array('ItemId' => $item["ItemId"], 'Time' => $lastUpdate), array('Enabled' => $enabled));
             }
         } else {
-			$enabled = 0;
-			$lastEnable = $db->fetchColumn('SELECT Enabled FROM MineralPrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
+            $enabled = 0;
+            $lastEnable = $db->fetchColumn('SELECT Enabled FROM MineralPrices WHERE ItemId= :item AND Time= :time', array('item' => $item["ItemId"], 'time' => $lastUpdate));
             if($enabled != $lastEnable) {
                 $db->update('MineralPrices', array('ItemId' => $item["ItemId"], 'Time' => $lastUpdate), array('Enabled' => $enabled));
             }

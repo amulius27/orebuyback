@@ -84,7 +84,7 @@ function PrintContractListAdminDashboard() {
             for($i = 2; $i < $size; $i++) {
                 $header = str_replace('_', ' ', $headers[$i]);
                 if($contents[$headers[$i]] > 0){
-                    if($header === "QuoteTime") {
+                    if($header == "QuoteTime") {
                         $number = $contents[$headers[$i]];
                     } else {
                         $number = number_format($contents[$headers[$i]], 0, '.', ',');

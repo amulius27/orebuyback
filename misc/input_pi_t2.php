@@ -111,7 +111,7 @@
     
     DBClose($db);
     
-    $biocells = $biocells * $values;
+    $biocells = $biocells * $value;
     $construction_blocks = $construction_blocks * $value;
     $consumer_electronics = $consumer_electronics * $value;
     $coolant = $coolant * $value;

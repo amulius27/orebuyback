@@ -442,6 +442,7 @@ CREATE TABLE IF NOT EXISTS `PiT2ContractContents` (
     `Rocket_Fuel` int(20) NOT NULL DEFAULT '0',
     `Silicate_Glass` int(20) NOT NULL DEFAULT '0',
     `Superconductors` int(20) NOT NULL DEFAULT '0',
+    `Supertensile_Plastics` int(20) NOT NULL DEFAULT '0',
     `Synthetic_Oil` int(20) NOT NULL DEFAULT '0',
     `Test_Cultures` int(20) NOT NULL DEFAULT '0',
     `Transmitter` int(20) NOT NULL DEFAULT '0',

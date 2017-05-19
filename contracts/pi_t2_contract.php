@@ -103,6 +103,11 @@
     } else {
         $Superconductors = 0;
     }
+    if(isset($_POST['Supertensile_Plastics'])) {
+        $Supertensile_Plastics = filter_input(INPUT_POST, "Supertensile_Plastics", FILTER_SANITIZE_NUMBER_INT);
+    } else {
+        $Supertensile_Plastics = 0;
+    }
     if(isset($_POST["Synthetic_Oil"])) {
         $Synthetic_Oil = filter_input(INPUT_POST, "Synthetic_Oil", FILTER_SANITIZE_NUMBER_INT);
     } else {
@@ -148,6 +153,7 @@
         'Rocket_Fuel' => $Rocket_Fuel,
         'Silicate_Glass' => $Silicate_Glass,
         'Superconductors' => $Superconductors,
+        'Supertensile_Plastics' => $Supertensile_Plastics,
         'Synthetic_Oil' => $Synthetic_Oil,
         'Test_Cultures' => $Test_Cultures,
         'Transmitter' => $Transmitter,
